@@ -1,0 +1,700 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"station",
+				"station_owner"
+			],
+			[
+				"get",
+				"get_30_days_sms"
+			],
+			[
+				"current",
+				"current_stations_fuels"
+			],
+			[
+				"stations",
+				"stations_owner_to_delete"
+			],
+			[
+				"stations_ow",
+				"stations_owners"
+			],
+			[
+				"delete",
+				"deleteStationClick"
+			],
+			[
+				"postal",
+				"postal_code"
+			],
+			[
+				"fuel",
+				"fuels_id"
+			],
+			[
+				"add",
+				"added_stations"
+			],
+			[
+				"glyp",
+				"glyphicon-plus"
+			],
+			[
+				"sign",
+				"sign_added"
+			],
+			[
+				"form",
+				"form-group"
+			],
+			[
+				"count_stat",
+				"count_stations"
+			],
+			[
+				"prices",
+				"prices_to_add"
+			],
+			[
+				"utf8",
+				"utf8_keys"
+			],
+			[
+				"xml",
+				"xml_response"
+			],
+			[
+				"error",
+				"error_code"
+			],
+			[
+				"price",
+				"price_evolution"
+			],
+			[
+				"curre",
+				"current_fuel_name"
+			],
+			[
+				"new",
+				"new_price"
+			],
+			[
+				"selec",
+				"select_notifications"
+			],
+			[
+				"users",
+				"user_sms_txt"
+			],
+			[
+				"tmp",
+				"tmp_station_id"
+			],
+			[
+				"arr",
+				"arr_stations_id"
+			],
+			[
+				"user",
+				"user_id"
+			],
+			[
+				"timer",
+				"timer_step1"
+			],
+			[
+				"time",
+				"timer_start"
+			],
+			[
+				"str",
+				"str_service_station"
+			],
+			[
+				"serv",
+				"service_station_to_add"
+			],
+			[
+				"ser",
+				"service_station_to_add"
+			],
+			[
+				"get_ser",
+				"get_services_stations"
+			],
+			[
+				"service",
+				"services_stations"
+			],
+			[
+				"request",
+				"request_add_service"
+			],
+			[
+				"in_arr",
+				"in_array_r"
+			],
+			[
+				"txt",
+				"txt_sms"
+			],
+			[
+				"curr",
+				"current_fioul_price_file"
+			],
+			[
+				"current_",
+				"current_fioul_name_file"
+			],
+			[
+				"delte",
+				"delete_old"
+			],
+			[
+				"array_ke",
+				"array_key_exists"
+			],
+			[
+				"related",
+				"related_question"
+			],
+			[
+				"relateed",
+				"related_model"
+			],
+			[
+				"curren",
+				"current_menu"
+			],
+			[
+				"is_online",
+				"is_online_0"
+			],
+			[
+				"fir",
+				"firstname"
+			],
+			[
+				"public",
+				"public_key_exist"
+			],
+			[
+				"is",
+				"isSynchronized"
+			],
+			[
+				"parent",
+				"parent"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 152.0,
+		"last_filter": "install",
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"Package Control: List Packages"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"task ne",
+				"Tasks: New"
+			],
+			[
+				"tas",
+				"Tasks: New document"
+			],
+			[
+				"packa",
+				"Package Control: Remove Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 485.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/var/www/pianolovescore"
+	],
+	"file_history":
+	[
+		"/var/www/pianolovescore/sftp-config.json",
+		"/home/gaetan/.config/sublime-text-3/Packages/User/SFTP.errors.log",
+		"/var/www/pianolovescore/download.php",
+		"/var/www/pianolovescore/scss/common.scss",
+		"/var/www/pianolovescore/css/common.scss",
+		"/home/gaetan/.config/sublime-text-3/Packages/User/SublimeOnSaveBuild.sublime-settings",
+		"/home/gaetan/.config/sublime-text-3/Packages/SublimeOnSaveBuild/SublimeOnSaveBuild.sublime-settings",
+		"/var/www/pianolovescore/.sassbuilder-config",
+		"/var/www/pianolovescore/scss/.sassbuilder-config.json",
+		"/var/www/pianolovescore/.sassbuilder-config.json",
+		"/media/gaetan/Données/wamp/www/les_ducs/config.rb",
+		"/var/www/pianolovescore/scss/config.rb",
+		"/var/www/pianolovescore/config.rb",
+		"/var/www/pianolovescore/scss/common.css",
+		"/media/gaetan/Système/Users/Adymic/Desktop/repair.bat",
+		"/var/www/fioulooker/admin/stations/add/add.php",
+		"/var/www/fioulooker/check_sms.php",
+		"/var/www/fioulooker/check_dgccrf.php",
+		"/var/www/fioulooker/config.inc.php",
+		"/var/www/fioulooker/css/bootstrap.css",
+		"/var/www/fioulooker/nodejs/check_dgccrf.js",
+		"/var/www/fioulooker/admin/home/index.php",
+		"/var/www/fioulooker/admin/users/add/index.php",
+		"/var/www/fioulooker/admin/users/add/add.php",
+		"/var/www/fioulooker/nodejs/test.js",
+		"/var/www/fioulooker/test/app.js",
+		"/var/www/fioulooker/class/sms.class.php",
+		"/var/www/fioulooker/class/pdo.class.php",
+		"/var/www/fioulooker/admin/index.php",
+		"/var/www/fioulooker/admin/users/edit/edit.php",
+		"/var/www/fioulooker/admin/users/edit/index.php",
+		"/var/www/fioulooker/admin/users/search_station.ajax.php",
+		"/var/www/fioulooker/admin/nav.inc.php",
+		"/var/www/fioulooker/.htaccess",
+		"/var/www/fioulooker/admin/.htaccess",
+		"/var/www/fioulooker/admin/.htpasswd",
+		"/var/www/fioulooker/admin/users/index.php",
+		"/var/www/fioulooker/js/common.js",
+		"/var/www/fioulooker/update/price.php",
+		"/var/www/fioulooker/admin/users/delete.php",
+		"/var/www/fioulooker/admin/stations/add/index.php",
+		"/var/www/fioulooker/admin/stations/delete.php",
+		"/var/www/fioulooker/admin/stations/edit/index.php",
+		"/var/www/fioulooker/admin/services/edit/edit.php",
+		"/var/www/fioulooker/admin/signs/edit/edit.php",
+		"/var/www/fioulooker/admin/services/add/add.php",
+		"/var/www/fioulooker/admin/stations/edit/edit.php",
+		"/var/www/fioulooker/st-project",
+		"/media/gaetan/Système/Users/Adymic/Desktop/CFEnet, le Centre de Formalités des Entreprises sur le net.url",
+		"/var/www/fioulooker/update.php",
+		"/var/www/fioulooker/udpate/price.php",
+		"/var/www/fioulooker/class/free_mobile.class.php",
+		"/home/gaetan/Téléchargements/users_stations.sql",
+		"/var/www/fioulooker/tmp/PrixCarburants_instantane.xml",
+		"/var/www/fioulooker/index.php",
+		"/var/www/fioulooker/free_mobile.class.php",
+		"/var/www/fioulooker/sms.php",
+		"/var/www/fioulooker/SMS/config.inc.php",
+		"/var/www/fioulooker/SMS/sms.class.php",
+		"/home/gaetan/Bureau/PrixCarburants_instantane.xml",
+		"/home/gaetan/Téléchargements/fioulooker.sql",
+		"/media/gaetan/Données/wamp/www/SAMM/php/class/admin.class.php",
+		"/media/gaetan/Données/wamp/www/SAMM/index2.php",
+		"/media/gaetan/Données/wamp/www/les_ducs/inc/pages/presentation-enterprise.html",
+		"/media/gaetan/Données/wamp/www/les_ducs/inc/function.inc.php",
+		"/media/gaetan/Données/wamp/www/les_ducs/inc/config.inc.php",
+		"/media/gaetan/Données/wamp/www/les_ducs/inc/page.inc.php",
+		"/media/gaetan/Données/wamp/www/les_ducs/index.php",
+		"/media/gaetan/Données/wamp/www/les_ducs/inc/nav.inc.php",
+		"/media/gaetan/Données/wamp/www/les_ducs/inc/meta.inc.php",
+		"/media/gaetan/Données/wamp/www/les_ducs/inc/header.inc.php",
+		"/var/www/fioulooker/tmp/INTERMARCHE BEUZEVILLE.txt",
+		"/var/www/fioulooker/tmp/MARKET PONT-AUDEMER.txt",
+		"/var/www/mdl2x/app/Console/Commands/ElasticIndexing.php",
+		"/var/www/mdl2x/resources/views/public/model.blade.php",
+		"/var/www/mdl2x/app/Http/Controllers/WebsiteController.php",
+		"/var/www/mdl2x/vendor/elasticsearch/elasticsearch/README.md",
+		"/var/www/mdl2x/config/elasticsearch.php",
+		"/var/www/mdl2x/config/app.php",
+		"/var/www/mdl2x/app/Console/Kernel.php",
+		"/var/www/mdl2x/vendor/shift31/laravel-elasticsearch/src/Shift31/LaravelElasticsearch/ElasticsearchServiceProvider.php",
+		"/var/www/mdl2x/routes/breadcrumbs.php",
+		"/var/www/mdl2x/routes/web.php",
+		"/var/www/mdl2x/resources/views/public/index.blade.php",
+		"/var/www/mdl2x/resources/views/public/category.blade.php",
+		"/var/www/mdl2x/resources/views/admin/menu/edit.blade.php",
+		"/var/www/mdl2x/app/Http/Controllers/Admin/MenuController.php",
+		"/var/www/mdl2x/database/migrations/2016_11_12_161856_create_models_table.php",
+		"/var/www/mdl2x/app/Http/Controllers/Admin/ModelController.php",
+		"/var/www/mdl2x/resources/views/admin/model/add.blade.php",
+		"/var/www/mdl2x/resources/views/admin/model/edit.blade.php",
+		"/var/www/mdl2x/resources/views/public/common/hotline.blade.php",
+		"/var/www/mdl2x/resources/views/layouts/public.blade.php",
+		"/var/www/mdl2x/resources/views/layouts/admin.blade.php",
+		"/var/www/mdl2x/config/breadcrumbs.php",
+		"/var/www/mdl2x/app/Providers/RouteServiceProvider.php",
+		"/var/www/mdl2x/app/Models/Menu.php",
+		"/var/www/mdl2x/composer.json",
+		"/var/www/mdl2x/resources/views/public/common/button-account.blade.php",
+		"/var/www/mdl2x/resources/views/public/common/footer.blade.php",
+		"/var/www/mdl2x/resources/views/admin/index.blade.php",
+		"/var/www/mdl2x/resources/views/admin/menu/index.blade.php",
+		"/var/www/mdl2x/resources/views/admin/message/index.twig",
+		"/var/www/mdl2x/resources/views/admin/menu/add.blade.php",
+		"/var/www/mdl2x/resources/views/admin/model/index.blade.php",
+		"/var/www/mdl2x/resources/views/admin/user/add.blade.php",
+		"/var/www/mdl2x/resources/views/admin/user/edit.blade.php",
+		"/var/www/mdl2x/resources/views/admin/user/index.blade.php",
+		"/var/www/mdl2x/resources/views/public/common/search-form.blade.php",
+		"/var/www/mdl2x/app/Http/Controllers/Admin/UserController.php",
+		"/var/www/mdl2x/app/Http/Middleware/RedirectIfAuthenticated.php",
+		"/var/www/mdl2x/app/Models/Model.php",
+		"/var/www/mdl2x/resources/views/admin/login.blade.php",
+		"/var/www/mdl2x/app/Http/Controllers/Admin/AdminMasterController.php",
+		"/var/www/mdl2x/app/Http/Controllers/Admin/HomeController.php",
+		"/var/www/mdl2x/config/auth.php",
+		"/var/www/mdl2x/resources/views/auth/login.blade.php",
+		"/var/www/mdl2x/app/Http/Controllers/Auth/LoginController.php",
+		"/var/www/mdl2x/app/Http/Controllers/Auth/RegisterController.php",
+		"/var/www/mdl2x/app/Http/Controllers/Auth/ForgotPasswordController.php",
+		"/var/www/mdl2x/app/Http/Controllers/Auth/ResetPasswordController.php",
+		"/var/www/mdl2x/app/Http/Controllers/Admin/Ajax/UserController.php",
+		"/var/www/mdl2x/app/Http/Controllers/Admin/Ajax/MenuController.php",
+		"/var/www/mdl2x/app/Http/Controllers/Admin/Ajax/CommonController.php",
+		"/var/www/mdl2x/app/Http/Controllers/SecurityController.php",
+		"/var/www/mdl2x/vendor/laravel/framework/src/Illuminate/Auth/Console/stubs/make/routes.stub",
+		"/var/www/mdl2x/app/Http/Controllers/PublicMasterController.php",
+		"/var/www/mdl2x/resources/views/auth/passwords/reset.blade.php"
+	],
+	"find":
+	{
+		"height": 27.0
+	},
+	"find_in_files":
+	{
+		"height": 108.0,
+		"where_history":
+		[
+			"/var/www/fioulooker",
+			"/var/www/mdl2x/vendor/elasticsearch/elasticsearch",
+			"/var/www/mdl2x/resources",
+			"/var/www/mdl2x/vendor/laravel/framework/src/Illuminate/Auth",
+			"/var/www/mdl2x",
+			"/var/www/mdl2x/app/Http",
+			"/var/www/mdl2x",
+			"/var/www/mdl2x/app/Http",
+			"/var/www/mdl2x",
+			"/var/www/mdl/database/migrations"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"pianolovescore",
+			"button",
+			"own",
+			"owner",
+			"pro",
+			"owner",
+			"propri",
+			"$$",
+			"user_",
+			"activa",
+			"underline",
+			"text-dec",
+			"panel-footer",
+			"50",
+			"return",
+			"balance",
+			"stations_own",
+			"station_own",
+			"foreach($stations_owner_to_delete as $station_id)\n\t\t\t{\n\t\t\t\t$insert_user_station = $pdo->prepare('INSERT INTO stations_owners(station_id, user_id) VALUES(:station_id, :user_id)');\n\t\t\t\t$insert_user_station->execute([\n\t\t\t\t\t'station_id' \t=> $station_id,\n\t\t\t\t\t'user_id'\t\t=> $user_id\n\t\t\t\t]);\n\t\t\t}",
+			"js_str_station_id",
+			"Ajouter",
+			"add",
+			"owner",
+			" class=\"done\"",
+			"class=\"done\"",
+			"fuels_he",
+			"fuel_head",
+			"class",
+			"deleteStationClick",
+			"station",
+			"user",
+			"foreach",
+			"toggle",
+			"badge",
+			"click",
+			"avail",
+			"availa",
+			"users",
+			"not",
+			"noti",
+			"bootstra",
+			"fuel_id",
+			"clone",
+			"fuel_id",
+			"f",
+			"sign_form",
+			"){+\n",
+			"se",
+			"serv",
+			"service",
+			"/>\n",
+			"sign",
+			"signs",
+			"prix",
+			"rup",
+			"ruptu",
+			"pdo",
+			"noti",
+			"noptif",
+			"select_notifications",
+			"./",
+			"/***/\n",
+			"servicesStationsExist",
+			"cleanString",
+			"include",
+			"2",
+			"servicesStationsExist",
+			"station_fuel",
+			"fuels",
+			"update",
+			"cities",
+			"services_stations_to_add",
+			"cleanString",
+			"servicesStationsExist",
+			"pvd",
+			"free_mobile",
+			"die",
+			"recipien",
+			"delete",
+			"updated_at",
+			"update",
+			"notifi",
+			"updated_at",
+			"fuel_id",
+			"station_id",
+			"user_id",
+			"avg_notify_delay",
+			"fuel",
+			"fuel_name",
+			"prices",
+			"creat",
+			"created",
+			"updated_at",
+			"crea",
+			"last_creat",
+			"s",
+			"FETCH_UNIQUE",
+			"transa",
+			"sms_mode",
+			"mode",
+			"sending_time",
+			"sending",
+			"set_sendin",
+			"sending_t",
+			"sending_d",
+			"dif",
+			"defe",
+			"def",
+			"deff",
+			" .'&",
+			"01",
+			"sms_mode",
+			"DB_TYPE",
+			"sms_recipients",
+			"87160001",
+			"timer",
+			"service_station_to_add",
+			"92330002",
+			"%",
+			"92330002",
+			"ob_flush();",
+			"time()",
+			"\t\n",
+			"servicesStationsExist",
+			"in_arra",
+			"in_array_r",
+			"echo",
+			"Relais colis"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"",
+			"modified_at",
+			"",
+			"microtime(true)",
+			"",
+			"$new",
+			":",
+			" \"",
+			"\",",
+			"\" ",
+			"    \"",
+			"}",
+			": {",
+			"}",
+			": {",
+			"{id}",
+			"@extends( 'layouts.",
+			"active_class",
+			"$model->",
+			"$errors->",
+			"redirect()->",
+			"$errors->",
+			" $model->",
+			"$errors->",
+			"redirect()",
+			"$redirect->",
+			"User::",
+			"response()->",
+			"$errors->",
+			"errors->",
+			" $user",
+			"redirect()->",
+			"elixir",
+			"();"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 124.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.sftp":
+	{
+		"height": 100.0
+	},
+	"pinned_build_system": "Packages/SASS Build/SASS - Compressed.sublime-build",
+	"project": "pianolovescore.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				".todo"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 250.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
