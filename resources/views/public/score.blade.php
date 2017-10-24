@@ -18,7 +18,7 @@
 @endsection
 @section('main')
     <section class="scores__content">
-        <div class="col-md-offset-5 col-md-8">
+        <div class="col-md-offset-4 col-md-8">
             <div class="row scores__title">
                 <h1>Etude n°2 op n°34</h1><h2><a href="#">Chopin</a></h2>
             </div>
@@ -47,6 +47,11 @@
                         <label class="star star-1" for="star-1"></label>
                     </form>
                 </div>
+            </div>
+            <div class="col-xs-4 col-md-2">
+                <a href="#">
+                    <img src="{{ URL::to('/') }}/img/pdf_download.png" class="scores__download"/>
+                </a>
             </div>
         </div>
     </section>

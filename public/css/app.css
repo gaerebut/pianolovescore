@@ -5790,6 +5790,8 @@ main {
   main .scores__content .scores__icon {
     margin-top: -100px;
     width: 100%; }
+  main .scores__content .scores__download {
+    width: 100%; }
 
 footer {
   border-top: 1px solid #000; }
