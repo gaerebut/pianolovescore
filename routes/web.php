@@ -12,5 +12,9 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('public/home');
+})->name('home');
+
+Route::get('/partitions/chopin/etude_n_2_op_34', function () {
+    return view('public/score');
 });
