@@ -73,96 +73,100 @@
                 <h2>Partitions gratuites que vous aimerez également</h2>
             </div>
         </div>
-        <div class="row">
-            <div class="col-sm-5 col-md-7">
-                <a href="/partitions/chopin/etude_n_2_op_34">Titre de la partition BLABLABLAB BAL BLA BLA BLAB LA BLAB LAB L</a>
-            </div>
-            <div class="col-xs-7 col-sm-4 col-md-3">
-                de <a href="/partitions/chopin/etude_n_2_op_34">Auteur NOM PRENOM</a>
-            </div>
-            <div class="col-xs-5 col-sm-2">
-                <div class="star-ratings-css">
-                    <div class="top" style="width: 50%">
-                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                    </div>
-                    <div class="bottom">
-                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-5 col-md-7">
-                <a href="/partitions/chopin/etude_n_2_op_34">Titre de la partition BLABLABLAB BAL BLA BLA BLAB LA BLAB LAB L</a>
-            </div>
-            <div class="col-xs-7 col-sm-4 col-md-3">
-                de <a href="/partitions/chopin/etude_n_2_op_34">Auteur NOM PRENOM</a>
-            </div>
-            <div class="col-xs-5 col-sm-2">
-                <div class="star-ratings-css">
-                    <div class="top" style="width: 50%">
-                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                    </div>
-                    <div class="bottom">
-                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-5 col-md-7">
-                <a href="/partitions/chopin/etude_n_2_op_34">Titre de la partition BLABLABLAB BAL BLA BLA BLAB LA BLAB LAB L</a>
-            </div>
-            <div class="col-xs-7 col-sm-4 col-md-3">
-                de <a href="/partitions/chopin/etude_n_2_op_34">Auteur NOM PRENOM</a>
-            </div>
-            <div class="col-xs-5 col-sm-2">
-                <div class="star-ratings-css">
-                    <div class="top" style="width: 50%">
-                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                    </div>
-                    <div class="bottom">
-                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-5 col-md-7">
-                <a href="/partitions/chopin/etude_n_2_op_34">Titre de la partition BLABLABLAB BAL BLA BLA BLAB LA BLAB LAB L</a>
-            </div>
-            <div class="col-xs-7 col-sm-4 col-md-3">
-                de <a href="/partitions/chopin/etude_n_2_op_34">Auteur NOM PRENOM</a>
-            </div>
-            <div class="col-xs-5 col-sm-2">
-                <div class="star-ratings-css">
-                    <div class="top" style="width: 50%">
-                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                    </div>
-                    <div class="bottom">
-                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-5 col-md-7">
-                <a href="/partitions/chopin/etude_n_2_op_34">Titre de la partition BLABLABLAB BAL BLA BLA BLAB LA BLAB LAB L</a>
-            </div>
-            <div class="col-xs-7 col-sm-4 col-md-3">
-                de <a href="/partitions/chopin/etude_n_2_op_34">Auteur NOM PRENOM</a>
-            </div>
-            <div class="col-xs-5 col-sm-2">
-                <div class="star-ratings-css">
-                    <div class="top" style="width: 50%">
-                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                    </div>
-                    <div class="bottom">
-                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <table class="table">
+            <tbody>
+                <tr>
+                    <td>
+                        <a href="/partitions/chopin/etude_n_2_op_34">Titre de la partition BLABLABLAB BAL BLA BLA BLAB LA BLAB LAB L</a>
+                    </td>
+                    <td>
+                        de <a href="/partitions/chopin/etude_n_2_op_34">Auteur NOM PRENOM</a>
+                    </td>
+                    <td>
+                        <div class="star-ratings-css">
+                            <div class="top" style="width: 50%">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                            <div class="bottom">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="/partitions/chopin/etude_n_2_op_34">Titre de la partition BLABLABLAB BAL BLA BLA BLAB LA BLAB LAB L</a>
+                    </td>
+                    <td>
+                        de <a href="/partitions/chopin/etude_n_2_op_34">Auteur NOM PRENOM</a>
+                    </td>
+                    <td>
+                        <div class="star-ratings-css">
+                            <div class="top" style="width: 50%">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                            <div class="bottom">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="/partitions/chopin/etude_n_2_op_34">Titre de la partition BLABLABLAB BAL BLA BLA BLAB LA BLAB LAB L</a>
+                    </td>
+                    <td>
+                        de <a href="/partitions/chopin/etude_n_2_op_34">Auteur NOM PRENOM</a>
+                    </td>
+                    <td>
+                        <div class="star-ratings-css">
+                            <div class="top" style="width: 50%">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                            <div class="bottom">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="/partitions/chopin/etude_n_2_op_34">Titre de la partition BLABLABLAB BAL BLA BLA BLAB LA BLAB LAB L</a>
+                    </td>
+                    <td>
+                        de <a href="/partitions/chopin/etude_n_2_op_34">Auteur NOM PRENOM</a>
+                    </td>
+                    <td>
+                        <div class="star-ratings-css">
+                            <div class="top" style="width: 50%">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                            <div class="bottom">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="/partitions/chopin/etude_n_2_op_34">Titre de la partition BLABLABLAB BAL BLA BLA BLAB LA BLAB LAB L</a>
+                    </td>
+                    <td>
+                        de <a href="/partitions/chopin/etude_n_2_op_34">Auteur NOM PRENOM</a>
+                    </td>
+                    <td>
+                        <div class="star-ratings-css">
+                            <div class="top" style="width: 50%">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                            <div class="bottom">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </section>
     <section class="scores__composer">
         <div class="row">
@@ -170,96 +174,100 @@
                 <h2>Autres partitions gratuites de Chopin</h2>
             </div>
         </div>
-        <div class="row">
-            <div class="col-sm-5 col-md-7">
-                <a href="/partitions/chopin/etude_n_2_op_34">Titre de la partition BLABLABLAB BAL BLA BLA BLAB LA BLAB LAB L</a>
-            </div>
-            <div class="col-xs-7 col-sm-4 col-md-3">
-                de <a href="/partitions/chopin/etude_n_2_op_34">Auteur NOM PRENOM</a>
-            </div>
-            <div class="col-xs-5 col-sm-2">
-                <div class="star-ratings-css">
-                    <div class="top" style="width: 50%">
-                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                    </div>
-                    <div class="bottom">
-                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-5 col-md-7">
-                <a href="/partitions/chopin/etude_n_2_op_34">Titre de la partition BLABLABLAB BAL BLA BLA BLAB LA BLAB LAB L</a>
-            </div>
-            <div class="col-xs-7 col-sm-4 col-md-3">
-                de <a href="/partitions/chopin/etude_n_2_op_34">Auteur NOM PRENOM</a>
-            </div>
-            <div class="col-xs-5 col-sm-2">
-                <div class="star-ratings-css">
-                    <div class="top" style="width: 50%">
-                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                    </div>
-                    <div class="bottom">
-                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-5 col-md-7">
-                <a href="/partitions/chopin/etude_n_2_op_34">Titre de la partition BLABLABLAB BAL BLA BLA BLAB LA BLAB LAB L</a>
-            </div>
-            <div class="col-xs-7 col-sm-4 col-md-3">
-                de <a href="/partitions/chopin/etude_n_2_op_34">Auteur NOM PRENOM</a>
-            </div>
-            <div class="col-xs-5 col-sm-2">
-                <div class="star-ratings-css">
-                    <div class="top" style="width: 50%">
-                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                    </div>
-                    <div class="bottom">
-                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-5 col-md-7">
-                <a href="/partitions/chopin/etude_n_2_op_34">Titre de la partition BLABLABLAB BAL BLA BLA BLAB LA BLAB LAB L</a>
-            </div>
-            <div class="col-xs-7 col-sm-4 col-md-3">
-                de <a href="/partitions/chopin/etude_n_2_op_34">Auteur NOM PRENOM</a>
-            </div>
-            <div class="col-xs-5 col-sm-2">
-                <div class="star-ratings-css">
-                    <div class="top" style="width: 50%">
-                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                    </div>
-                    <div class="bottom">
-                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-5 col-md-7">
-                <a href="/partitions/chopin/etude_n_2_op_34">Titre de la partition BLABLABLAB BAL BLA BLA BLAB LA BLAB LAB L</a>
-            </div>
-            <div class="col-xs-7 col-sm-4 col-md-3">
-                de <a href="/partitions/chopin/etude_n_2_op_34">Auteur NOM PRENOM</a>
-            </div>
-            <div class="col-xs-5 col-sm-2">
-                <div class="star-ratings-css">
-                    <div class="top" style="width: 50%">
-                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                    </div>
-                    <div class="bottom">
-                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <table class="table">
+            <tbody>
+                <tr>
+                    <td>
+                        <a href="/partitions/chopin/etude_n_2_op_34">Titre de la partition BLABLABLAB BAL BLA BLA BLAB LA BLAB LAB L</a>
+                    </td>
+                    <td>
+                        de <a href="/partitions/chopin/etude_n_2_op_34">Auteur NOM PRENOM</a>
+                    </td>
+                    <td>
+                        <div class="star-ratings-css">
+                            <div class="top" style="width: 50%">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                            <div class="bottom">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="/partitions/chopin/etude_n_2_op_34">Titre de la partition BLABLABLAB BAL BLA BLA BLAB LA BLAB LAB L</a>
+                    </td>
+                    <td>
+                        de <a href="/partitions/chopin/etude_n_2_op_34">Auteur NOM PRENOM</a>
+                    </td>
+                    <td>
+                        <div class="star-ratings-css">
+                            <div class="top" style="width: 50%">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                            <div class="bottom">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="/partitions/chopin/etude_n_2_op_34">Titre de la partition BLABLABLAB BAL BLA BLA BLAB LA BLAB LAB L</a>
+                    </td>
+                    <td>
+                        de <a href="/partitions/chopin/etude_n_2_op_34">Auteur NOM PRENOM</a>
+                    </td>
+                    <td>
+                        <div class="star-ratings-css">
+                            <div class="top" style="width: 50%">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                            <div class="bottom">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="/partitions/chopin/etude_n_2_op_34">Titre de la partition BLABLABLAB BAL BLA BLA BLAB LA BLAB LAB L</a>
+                    </td>
+                    <td>
+                        de <a href="/partitions/chopin/etude_n_2_op_34">Auteur NOM PRENOM</a>
+                    </td>
+                    <td>
+                        <div class="star-ratings-css">
+                            <div class="top" style="width: 50%">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                            <div class="bottom">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="/partitions/chopin/etude_n_2_op_34">Titre de la partition BLABLABLAB BAL BLA BLA BLAB LA BLAB LAB L</a>
+                    </td>
+                    <td>
+                        de <a href="/partitions/chopin/etude_n_2_op_34">Auteur NOM PRENOM</a>
+                    </td>
+                    <td>
+                        <div class="star-ratings-css">
+                            <div class="top" style="width: 50%">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                            <div class="bottom">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </section>
 @endsection
 

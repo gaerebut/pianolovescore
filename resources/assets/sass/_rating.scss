@@ -38,10 +38,10 @@ label.star:before {
 	unicode-bidi: bidi-override;
 	color: #c5c5c5;
 	font-size: 30px;
-	line-height: 20px;
 	height: 30px;
 	width: 135px;
-	margin: 0 auto;
+	line-height: 25px;
+	margin: -0 auto;
 	position: relative;
 	padding: 0;
 	text-shadow: 0px 1px 0 #a2a2a2;
@@ -61,5 +61,14 @@ label.star:before {
 		padding: 0;
 		display: block;
 		z-index: 0;
+	}
+}
+
+@media (max-width: $screen-xs-max) {
+	.star-ratings-css {
+		font-size: 20px;
+		height: 20px;
+		line-height: 15px;
+		width: 90px;
 	}
 }
