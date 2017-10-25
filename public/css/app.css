@@ -5732,7 +5732,7 @@ button.close {
     display: none !important; } }
 
 div.stars {
-  width: 270px;
+  width: 280px;
   margin: auto; }
 
 input.star {
@@ -5764,6 +5764,31 @@ label.star:before {
   content: '\f006';
   font-family: FontAwesome; }
 
+.star-ratings-css {
+  unicode-bidi: bidi-override;
+  color: #c5c5c5;
+  font-size: 30px;
+  line-height: 20px;
+  height: 30px;
+  width: 135px;
+  margin: 0 auto;
+  position: relative;
+  padding: 0;
+  text-shadow: 0px 1px 0 #a2a2a2; }
+  .star-ratings-css .top {
+    color: #e7711b;
+    padding: 0;
+    position: absolute;
+    z-index: 1;
+    display: block;
+    top: 0;
+    left: 0;
+    overflow: hidden; }
+  .star-ratings-css .bottom {
+    padding: 0;
+    display: block;
+    z-index: 0; }
+
 header .navbar {
   margin: 10px 0 0 0;
   padding: 0;
@@ -5780,7 +5805,16 @@ header .navbar {
 
 main {
   border-right: 1px solid #000;
-  border-left: 1px solid #000; }
+  border-left: 1px solid #000;
+  /*
+	.scores__alike{
+		border-top: 1px solid #000;
+	}
+
+	.scores__composer{
+		border-top: 1px solid #000;
+	}
+*/ }
   main .scores__content .scores__title > h1, main .scores__content .scores__title h2 {
     margin-bottom: 30px;
     display: inline-block; }
@@ -5790,8 +5824,14 @@ main {
   main .scores__content .scores__icon {
     margin-top: -100px;
     width: 100%; }
-  main .scores__content .scores__download {
-    width: 100%; }
+  main .scores__content .scores__infos {
+    text-align: center; }
+    main .scores__content .scores__infos .scores__download {
+      width: 100%; }
+    main .scores__content .scores__infos .scores__audio {
+      margin-top: 50px; }
+      main .scores__content .scores__infos .scores__audio audio {
+        width: 70%; }
 
 footer {
   border-top: 1px solid #000; }

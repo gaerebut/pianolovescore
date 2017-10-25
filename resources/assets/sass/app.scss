@@ -51,10 +51,26 @@ main{
 			width:100%;
 		}
 
-		.scores__download{
-			width: 100%;
+		.scores__infos{
+			text-align: center;
+
+			.scores__download{ width: 100%; }
+			.scores__audio{
+			    margin-top: 50px;
+
+			    audio{ width: 70%; }
+			}
 		}
 	}
+/*
+	.scores__alike{
+		border-top: 1px solid #000;
+	}
+
+	.scores__composer{
+		border-top: 1px solid #000;
+	}
+*/
 }
 
 footer{
@@ -66,9 +82,7 @@ footer{
 /********************/
 @media (max-width: $screen-xs-max) {
 	.navbar {
-		.navbar-nav{
-			width: 100%;
-		}
+		.navbar-nav{ width: 100%; }
 	}
 }
 
