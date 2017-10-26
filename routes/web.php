@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('public/home');
 })->name('home');
 
-Route::get('/partitions/chopin/etude_n_2_op_34', function () {
-    return view('public/score');
-});
+// Route::get('/partitions/chopin/etude_n_2_op_34', function () {
+//     return view('public/score');
+// });
+
+Route::get('partitions', 'ScoreController@showByComposers')->name('scores.showByComposer');
+Route::get('partitions/{composer}', 'ScoreController@showForComposer')->name('scores.showForComposer');
+Route::get('partitions/{composer}/{slug}', 'ScoreController@show')->name('scores.show');

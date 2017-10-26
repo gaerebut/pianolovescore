@@ -11,7 +11,7 @@
             <div class="row">
                 <form action="#">
                     <div class="col-sm-offset-3 col-sm-4">
-                        <input type="text" class="form-control" placeholder="Rechercher une partition..." />
+                        <input type="text" class="form-control" placeholder="Rechercher une partition, un compositeur..." />
                     </div>
                     <div class="col-sm-2">
                        <input type="submit" class="form-control" value="Rechercher" /> 
