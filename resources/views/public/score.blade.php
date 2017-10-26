@@ -20,13 +20,13 @@
     <section class="scores__content">
         <div class="col-md-offset-4 col-md-8">
             <div class="row scores__title">
-                <h1>Etude n°2 op n°34</h1><h2><a href="#">Chopin</a></h2>
+                <h1>{{ $score->title }}</h1><h2><a href="#">{{ $score->author->lastname }}</a></h2>
             </div>
         </div>
         <div class="row border-left-0 border-right-0 border-top-0">
             <div class="col-md-4">
-                <a data-fancybox="gallery" href="http://cdn.imslp.org/images/thumb/pdfs/e9/aa5eb550e430c18e8c8b7b354f6915bbd9e065e7.png">
-                    <img src="http://cdn.imslp.org/images/thumb/pdfs/e9/aa5eb550e430c18e8c8b7b354f6915bbd9e065e7.png" class="scores__icon">
+                <a data-fancybox="gallery" href="{{ $score->score_image }}">
+                    <img src="{{ $score->score_image }}" class="scores__icon">
                 </a>
             </div>
             <div class="col-md-8 scores__infos">
@@ -50,16 +50,14 @@
                 <div class="row">
                     <div class="col-xs-offset-4 col-xs-4 col-md-offset-0 col-md-3">
                         <h4><strong>Télécharger gratuitement</strong></h4>
-                        <a href="#">
+                        <a href="{{ $score->score_url }}">
                             <img src="{{ URL::to('/') }}/img/pdf_download.png" class="scores__download"/>
                         </a>
                     </div>
                     <div class="col-xs-12 col-md-9 scores__audio">
-                        <h4>Ecoutez ci-dessous <strong>Etude n°2 op n°34</strong> de <strong>Chopin</strong></h4>
+                        <h4>Ecoutez ci-dessous <strong>{{ $score->title }}</strong> de <strong>{{ $score->author->lastname }}</strong></h4>
                         <audio controls="controls" preload="metadata" controlsList="nodownload">
-                            <!--<source src="music.mp3" type="audio/mp3" />
-                            <source src="music.aac" type="audio/aac" />-->
-                            <source src="http://ks.imslp.info/files/imglnks/usimg/7/73/IMSLP113795-PMLP01649-Chopin-Ballade-Fminor-Seitzer.ogg" type="audio/ogg" />
+                            <source src="{{ $score->score_sound_url }}" type="audio/{{ $score->score_sound_format }}" />
                             Votre navigateur n'est pas compatible
                         </audio>
                     </div>

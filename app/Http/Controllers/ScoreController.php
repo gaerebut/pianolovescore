@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Score;
 use Illuminate\Http\Request;
 
 class ScoreController extends Controller
@@ -12,9 +13,10 @@ class ScoreController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function show($slug)
+    public function show($composer, $slug)
     {
-        return view('public.score', ['score' => Score::findOrFail($id)]);
+        // $score = Score::where('slug', '=', $slug)->firstOrFail();
+        $score = Score::where('slug', '=', $slug)->first();
+        return view('public.score', ['score' => $score]);
     }
-}
 }

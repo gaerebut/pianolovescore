@@ -11,6 +11,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+        $this->call(AuthorsTableSeeder::class);
+        $this->command->info('Remplissage de la table "authors"');
+
+        $this->call(ScoresTableSeeder::class);
+        $this->command->info('Remplissage de la table "scores"');
     }
 }
