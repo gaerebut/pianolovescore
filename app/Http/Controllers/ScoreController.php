@@ -10,13 +10,13 @@ class ScoreController extends Controller
     /**
      * Show the profile for the given user.
      *
-     * @param  int  $id
-     * @return Response
+     * @param string  $composer
+    *  @param string $slug 
+     * @return View
      */
     public function show($composer, $slug)
     {
-        // $score = Score::where('slug', '=', $slug)->firstOrFail();
-        $score = Score::where('slug', '=', $slug)->first();
+        $score = Score::where('slug', '=', $slug)->firstOrFail();
         return view('public.score', ['score' => $score]);
     }
 }

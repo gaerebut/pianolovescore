@@ -34,7 +34,7 @@
                     <h4>Quelle difficulté attribuez-vous à cette <strong>partition de piano</strong> ?</h4>
                 </div>
                 <div class="row stars">
-                    <form action="#">
+                    <form action="{{ route('ajax.rating') }}" id="rating_form">
                         <input class="star star-5" id="star-5" type="radio" name="star" value="5"/>
                         <label class="star star-5" for="star-5"></label>
                         <input class="star star-4" id="star-4" type="radio" name="star" value="4"/>
@@ -273,7 +273,26 @@
 <script type="text/javascript">
     $(function(){
         $('[type*="radio"]').change(function () {
-            console.log( $(this).attr('value') );
+            //console.log( $(this).attr('value') );
+
+            $.ajaxSetup({
+                headers: {'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')}
+            });
+
+            $.ajax({
+                url: $('#rating_form').attr('action'),
+                method: 'POST',
+                processData: false,
+                contentType: false,
+                cache: false,
+                data: 'slug={{ $score->slug }}&rate=' + $(this).attr('value'),
+                success: function(data) {
+                   console.log(data);
+                },
+                error: function(data) {
+                    console.log(data);
+                }
+            }); 
         });
     });
 </script>
