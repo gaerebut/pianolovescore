@@ -61,6 +61,12 @@ main{
 			    audio{ width: 70%; }
 			}
 		}
+
+		.scores__rating__thanks{
+			display:none;
+			color: #ff9100;
+			font-weight: bold;
+		}
 	}
 /*
 	.scores__alike{

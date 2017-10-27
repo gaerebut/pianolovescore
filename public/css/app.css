@@ -5839,6 +5839,10 @@ main {
       margin-top: 50px; }
       main .scores__content .scores__infos .scores__audio audio {
         width: 70%; }
+  main .scores__content .scores__rating__thanks {
+    display: none;
+    color: #ff9100;
+    font-weight: bold; }
 
 footer {
   border-top: 1px solid #000; }

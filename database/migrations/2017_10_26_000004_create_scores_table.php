@@ -22,7 +22,7 @@ class CreateScoresTable extends Migration
             $table->string('score_url', 255);
             $table->string('score_sound_format', 255)->nullable();
             $table->string('score_sound_url', 255)->nullable();
-            $table->integer('count_votes')->nullable();
+            $table->integer('count_votes')->default(0);
             $table->integer('avg_votes')->nullable();
             $table->datetime('deleted_at')->nullable();
             $table->timestamps();

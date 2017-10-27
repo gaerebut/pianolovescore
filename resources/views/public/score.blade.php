@@ -34,6 +34,14 @@
                     <h4>Quelle difficulté attribuez-vous à cette <strong>partition de piano</strong> ?</h4>
                 </div>
                 <div class="row stars">
+                    <div class="star-ratings-css">
+                        <div class="top" style="width: {{ $score->avg_votes }}%">
+                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                        </div>
+                        <div class="bottom">
+                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                        </div>
+                    </div>
                     <form action="{{ route('ajax.rating') }}" id="rating_form">
                         <input class="star star-5" id="star-5" type="radio" name="star" value="5"/>
                         <label class="star star-5" for="star-5"></label>
@@ -46,6 +54,8 @@
                         <input class="star star-1" id="star-1" type="radio" name="star" value="1"/>
                         <label class="star star-1" for="star-1"></label>
                     </form>
+                    <h3 class="scores__rating__thanks">Merci pour votre vote</h3>
+                    <div class="scores__rating__result">Moyenne : <strong class="avg_votes"><?php echo round($score->avg_votes/20, 2); ?></strong>/5 (<strong class="count_votes">{{ $score->count_votes }}</strong> votes)</div>
                 </div>
                 <div class="row">
                     <div class="col-xs-offset-4 col-xs-4 col-md-offset-0 col-md-3">
@@ -282,15 +292,21 @@
             $.ajax({
                 url: $('#rating_form').attr('action'),
                 method: 'POST',
-                processData: false,
-                contentType: false,
-                cache: false,
+                dataType: 'JSON',
                 data: 'slug={{ $score->slug }}&rate=' + $(this).attr('value'),
                 success: function(data) {
-                   console.log(data);
+                   if(data.success)
+                   {
+                        $('.stars form').fadeOut(1000, function(){
+                            $('.scores__rating__thanks').fadeIn();
+                        });
+
+                        $('.avg_votes').html((data.avg_votes/20).toFixed(2));
+                        $('.count_votes').html(data.count_votes);
+                   }
                 },
                 error: function(data) {
-                    console.log(data);
+                    alert('ERROR : ' + data);
                 }
             }); 
         });

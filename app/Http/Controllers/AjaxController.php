@@ -6,6 +6,7 @@ use Validator;
 use App\Models\Rating;
 use App\Models\Score;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class AjaxController extends Controller
 {
@@ -17,16 +18,17 @@ class AjaxController extends Controller
      */
     public function storeRating(Request $request)
     {
+    	$input = $request->all();
+
     	$validator = Validator::make($request->all(), [
     		'slug'	=> 'string|required|max:200',
 		    'rate' 	=> 'int|required'
 		]);
-
-    	$score = Score::where('slug', '=', $request->slug)->first();
+    	$score = Score::where('slug', '=', $input['slug'])->first();
 
     	if($score){
-    		$ip_address = Request::ip();
-    		$rate = $request->rate * 20;
+    		$ip_address = \Request::ip();
+    		$rate = (int)$input['rate'] * 20;
 
     		$already_rate = Rating::where([
     			['score_id', '=', $score->id],
@@ -35,15 +37,26 @@ class AjaxController extends Controller
 
     		if(!$already_rate){
 	    		$rating = new Rating();
-	    		$rating->scoreId = $score->id;
-	    		$rating->ipAddress = $ip_address;
+	    		$rating->score_id = $score->id;
+	    		//$rating->ip_address = $ip_address;
+	    		$rating->ip_address = '127.0.0.0';
 	    		$rating->rate = $rate;
-	    		$rate->save();
+	    		$rating->save();
 
 	    		$score->avg_votes = (($score->avg_votes * $score->count_votes) + $rate) / ($score->count_votes + 1);
 	    		$score->count_votes = $score->count_votes + 1;
 	    		$score->save();
+
+	    		$result = ['success' => true, 'avg_votes' => $score->avg_votes, 'count_votes' => $score->count_votes];
+	    	}
+	    	else{
+	    		$result = ['success' => false, 'message' => 'Vous avez déjà noté cette partition'];
 	    	}
     	}
+    	else{
+    		$result = ['success' => false, 'message' => 'La partition demandée est introuvable'];
+    	}
+
+    	return $result;
     }
 }
