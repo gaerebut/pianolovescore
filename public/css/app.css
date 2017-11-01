@@ -5780,7 +5780,7 @@ label.star:before {
     height: 36px;
     width: 218px;
     line-height: 36px; }
-    .star-ratings-css.result.hidden {
+    .star-ratings-css.result.off {
       display: none; }
     .star-ratings-css.result .top span::before, .star-ratings-css.result .bottom span::before {
       content: '\f005';

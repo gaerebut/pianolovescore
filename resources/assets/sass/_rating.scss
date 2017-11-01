@@ -52,7 +52,7 @@ label.star:before {
 		width: 218px;
 		line-height: 36px;
 
-		&.hidden{display: none;}
+		&.off{display: none;}
 
 		.top, .bottom{
 			span::before{
