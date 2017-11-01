@@ -34,12 +34,12 @@
                     <h4>Quelle difficulté attribuez-vous à cette <strong>partition de piano</strong> ?</h4>
                 </div>
                 <div class="row stars">
-                    <div class="star-ratings-css">
+                    <div class="star-ratings-css result hidden">
                         <div class="top" style="width: {{ $score->avg_votes }}%">
-                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            <span></span><span></span><span></span><span></span><span></span>
                         </div>
                         <div class="bottom">
-                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            <span></span><span></span><span></span><span></span><span></span>
                         </div>
                     </div>
                     <form action="{{ route('ajax.rating') }}" id="rating_form">
@@ -299,6 +299,7 @@
                    {
                         $('.stars form').fadeOut(1000, function(){
                             $('.scores__rating__thanks').fadeIn();
+                            $('.stars .result .top').css('width', data.avg_votes + '%').parent().fadeIn();
                         });
 
                         $('.avg_votes').html((data.avg_votes/20).toFixed(2));

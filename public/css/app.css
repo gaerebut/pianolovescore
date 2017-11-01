@@ -5766,15 +5766,25 @@ label.star:before {
 
 .star-ratings-css {
   unicode-bidi: bidi-override;
-  color: #c5c5c5;
   font-size: 30px;
   height: 30px;
   width: 135px;
   line-height: 25px;
-  margin: -0 auto;
+  margin: 0 auto;
   position: relative;
   padding: 0;
   text-shadow: 0px 1px 0 #a2a2a2; }
+  .star-ratings-css.result {
+    font-family: FontAwesome;
+    font-size: 36px;
+    height: 36px;
+    width: 218px;
+    line-height: 36px; }
+    .star-ratings-css.result.hidden {
+      display: none; }
+    .star-ratings-css.result .top span::before, .star-ratings-css.result .bottom span::before {
+      content: '\f005';
+      padding: 0 5px; }
   .star-ratings-css .top {
     color: #e7711b;
     padding: 0;
@@ -5842,7 +5852,8 @@ main {
   main .scores__content .scores__rating__thanks {
     display: none;
     color: #ff9100;
-    font-weight: bold; }
+    font-weight: bold;
+    margin: 7px; }
 
 footer {
   border-top: 1px solid #000; }

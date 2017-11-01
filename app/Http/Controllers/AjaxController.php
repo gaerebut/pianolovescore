@@ -36,14 +36,16 @@ class AjaxController extends Controller
     		])->first();
 
     		if(!$already_rate){
+                $sum_rates = $score->ratings->sum('rate');
+
 	    		$rating = new Rating();
 	    		$rating->score_id = $score->id;
-	    		//$rating->ip_address = $ip_address;
-	    		$rating->ip_address = '127.0.0.0';
+	    		$rating->ip_address = $ip_address;
+	    		//$rating->ip_address = '127.0.0.0';
 	    		$rating->rate = $rate;
 	    		$rating->save();
 
-	    		$score->avg_votes = (($score->avg_votes * $score->count_votes) + $rate) / ($score->count_votes + 1);
+	    		$score->avg_votes = ($rate + $sum_rates) / ($score->count_votes + 1);
 	    		$score->count_votes = $score->count_votes + 1;
 	    		$score->save();
 
