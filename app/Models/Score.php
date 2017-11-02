@@ -25,4 +25,9 @@ class Score extends Model
     {
         return $this->hasMany('App\Models\KeywordScore');
     }
+
+    public function __toString()
+    {
+        return $this->title;
+    }
 }

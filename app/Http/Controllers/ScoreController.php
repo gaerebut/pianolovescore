@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Score;
 use App\Models\Rating;
+use App\Models\Author;
 use Illuminate\Http\Request;
 
 class ScoreController extends Controller
@@ -11,13 +12,13 @@ class ScoreController extends Controller
     /**
      * Show the profile for the given user.
      *
-     * @param string  $composer
-    *  @param string $slug 
+     * @param string  $composer_slug
+    *  @param string $score_slug 
      * @return View
      */
-    public function show($composer, $slug)
+    public function show($composer_slug, $score_slug)
     {
-        $score = Score::where('slug', '=', $slug)->firstOrFail();
+        $score = Score::where('slug', '=', $score_slug)->firstOrFail();
         $rate = Rating::where([
             ['score_id', '=', $score->id],
             ['ip_address', '=', \Request::ip()]
@@ -26,9 +27,20 @@ class ScoreController extends Controller
         return view('public.score', ['score' => $score, 'user_already_vote' => (bool)$rate]);
     }
 
-    public function download($slug)
+    public function showAll()
     {
-        $score = Score::where('slug', '=', $slug)->firstOrFail();
+        return view('public.home');
+    }
+
+    public function showForAComposer($composer_slug)
+    {
+        $author = Author::where('slug', '=', $composer_slug)->firstOrFail();
+        return view('public.author', ['author' => $author]);
+    }
+
+    public function download($score_slug)
+    {
+        $score = Score::where('slug', '=', $score_slug)->firstOrFail();
 
         $file = uniqid() . '.pdf';
         file_put_contents($file, file_get_contents($score->score_url));

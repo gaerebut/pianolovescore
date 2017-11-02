@@ -13,6 +13,11 @@ class Author extends Model
 
     public function scores()
     {
-        return $this->hasMany('App\Models\Score');
+        return $this->hasMany('App\Models\Score')->orderBy('title');
+    }
+
+    public function __toString()
+    {
+    	return $this->lastname;
     }
 }
