@@ -29,7 +29,9 @@ class ScoreController extends Controller
 
     public function showAll()
     {
-        return view('public.home');
+        $authors = Author::orderBy('lastname')->get();
+
+        return view('public.all_scores', ['authors' => $authors]);
     }
 
     public function showForAComposer($composer_slug)

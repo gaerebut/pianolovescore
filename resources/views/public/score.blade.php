@@ -20,7 +20,7 @@
     <section class="scores__content">
         <div class="col-md-offset-4 col-md-8">
             <div class="row scores__title">
-                <h1>{{ $score->title }}</h1><h2><a href="#">{{ $score->author->lastname }}</a></h2>
+                <h1>{{ $score->title }}</h1><h2><a href="{{ route('scores.showForAComposer', ['slug_author'=>$score->author->slug]) }}">{{ $score->author->lastname }}</a></h2>
             </div>
         </div>
         <div class="row border-left-0 border-right-0 border-top-0">
