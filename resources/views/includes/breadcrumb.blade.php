@@ -11,9 +11,9 @@
 		    <li class="breadcrumb-item">
 		        @if($i < count(Request::segments()) & $i > 0)
 		        	<?php $link .= "/" . Request::segment($i); ?>
-		        	<a href="<?php echo $link; ?>">{{Request::segment($i)}}</a>
+		        	<a href="<?php echo $link; ?>">{{ ucfirst(Request::segment($i))}}</a>
 		        @else
-		        	Etude n°2 op n°34
+		        	{{ $breadcrumb_last_level }}
 		        @endif
 		    </li>
 		@endfor
