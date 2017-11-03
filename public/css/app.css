@@ -5854,6 +5854,8 @@ main {
     color: #ff9100;
     font-weight: bold;
     margin: 7px; }
+  main .scores__content .scores__listing_downloaded img {
+    width: 2em; }
 
 footer {
   border-top: 1px solid #000; }
