@@ -2,13 +2,16 @@
     <div class="navbar-collapse">
         <ul class="nav navbar-nav">
             <li>
-                <a href="#">Accueil</a>
+                <a href="{{ route('home') }}">Accueil</a>
             </li>
             <li>
-                <a href="#">Partition</a>
+                <a href="{{ route('scores') }}">Partitions</a>
             </li>
             <li>
-                <a href="#">Demander une partition</a>
+                <a href="#">Astuces</a>
+            </li>
+            <li>
+                <a href="{{ route('score_request') }}">Demander une partition</a>
             </li>
             <li>
                 <a href="#">Contact</a>

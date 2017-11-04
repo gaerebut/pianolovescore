@@ -9,13 +9,6 @@ use Illuminate\Http\Request;
 
 class ScoreController extends Controller
 {
-    /**
-     * Show the profile for the given user.
-     *
-     * @param string  $composer_slug
-    *  @param string $score_slug 
-     * @return View
-     */
     public function show($composer_slug, $score_slug)
     {
         $score = Score::where('slug', '=', $score_slug)->firstOrFail();
@@ -41,12 +34,10 @@ class ScoreController extends Controller
         ]);
     }
 
-    public function showForAComposer($composer_slug)
+    public function requestShow()
     {
-        $author = Author::where('slug', '=', $composer_slug)->firstOrFail();
-        return view('public.author', [
-            'breadcrumb_last_level' => $author->fullname,
-            'author' => $author
+        return view('public.score_request', [
+            'breadcrumb_last_level' => 'Demander une partition',
         ]);
     }
 

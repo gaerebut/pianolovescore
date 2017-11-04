@@ -11,17 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('public/home');
-})->name('home');
+Route::post('ajax/score/rating', 'AjaxController@storeRating')->name('ajax_rating');
 
-// Route::get('/partitions/chopin/etude_n_2_op_34', function () {
-//     return view('public/score');
-// });
+// HOME CONTROLLER
+Route::get('/', 'HomeController@show')->name('home');
 
-Route::post('ajax/score/rating', 'AjaxController@storeRating')->name('ajax.rating');
+// SCORE CONTROLLER
+Route::get('/demander-une-partition', 'ScoreController@requestShow')->name('score_request');
+Route::get('/download/{slug}', 'ScoreController@download')->name('score_download');
+Route::get('/partitions/{composer_slug}/{score_slug}', 'ScoreController@show')->name('score');
+Route::get('/partitions', 'ScoreController@showAll')->name('scores');
 
-Route::get('download/{slug}', 'ScoreController@download')->name('score.download');
-Route::get('partitions', 'ScoreController@showAll')->name('scores.showAll');
-Route::get('partitions/{composer_slug}', 'ScoreController@showForAComposer')->name('scores.showForAComposer');
-Route::get('partitions/{composer_slug}/{score_slug}', 'ScoreController@show')->name('scores.show');
+//AUTHOR CONTROLLER
+Route::get('/partitions/{composer_slug}', 'AuthorController@showScores')->name('author_scores');

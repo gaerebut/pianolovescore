@@ -48,7 +48,7 @@
                     @endif
                     <tr>
                         <td>
-                            <a href="{{ route('scores.show', ['composer_slug'=>$author->slug, 'score_slug'=>$current_score->slug]) }}">{{ $current_score }}</a>
+                            <a href="{{ route('scores', ['composer_slug'=>$author->slug, 'score_slug'=>$current_score->slug]) }}">{{ $current_score }}</a>
                         </td>
                         <td>
                             @if(!is_null($current_score->avg_votes))

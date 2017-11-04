@@ -20,7 +20,7 @@
     <section class="scores__content">
         <div class="col-md-offset-4 col-md-8">
             <div class="row scores__title">
-                <h1>{{ $score->title }}</h1><h2><a href="{{ route('scores.showForAComposer', ['slug_author'=>$score->author->slug]) }}">{{ $score->author->lastname }}</a></h2>
+                <h1>{{ $score->title }}</h1><h2><a href="{{ route('author_scores', ['slug_author'=>$score->author->slug]) }}">{{ $score->author->fullname }}</a></h2>
             </div>
         </div>
         <div class="row border-left-0 border-right-0 border-top-0">
@@ -62,7 +62,7 @@
                 <div class="row">
                     <div class="col-xs-offset-4 col-xs-4 col-md-offset-0 col-md-3">
                         <h4><strong>Télécharger gratuitement</strong></h4>
-                        <a href="{{ route('score.download', ['slug' => $score->slug]) }}">
+                        <a href="{{ route('score_download', ['slug' => $score->slug]) }}">
                             <img src="{{ URL::to('/') }}/img/pdf_download.png" class="scores__download"/>
                         </a>
                     </div>
@@ -78,12 +78,14 @@
         </div>
     </section>
     <section class="scores__alike">
-        <div class="row">
-            <div class="col-xs-12">
-                <h2>Partitions gratuites que vous aimerez également</h2>
-            </div>
-        </div>
-        <table class="table">
+        <table class="table table-condensed">
+            <thead>
+                <tr>
+                    <td colspan="3">
+                        <h2>Partitions gratuites que vous aimerez également</h2>
+                    </td>
+                </tr>
+            </thead>
             <tbody>
                 <tr>
                     <td>
@@ -179,12 +181,14 @@
         </table>
     </section>
     <section class="scores__composer">
-        <div class="row">
-            <div class="col-xs-12">
-                <h2>Autres partitions gratuites de Chopin</h2>
-            </div>
-        </div>
         <table class="table">
+            <thead>
+                <tr>
+                    <td colspan="3">
+                        <h2>Autres partitions gratuites de Chopin</h2>
+                    </td>
+                </tr>
+            </thead>
             <tbody>
                 <tr>
                     <td>
