@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Score extends Model
 {
     use SoftDeletes;
-    protected $dates = ['created_at', 'deleted_at'];
+    protected $dates = ['created_at', 'modified_at', 'deleted_at'];
     protected $table = 'scores';
 
     public function author()

@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Validator;
 use App\Models\Rating;
 use App\Models\Score;
 use Illuminate\Http\Request;
@@ -18,12 +17,12 @@ class AjaxController extends Controller
      */
     public function storeRating(Request $request)
     {
-    	$input = $request->all();
-
-    	$validator = Validator::make($request->all(), [
+    	$request->validate([
     		'slug'	=> 'string|required|max:200',
 		    'rate' 	=> 'int|required'
 		]);
+
+        $input = $request->all();
     	$score = Score::where('slug', '=', $input['slug'])->first();
 
     	if($score){

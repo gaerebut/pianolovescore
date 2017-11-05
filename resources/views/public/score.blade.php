@@ -24,10 +24,11 @@
             </div>
         </div>
         <div class="row border-left-0 border-right-0 border-top-0">
-            <div class="col-md-4">
+            <div class="col-md-4 text-center">
                 <a data-fancybox="gallery" href="{{ $score->score_image }}">
                     <img src="{{ $score->score_image }}" class="scores__icon">
                 </a>
+                <h6><strong>Cliquez sur l'image pour l'agrandir</strong></h6>
             </div>
             <div class="col-md-8 scores__infos">
                 <div class="row">
@@ -43,7 +44,7 @@
                         </div>
                     </div>
                     @if(!$user_already_vote)
-                        <form action="{{ route('ajax.rating') }}" id="rating_form">
+                        <form action="{{ route('ajax_rating') }}" id="rating_form">
                             <input class="star star-5" id="star-5" type="radio" name="star" value="5"/>
                             <label class="star star-5" for="star-5"></label>
                             <input class="star star-4" id="star-4" type="radio" name="star" value="4"/>
@@ -65,6 +66,8 @@
                         <a href="{{ route('score_download', ['slug' => $score->slug]) }}">
                             <img src="{{ URL::to('/') }}/img/pdf_download.png" class="scores__download"/>
                         </a>
+                        <h6><strong>{{ $score->downloaded . str_plural(' téléchargement', $score->downloaded|1
+                        )}}</strong></h6>
                     </div>
                     <div class="col-xs-12 col-md-9 scores__audio">
                         <h4>Ecoutez ci-dessous <strong>{{ $score->title }}</strong> de <strong>{{ $score->author->lastname }}</strong></h4>
@@ -284,10 +287,13 @@
         </table>
     </section>
 @endsection
-
 @section('js_code')
 <script type="text/javascript">
     $(function(){
+        $("a#inline").fancybox({
+            'hideOnContentClick': true
+        });
+
         $('[type*="radio"]').change(function () {
             //console.log( $(this).attr('value') );
 
