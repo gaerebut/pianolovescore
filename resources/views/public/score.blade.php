@@ -1,4 +1,4 @@
-@extends('layouts.common')
+@extends('layouts.public')
 
 @section('css')
     @parent

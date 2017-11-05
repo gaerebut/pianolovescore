@@ -12,9 +12,12 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call(AuthorsTableSeeder::class);
-        $this->command->info('Remplissage de la table "authors"');
+        $this->command->info('Ajout d\'auteurs');
 
         $this->call(ScoresTableSeeder::class);
-        $this->command->info('Remplissage de la table "scores"');
+        $this->command->info('Ajout de partitions');
+
+        $this->call(UsersTableSeeder::class);
+        $this->command->info('Création de comptes utilisateurs');
     }
 }
