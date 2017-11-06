@@ -17,14 +17,13 @@
 //
 Route::group( ['namespace' => 'Admin', 'prefix' => 'admin' ], function()
 {
+	Route::get('login', 'HomeController@login')->name('admin_login');
 	Route::post('login', 'HomeController@connect')->name('admin_login_connect');
 	Route::get('logout', 'HomeController@disconnect')->name('admin_logout');
-	Route::get( 'login', function(){
-		return view( 'admin/login');
-	} )->name('admin_login');
 
 	Route::group( [ 'middleware' => 'guest' ], function()
 	{
+		Route::get('/', 'HomeController@show')->name('admin');
 		Route::get('/', 'HomeController@show')->name('admin');
 	} );
 } );

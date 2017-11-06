@@ -15,6 +15,16 @@ class HomeController extends BaseController
 		return view( 'admin.index' );
     }
 
+    public function login()
+    {
+    	if( Auth::check() )
+		{
+			return redirect()->route( 'admin' );
+		}
+		
+		return view( 'admin.login' );
+    }
+
     public function connect( Request $request )
 	{
 		if( Auth::check() )
@@ -26,7 +36,7 @@ class HomeController extends BaseController
         	'username'	=> 'required',
             'password'  => 'required'
         ], [
-        	'username.required'		=> 'Merci de renseigner un identifiant.',
+        	'username.required'	=> 'Merci de renseigner un identifiant.',
         	'password.required'	=> 'Merci de renseigner un mot de passe.'
         ] );
 
@@ -44,7 +54,7 @@ class HomeController extends BaseController
 		}
 	   	
 	   	$this->setFlash( 'error', 'Erreur lors de la connexion - Veuillez réessayer.' );
-	    return redirect()->route( 'admin.login' )
+	    return redirect()->route( 'admin_login' )
         		-> withErrors( $validation )
         		-> withInput();
 	}
@@ -53,6 +63,6 @@ class HomeController extends BaseController
 	{
 		Auth::logout();
 		$this->setFlash( 'success', 'Vous venez de vous déconnecter' );
-		return redirect()->route( 'admin.login' );
+		return redirect()->route( 'admin_login' );
 	}
 }
