@@ -38,8 +38,7 @@ class ScoreController extends Controller
     public function requestShow()
     {
         return view('public.score_request', [
-            'breadcrumb_last_level' => 'Demander une partition',
-            'sent'=>true
+            'breadcrumb_last_level' => 'Demander une partition'
         ]);
     }
 

@@ -12,7 +12,7 @@ class HomeController extends BaseController
 {
     public function show()
     {
-		return view( 'admin.index' );
+		return view( 'admin.home' );
     }
 
     public function login()

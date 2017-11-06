@@ -23,8 +23,11 @@ Route::group( ['namespace' => 'Admin', 'prefix' => 'admin' ], function()
 
 	Route::group( [ 'middleware' => 'guest' ], function()
 	{
-		Route::get('/', 'HomeController@show')->name('admin');
-		Route::get('/', 'HomeController@show')->name('admin');
+		Route::get('/', 'HomeController@show')->name('admin_home');
+		Route::get('/authors', 'AuthorController@show')->name('admin_authors');
+		Route::get('/scores', 'ScoreController@show')->name('admin_scores');
+		Route::get('/tips', 'TipsController@show')->name('admin_tips');
+		Route::get('/scores-requests', 'ScoreController@scoreRequest')->name('admin_scores_requests');
 	} );
 } );
 

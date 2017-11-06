@@ -23,7 +23,7 @@
                     </ul>
                 </div>
             @endif
-            @if( $sent==true)
+            @if(!empty($sent) && $sent==true)
                 <div class="alert alert-success">
                     <h3>Merci !</h3>
                     <h4>Votre demande de partition à bien été envoyée.</h4>

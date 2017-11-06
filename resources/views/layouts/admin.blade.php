@@ -16,7 +16,7 @@
                 </div>
             </div>
             <div class="row">
-                @include('includes.nav')
+                @include('includes.nav_admin')
             </div>
         </header>
         <main class="container">

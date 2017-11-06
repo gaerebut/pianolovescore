@@ -19,7 +19,7 @@
                 </form>
             </div>
             <div class="row">
-                @include('includes.nav')
+                @include('includes.nav_public')
             </div>
         </header>
         <main class="container">
