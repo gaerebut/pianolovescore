@@ -22,11 +22,52 @@
         <main class="container">
             @yield('breadcrumb')
             <article>
+                @php
+                    $session_info = session('info');
+                    $session_success = session('success');
+                    $session_error = session('error');
+                @endphp
+                
+                @if ( !is_null( $session_info ) )
+                    @foreach ( $session_info as $session )
+                        <div class="alert alert-info" role="alert">
+                            <span class="glyphicon glyphicon-info-sign"></span>
+                            {{ $session }}
+                        </div>
+                    @endforeach
+                @endif
+                @if ( !is_null( $session_success ) )
+                    @foreach ( $session_success as $session )
+                        <div class="alert alert-success" role="alert">
+                            <span class="glyphicon glyphicon-ok-sign"></span>
+                            {{ $session }}
+                        </div>
+                    @endforeach
+                @endif
+                @if ( !is_null( $session_error ) )
+                    @foreach ( $session_error as $session )
+                        <div class="alert alert-danger" role="alert">
+                            <span class="glyphicon glyphicon-remove-sign"></span>
+                            {{ $session }}
+                        </div>
+                    @endforeach
+                @endif
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 @yield('main')
             </article>
         </main>
         <footer class="container-fluid text-center">FOOTER</footer>
         @section('js_code')
+            <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+            <script src="{{ elixir( '/js/bootstrap.js' ) }}"></script>
         @show
     </body>
 </html>

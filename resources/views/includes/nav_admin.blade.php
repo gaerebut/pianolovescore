@@ -16,9 +16,6 @@
             <li>
                 <a href="{{ route('admin_scores_requests') }}">Demander une partition</a>
             </li>
-            <li>
-                <a href="#">Contact</a>
-            </li>
         </ul>
     </div>
 </nav>

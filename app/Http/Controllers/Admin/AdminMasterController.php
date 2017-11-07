@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller as BaseController;
+use App\Http\Controllers\Controller as BaseController;
 
 use Session;
 use Auth;
