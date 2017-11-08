@@ -53,9 +53,20 @@ class AuthorController extends BaseController
         return $this->show();
     }
 
-    public function showEdit($slug_author)
+    public function showEdit($id_author)
     {
-
+        $author = Author::where('id', '=', $id_author)->firstOrFail();
+        if($author)
+        {
+            return view('admin.author.edit', [
+                'breadcrumb_last_level' => 'Modifier un auteur',
+                'author'                => $author
+            ]);
+        }
+        else
+        {
+            $this->setFlash( 'error', "Cet auteur est introuvable" );
+        }
     }
 
     public function edit(Request $request)
@@ -63,9 +74,9 @@ class AuthorController extends BaseController
 
     }
 
-    public function remove($slug_author)
+    public function remove($id_author)
     {
-        if(Author::where('slug', '=', $slug_author)->delete())
+        if(Author::where('id', '=', $id_author)->delete())
         {
             $this->setFlash( 'success', "L'auteur vient d'être créé" );
         }

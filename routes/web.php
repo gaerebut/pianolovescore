@@ -26,13 +26,14 @@ Route::group( ['namespace' => 'Admin', 'prefix' => 'admin' ], function()
 		Route::get('/', 'HomeController@show')->name('admin_home');
 		
 		Route::get('/authors', 'AuthorController@show')->name('admin_authors');
+		
 		Route::get('/authors/add', 'AuthorController@showAdd')->name('admin_authors_add');
 		Route::post('/authors/add', 'AuthorController@add')->name('admin_authors_add_store');
 
-		Route::get('/authors/edit/{slug_author}', 'AuthorController@showEdit')->name('admin_authors_edit');
+		Route::get('/authors/edit/{id_author}', 'AuthorController@showEdit')->name('admin_authors_edit');
 		Route::post('/authors/edit', 'AuthorController@edit')->name('admin_authors_edit_store');
 
-		Route::get('/authors/remove/{slug_author}', 'AuthorController@remove')->name('admin_authors_remove');
+		Route::get('/authors/remove/{id_author}', 'AuthorController@remove')->name('admin_authors_remove');
 
 		Route::get('/scores', 'ScoreController@show')->name('admin_scores');
 		Route::get('/tips', 'TipsController@show')->name('admin_tips');
