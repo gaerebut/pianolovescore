@@ -26,8 +26,13 @@ Route::group( ['namespace' => 'Admin', 'prefix' => 'admin' ], function()
 		Route::get('/', 'HomeController@show')->name('admin_home');
 		
 		Route::get('/authors', 'AuthorController@show')->name('admin_authors');
-		Route::get('/authors/ajouter', 'AuthorController@showAdd')->name('admin_authors_add');
-		Route::post('/authors/ajouter', 'AuthorController@add')->name('admin_authors_add_store');
+		Route::get('/authors/add', 'AuthorController@showAdd')->name('admin_authors_add');
+		Route::post('/authors/add', 'AuthorController@add')->name('admin_authors_add_store');
+
+		Route::get('/authors/edit/{slug_author}', 'AuthorController@showEdit')->name('admin_authors_edit');
+		Route::post('/authors/edit', 'AuthorController@edit')->name('admin_authors_edit_store');
+
+		Route::get('/authors/remove/{slug_author}', 'AuthorController@remove')->name('admin_authors_remove');
 
 		Route::get('/scores', 'ScoreController@show')->name('admin_scores');
 		Route::get('/tips', 'TipsController@show')->name('admin_tips');
@@ -44,9 +49,9 @@ Route::get('/', 'HomeController@show')->name('home');
 Route::post('/demander-une-partition', 'ScoreController@requestSave')->name('score_request_submit');
 Route::get('/demander-une-partition', 'ScoreController@requestShow')->name('score_request');
 
-Route::get('/download/{slug}', 'ScoreController@download')->name('score_download');
-Route::get('/partitions/{composer_slug}/{score_slug}', 'ScoreController@show')->name('score');
+Route::get('/telecharger/{slug}', 'ScoreController@download')->name('score_download');
+Route::get('/partitions/{slug_author}/{slug_score}', 'ScoreController@show')->name('score');
 Route::get('/partitions', 'ScoreController@showAll')->name('scores');
 
 //AUTHOR CONTROLLER
-Route::get('/partitions/{composer_slug}', 'AuthorController@showScores')->name('author_scores');
+Route::get('/partitions/{slug_author}', 'AuthorController@showScores')->name('author_scores');

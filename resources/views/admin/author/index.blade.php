@@ -27,11 +27,11 @@
 						<td>{{ $author->firstname }}</td>
 						<td>{{ count($author->scores) }}</td>
 						<td>
-							<a href="#" class="btn btn-primary">
+							<a href="{{ route('admin_authors_edit',['author_slug'=>$author->slug]) }}" class="btn btn-primary">
 								<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
 								Editer
 							</a>
-							<a href="#" class="btn btn-danger" data-toggle="confirmation" data-title="Confirmation" data-btn-ok-label="Supprimer" data-btn-ok-class="btn-success" data-btn-cancel-label="Annuler"data-btn-cancel-class="btn-danger" data-content="Êtes-vous sûr de vouloir supprimer cet utilisateur ?" data-placement="right" data-singleton="true" data-popout="true">
+							<a href="{{ route('admin_authors_remove',['author_slug'=>$author->slug]) }}" class="btn btn-danger" data-toggle="confirmation" data-title="Confirmation" data-btn-ok-label="Supprimer" data-btn-ok-class="btn-success" data-btn-cancel-label="Annuler"data-btn-cancel-class="btn-danger" data-content="Êtes-vous sûr de vouloir supprimer cet utilisateur ?" data-placement="right" data-singleton="true" data-popout="true">
 								<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
 								Supprimer
 							</a>
@@ -51,8 +51,7 @@
 		$(function()
 		{
 			$('[data-toggle=confirmation]').confirmation({
-			  rootSelector: '[data-toggle=confirmation]',
-			  // other options
+				rootSelector: '[data-toggle=confirmation]'
 			});
 		});
 	</script>

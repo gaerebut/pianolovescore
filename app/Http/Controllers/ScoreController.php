@@ -76,9 +76,9 @@ class ScoreController extends Controller
         ]);
     }
 
-    public function download($score_slug)
+    public function download($slug_score)
     {
-        $score = Score::where('slug', '=', $score_slug)->firstOrFail();
+        $score = Score::where('slug', '=', $slug_score)->firstOrFail();
 
         $file = uniqid() . '.pdf';
         file_put_contents($file, file_get_contents($score->score_url));

@@ -67,7 +67,7 @@
         <footer class="container-fluid text-center">FOOTER</footer>
         @section('js_code')
             <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
-            <script src="{{ elixir( '/js/bootstrap.js' ) }}"></script>
+            <script src="{{ elixir( '/js/admin.js' ) }}"></script>
         @show
     </body>
 </html>

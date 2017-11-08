@@ -65,6 +65,15 @@ class AuthorController extends BaseController
 
     public function remove($slug_author)
     {
+        if(Author::where('slug', '=', $slug_author)->delete())
+        {
+            $this->setFlash( 'success', "L'auteur vient d'être créé" );
+        }
+        else
+        {
+            $this->setFlash( 'error', "Cet auteur est introuvable" );
+        }
 
+        return back();
     }
 }
