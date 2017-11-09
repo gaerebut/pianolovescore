@@ -17,7 +17,8 @@ class AuthorsTableSeeder extends Seeder
         	'slug' 		=> 'chopin',
         	'firstname'	=> 'Frédéric',
         	'lastname'	=> 'Chopin',
-        	'fullname'	=> 'Frédéric Chopin'
+        	'fullname'	=> 'Frédéric Chopin',
+            'birthday'  => '1810-03-01'
         ]);
     }
 }

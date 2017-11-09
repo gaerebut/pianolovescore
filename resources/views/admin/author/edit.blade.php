@@ -5,7 +5,7 @@
 @endsection
 @section('main')
 	<div class="col-md-8 col-md-offset-2">
-		<form action="{{ route('admin_authors_add') }}" method="post" class="form-horizontal">
+		<form action="{{ route('admin_authors_edit_store') }}" method="post" class="form-horizontal">
 			<div class="form-group">
 				<label for="lastname" class="col-sm-2 control-label">Nom</label>
 				<div class="col-sm-10">
@@ -21,7 +21,7 @@
 			<div class="form-group">
 				<label for="slug" class="col-sm-2 control-label">Identifiant URL</label>
 				<div class="col-sm-8">
-					<input type="text" class="form-control" id="slug" name="slug" placeholder="Exempe: Nom ou NOM Prénom"  value="{{ $author->slug }}"disabled required>
+					<input type="text" class="form-control" id="slug" name="slug" placeholder="Exempe: Nom ou NOM Prénom"  value="{{ $author->slug }}" disabled required>
 				</div>
 				<div class="col-sm-2">
 					<a class="btn btn-warning pull-right" id="edit-slug">
@@ -33,14 +33,14 @@
 			<div class="form-group">
 				<label for="birthday" class="col-sm-2 control-label">Date de naissance</label>
 				<div class="col-sm-10">
-					<input type="date" class="form-control" id="birthday" name="birthday" placeholder="01/01/1900" value="{{ $author->birth }}" required>
+					<input type="date" class="form-control" id="birthday" name="birthday" placeholder="01/01/1900" value="{{ $author->birthday }}" required>
 				</div>
 			</div>
 			<a href="{{ route('admin_authors') }}" class="btn btn-warning pull-left">
 				<span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
 				Annuler
 			</a>
-			<button type="submit" href="{{ route('admin_authors_edit') }}" class="btn btn-success pull-right">
+			<button type="submit" class="btn btn-success pull-right">
 				<span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span>
 				Modifier
 			</button>

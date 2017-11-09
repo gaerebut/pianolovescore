@@ -71,7 +71,32 @@ class AuthorController extends BaseController
 
     public function edit(Request $request)
     {
+        $input = $request->all();
 
+        $request->validate([    
+            'lastname'  => 'required',
+            'firstname' => 'required',
+            'slug'      => 'required|unique:authors,slug,' . $input['id'],
+            'birthday'  => 'required'
+        ],[
+            'lastname.required' => 'Veuillez indiquer le nom de l\'auteur',
+            'firstname.required'=> 'Veuillez indiquer le prénom de l\'auteur',
+            'slug.required'     => 'Veuillez indiquer l\'identifiant URL',
+            'slug.unique'       => 'Cet identifiant URL existe déjà, veuillez en choisir un autre',
+            'birthday.required' => 'Veuillez indiquer la date de naisse de l\'auteur',
+        ]);
+        
+
+        $author = Author::where('id', '=', $input['id'])->firstOrFail();
+        $author->slug   = ucfirst($input['slug']);
+        $author->lastname   = ucfirst($input['lastname']);
+        $author->firstname  = ucfirst($input['firstname']);
+        $author->fullname   = $author->firstname . ' ' . $author->lastname;
+        $author->birthday   = $input['birthday'];
+        $author->save();
+
+        $this->setFlash( 'success', "L'auteur vient d'être modifié" );
+        return $this->show();
     }
 
     public function remove($id_author)
