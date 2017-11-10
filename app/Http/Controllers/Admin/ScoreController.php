@@ -72,10 +72,10 @@ class ScoreController extends BaseController
         $score->save();
 
         $keywords = explode(",",strtolower($input['keywords']));
+        $keywords = array_map('trim', $keywords);
+
         foreach($keywords as $word)
         {
-        	$word = trim($word);
-
         	$keyword = Keyword::where('keyword', '=', $word)->first();
 
         	if(!$keyword)
@@ -84,7 +84,7 @@ class ScoreController extends BaseController
 	        	$keyword->keyword = trim($word);
 	        	$keyword->save();
 	        }
-	        
+
 		    $score->keywords()->attach($keyword);
         }
 
@@ -97,9 +97,12 @@ class ScoreController extends BaseController
         $score = Score::where('id', '=', $id_score)->firstOrFail();
         if($score)
         {
+        	$authors = Author::orderBy('lastname')->get();
+
             return view('admin.score.edit', [
                 'breadcrumb_last_level' => 'Modifier une partition',
-                'score'                => $score
+                'score'                	=> $score,
+                'authors'				=> $authors
             ]);
         }
         else
@@ -116,7 +119,7 @@ class ScoreController extends BaseController
             'title'			=> 'required',
             'slug'			=> 'required|unique:scores,slug,' . $input['id'],
             'keywords'  	=> 'required',
-            'author_id'     => 'required|exists:authors,id,' . $input['author_id'],
+            'author_id'     => 'required|exists:authors,id',
             'score_image'  	=> 'required',
             'score_url'  	=> 'required'
         ],[
@@ -148,22 +151,41 @@ class ScoreController extends BaseController
         $score->save();
 
         $keywords = explode(",",strtolower($input['keywords']));
+        $keywords = array_map('trim', $keywords);
+
         foreach($score->keywords as $keyword)
         {
-        	if(!in_array(trim($keyword), $keywords))
+        	if(!in_array($keyword, $keywords))
         	{
-        		$score->keywords->detach($keyword->id);
+        		$score->keywords()->detach($keyword->id);
         	}
         }
 
         foreach($keywords as $word)
         {
-        	$keyword = new Keyword();
-        	$keyword->keyword = $word;
-        	if($keyword->save())
+         	$keyword = Keyword::where('keyword', '=', $word)->first();
+
+        	if(!$keyword)
         	{
-	        	$score->keywords->attach($keyword->id);
-	        }
+	        	$keyword = new Keyword();
+	        	$keyword->keyword = trim($word);
+	        	$keyword->save();
+			}
+
+			$attach = true;
+			foreach($score->keywords as $current_keyword)
+			{
+				if($current_keyword->keyword == $keyword)
+				{
+					$attach = false;
+					break;
+				}
+			}
+
+			if($attach)
+			{
+				$score->keywords()->attach($keyword);
+			}
         }
 
         $this->setFlash( 'success', "La partition vient d'être modifiée" );

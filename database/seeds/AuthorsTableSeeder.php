@@ -20,5 +20,13 @@ class AuthorsTableSeeder extends Seeder
         	'fullname'	=> 'Frédéric Chopin',
             'birthday'  => '1810-03-01'
         ]);
+
+        Author::create([
+            'slug'      => 'beethoven',
+            'firstname' => 'Ludwig van',
+            'lastname'  => 'Beethoven',
+            'fullname'  => 'Ludwig van Beethoven',
+            'birthday'  => '1770-03-01'
+        ]);
     }
 }
