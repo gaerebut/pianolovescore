@@ -19,7 +19,7 @@ class HomeController extends BaseController
     {
     	if( Auth::check() )
 		{
-			return redirect()->route( 'admin' );
+			return redirect()->route( 'admin_home' );
 		}
 		
 		return view( 'admin.login' );
@@ -29,7 +29,7 @@ class HomeController extends BaseController
 	{
 		if( Auth::check() )
 		{
-			return redirect()->route( 'admin' );
+			return redirect()->route( 'admin_home' );
 		}
 
 		$validation = Validator::make( $request->all(), [
@@ -50,7 +50,7 @@ class HomeController extends BaseController
 			isset( $request->remember )
 		) )
         {
-        	return redirect()->route( 'admin' );
+        	return redirect()->route( 'admin_home' );
 		}
 	   	
 	   	$this->setFlash( 'error', 'Erreur lors de la connexion - Veuillez réessayer.' );

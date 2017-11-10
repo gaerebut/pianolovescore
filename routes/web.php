@@ -27,13 +27,27 @@ Route::group( ['namespace' => 'Admin', 'prefix' => 'admin' ], function()
 		
 		Route::get('/authors', 'AuthorController@show')->name('admin_authors');
 		
-		Route::get('/authors/add', 'AuthorController@showAdd')->name('admin_authors_add');
-		Route::post('/authors/add', 'AuthorController@add')->name('admin_authors_add_store');
+		Route::group( ['prefix' => 'authors' ], function()
+		{
+			Route::get('/add', 'AuthorController@showAdd')->name('admin_authors_add');
+			Route::post('/add', 'AuthorController@add')->name('admin_authors_add_store');
 
-		Route::get('/authors/edit/{id_author}', 'AuthorController@showEdit')->name('admin_authors_edit');
-		Route::post('/authors/edit', 'AuthorController@edit')->name('admin_authors_edit_store');
+			Route::get('/edit/{id_author}', 'AuthorController@showEdit')->name('admin_authors_edit');
+			Route::post('/edit', 'AuthorController@edit')->name('admin_authors_edit_store');
 
-		Route::get('/authors/remove/{id_author}', 'AuthorController@remove')->name('admin_authors_remove');
+			Route::get('/remove/{id_author}', 'AuthorController@remove')->name('admin_authors_remove');
+		});
+
+		Route::group( ['prefix' => 'scores' ], function()
+		{
+			Route::get('/add', 'ScoreController@showAdd')->name('admin_scores_add');
+			Route::post('/add', 'ScoreController@add')->name('admin_scores_add_store');
+
+			Route::get('/edit/{id_score}', 'ScoreController@showEdit')->name('admin_scores_edit');
+			Route::post('/edit', 'ScoreController@edit')->name('admin_scores_edit_store');
+
+			Route::get('/remove/{id_score}', 'ScoreController@remove')->name('admin_scores_remove');
+		});
 
 		Route::get('/scores', 'ScoreController@show')->name('admin_scores');
 		Route::get('/tips', 'TipsController@show')->name('admin_tips');

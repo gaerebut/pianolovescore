@@ -10,7 +10,7 @@ class AuthorController extends BaseController
 {
     public function show()
     {
-    	$authors = Author::orderBy('lastname')->get();
+    	$authors = Author::orderBy('id')->get();
 
     	return view('admin.author.index', [
     		'breadcrumb_last_level' => 'Auteurs',
