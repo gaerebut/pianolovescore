@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Score;
+use App\Models\Author;
 use App\Models\Keyword;
 
 use Illuminate\Http\Request;
@@ -22,8 +23,10 @@ class ScoreController extends BaseController
 
     public function showAdd()
     {
+    	$authors = Author::orderBy('lastname')->get();
     	return view('admin.score.add', [
-    		'breadcrumb_last_level' => 'Ajouter une partition'
+    		'breadcrumb_last_level' => 'Ajouter une partition',
+    		'authors'				=> $authors
         ]);
     }
 
@@ -35,7 +38,7 @@ class ScoreController extends BaseController
             'title'			=> 'required',
             'slug'			=> 'required|unique:scores,slug',
             'keywords'  	=> 'required',
-            'author_id'     => 'required|exists:authors,id,' . $input['author_id'],
+            'author_id'     => 'required|exists:authors,id',
             'score_image'  	=> 'required',
             'score_url'  	=> 'required'
         ],[
@@ -71,12 +74,18 @@ class ScoreController extends BaseController
         $keywords = explode(",",strtolower($input['keywords']));
         foreach($keywords as $word)
         {
-        	$keyword = new Keyword();
-        	$keyword->keyword = $word;
-        	if($keyword->save())
+        	$word = trim($word);
+
+        	$keyword = Keyword::where('keyword', '=', $word)->first();
+
+        	if(!$keyword)
         	{
-	        	$score->keywords->attach($keyword->id);
+	        	$keyword = new Keyword();
+	        	$keyword->keyword = trim($word);
+	        	$keyword->save();
 	        }
+	        
+		    $score->keywords()->attach($keyword);
         }
 
         $this->setFlash( 'success', "La partition vient d'être créée" );
@@ -141,7 +150,7 @@ class ScoreController extends BaseController
         $keywords = explode(",",strtolower($input['keywords']));
         foreach($score->keywords as $keyword)
         {
-        	if(!in_array($keyword, $keywords))
+        	if(!in_array(trim($keyword), $keywords))
         	{
         		$score->keywords->detach($keyword->id);
         	}

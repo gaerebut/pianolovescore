@@ -14,7 +14,7 @@ class CreateKeywordsScoresTable extends Migration
         Schema::create('keywords_scores', function (Blueprint $table) {
             $table->integer('keyword_id')->unsigned();
             $table->integer('score_id')->unsigned();
-            $table->timestamps();
+
             $table->foreign('keyword_id')->references('id')->on('keywords');
             $table->foreign('score_id')->references('id')->on('scores');
         });

@@ -1,4 +1,4 @@
-function sanitize( str )
+function sanitize( str, separator = '-' )
 {
     str = str.replace( /^\s+|\s+$/g, '' );
     str = str.toLowerCase();
@@ -10,7 +10,7 @@ function sanitize( str )
         str = str.replace( new RegExp( from.charAt( i ), 'g' ), to.charAt( i ) );
     }
 
-    str = str.replace( /[^a-z0-9 -]/g, '' ).replace( /\s+/g, '-' ).replace( /-+/g, '-' );
+    str = str.replace( /[^a-z0-9 -]/g, '' ).replace( /\s+/g, separator ).replace( /-+/g, separator );
 
     return str;
 }
