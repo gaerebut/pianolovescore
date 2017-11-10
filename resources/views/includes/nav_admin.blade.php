@@ -14,7 +14,7 @@
                 <a href="{{ route('admin_tips') }}">Astuces</a>
             </li>
             <li>
-                <a href="{{ route('admin_scores_requests') }}">Demander une partition</a>
+                <a href="{{ route('admin_scoresrequests') }}">Demander une partition</a>
             </li>
         </ul>
     </div>

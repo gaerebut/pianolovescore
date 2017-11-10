@@ -25,10 +25,10 @@ Route::group( ['namespace' => 'Admin', 'prefix' => 'admin' ], function()
 	{
 		Route::get('/', 'HomeController@show')->name('admin_home');
 		
-		Route::get('/authors', 'AuthorController@show')->name('admin_authors');
-		
 		Route::group( ['prefix' => 'authors' ], function()
 		{
+			Route::get('/', 'AuthorController@show')->name('admin_authors');
+
 			Route::get('/add', 'AuthorController@showAdd')->name('admin_authors_add');
 			Route::post('/add', 'AuthorController@add')->name('admin_authors_add_store');
 
@@ -40,6 +40,8 @@ Route::group( ['namespace' => 'Admin', 'prefix' => 'admin' ], function()
 
 		Route::group( ['prefix' => 'scores' ], function()
 		{
+			Route::get('/', 'ScoreController@show')->name('admin_scores');
+
 			Route::get('/add', 'ScoreController@showAdd')->name('admin_scores_add');
 			Route::post('/add', 'ScoreController@add')->name('admin_scores_add_store');
 
@@ -49,9 +51,31 @@ Route::group( ['namespace' => 'Admin', 'prefix' => 'admin' ], function()
 			Route::get('/remove/{id_score}', 'ScoreController@remove')->name('admin_scores_remove');
 		});
 
-		Route::get('/scores', 'ScoreController@show')->name('admin_scores');
-		Route::get('/tips', 'TipsController@show')->name('admin_tips');
-		Route::get('/scores-requests', 'ScoreController@scoreRequest')->name('admin_scores_requests');
+		Route::group( ['prefix' => 'tips' ], function()
+		{
+			Route::get('/', 'TipController@show')->name('admin_tips');
+
+			Route::get('/add', 'TipController@showAdd')->name('admin_tips_add');
+			Route::post('/add', 'TipController@add')->name('admin_tips_add_store');
+
+			Route::get('/edit/{id_tip}', 'TipController@showEdit')->name('admin_tips_edit');
+			Route::post('/edit', 'TipController@edit')->name('admin_tips_edit_store');
+
+			Route::get('/remove/{id_tip}', 'TipController@remove')->name('admin_tips_remove');
+		});
+
+		Route::group( ['prefix' => 'scores-requests' ], function()
+		{
+			Route::get('/', 'ScoreRequestController@show')->name('admin_scoresrequests');
+
+			Route::get('/add', 'ScoreRequestController@showAdd')->name('admin_scoresrequests_add');
+			Route::post('/add', 'ScoreRequestController@add')->name('admin_scoresrequests_add_store');
+
+			Route::get('/edit/{id_scorerequest}', 'ScoreRequestController@showEdit')->name('admin_scoresrequests_edit');
+			Route::post('/edit', 'ScoreRequestController@edit')->name('admin_scoresrequests_edit_store');
+
+			Route::get('/remove/{id_scorerequest}', 'ScoreRequestController@remove')->name('admin_scoresrequests_remove');
+		});
 	} );
 } );
 

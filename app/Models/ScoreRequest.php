@@ -9,7 +9,7 @@ class ScoreRequest extends Model
 {
     use SoftDeletes;
     protected $dates = ['created_at', 'modified_at', 'deleted_at'];
-    protected $table = 'score_requests';
+    protected $table = 'scores_requests';
 
     public function __toString()
     {
