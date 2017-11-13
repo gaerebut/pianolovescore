@@ -21,6 +21,11 @@ class Score extends Model
         return $this->hasMany('App\Models\Rating');
     }
 
+    public function scoresRequests()
+    {
+        return $this->hasMany('App\Models\ScoreRequest');
+    }
+
     public function keywords()
     {
         return $this->belongsToMany('App\Models\Keyword', 'keywords_scores');

@@ -5,6 +5,7 @@
 @endsection
 @section('main')
 	@if(!empty($scores_requests) && count($scores_requests) > 0 )
+		<?php \Carbon\Carbon::setLocale(config('app.locale')); ?>
 		<table class="table ">
 			<thead>
 				<tr>
@@ -12,6 +13,7 @@
 					<th>Titre</th>
 					<th>Auteur</th>
 					<th>Demandeur</th>
+					<th></th>
 					<th></th>
 				</tr>
 			</thead>
@@ -22,6 +24,7 @@
 						<td>{{ $score_request }}</td>
 						<td>{{ $score_request->author }}</td>
 						<td>{{ strtoupper($score_request->contact_lastname) . ' ' . ucfirst($score_request->contact_firstname) }}</td>
+						<td>{{ $score_request->created_at->diffForHumans() }}</td>
 						<td>
 							<a href="{{ route('admin_scoresrequests_edit',['id_scorerequest'=>$score_request->id]) }}" class="btn btn-primary">
 								<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>

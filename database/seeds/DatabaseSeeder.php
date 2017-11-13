@@ -19,5 +19,8 @@ class DatabaseSeeder extends Seeder
 
         $this->call(UsersTableSeeder::class);
         $this->command->info('Création des comptes utilisateurs');
+
+        $this->call(ScoresRequestTableSeeder::class);
+        $this->command->info('Création des demandes de partitions');
     }
 }

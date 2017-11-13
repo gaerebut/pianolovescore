@@ -44,7 +44,7 @@
                 <div class="form-group">
                     <label for="contact_email" class="col-sm-2 control-label">Email</label>
                     <div class="col-sm-10">
-                        <input type="emal" class="form-control" name="contact_email"  id="contact_email" value="{{ old('contact_email') }}" placeholder="Exemple : jean.hebert@siteweb.com" required /><i>Vous serez informé par email lorsque votre demande sera traitée.</i>
+                        <input type="email" class="form-control" name="contact_email"  id="contact_email" value="{{ old('contact_email') }}" placeholder="Exemple : jean.hebert@siteweb.com" required /><i>Vous serez informé par email lorsque votre demande sera traitée.</i>
                     </div>
                 </div>
                 <div class="form-group">
@@ -57,6 +57,12 @@
                     <label for="author" class="col-sm-2 control-label">Auteur</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" name="author" id="author" value="{{ old('author') }}" placeholder="Exemple : Frederic Chopin" required />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="contact_message" class="col-sm-2 control-label">Commentaire (optionnel)</label>
+                    <div class="col-sm-10">
+                        <textarea class="form-control" name="contact_message"  id="contact_message" value="{{ old('contact_message') }}" required /></textarea>
                     </div>
                 </div>
                  <div class="form-group">

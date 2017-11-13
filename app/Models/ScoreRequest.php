@@ -11,6 +11,11 @@ class ScoreRequest extends Model
     protected $dates = ['created_at', 'modified_at', 'deleted_at'];
     protected $table = 'scores_requests';
 
+    public function score()
+    {
+        return $this->belongsTo('App\Models\Score');
+    }
+
     public function __toString()
     {
         return $this->title;

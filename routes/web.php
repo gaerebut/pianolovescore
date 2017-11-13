@@ -68,9 +68,6 @@ Route::group( ['namespace' => 'Admin', 'prefix' => 'admin' ], function()
 		{
 			Route::get('/', 'ScoreRequestController@show')->name('admin_scoresrequests');
 
-			Route::get('/add', 'ScoreRequestController@showAdd')->name('admin_scoresrequests_add');
-			Route::post('/add', 'ScoreRequestController@add')->name('admin_scoresrequests_add_store');
-
 			Route::get('/edit/{id_scorerequest}', 'ScoreRequestController@showEdit')->name('admin_scoresrequests_edit');
 			Route::post('/edit', 'ScoreRequestController@edit')->name('admin_scoresrequests_edit_store');
 

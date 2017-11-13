@@ -72,6 +72,20 @@ main{
 			img{ width: 1.8em }
 		}
 	}
+
+	.scores_request_summary{
+		&:after{
+			position: absolute;
+		    top: 15px;
+		    left: 15px;
+		    font-size: 12px;
+		    font-weight: 700;
+		    color: #959595;
+		    text-transform: uppercase;
+		    letter-spacing: 1px;
+		    content: "";
+		}
+	}
 /*
 	.scores__alike{
 		border-top: 1px solid #000;
