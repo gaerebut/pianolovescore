@@ -15,7 +15,7 @@ return [
     */
 
     'mailgun' => [
-        'domain' => env('https://api.mailgun.net/v3/pianolovescore.com'),
+        'domain' => env('pianolovescore.com'),
         'secret' => env('key-ff3f34d8d59049f5baee3d7db855dfa7'),
     ],
 
