@@ -91,5 +91,3 @@ Route::get('/partitions', 'ScoreController@showAll')->name('scores');
 
 //AUTHOR CONTROLLER
 Route::get('/partitions/{slug_author}', 'AuthorController@showScores')->name('author_scores');
-
-Route::get('/email', 'Admin\ScoreRequestController@mail')->name('admin_scoresrequests_mail');

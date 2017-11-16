@@ -14,6 +14,11 @@
         Vous avez demandé à avoir la partition "{{ $score_request->score->title }}" de {{ $score_request->score->author->lastname }} et votre demande à été acceptée.
         La partition est maintenant disponible à l'adresse suivante : <a href="{{ route('score', ['slug_author'=>$score_request->score->author->slug, 'slug_score'=>$score_request->score->slug])}}" target="_blank">{{ route('score', ['slug_author'=>$score_request->score->author->slug, 'slug_score'=>$score_request->score->slug])}}</a>
         <br /><br />
+        @if(!empty($score_request->admin_message))
+        	L'administrateur à également ajouté le message suivant :<br />
+        	<p><strong>{{ $score_request->admin_message }}</strong></p>
+        	<br /><br />
+        @endif
         Si le lien ne fonctionne pas, copiez/collez le dans votre navigateur.
         <br /><br />
         A bientôt sur PianoLoveScore.com

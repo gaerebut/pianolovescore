@@ -6,8 +6,8 @@ use App\Models\ScoreRequest;
 use App\Models\Score;
 
 use App\Mail\ScoreRequestAccepted;
-use Mail;
 
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Admin\AdminMasterController as BaseController;
 
@@ -57,19 +57,10 @@ class ScoreRequestController extends BaseController
             $score_request->score_id    = (int)$input['score_id'];
         }
         $score_request->state           = (int)$input['state'];
-        $score_request->admin_message   = (int)$input['admin_message'];
-        //$score_request->save();
+        $score_request->admin_message   = $input['admin_message'];
+        $score_request->save();
 
-        $email = Mail::to($score_request->contact_email)->send(new ScoreRequestAccepted($score_request));
-
-        if($email)
-        {
-            dd('EMAIL OK: ' . $email);
-        }
-        else
-        {
-            dd('EMAIL KO: ' . $email);
-        }
+        Mail::to($score_request->contact_email)->send( $score_request->state===1?'accepted':'refused', new ScoreRequest($score_request));
 
         $this->setFlash( 'success', "La demande de partition vient d'être traitée" );
         return $this->show();

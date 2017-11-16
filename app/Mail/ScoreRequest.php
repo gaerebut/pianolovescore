@@ -7,18 +7,19 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class ScoreRequestAccepted extends Mailable
+class ScoreRequest extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $score_request;
+    public $view_path, $score_request;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($score_request)
+    public function __construct($state, $score_request)
     {
+        $this->view_path = 'emails.score_request.' . $state;
         $this->score_request = $score_request;
     }
 
@@ -29,6 +30,6 @@ class ScoreRequestAccepted extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.score_request.accepted');
+        return $this->view( $this->view_path );
     }
 }

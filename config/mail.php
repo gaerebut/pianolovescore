@@ -56,10 +56,9 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'gaetan.rebut@gmail.com'),
-        'name' => env('MAIL_FROM_NAME', 'PianoLoveScore - Contact'),
+        'address' => 'gaetan.rebut@gmail.com',
+        'name' => 'PianoLoveScore - Contact',
     ],
-
     /*
     |--------------------------------------------------------------------------
     | E-Mail Encryption Protocol
@@ -85,7 +84,6 @@ return [
     */
 
     'username' => env('MAIL_USERNAME'),
-
     'password' => env('MAIL_PASSWORD'),
 
     /*
