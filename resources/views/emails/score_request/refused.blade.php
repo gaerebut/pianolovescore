@@ -11,7 +11,7 @@
     <body>
         Bonjour {{ $score_request->contact_firstname }},
         <br /><br />
-        Vous avez demandé à avoir la partition "{{ $score_request->title }}" de {{ $score_request->author->lastname }}, cependant votre demande à été refusée pour la raison suivante :
+        Vous avez demandé à avoir la partition "{{ $score_request->title }}" de {{ $score_request->author }}, cependant votre demande à été refusée pour la raison suivante :
         <br /><br />
         <p><strong>{{ $score_request->admin_message }}</strong></p>
         <br /><br />

@@ -22,7 +22,7 @@ class SitemapController extends Controller
 
 	public function categories()
 	{
-
+		return response()->view('public.sitemap.categories')->header('Content-Type', 'text/xml');
 	}
 
 	public function authors()
