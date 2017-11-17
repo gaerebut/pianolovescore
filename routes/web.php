@@ -76,6 +76,14 @@ Route::group( ['namespace' => 'Admin', 'prefix' => 'admin' ], function()
 	} );
 } );
 
+Route::group( ['prefix' => 'sitemap' ], function()
+{
+	Route::get('/', 'SitemapController@index')->name('sitemap');
+	Route::get('categories', 'SitemapController@categories')->name('sitemap_categories');
+	Route::get('authors', 'SitemapController@authors')->name('sitemap_authors');
+	Route::get('scores', 'SitemapController@scores')->name('sitemap_scores');
+});
+
 Route::post('ajax/score/rating', 'AjaxController@storeRating')->name('ajax_rating');
 
 // HOME CONTROLLER
