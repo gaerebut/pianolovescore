@@ -2,14 +2,23 @@
 
 namespace App\Models;
 
+use Laravel\Scout\Searchable;
+
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Score extends Model
 {
+    use Searchable;
     use SoftDeletes;
+
     protected $dates = ['created_at', 'modified_at', 'deleted_at'];
     protected $table = 'scores';
+
+    public function toSearchableArray()
+    {
+        return array_only($this->toArray(), ['title']);
+    }
 
     public function author()
     {

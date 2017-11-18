@@ -76,6 +76,7 @@ class ComposerStaticInitdfea26b96a60ef0486ab1f5525d2a5db
         array (
             'League\\Flysystem\\' => 17,
             'Laravel\\Tinker\\' => 15,
+            'Laravel\\Scout\\' => 14,
         ),
         'I' => 
         array (
@@ -230,6 +231,10 @@ class ComposerStaticInitdfea26b96a60ef0486ab1f5525d2a5db
         array (
             0 => __DIR__ . '/..' . '/laravel/tinker/src',
         ),
+        'Laravel\\Scout\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laravel/scout/src',
+        ),
         'Illuminate\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/framework/src/Illuminate',
@@ -293,6 +298,13 @@ class ComposerStaticInitdfea26b96a60ef0486ab1f5525d2a5db
     );
 
     public static $prefixesPsr0 = array (
+        'R' => 
+        array (
+            'Roumen\\Sitemap' => 
+            array (
+                0 => __DIR__ . '/..' . '/roumen/sitemap/src',
+            ),
+        ),
         'P' => 
         array (
             'Prophecy\\' => 
@@ -329,9 +341,32 @@ class ComposerStaticInitdfea26b96a60ef0486ab1f5525d2a5db
                 0 => __DIR__ . '/..' . '/doctrine/lexer/lib',
             ),
         ),
+        'A' => 
+        array (
+            'AlgoliaSearch' => 
+            array (
+                0 => __DIR__ . '/..' . '/algolia/algoliasearch-client-php/src',
+            ),
+        ),
     );
 
     public static $classMap = array (
+        'AlgoliaSearch\\AlgoliaConnectionException' => __DIR__ . '/..' . '/algolia/algoliasearch-client-php/src/AlgoliaSearch/AlgoliaConnectionException.php',
+        'AlgoliaSearch\\AlgoliaException' => __DIR__ . '/..' . '/algolia/algoliasearch-client-php/src/AlgoliaSearch/AlgoliaException.php',
+        'AlgoliaSearch\\Client' => __DIR__ . '/..' . '/algolia/algoliasearch-client-php/src/AlgoliaSearch/Client.php',
+        'AlgoliaSearch\\ClientContext' => __DIR__ . '/..' . '/algolia/algoliasearch-client-php/src/AlgoliaSearch/ClientContext.php',
+        'AlgoliaSearch\\FailingHostsCache' => __DIR__ . '/..' . '/algolia/algoliasearch-client-php/src/AlgoliaSearch/FailingHostsCache.php',
+        'AlgoliaSearch\\FileFailingHostsCache' => __DIR__ . '/..' . '/algolia/algoliasearch-client-php/src/AlgoliaSearch/FileFailingHostsCache.php',
+        'AlgoliaSearch\\InMemoryFailingHostsCache' => __DIR__ . '/..' . '/algolia/algoliasearch-client-php/src/AlgoliaSearch/InMemoryFailingHostsCache.php',
+        'AlgoliaSearch\\Index' => __DIR__ . '/..' . '/algolia/algoliasearch-client-php/src/AlgoliaSearch/Index.php',
+        'AlgoliaSearch\\IndexBrowser' => __DIR__ . '/..' . '/algolia/algoliasearch-client-php/src/AlgoliaSearch/IndexBrowser.php',
+        'AlgoliaSearch\\Iterators\\AlgoliaIterator' => __DIR__ . '/..' . '/algolia/algoliasearch-client-php/src/AlgoliaSearch/Iterators/AlgoliaIterator.php',
+        'AlgoliaSearch\\Iterators\\RuleIterator' => __DIR__ . '/..' . '/algolia/algoliasearch-client-php/src/AlgoliaSearch/Iterators/RuleIterator.php',
+        'AlgoliaSearch\\Iterators\\SynonymIterator' => __DIR__ . '/..' . '/algolia/algoliasearch-client-php/src/AlgoliaSearch/Iterators/SynonymIterator.php',
+        'AlgoliaSearch\\Json' => __DIR__ . '/..' . '/algolia/algoliasearch-client-php/src/AlgoliaSearch/Json.php',
+        'AlgoliaSearch\\PlacesIndex' => __DIR__ . '/..' . '/algolia/algoliasearch-client-php/src/AlgoliaSearch/PlacesIndex.php',
+        'AlgoliaSearch\\SynonymType' => __DIR__ . '/..' . '/algolia/algoliasearch-client-php/src/AlgoliaSearch/SynonymType.php',
+        'AlgoliaSearch\\Version' => __DIR__ . '/..' . '/algolia/algoliasearch-client-php/src/AlgoliaSearch/Version.php',
         'Anhskohbo\\NoCaptcha\\Facades\\NoCaptcha' => __DIR__ . '/..' . '/anhskohbo/no-captcha/src/Facades/NoCaptcha.php',
         'Anhskohbo\\NoCaptcha\\NoCaptcha' => __DIR__ . '/..' . '/anhskohbo/no-captcha/src/NoCaptcha.php',
         'Anhskohbo\\NoCaptcha\\NoCaptchaServiceProvider' => __DIR__ . '/..' . '/anhskohbo/no-captcha/src/NoCaptchaServiceProvider.php',
@@ -352,13 +387,14 @@ class ComposerStaticInitdfea26b96a60ef0486ab1f5525d2a5db
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\ScoreController' => __DIR__ . '/../..' . '/app/Http/Controllers/ScoreController.php',
+        'App\\Http\\Controllers\\SitemapController' => __DIR__ . '/../..' . '/app/Http/Controllers/SitemapController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
-        'App\\Mail\\ScoreRequestRefused' => __DIR__ . '/../..' . '/app/Mail/ScoreRequestRefused.php',
+        'App\\Mail\\ScoreRequest' => __DIR__ . '/../..' . '/app/Mail/ScoreRequest.php',
         'App\\Models\\Author' => __DIR__ . '/../..' . '/app/Models/Author.php',
         'App\\Models\\Keyword' => __DIR__ . '/../..' . '/app/Models/Keyword.php',
         'App\\Models\\Rating' => __DIR__ . '/../..' . '/app/Models/Rating.php',
@@ -1828,6 +1864,19 @@ class ComposerStaticInitdfea26b96a60ef0486ab1f5525d2a5db
         'JakubOnderka\\PhpConsoleColor\\ConsoleColor' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/JakubOnderka/PhpConsoleColor/ConsoleColor.php',
         'JakubOnderka\\PhpConsoleColor\\InvalidStyleException' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/JakubOnderka/PhpConsoleColor/InvalidStyleException.php',
         'JakubOnderka\\PhpConsoleHighlighter\\Highlighter' => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src/JakubOnderka/PhpConsoleHighlighter/Highlighter.php',
+        'Laravel\\Scout\\Builder' => __DIR__ . '/..' . '/laravel/scout/src/Builder.php',
+        'Laravel\\Scout\\Console\\FlushCommand' => __DIR__ . '/..' . '/laravel/scout/src/Console/FlushCommand.php',
+        'Laravel\\Scout\\Console\\ImportCommand' => __DIR__ . '/..' . '/laravel/scout/src/Console/ImportCommand.php',
+        'Laravel\\Scout\\EngineManager' => __DIR__ . '/..' . '/laravel/scout/src/EngineManager.php',
+        'Laravel\\Scout\\Engines\\AlgoliaEngine' => __DIR__ . '/..' . '/laravel/scout/src/Engines/AlgoliaEngine.php',
+        'Laravel\\Scout\\Engines\\Engine' => __DIR__ . '/..' . '/laravel/scout/src/Engines/Engine.php',
+        'Laravel\\Scout\\Engines\\NullEngine' => __DIR__ . '/..' . '/laravel/scout/src/Engines/NullEngine.php',
+        'Laravel\\Scout\\Events\\ModelsImported' => __DIR__ . '/..' . '/laravel/scout/src/Events/ModelsImported.php',
+        'Laravel\\Scout\\Jobs\\MakeSearchable' => __DIR__ . '/..' . '/laravel/scout/src/Jobs/MakeSearchable.php',
+        'Laravel\\Scout\\ModelObserver' => __DIR__ . '/..' . '/laravel/scout/src/ModelObserver.php',
+        'Laravel\\Scout\\ScoutServiceProvider' => __DIR__ . '/..' . '/laravel/scout/src/ScoutServiceProvider.php',
+        'Laravel\\Scout\\Searchable' => __DIR__ . '/..' . '/laravel/scout/src/Searchable.php',
+        'Laravel\\Scout\\SearchableScope' => __DIR__ . '/..' . '/laravel/scout/src/SearchableScope.php',
         'Laravel\\Tinker\\ClassAliasAutoloader' => __DIR__ . '/..' . '/laravel/tinker/src/ClassAliasAutoloader.php',
         'Laravel\\Tinker\\Console\\TinkerCommand' => __DIR__ . '/..' . '/laravel/tinker/src/Console/TinkerCommand.php',
         'Laravel\\Tinker\\TinkerCaster' => __DIR__ . '/..' . '/laravel/tinker/src/TinkerCaster.php',
@@ -2958,6 +3007,9 @@ class ComposerStaticInitdfea26b96a60ef0486ab1f5525d2a5db
         'Ramsey\\Uuid\\UuidFactory' => __DIR__ . '/..' . '/ramsey/uuid/src/UuidFactory.php',
         'Ramsey\\Uuid\\UuidFactoryInterface' => __DIR__ . '/..' . '/ramsey/uuid/src/UuidFactoryInterface.php',
         'Ramsey\\Uuid\\UuidInterface' => __DIR__ . '/..' . '/ramsey/uuid/src/UuidInterface.php',
+        'Roumen\\Sitemap\\Model' => __DIR__ . '/..' . '/roumen/sitemap/src/Roumen/Sitemap/Model.php',
+        'Roumen\\Sitemap\\Sitemap' => __DIR__ . '/..' . '/roumen/sitemap/src/Roumen/Sitemap/Sitemap.php',
+        'Roumen\\Sitemap\\SitemapServiceProvider' => __DIR__ . '/..' . '/roumen/sitemap/src/Roumen/Sitemap/SitemapServiceProvider.php',
         'ScoresRequestTableSeeder' => __DIR__ . '/../..' . '/database/seeds/ScoresRequestTableSeeder.php',
         'ScoresTableSeeder' => __DIR__ . '/../..' . '/database/seeds/ScoresTableSeeder.php',
         'SebastianBergmann\\CodeCoverage\\CodeCoverage' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/CodeCoverage.php',

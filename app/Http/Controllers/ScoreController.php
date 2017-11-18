@@ -93,4 +93,18 @@ class ScoreController extends Controller
         $score->downloaded = $score->downloaded + 1;
         $score->save();
     }
+
+    public function search(Request $request)
+    {
+        $input = $request->all();
+        $scores = Score::search($input['k'])->get();
+        $authors = Author::search($input['k'])->get();
+        
+        return view('public.search', [
+            'breadcrumb_last_level' => 'Rechercher une partition gratuite',
+            'keywords'              => $input['k'],
+            'scores'                => $scores,
+            'authors'               => $authors
+        ]);
+    }
 }

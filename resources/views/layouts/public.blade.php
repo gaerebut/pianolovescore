@@ -9,13 +9,14 @@
                 <h1 class="text-center">PianoLoveScore</h1>
             </div>
             <div class="row">
-                <form action="#">
+                <form action="{{ route('search') }}" method="post">
                     <div class="col-sm-offset-3 col-sm-4">
-                        <input type="text" class="form-control" placeholder="Rechercher une partition, un compositeur..." />
+                        <input type="text" class="form-control" placeholder="Rechercher une partition, un compositeur..." name="k"/>
                     </div>
                     <div class="col-sm-2">
                        <input type="submit" class="form-control" value="Rechercher" /> 
                     </div>
+                    {{ csrf_field() }}
                 </form>
             </div>
             <div class="row">
