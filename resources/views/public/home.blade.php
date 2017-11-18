@@ -1,8 +1,7 @@
 @extends('layouts.public')
 
 @section('main')
-<?php \Carbon\Carbon::setLocale(config('app.locale')); ?>
-
+    <?php \Carbon\Carbon::setLocale(config('app.locale')); ?>
     <section class="homesection">
         <h1 class="homesection__title">
             Piano Love Score

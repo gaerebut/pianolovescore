@@ -4,6 +4,7 @@
     @include('includes.breadcrumb')
 @endsection
 @section('main')
+    <?php \Carbon\Carbon::setLocale(config('app.locale')); ?>
     <section class="scores__content">
         @if(count($scores) > 0 || count($authors)>0)
             <h2>Résultat de la recherche pour "{{ $keywords }}"</h2>
@@ -12,7 +13,7 @@
                     <thead>
                         <tr>
                             <td colspan="4">
-                                <h3 class="homesection__title">{{ count($scores) }} partitions gratuites trouvées :</h3>
+                                <h3 class="homesection__title">{{ count($scores) }} {{ count($scores)>1?'partitions gratuites trouvées':'partition gratuite trouvée' }} :</h3>
                             </td>
                         </tr>
                     </thead>
@@ -44,12 +45,12 @@
                 </table>
             @endif
 
-            @if(!empty($authors))
+            @if(count($authors)>0)
                 <table class="table table-condensed">
                     <thead>
                         <tr>
                             <td colspan="2">
-                                <h3 class="homesection__title">{{ count($authors) }} auteurs / compositeurs :</h3>
+                                <h3 class="homesection__title">{{ count($authors) }} {{ count($authors)>1?'auteurs/compositeurs':'auteur/compositeur'}} :</h3>
                             </td>
                         </tr>
                     </thead>

@@ -9,14 +9,13 @@
                 <h1 class="text-center">PianoLoveScore</h1>
             </div>
             <div class="row">
-                <form action="{{ route('search') }}" method="post">
+                <form action="{{ route('search', ['q'=>'']) }}" method="get">
                     <div class="col-sm-offset-3 col-sm-4">
-                        <input type="text" class="form-control" placeholder="Rechercher une partition, un compositeur..." name="k"/>
+                        <input type="text" class="form-control" placeholder="Rechercher une partition, un compositeur..." name="q" pattern=".{2,20}" required/>
                     </div>
                     <div class="col-sm-2">
                        <input type="submit" class="form-control" value="Rechercher" /> 
                     </div>
-                    {{ csrf_field() }}
                 </form>
             </div>
             <div class="row">
@@ -29,7 +28,9 @@
                 @yield('main')
             </article>
         </main>
-        <footer class="container-fluid text-center">FOOTER</footer>
+        <footer class="container-fluid text-center">
+
+        </footer>
         @section('js_code')
         @show
     </body>

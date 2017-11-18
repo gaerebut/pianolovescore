@@ -97,7 +97,8 @@ Route::get('/telecharger/{slug}', 'ScoreController@download')->name('score_downl
 Route::get('/partitions/{slug_author}/{slug_score}', 'ScoreController@show')->name('score');
 Route::get('/partitions', 'ScoreController@showAll')->name('scores');
 
-Route::post('/rechercher', 'ScoreController@search')->name('search');
+Route::get('/rechercher', 'ScoreController@search')->name('search');
+Route::get('/rechercher/{q}', 'ScoreController@search')->name('search');
 
 //AUTHOR CONTROLLER
 Route::get('/partitions/{slug_author}', 'AuthorController@showScores')->name('author_scores');

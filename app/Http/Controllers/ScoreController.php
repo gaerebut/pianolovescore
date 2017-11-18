@@ -7,6 +7,7 @@ use App\Models\Rating;
 use App\Models\Author;
 use App\Models\ScoreRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 
 class ScoreController extends Controller
 {
@@ -94,15 +95,16 @@ class ScoreController extends Controller
         $score->save();
     }
 
-    public function search(Request $request)
+    public function search($q = null)
     {
-        $input = $request->all();
-        $scores = Score::search($input['k'])->get();
-        $authors = Author::search($input['k'])->get();
+        $keywords = Input::get('q', $q);
+
+        $scores = Score::search($keywords)->get();
+        $authors = Author::search($keywords)->get();
         
         return view('public.search', [
             'breadcrumb_last_level' => 'Rechercher une partition gratuite',
-            'keywords'              => $input['k'],
+            'keywords'              => $keywords,
             'scores'                => $scores,
             'authors'               => $authors
         ]);

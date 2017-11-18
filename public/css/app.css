@@ -5849,6 +5849,8 @@ main {
       margin-top: 50px; }
       main .scores__content .scores__infos .scores__audio audio {
         width: 70%; }
+    main .scores__content .scores__infos .scores__keywords a {
+      margin: auto 5px; }
   main .scores__content .scores__rating__thanks {
     display: none;
     color: #ff9100;
@@ -5856,6 +5858,16 @@ main {
     margin: 7px; }
   main .scores__content .scores__listing_downloaded img {
     width: 1.8em; }
+  main .scores_request_summary:after {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #959595;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    content: ""; }
 
 footer {
   border-top: 1px solid #000; }

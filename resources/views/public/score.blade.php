@@ -77,6 +77,13 @@
                         </audio>
                     </div>
                 </div>
+                <div class="row scores__keywords">
+                    <h3><strong><mark>
+                        @foreach($score->keywords as $keyword)
+                            <a href="{{ route('search', ['q' => $keyword->keyword]) }}">#{{ $keyword }}</a>
+                        @endforeach
+                    </mark></strong></h3>
+                </div>
             </div>
         </div>
     </section>
