@@ -5806,6 +5806,19 @@ label.star:before {
     line-height: 15px;
     width: 90px; } }
 
+header .logo {
+  display: inline-block;
+  position: relative; }
+  header .logo:before {
+    width: 35px;
+    height: 35px;
+    content: "";
+    background-image: url(/img/logo.png);
+    background-size: 35px;
+    position: absolute;
+    left: -40px;
+    top: 0; }
+
 header .navbar {
   margin: 10px 0 0 0;
   padding: 0;
@@ -5832,6 +5845,10 @@ main {
 		border-top: 1px solid #000;
 	}
 */ }
+  main .homesection__title, main .homesection__subtitle {
+    display: inline-block; }
+  main .homesection__subtitle:before {
+    content: ' - '; }
   main .scores__content .scores__title > h1, main .scores__content .scores__title h2 {
     margin-bottom: 30px;
     display: inline-block; }
@@ -5849,7 +5866,7 @@ main {
       margin-top: 50px; }
       main .scores__content .scores__infos .scores__audio audio {
         width: 70%; }
-    main .scores__content .scores__infos .scores__keywords a {
+    main .scores__content .scores__infos .scores__keywords aadmin {
       margin: auto 5px; }
   main .scores__content .scores__rating__thanks {
     display: none;

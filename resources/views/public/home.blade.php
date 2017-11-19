@@ -3,10 +3,8 @@
 @section('main')
     <?php \Carbon\Carbon::setLocale(config('app.locale')); ?>
     <section class="homesection">
-        <h1 class="homesection__title">
-            Piano Love Score
-        </h1>
-        <h2>Partitions Gratuites de Piano</h2>
+        <h1 class="homesection__title">Piano Love Score</h1>
+        <h2 class="homesection__subtitle">Partitions Gratuites de Piano</h2>
         <div class="homesection__content">
             <p>
                 PianoLoveScore vous permet de télécharger des <a href="{{ route('home') }}">partitions gratuites de piano</a> au format PDF, de les noter en fonction de vos goûts, d'écouter leurs version audio et de partager votre expérience avec les autres membres.

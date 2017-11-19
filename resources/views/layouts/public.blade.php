@@ -5,8 +5,8 @@
     </head>
     <body>
         <header class="container-fluid">
-            <div class="row">
-                <h1 class="text-center">PianoLoveScore</h1>
+            <div class="row text-center">
+                <h1 class="text-center logo">PianoLoveScore</h1>
             </div>
             <div class="row">
                 <form action="{{ route('search', ['q'=>'']) }}" method="get">

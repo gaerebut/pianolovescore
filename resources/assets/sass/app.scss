@@ -7,7 +7,21 @@
 @import "rating";
 
 header {
+	.logo{
+		display: inline-block;
+		position: relative;
 
+		&:before{
+			width: 35px;
+			height: 35px;
+		    content: "";
+		    background-image: url(/img/logo.png);
+		    background-size: 35px;
+		    position: absolute;
+		    left: -40px;
+		    top: 0;
+		}
+	}
 	.navbar {
 		margin: 10px 0 0 0;
 		padding: 0;
@@ -31,6 +45,8 @@ header {
 main{
 	border-right: 1px solid #000;
 	border-left: 1px solid #000;
+	.homesection__title, .homesection__subtitle{ display:inline-block; }
+	.homesection__subtitle:before{ content: ' - ' }
 
 	.scores__content{
 		.scores__title{
