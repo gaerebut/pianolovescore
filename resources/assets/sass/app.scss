@@ -25,8 +25,7 @@ header {
 	.navbar {
 		margin: 10px 0 0 0;
 		padding: 0;
-		border-top: 1px solid #000;
-		border-bottom: 1px solid #000;
+    	border-top: 3px solid #29487d;
 
 		.navbar-nav {
 			display: inline-block;
@@ -43,8 +42,10 @@ header {
 }
 
 main{
-	border-right: 1px solid #000;
-	border-left: 1px solid #000;
+	border-top: 3px solid #4267b2;
+	border-right: 2px solid #4267b2;
+	border-left: 2px solid #4267b2;
+
 	.homesection__title, .homesection__subtitle{ display:inline-block; }
 	.homesection__subtitle:before{ content: ' - ' }
 
