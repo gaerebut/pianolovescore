@@ -2,7 +2,7 @@
 	<ol class="breadcrumb page-breadcrumb">
 		<li>
 			<i class="fa fa-home"></i>
-			<a href="/">Home</a>
+			<a href="/">Accueil</a>
 		</li>
 		@php
 		    $link = url('/');

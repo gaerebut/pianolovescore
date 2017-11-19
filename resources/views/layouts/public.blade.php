@@ -28,8 +28,8 @@
                 @yield('main')
             </article>
         </main>
-        <footer class="container-fluid text-center">
-
+        <footer class="container text-center">
+            ©2017 - pianolovescore.com - <a href="https://www.facebook.com/groups/partitio.gratuite/" target="_blank">Notre Groupe Facebook</a>
         </footer>
         @section('js_code')
         @show
