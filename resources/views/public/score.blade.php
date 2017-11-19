@@ -1,5 +1,8 @@
 @extends('layouts.public')
 
+@section('title'){{ $score->title }} de {{ $score->author }} - Partition Gratuite de Piano @endsection
+@section('description')Partition Gratuite de Piano - {{ $score->title }} de {{ $score->author }} - Téléchargez gratuitement cette partition @endsection
+
 @section('css')
     @parent
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css" />

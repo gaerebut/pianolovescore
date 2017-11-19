@@ -1,5 +1,8 @@
 @extends('layouts.public')
 
+@section('title'){{ $keywords }} - Recherche de partitions gratuites de piano sur PianoLoveScore @endsection
+@section('description')Recherche de '{{ $keywords }}' parmis les partitions gratuites de piano, auteurs et astuces de piano @endsection
+
 @section('breadcrumb')
     @include('includes.breadcrumb')
 @endsection

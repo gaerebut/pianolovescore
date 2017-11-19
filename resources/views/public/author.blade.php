@@ -1,5 +1,8 @@
 @extends('layouts.public')
 
+@section('title'){{ $author }} sur Piano Love Score - {{ $count_scores }} <?php echo $count_scores>1?'partitions gratuites':'partition gratuite'; ?> @endsection
+@section('description')Retrouvez l'ensemble des partitions gratuites de piano de {{ $author->fullname }} sur PianoLoveScore et téléchargez-les @endsection
+
 @section('breadcrumb')
     @include('includes.breadcrumb')
 @endsection

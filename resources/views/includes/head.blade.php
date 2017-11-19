@@ -3,9 +3,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
-<title>Pianolovescore</title>
+<meta name="content-type" content="text/html;charset=utf-8" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>@yield('title')</title>
+<meta name="description" content="@yield('description')">
 @section('css')
 <link rel="stylesheet" href="{{ elixir('css/app.css') }}">
+<link rel="icon" type="image/png" href="img/favicon.png" />
 <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 @show
 

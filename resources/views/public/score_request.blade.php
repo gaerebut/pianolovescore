@@ -1,5 +1,8 @@
 @extends('layouts.public')
 
+@section('title')Demande de partition gratuite sur Piano Love Score @endsection
+@section('description')Demandez une partition gratuite de piano que vous cherchez et un administrateur vous la postera en ligne @endsection
+
 @section('breadcrumb')
     @include('includes.breadcrumb')
 @endsection
@@ -83,7 +86,7 @@
 @section('js_code')
     {!! NoCaptcha::renderJs() !!}
     <script type="text/javascript">
-        /*$(function(){
+        $(function(){
             $('.request').on('submit', function(){
                 if( grecaptcha.getResponse().length > 0){
                     $(this).submit();
@@ -94,6 +97,6 @@
                     return false;
                 }
             });
-        })*/
+        })
     </script>
 @endsection
