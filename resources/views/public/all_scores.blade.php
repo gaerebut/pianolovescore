@@ -3,6 +3,10 @@
 @section('title')Les partitions Gratuites de Piano sur PianoLoveScore @endsection
 @section('description')Partitions Gratuites de Piano par Auteurs sur Piano Love Score. Téléchargez et notez les partitions après les avoir téléchargées @endsection
 
+@section('og_type')book @endsection
+@section('og_title')Partitions Gratuites de Piano sur PianoLoveScore @endsection
+@section('og_description')Téléchargement de partitions gratuites de piano. Trouvez les partitions libres de droits en libre accès, notez-les, commentez-les et faites des découvertes @endsection
+@section('og_image'){{ Request::url() }}{{ elixir('img/logo_full.png') }} @endsection
 
 @section('breadcrumb')
     @include('includes.breadcrumb')

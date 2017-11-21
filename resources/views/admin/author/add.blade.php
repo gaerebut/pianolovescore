@@ -3,6 +3,10 @@
 @section('breadcrumb')
     @include('includes.breadcrumb')
 @endsection
+@section('css')
+    @parent
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.css" rel="stylesheet">
+@endsection
 @section('main')
 	<div class="col-md-8 col-md-offset-2">
 		<form action="{{ route('admin_authors_add') }}" method="post" class="form-horizontal">
@@ -16,6 +20,12 @@
 				<label for="firstname" class="col-sm-2 control-label">Prénom</label>
 				<div class="col-sm-10">
 					<input type="text" class="form-control" id="firstname" name="firstname" placeholder="Prénom" value="{{ old('firstname') }}" required>
+				</div>
+			</div>
+			*<div class="form-group">
+				<label for="description" class="col-sm-2 control-label">Description</label>
+				<div class="col-sm-10">
+					<textarea id="description" name="description">{{ old('description') }}</textarea>
 				</div>
 			</div>
 			<div class="form-group">
@@ -50,10 +60,16 @@
 @endsection
 @section('js_code')
 	@parent
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.js"></script>
 	<script src="{{ elixir( '/js/sanitize.js' ) }}"></script>
 
 	<script type="text/javascript">
-	    $(function(){	
+	    $(function(){
+	    	$('#description').summernote({
+				placeholder: 'La description de l\'auteur doit être la plus longue possible. Attention : ne surtout pas faire de copier/coller de n\'importe quel texte !',
+				height: 200
+			});
+
 	        $( '#lastname' ).unbind().keyup( function()
 	        {
 	            var slug = sanitize( $( this ).val() );

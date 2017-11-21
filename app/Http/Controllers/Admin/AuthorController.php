@@ -42,11 +42,12 @@ class AuthorController extends BaseController
         $input = $request->all();
 
         $author = new Author();
-        $author->slug 	= ucfirst($input['slug']);
-        $author->lastname 	= ucfirst($input['lastname']);
-        $author->firstname 	= ucfirst($input['firstname']);
-        $author->fullname 	= $author->firstname . ' ' . $author->lastname;
-        $author->birthday 	= $input['birthday'];
+        $author->slug           = ucfirst($input['slug']);
+        $author->description    = $input['description'];
+        $author->lastname       = ucfirst($input['lastname']);
+        $author->firstname 	    = ucfirst($input['firstname']);
+        $author->fullname 	    = $author->firstname . ' ' . $author->lastname;
+        $author->birthday 	    = $input['birthday'];
         $author->save();
 
         $this->setFlash( 'success', "L'auteur vient d'être créé" );
@@ -88,11 +89,12 @@ class AuthorController extends BaseController
         
 
         $author = Author::where('id', '=', $input['id'])->firstOrFail();
-        $author->slug   = ucfirst($input['slug']);
-        $author->lastname   = ucfirst($input['lastname']);
-        $author->firstname  = ucfirst($input['firstname']);
-        $author->fullname   = $author->firstname . ' ' . $author->lastname;
-        $author->birthday   = $input['birthday'];
+        $author->slug           = ucfirst($input['slug']);
+        $author->description    = $input['description'];
+        $author->lastname       = ucfirst($input['lastname']);
+        $author->firstname      = ucfirst($input['firstname']);
+        $author->fullname       = $author->firstname . ' ' . $author->lastname;
+        $author->birthday       = $input['birthday'];
         $author->save();
 
         $this->setFlash( 'success', "L'auteur vient d'être modifié" );

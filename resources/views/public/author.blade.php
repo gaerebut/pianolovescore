@@ -1,19 +1,28 @@
 @extends('layouts.public')
 
-@section('title'){{ $author }} sur Piano Love Score - {{ $count_scores }} <?php echo $count_scores>1?'partitions gratuites':'partition gratuite'; ?> @endsection
+<?php
+    $count_scores = count($author->scores);
+?>
+
+@section('title'){{ $author }} sur Piano Love Score - {{ $count_scores . ($count_scores>1?'partitions gratuites':'partition gratuite') }} @endsection
 @section('description')Retrouvez l'ensemble des partitions gratuites de piano de {{ $author->fullname }} sur PianoLoveScore et téléchargez-les @endsection
+
+@section('og_type')books.author @endsection
+@section('og_title')Partitions Gratuites de Piano de {{ $author }} @endsection
+@section('og_description')Téléchargement de partitions gratuites de piano de {{ $author }}. Trouvez les partitions libres de droits en libre accès, notez-les, commentez-les et faites des découvertes @endsection
+@section('og_image'){{ Request::url() }}{{ elixir('img/logo_full.png') }} @endsection
 
 @section('breadcrumb')
     @include('includes.breadcrumb')
 @endsection
 @section('main')
-<?php
-    $count_scores = count($author->scores);
-?>
     <section class="scores__content">
         <div class="col-lg-offset-2 col-lg-8">
             <div class="row scores__title">
                 <h1>{{ $author->fullname }}</h1><h2>{{ $count_scores }} <?php echo $count_scores>1?'partitions gratuites':'partition gratuite'; ?></h2>
+            </div>
+            <div class="row text-left">
+                <p>{!! $author->description !!}</p>
             </div>
         </div>
         <div class="col-lg-offset-2 col-lg-8">

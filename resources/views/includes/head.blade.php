@@ -7,17 +7,16 @@
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title>@yield('title')</title>
 <meta name="description" content="@yield('description')">
+
+<meta property="og:url" 		content="{{ Request::url() }}" />
+<meta property="og:type" 		content="@yield('og_type')" />
+<meta property="og:title" 		content="@yield('og_title')" />
+<meta property="og:description"	content="@yield('og_description')" />
+<meta property="og:image"		content="@yield('og_image')" />
+
 @section('css')
 <link rel="stylesheet" href="{{ elixir('css/app.css') }}">
 <link rel="icon" type="image/png" href="img/favicon.png" />
+<!--[if IE]><link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" /><![endif]-->
 <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-@show
-
-@section('js')
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-<![endif]-->
 @show

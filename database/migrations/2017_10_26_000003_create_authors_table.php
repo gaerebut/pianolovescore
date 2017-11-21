@@ -19,6 +19,7 @@ class CreateAuthorsTable extends Migration
             $table->string('firstname', 100);
             $table->string('lastname', 100);
             $table->string('fullname', 255)->unique();
+            $table->text('description')->nullable();
             $table->date('birthday')->nullable();
             $table->datetime('deleted_at')->nullable();
             $table->timestamps();

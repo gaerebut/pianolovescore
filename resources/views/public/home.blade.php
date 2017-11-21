@@ -3,6 +3,11 @@
 @section('title')Partition Gratuite de Piano : Téléchargez des partitions de piano gratuitement @endsection
 @section('description')Partition Gratuite de Piano : Partitions Gratuites Piano, Téléchargements, Auteurs, Compositeurs, Astuces @endsection
 
+@section('og_type')book @endsection
+@section('og_title')Partitions Gratuites de Piano sur PianoLoveScore @endsection
+@section('og_description')Téléchargement de partitions gratuites de piano. Trouvez les partitions libres de droits en libre accès, notez-les, commentez-les et faites des découvertes @endsection
+@section('og_image'){{ Request::url() }}{{ elixir('img/logo_full.png') }} @endsection
+
 @section('main')
     <?php \Carbon\Carbon::setLocale(config('app.locale')); ?>
     <section class="homesection">

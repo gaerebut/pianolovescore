@@ -3,6 +3,11 @@
 @section('title'){{ $keywords }} - Recherche de partitions gratuites de piano sur PianoLoveScore @endsection
 @section('description')Recherche de '{{ $keywords }}' parmis les partitions gratuites de piano, auteurs et astuces de piano @endsection
 
+@section('og_type')book @endsection
+@section('og_title')Recherchez une partition gratuite de piano @endsection
+@section('og_description')Recherchez une partitions gratuite de piano ou un auteur sur PianoLoveScore. Téléchargez les partitions gratuitement. @endsection
+@section('og_image'){{ Request::url() }}{{ elixir('img/logo_full.png') }} @endsection
+
 @section('breadcrumb')
     @include('includes.breadcrumb')
 @endsection

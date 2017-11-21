@@ -54,6 +54,7 @@ class ScoreController extends BaseController
 
         $score = new Score();
         $score->title 				= ucfirst($input['title']);
+        $score->description         = $input['description'];
         $score->slug 				= ucfirst($input['slug']);
         $score->author_id			= $input['author_id'];
         $score->score_image			= $input['score_image'];
@@ -135,6 +136,7 @@ class ScoreController extends BaseController
 
         $score = Score::where('id', '=', $input['id'])->firstOrFail();
         $score->title 				= ucfirst($input['title']);
+        $score->description         = $input['description'];
         $score->slug 				= ucfirst($input['slug']);
         $score->author_id			= $input['author_id'];
         $score->score_image			= $input['score_image'];
