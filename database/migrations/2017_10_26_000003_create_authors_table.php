@@ -15,10 +15,10 @@ class CreateAuthorsTable extends Migration
     {
         Schema::create('authors', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('slug', 200)->unique();
-            $table->string('firstname', 100);
-            $table->string('lastname', 100);
-            $table->string('fullname', 255)->unique();
+            $table->string('slug', 190)->unique();
+            $table->string('firstname', 95);
+            $table->string('lastname', 95);
+            $table->string('fullname', 190)->unique();
             $table->text('description')->nullable();
             $table->date('birthday')->nullable();
             $table->datetime('deleted_at')->nullable();
