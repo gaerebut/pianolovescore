@@ -1,8 +1,9 @@
 Options +FollowSymLinks
 RewriteEngine On
 
-RewriteCond %{HTTP_HOST} ^www\.pianolovescore\.com [NC]
-RewriteRule ^(.*)$ http://pianolovescore.com/$1 [L,R=301]
+RewriteBase /
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
 
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
