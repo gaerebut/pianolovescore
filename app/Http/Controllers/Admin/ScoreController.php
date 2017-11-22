@@ -142,6 +142,8 @@ class ScoreController extends BaseController
         $score->score_image			= $input['score_image'];
         $score->score_url			= $input['score_url'];
         $score->score_sound_url		= $input['score_sound_url'];
+        $score->nb_pages            = $this->getPDFPages($input['score_url']);
+
         if(!empty($input['score_sound_url']))
         {
 	        $score->score_sound_format	= pathinfo(parse_url($input['score_sound_url'])['path'], PATHINFO_EXTENSION);
@@ -206,5 +208,27 @@ class ScoreController extends BaseController
         }
 
         return back();
+    }
+
+    private function getPDFPages($document)
+    {
+        $fp = @fopen(preg_replace("/\[(.*?)\]/i", "",$document),"r");
+        $max=0;
+        while(!feof($fp)) {
+            $line = fgets($fp,255);
+            if (preg_match('/\/Count [0-9]+/', $line, $matches))
+            {
+                preg_match('/[0-9]+/',$matches[0], $matches2);
+                if ($max<$matches2[0]) $max=$matches2[0];
+            }
+        }
+        fclose($fp);
+        if($max==0)
+        {
+            $im = new imagick($document);
+            $max=$im->getNumberImages();
+        }
+
+        return $max;
     }
 }

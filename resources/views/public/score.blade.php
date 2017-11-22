@@ -18,22 +18,23 @@
     @include('includes.breadcrumb')
 @endsection
 @section('main')
-    <section class="scores__content">
+    <section class="scores__content" itemscope="" itemtype="http://schema.org/Book">
         <div class="col-md-offset-4 col-md-8">
             <div class="row scores__title">
-                <h1>{{ $score->title }}</h1><h2><a href="{{ route('author_scores', ['slug_author'=>$score->author->slug]) }}">{{ $score->author->fullname }}</a></h2>
+                <h1 itemprop="name">{{ $score->title }}</h1><h2><a href="{{ route('author_scores', ['slug_author'=>$score->author->slug]) }}" itemprop="author" itemscope itemtype="http://schema.org/Person" itemid="#author"><meta itemprop="name" content="{{ $score->author->fullname }}"/>{{ $score->author->fullname }}</a></h2>
             </div>
         </div>
         <div class="row border-left-0 border-right-0 border-top-0">
             <div class="col-md-4 text-center">
                 <a data-fancybox="gallery" href="{{ $score->score_image }}">
-                    <img src="{{ $score->score_image }}" class="scores__icon">
+                    <img src="{{ $score->score_image }}" class="scores__icon" itemprop="image">
                 </a>
                 <h6><strong>Cliquez sur l'image pour l'agrandir</strong></h6>
             </div>
             <div class="col-md-8 scores__infos">
                 <div class="row text-left">
-                    <p>{!! $score->description !!}</p>
+                    <p itemprop="description">{!! $score->description !!}</p>
+                    <p>Cette oeuvre contient <span itemprop="numberOfPages">{{ $score->nb_pages }}</span> pages</h6>
                 </div>
                 <div class="row">
                     <div class="col-xs-offset-4 col-xs-4 col-md-offset-1 col-md-3">
@@ -44,7 +45,7 @@
                         <h6><strong>{{ $score->downloaded . str_plural(' téléchargement', $score->downloaded|1
                         )}}</strong></h6>
                     </div>
-                    <div class="col-xs-12 col-md-8">
+                    <div class="col-xs-12 col-md-8" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
                         @if(!$user_already_vote)
                             <h5>Quelle difficulté attribuez-vous à cette <strong>partition de piano</strong> ?</h5>
                         @else
@@ -74,7 +75,7 @@
                                 </form>
                                 <h3 class="scores__rating__thanks">Merci pour votre vote</h3>
                             @endif
-                            <div class="scores__rating__result">Moyenne : <strong class="avg_votes"><?php echo round($score->avg_votes/20, 2); ?></strong>/5 (<strong class="count_votes">{{ $score->count_votes }}</strong> votes)</div>
+                            <div class="scores__rating__result">Moyenne : <strong class="avg_votes" itemprop="ratingValue"><?php echo round($score->avg_votes/20, 2); ?></strong>/5 (<strong class="count_votes" itemprop="reviewCount">{{ $score->count_votes }}</strong> votes)</div>
                         </div>
                         @if(!is_null($score->score_sound_url))
                             <div class="scores__audio">
