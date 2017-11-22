@@ -10,10 +10,10 @@
     </head>
     <body>
         Message provenant de PianoLoveScore :<br /><br />
-        NOM / PRENOM: {{ $lastname }} / {{ $firstname }}<br />
-        EMAIL : {{ $email }}<br />
-        OBJET : {{ $subject }}<br />
-        MESSAGE : {{ $message }}<br />
+        NOM / PRENOM: {{ $contact['contact_lastname'] }} / {{ $contact['contact_firstname'] }}<br />
+        EMAIL : {{ $contact['contact_email'] }}<br />
+        OBJET : {{ $contact['subject'] }}<br />
+        MESSAGE : {{ $contact['message'] }}<br />
         ----------------------------------------
         <br />
         Ceci est un email automatique, merci de ne pas y répondre.

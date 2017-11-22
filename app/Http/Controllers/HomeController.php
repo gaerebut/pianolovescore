@@ -36,19 +36,18 @@ class HomeController extends Controller
             'contact_email'         => 'required',
             'subject'				=> 'required',
             'message'				=> 'required',
-            'g-recaptcha-response'  => 'required|captcha'
+            //'g-recaptcha-response'  => 'required|captcha'
         ],[
             'contact_lastname.required'     => 'Veuillez indiquer votre nom',
             'contact_lastname.required'     => 'Veuillez indiquer votre prénom',
             'contact_email.required' 		=> 'Veuillez indiquer votre adresse email',
             'subject.required'              => 'Veuillez indiquer un objet',
             'message.required'              => 'Veuillez indiquer un message',
-            'g-recaptcha-response.required' => 'Veuillez confirmer que vous n\'êtes pas un robot',
-            'g-recaptcha-response.captcha'  => 'La confirmation anti-robot a échoué. Veuillez réessayer.'
+            //'g-recaptcha-response.required' => 'Veuillez confirmer que vous n\'êtes pas un robot',
+            //'g-recaptcha-response.captcha'  => 'La confirmation anti-robot a échoué. Veuillez réessayer.'
         ]);
-        $input = $request->all();
 
-        Mail::to( 'gaetan.rebut@gmail.com' )->send( new Contactus($input['contact_lastname'], $input['contact_firstname'], $input['contact_email'], $input['subject'], $input['message']));
+        Mail::to( 'gaetan.rebut@gmail.com' )->send( new Contactus($request->all()));
 
         return view('public.contactus', [
             'breadcrumb_last_level' => 'Demande de contact envoyée',

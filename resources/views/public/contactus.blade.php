@@ -58,7 +58,7 @@
                 <div class="form-group">
                     <label for="message" class="col-sm-2 control-label">Message</label>
                     <div class="col-sm-10">
-                        <textarea class="form-control" name="message"  id="message" required rows="4">{{ !empty(old('message'))?old('message'):'Bonjour,' }}</textarea>
+                        <textarea class="form-control" name="message" id="message" rows="4" required>{{ !empty(old('message'))?old('message'):'Bonjour,' }}</textarea>
                     </div>
                 </div>
                  <div class="form-group">
