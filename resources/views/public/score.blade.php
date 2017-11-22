@@ -80,7 +80,7 @@
                         @if(!is_null($score->score_sound_url))
                             <div class="scores__audio">
                                 <h4>Ecoutez ci-dessous <strong>{{ $score->title }}</strong> de <strong>{{ $score->author->lastname }}</strong></h4>
-                                <audio controls="controls" preload="metadata" controlsList="nodownload">
+                                <audio controls="controls" preload="metadata" controlsList="nodownload" itemprop="audio">
                                     <source src="{{ $score->score_sound_url }}" type="audio/{{ $score->score_sound_format }}" />
                                     Votre navigateur n'est pas compatible
                                 </audio>
