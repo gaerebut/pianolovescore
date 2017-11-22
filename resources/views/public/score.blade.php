@@ -98,6 +98,7 @@
             </div>
         </div>
     </section>
+    <!--
     <section class="scores__alike">
         <table class="table table-condensed">
             <thead>
@@ -304,6 +305,7 @@
             </tbody>
         </table>
     </section>
+    -->
 @endsection
 @section('js_code')
 <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
