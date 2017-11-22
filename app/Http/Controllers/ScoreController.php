@@ -53,9 +53,9 @@ class ScoreController extends Controller
             'author'                => 'required',
             'g-recaptcha-response'  => 'required|captcha'
         ],[
-            'contact_lastname'              => 'Veuillez indiquer votre nom',
-            'contact_lastname'              => 'Veuillez indiquer votre prénom',
-            'contact_email'                 => 'Veuillez indiquer votre adresse email',
+            'contact_lastname.required'     => 'Veuillez indiquer votre nom',
+            'contact_lastname.required'     => 'Veuillez indiquer votre prénom',
+            'contact_email.required'        => 'Veuillez indiquer votre adresse email',
             'title.required'                => 'Veuillez indiquer un titre',
             'author.required'               => 'Veuillez indiquer un auteur',
             'g-recaptcha-response.required' => 'Veuillez confirmer que vous n\'êtes pas un robot',

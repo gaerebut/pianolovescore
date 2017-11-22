@@ -14,7 +14,7 @@
                 <a href="{{ route('score_request') }}">Demander une partition</a>
             </li>
             <li>
-                <a href="#">Contact</a>
+                <a href="{{ route('contactus') }}">Contactez-nous</a>
             </li>
         </ul>
     </div>

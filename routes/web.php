@@ -93,6 +93,9 @@ Route::get('/', 'HomeController@show')->name('home');
 Route::post('/demander-une-partition', 'ScoreController@requestSave')->name('score_request_submit');
 Route::get('/demander-une-partition', 'ScoreController@requestShow')->name('score_request');
 
+Route::post('/contact', 'HomeController@contactusSave')->name('contactus_submit');
+Route::get('/contact', 'HomeController@contactusShow')->name('contactus');
+
 Route::get('/telecharger/{slug}', 'ScoreController@download')->name('score_download');
 Route::get('/partitions/{slug_author}/{slug_score}', 'ScoreController@show')->name('score');
 Route::get('/partitions', 'ScoreController@showAll')->name('scores');
