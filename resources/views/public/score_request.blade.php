@@ -11,10 +11,6 @@
 @section('breadcrumb')
     @include('includes.breadcrumb')
 @endsection
-@section('js')
-    @parent
-    <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
-@endsection
 @section('main')
     <section class="scores__content">
         <div class="col-sm-offset-2 col-sm-8">
@@ -89,6 +85,7 @@
     </section>
 @endsection
 @section('js_code')
+    <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
     {!! NoCaptcha::renderJs() !!}
     <script type="text/javascript">
         $(function(){
