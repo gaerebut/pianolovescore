@@ -17,7 +17,7 @@ class Score extends Model
 
     public function toSearchableArray()
     {
-        return array_only($this->toArray(), ['title', 'description']);
+        return array_only($this->toArray(), ['title']);
     }
 
     public function author()
