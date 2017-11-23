@@ -16,7 +16,7 @@
         <div class="col-lg-offset-2 col-lg-8">
             <table class="table table-condensed">
                 @foreach($authors as $author)
-                    @if(!empty($author->scores))
+                    @if(count($author->scores)>0)
                         <thead>
                             <tr>
                                 <th colspan="2">
