@@ -32,15 +32,6 @@
             ©2017 - pianolovescore.com - <a href="https://www.facebook.com/groups/partitio.gratuite/" target="_blank">Notre Groupe Facebook</a>
         </footer>
         @section('js_code')
-            <!-- Global site tag (gtag.js) - Google Analytics -->
-            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-16559180-13"></script>
-            <script>
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'UA-16559180-13');
-            </script>
-
             <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
             <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
             <!--[if lt IE 9]>

@@ -14,6 +14,15 @@
 <meta property="og:description"	content="@yield('og_description')" />
 <meta property="og:image"		content="@yield('og_image')" />
 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-16559180-13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-16559180-13');
+</script>
+
 @section('css')
 <link rel="stylesheet" href="{{ elixir('css/app.css') }}">
 <link rel="icon" type="image/png" href="img/favicon.png" />
