@@ -3,7 +3,7 @@
     @foreach ($authors as $author)
         <url>
             <loc>{{ route('author_scores', ['slug_author' => $author->slug]) }}</loc>
-            <lastmod>{{ $author->updated_at->tz('UTC')->toAtomString() }}</lastmod>
+            <lastmod>{{ $author->updated_at }}</lastmod>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
         </url>
