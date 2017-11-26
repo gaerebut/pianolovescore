@@ -1,12 +1,5 @@
 <div class="breadcrumb__container">
 	<ol class="breadcrumb page-breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
-		<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-			<i class="fa fa-home"></i>
-			<a href="/" itemscope itemtype="http://schema.org/Thing" itemprop="item" >
-				<span itemprop="name">Accueil</span>
-			</a>
-			<meta itemprop="position" content="1" />
-		</li>
 		@php
 		    $link = url('/');
 		@endphp
