@@ -8,7 +8,8 @@
 @endsection
 @section('main')
     <div class="text-center">
-        <h4>{{ $exception->getMessage() }}</h4>
+        <br /><br /><br /><br /><br /><br />
         <h1>LA RESSOURCE DEMANDEE EST INTROUVABLE!</h1>
+        <br /><br /><br /><br /><br /><br />
     </div>
 @endsection
