@@ -74,6 +74,12 @@
 				</div>
 			</div>
 			<div class="form-group">
+				<label for="nb_pages" class="col-sm-2 control-label">Nombre de pages</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="nb_pages" name="nb_pages" placeholder="3" value="{{ $score->nb_pages }}" required>
+				</div>
+			</div>
+			<div class="form-group">
 				<label for="score_url" class="col-sm-2 control-label">URL du fichier PDF</label>
 				<div class="col-sm-10">
 					<input type="text" class="form-control" id="score_url" name="score_url" placeholder="http://www.adressedusiteweb.com/partition.pdf" value="{{ $score->score_url }}" required>
