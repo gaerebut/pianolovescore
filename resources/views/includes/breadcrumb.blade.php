@@ -12,7 +12,7 @@
 		        	</a>
 		        @else
 		        	<span itemscope itemtype="http://schema.org/Thing" itemprop="item">
-		        		<span itemprop="name">{{ $breadcrumb_last_level }}</span>
+		        		<span itemprop="name">@if(empty($breadcrumb_last_level)) Page introuvable @else {{ $breadcrumb_last_level }} @endif</span>
 		        	</span>
 		        @endif
 		        <meta itemprop="position" content="{{ $i+1 }}" />
