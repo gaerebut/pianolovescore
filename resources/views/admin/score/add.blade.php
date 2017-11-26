@@ -10,6 +10,10 @@
 @section('main')
 	<div class="col-md-8 col-md-offset-2">
 		<form action="{{ route('admin_scores_add') }}" method="post" class="form-horizontal">
+			<div class="row text-right">
+				<label for="is_online" class="form-label">MISE EN LIGNE DE LA PARTITION</label>
+				<input type="checkbox" id="is_online" name="is_online" value="1">
+			</div>
 			<div class="form-group">
 				<label for="title" class="col-sm-2 control-label">Titre</label>
 				<div class="col-sm-10">

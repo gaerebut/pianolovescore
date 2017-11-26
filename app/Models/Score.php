@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Laravel\Scout\Searchable;
 
+use App\Scopes\IsOnlineScope;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -14,6 +15,12 @@ class Score extends Model
 
     protected $dates = ['created_at', 'modified_at', 'deleted_at'];
     protected $table = 'scores';
+
+    protected static function boot()
+    {
+        parent::boot();
+        static::addGlobalScope(new IsOnlineScope);
+    }
 
     public function toSearchableArray()
     {

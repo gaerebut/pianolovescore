@@ -27,6 +27,7 @@ class CreateScoresTable extends Migration
             $table->integer('count_votes')->default(0);
             $table->integer('avg_votes')->nullable();
             $table->integer('downloaded')->default(0);
+            $table->boolean('is_online')->default(1);
             $table->datetime('deleted_at')->nullable();
             $table->timestamps();
 

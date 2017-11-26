@@ -19,6 +19,7 @@
 					<th>Moyenne</th>
 					<th>Téléchargements</th>
 					<th>Mots clés</th>
+					<th>En ligne</th>
 					<th></th>
 				</tr>
 			</thead>
@@ -36,6 +37,7 @@
 								{{ $keyword . ' ' }}
 							@endforeach
 						</td>
+						<td>@if($score->is_online) <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> @else <span class="glyphicon glyphicon-remove"></span> @endif</td>
 						<td>
 							<a href="{{ route('admin_scores_edit',['id_score'=>$score->id]) }}" class="btn btn-primary">
 								<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>

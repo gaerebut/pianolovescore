@@ -5,6 +5,7 @@
 
 <meta name="content-type" content="text/html;charset=utf-8" />
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="robots" content="all">
 <title>@yield('title')</title>
 <meta name="description" content="@yield('description')">
 

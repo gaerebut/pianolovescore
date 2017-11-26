@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Score;
 use App\Models\Author;
 use App\Models\Keyword;
-
+use App\Scopes\IsOnlineScope;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Admin\AdminMasterController as BaseController;
 
@@ -13,7 +13,7 @@ class ScoreController extends BaseController
 {
     public function show()
     {
-    	$scores = Score::orderBy('id')->get();
+    	$scores = Score::withoutGlobalScope(IsOnlineScope::class)->orderBy('id')->get();
 
     	return view('admin.score.index', [
     		'breadcrumb_last_level' => 'Partitions',
@@ -57,6 +57,7 @@ class ScoreController extends BaseController
         $score->description         = $input['description'];
         $score->slug 				= ucfirst($input['slug']);
         $score->author_id			= $input['author_id'];
+        $score->is_online           = !empty($input['is_online']);
         $score->score_image			= $input['score_image'];
         $score->score_url			= $input['score_url'];
         $score->score_sound_url		= $input['score_sound_url'];
@@ -95,7 +96,7 @@ class ScoreController extends BaseController
 
     public function showEdit($id_score)
     {
-        $score = Score::where('id', '=', $id_score)->firstOrFail();
+        $score = Score::withoutGlobalScope(IsOnlineScope::class)->where('id', '=', $id_score)->firstOrFail();
         if($score)
         {
         	$authors = Author::orderBy('lastname')->get();
@@ -134,11 +135,12 @@ class ScoreController extends BaseController
             'score_url.required'	=> 'Veuillez indiquer l\'url du fichier PDF de la partition',
         ]);
 
-        $score = Score::where('id', '=', $input['id'])->firstOrFail();
+        $score = Score::withoutGlobalScope(IsOnlineScope::class)->where('id', '=', $input['id'])->firstOrFail();
         $score->title 				= ucfirst($input['title']);
         $score->description         = $input['description'];
         $score->slug 				= ucfirst($input['slug']);
         $score->author_id			= $input['author_id'];
+        $score->is_online           = !empty($input['is_online']);
         $score->score_image			= $input['score_image'];
         $score->score_url			= $input['score_url'];
         $score->score_sound_url		= $input['score_sound_url'];
@@ -198,7 +200,7 @@ class ScoreController extends BaseController
 
     public function remove($id_score)
     {
-        if(Score::where('id', '=', $id_score)->delete())
+        if(Score::withoutGlobalScope(IsOnlineScope::class)->where('id', '=', $id_score)->delete())
         {
             $this->setFlash( 'success', "La partition vient d'être créée" );
         }

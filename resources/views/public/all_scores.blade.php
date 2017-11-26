@@ -26,9 +26,9 @@
                         </thead>
                         <tbody>
                             <?php
-                                $maximum_scores = Config::get('constants.public_scores_maximum_showed');
-                                $count_author_scores = count($author->scores);
-                                $maximum_scores_showed = min($count_author_scores, $maximum_scores);
+                            $maximum_scores = Config::get('constants.public_scores_maximum_showed');
+                            $count_author_scores = count($author->scores);
+                            $maximum_scores_showed = min($count_author_scores, $maximum_scores);
                             ?>
                             @for($i=0; $i<$maximum_scores_showed; $i++)
                                 <?php $current_score = $author->scores[$i]; ?>
