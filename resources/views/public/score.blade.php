@@ -34,7 +34,7 @@
             <div class="col-md-8 scores__infos">
                 <div class="row text-left">
                     <p itemprop="description">{!! $score->description !!}</p>
-                    <p>Cette oeuvre contient <span itemprop="numberOfPages">{{ $score->nb_pages }}</span> pages</h6>
+                    <p>Cette oeuvre contient <span itemprop="numberOfPages">{{ $score->nb_pages }}</span> {{ str_plural('page', $score->nb_pages) }}</h6>
                 </div>
                 <div class="row">
                     <div class="col-xs-offset-4 col-xs-4 col-md-offset-1 col-md-3">
