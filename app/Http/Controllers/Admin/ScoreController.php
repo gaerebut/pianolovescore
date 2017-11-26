@@ -215,6 +215,8 @@ class ScoreController extends BaseController
 
     private function getPDFPages($document)
     {
+        ini_set('memory_limit','256M');
+        
         $fp = @fopen(preg_replace("/\[(.*?)\]/i", "",$document),"r");
         $max=0;
         while(!feof($fp)) {
