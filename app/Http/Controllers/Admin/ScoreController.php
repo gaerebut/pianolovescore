@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Imagick;
 use App\Models\Score;
 use App\Models\Author;
 use App\Models\Keyword;
