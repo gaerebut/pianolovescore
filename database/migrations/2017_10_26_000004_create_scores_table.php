@@ -23,6 +23,7 @@ class CreateScoresTable extends Migration
             $table->string('score_url', 190);
             $table->string('score_sound_format', 190)->nullable();
             $table->string('score_sound_url', 190)->nullable();
+            $table->string('youtube_playlist_id', 50)->nullable();
             $table->integer('nb_pages')->default(1);
             $table->integer('count_votes')->default(0);
             $table->integer('avg_votes')->nullable();

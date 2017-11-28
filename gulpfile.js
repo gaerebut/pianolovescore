@@ -5,6 +5,7 @@ elixir.config.sourcemaps = false;
 
 elixir(function(mix) {
 	mix.scripts(['app.js'], 'public/js/app.js');
+	mix.scripts(['../../../node_modules/bootstrap-sass/assets/javascripts/bootstrap.min.js'], 'public/js/bootstrap.min.js');
 	mix.scripts(['bootstrap.min.js','app.js'], 'public/js/admin.js');
 	mix.scripts(['admin/sanitize.js'], 'public/js/sanitize.js');
 	mix.scripts(['admin/bootstrap-confirmation.min.js'], 'public/js/bootstrap-confirmation.min.js');

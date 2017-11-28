@@ -88,15 +88,39 @@
                         @endif
                     </div>
                 </div>
-                <div class="row scores__keywords text-left">
-                    <h4>Recherches associées : <strong><mark>
-                        @foreach($score->keywords as $keyword)
-                            <a href="{{ route('search', ['q' => $keyword->keyword]) }}">#{{ $keyword }}</a>
-                        @endforeach
-                    </mark></strong></h4>
-                </div>
+                @if(count($score->keywords) > 1)
+                    <div class="row scores__keywords text-left">
+                        <h4>Recherches associées : <strong><mark>
+                            @foreach($score->keywords as $keyword)
+                                <a href="{{ route('search', ['q' => $keyword->keyword]) }}">#{{ $keyword }}</a>
+                            @endforeach
+                        </mark></strong></h4>
+                    </div>
+                @endif
             </div>
         </div>
+        @if(!is_null($score->youtube_playlist_id))
+            <div class="row">
+                <div class="card">
+                    <ul class="nav nav-tabs" role="tablist">
+                        {{--
+                        <li role="presentation"><a href="#commentaires-partition" aria-controls="comments-score" role="tab" data-toggle="tab">Profile</a></li>
+                        --}}
+                        @if(!is_null($score->youtube_playlist_id))
+                            <li role="presentation" class="active"><a href="#videos-piano" aria-controls="videos-piano" role="tab" data-toggle="tab">Vos vidéos</a></li>
+                        @endif
+                    </ul>
+                    <div class="tab-content">
+                        {{--
+                        <div role="tabpanel" class="tab-pane" id="commentaires-partition">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+                        --}}
+                        @if(!is_null($score->youtube_playlist_id))
+                            <div role="tabpanel" class="tab-pane active" id="videos-piano"><iframe width="100%" height="400" src="https://www.youtube-nocookie.com/embed/videoseries?list={{ $score->youtube_playlist_id }}" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe></div>
+                        @endif
+                    </div>
+                </div>
+            </div>
+        @endif
     </section>
     <!--
     <section class="scores__alike">
@@ -311,6 +335,7 @@
 <script src="//load.sumome.com/" data-sumo-site-id="492cf06dd4417e64435c1585751ab4124d7c3fbfcf4021d3dfba6cbcc0a43f9e" async="async"></script>
 <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+<script src="/js/bootstrap.min.js" type="text/javascript"></script>
 <script type="text/javascript">
     $(function(){
         $("a#inline").fancybox({
