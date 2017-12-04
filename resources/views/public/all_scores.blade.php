@@ -58,7 +58,7 @@
                             <tbody>
                                 <tr>
                                     <td colspan="3">
-                                        <a href="{{ route('scores.showForAComposer', ['author_slug'=>$author->slug]) }}" class="btn btn-default btn-lg">
+                                        <a href="{{ route('author_scores', ['slug_author'=>$author->slug]) }}" class="btn btn-default btn-lg">
                                             <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Voir les {{ $count_author_scores-$maximum_scores }} autres partitions gratuites de {{ $author->fullname }}
                                         </a>
                                     </td>
