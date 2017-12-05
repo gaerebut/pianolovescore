@@ -47,6 +47,11 @@ class Score extends Model
         return $this->belongsToMany('App\Models\Keyword', 'keywords_scores');
     }
 
+    public function comments()
+    {
+        return $this->hasMany('App\Models\Comments');
+    }
+
     public function __toString()
     {
         return $this->title;
