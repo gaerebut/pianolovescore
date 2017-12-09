@@ -49,7 +49,7 @@ class Score extends Model
 
     public function comments()
     {
-        return $this->hasMany('App\Models\Comments');
+        return $this->hasMany('App\Models\Comment')->WhereNull('parent_id');
     }
 
     public function __toString()

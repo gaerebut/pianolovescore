@@ -22,5 +22,8 @@ class DatabaseSeeder extends Seeder
 
         $this->call(ScoresRequestTableSeeder::class);
         $this->command->info('Création des demandes de partitions');
+
+        $this->call(CommentsTableSeeder::class);
+        $this->command->info('Création des commentaires de partitions');
     }
 }

@@ -5875,6 +5875,14 @@ main {
     margin: 7px; }
   main .scores__content .scores__listing_downloaded img {
     width: 1.8em; }
+  main .scores__content .scores__comment {
+    margin-left: 15px; }
+    main .scores__content .scores__comment > div {
+      margin-bottom: 10px;
+      border-left: 2px solid #4267b2;
+      padding-left: 10px; }
+    main .scores__content .scores__comment .reply-form {
+      margin-top: 10px; }
   main .scores_request_summary:after {
     position: absolute;
     top: 15px;

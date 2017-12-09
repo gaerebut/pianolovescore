@@ -15,7 +15,7 @@ class CreateCommentsTable extends Migration
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('parent_id')->nullable()->unsigned();
+            $table->integer('parent_id')->unsigned()->nullable();
             $table->integer('score_id')->unsigned();
             $table->string('username', 190);
             $table->text('comment');
@@ -24,7 +24,7 @@ class CreateCommentsTable extends Migration
             $table->datetime('deleted_at')->nullable();
             $table->timestamps();
 
-            $table->foreign('parent_id')->references('id')->on('comments');
+            $table->foreign('parent_id')->references('id')->on('comments')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('score_id')->references('id')->on('scores');
         });
     }

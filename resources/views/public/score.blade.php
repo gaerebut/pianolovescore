@@ -18,6 +18,8 @@
     @include('includes.breadcrumb')
 @endsection
 @section('main')
+    <?php \Carbon\Carbon::setLocale(config('app.locale')); ?>
+
     <section class="scores__content" itemscope="" itemtype="http://schema.org/Book">
         <div class="col-md-offset-4 col-md-8">
             <div class="row scores__title">
@@ -99,28 +101,41 @@
                 @endif
             </div>
         </div>
-        @if(!is_null($score->youtube_playlist_id))
-            <div class="row">
-                <div class="card">
-                    <ul class="nav nav-tabs" role="tablist">
-                        {{--
-                        <li role="presentation"><a href="#commentaires-partition" aria-controls="comments-score" role="tab" data-toggle="tab">Profile</a></li>
-                        --}}
-                        @if(!is_null($score->youtube_playlist_id))
-                            <li role="presentation" class="active"><a href="#videos-piano" aria-controls="videos-piano" role="tab" data-toggle="tab">Vos vidéos</a></li>
-                        @endif
-                    </ul>
-                    <div class="tab-content">
-                        {{--
-                        <div role="tabpanel" class="tab-pane" id="commentaires-partition">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
-                        --}}
-                        @if(!is_null($score->youtube_playlist_id))
-                            <div role="tabpanel" class="tab-pane active" id="videos-piano"><iframe width="100%" height="400" src="https://www.youtube-nocookie.com/embed/videoseries?list={{ $score->youtube_playlist_id }}" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe></div>
-                        @endif
-                    </div>
+        <div class="row">
+            <div class="card">
+                <ul class="nav nav-tabs" role="tablist">
+                    @if(count($score->comments) > 0)
+                    <li role="presentation" class="active"><a href="#commentaires-partition" aria-controls="commentsents-score" role="tab" data-toggle="tab">Commentaires</a></li>
+                    @endif
+                    @if(!is_null($score->youtube_playlist_id))
+                        <li role="presentation" @if(count($score->comments)==0) class="active" @endif ><a href="#videos-piano" aria-controls="videos-piano" role="tab" data-toggle="tab">Vos vidéos</a></li>
+                    @endif
+                </ul>
+                <div class="tab-content">
+                    @if(count($score->comments) > 0)
+                        <div role="tabpanel" class="tab-pane active" id="commentaires-partition">
+                            <fieldset class="reply-form collapse">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Votre pseudo..." />
+                                </div>
+                                <div class="form-group">
+                                    <textarea class="form-control" placeholder="Votre commentaire..."></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <button class="btn btn-primary reply-comment">Poster le commentaire</button>
+                                </div>
+                            </div>
+                            @foreach($score->comments as $comment)
+                                @include('public._comments', array('comment' => $comment))
+                            @endforeach
+                        </div>
+                    @endif
+                    @if(!is_null($score->youtube_playlist_id))
+                        <div role="tabpanel" class="tab-pane @if(count($score->comments)==0) active @endif" id="videos-piano"><iframe width="100%" height="400" src="https://www.youtube-nocookie.com/embed/videoseries?list={{ $score->youtube_playlist_id }}" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe></div>
+                    @endif
                 </div>
             </div>
-        @endif
+        </div>
     </section>
     <!--
     <section class="scores__alike">
@@ -332,45 +347,77 @@
     -->
 @endsection
 @section('js_code')
-<script src="//load.sumome.com/" data-sumo-site-id="492cf06dd4417e64435c1585751ab4124d7c3fbfcf4021d3dfba6cbcc0a43f9e" async="async"></script>
-<script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
-<script src="/js/bootstrap.min.js" type="text/javascript"></script>
-<script type="text/javascript">
-    $(function(){
-        $("a#inline").fancybox({
-            'hideOnContentClick': true
-        });
-
-        $('[type*="radio"]').change(function () {
-            //console.log( $(this).attr('value') );
-
-            $.ajaxSetup({
-                headers: {'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')}
+    <script src="//load.sumome.com/" data-sumo-site-id="492cf06dd4417e64435c1585751ab4124d7c3fbfcf4021d3dfba6cbcc0a43f9e" async="async"></script>
+    <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+    <script src="/js/bootstrap.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function(){
+            $("a#inline").fancybox({
+                'hideOnContentClick': true
             });
 
-            $.ajax({
-                url: $('#rating_form').attr('action'),
-                method: 'POST',
-                dataType: 'JSON',
-                data: 'slug={{ $score->slug }}&rate=' + $(this).attr('value'),
-                success: function(data) {
-                   if(data.success)
-                   {
-                        $('.stars form').fadeOut(1000, function(){
-                            $('.scores__rating__thanks').fadeIn();
-                            $('.stars .result .top').css('width', data.avg_votes + '%').parent().fadeIn();
-                        });
+            $('[type*="radio"]').change(function () {
+                //console.log( $(this).attr('value') );
 
-                        $('.avg_votes').html((data.avg_votes/20).toFixed(2));
-                        $('.count_votes').html(data.count_votes);
-                   }
-                },
-                error: function(data) {
-                    alert('ERROR : ' + data);
+                $.ajaxSetup({
+                    headers: {'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')}
+                });
+
+                $.ajax({
+                    url: $('#rating_form').attr('action'),
+                    method: 'POST',
+                    dataType: 'JSON',
+                    data: 'slug={{ $score->slug }}&rate=' + $(this).attr('value'),
+                    success: function(data) {
+                       if(data.success)
+                       {
+                            $('.stars form').fadeOut(1000, function(){
+                                $('.scores__rating__thanks').fadeIn();
+                                $('.stars .result .top').css('width', data.avg_votes + '%').parent().fadeIn();
+                            });
+
+                            $('.avg_votes').html((data.avg_votes/20).toFixed(2));
+                            $('.count_votes').html(data.count_votes);
+                       }
+                    },
+                    error: function(data) {
+                        alert('ERROR : ' + data);
+                    }
+                }); 
+            });
+
+            var replyForm = $('fieldset.reply-form');
+            $('.scores__comment .reply').on('click', function(e)
+            {
+                e.preventDefault();
+
+                var id = $(this).parents(':eq(1)').attr('id');
+                var commentForm = $('#add-comment-'+id);
+
+                if(commentForm.length == 0)
+                {
+                    replyForm.clone().insertAfter(this).removeClass('collapse');
+                    $(this).html('Fermer');
                 }
-            }); 
+                else if(commentForm.hasClass('collapse'))
+                {
+                    commentForm.removeClass('collapse');
+                    $(this).html('Fermer');
+                }
+                else
+                {
+                    commentForm.addClass('collapse');
+                    $(this).html('Répondre');
+                }
+            });
+
+            $(document).on('click', 'button.reply-comment', function(e)
+            {
+                e.preventDefault();
+
+                alert($(this).parents(':eq(3)').attr('id'));
+            });
         });
-    });
-</script>
+    </script>
 @endsection
