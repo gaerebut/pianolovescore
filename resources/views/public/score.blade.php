@@ -114,17 +114,17 @@
                 <div class="tab-content">
                     @if(count($score->comments) > 0)
                         <div role="tabpanel" class="tab-pane active" id="commentaires-partition">
-                            <fieldset class="reply-form collapse">
+                            <form class="reply_form" action="{{ route('ajax_comment') }}" onsubmit="return false">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Votre pseudo..." />
+                                    <input type="text" id="u" class="form-control" placeholder="Votre pseudo..." pattern=".{3,}" required />
                                 </div>
                                 <div class="form-group">
-                                    <textarea class="form-control" placeholder="Votre commentaire..."></textarea>
+                                    <textarea class="form-control" id="c" placeholder="Votre commentaire..." pattern=".{3,}" required></textarea>
                                 </div>
                                 <div class="form-group">
-                                    <button class="btn btn-primary reply-comment">Poster le commentaire</button>
+                                    <button type="submit" class="btn btn-primary reply_comment">Poster le commentaire</button>
                                 </div>
-                            </div>
+                            </form>
                             @foreach($score->comments as $comment)
                                 @include('public._comments', array('comment' => $comment))
                             @endforeach
@@ -353,17 +353,16 @@
     <script src="/js/bootstrap.min.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(function(){
+            $.ajaxSetup({
+                headers: {'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')}
+            });
+
             $("a#inline").fancybox({
                 'hideOnContentClick': true
             });
 
-            $('[type*="radio"]').change(function () {
-                //console.log( $(this).attr('value') );
-
-                $.ajaxSetup({
-                    headers: {'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')}
-                });
-
+            $('[type*="radio"]').change(function ()
+            {
                 $.ajax({
                     url: $('#rating_form').attr('action'),
                     method: 'POST',
@@ -387,20 +386,14 @@
                 }); 
             });
 
-            var replyForm = $('fieldset.reply-form');
             $('.scores__comment .reply').on('click', function(e)
             {
                 e.preventDefault();
 
-                var id = $(this).parents(':eq(1)').attr('id');
-                var commentForm = $('#add-comment-'+id);
+                var parent = $(this).parent();
+                var commentForm = $(this).next();
 
-                if(commentForm.length == 0)
-                {
-                    replyForm.clone().insertAfter(this).removeClass('collapse');
-                    $(this).html('Fermer');
-                }
-                else if(commentForm.hasClass('collapse'))
+                if(commentForm.hasClass('collapse'))
                 {
                     commentForm.removeClass('collapse');
                     $(this).html('Fermer');
@@ -412,11 +405,42 @@
                 }
             });
 
-            $(document).on('click', 'button.reply-comment', function(e)
+            $('button.reply_comment').on('click', function(e)
             {
-                e.preventDefault();
+                /**/
+                var form = $(this).parents('form:first');
 
-                alert($(this).parents(':eq(3)').attr('id'));
+                if(form[0].checkValidity())
+                {
+                    var parent = $('>div:first', form.parents('.scores__comment:first'));
+
+                    var parent_id_str = '';
+                    if(typeof parent.attr('id') != 'undefined')
+                    {
+                        parent_id_str = '&parent_id='+parent.attr('id');
+                    }
+
+                    $.ajax({
+                        url: $('#reply_form').attr('action'),
+                        method: 'POST',
+                        dataType: 'JSON',
+                        data: 'score_id={{ $score->id }}'+parent_id_str+'&username='+$('#u', form).val()+'&comment=' + $('#c', form).val(),
+                        success: function(data) {
+                           if(data.success)
+                           {
+                                form.parent().append('<div class="scores__comment"><div id="'+data.id+'"><strong>'+data.username+'</strong> - A l\'instant<div>'+data.comment+'</div>)');
+                           }
+                        },
+                        error: function(data) {
+                            alert('ERROR : ' + data);
+                        }
+                    }); 
+                }
+                else
+                {
+                    alert('error');
+                }
+                /**/
             });
         });
     </script>
