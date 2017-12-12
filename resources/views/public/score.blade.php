@@ -104,32 +104,30 @@
         <div class="row">
             <div class="card">
                 <ul class="nav nav-tabs" role="tablist">
-                    @if(count($score->comments) > 0)
                     <li role="presentation" class="active"><a href="#commentaires-partition" aria-controls="commentsents-score" role="tab" data-toggle="tab">Commentaires</a></li>
-                    @endif
                     @if(!is_null($score->youtube_playlist_id))
                         <li role="presentation" @if(count($score->comments)==0) class="active" @endif ><a href="#videos-piano" aria-controls="videos-piano" role="tab" data-toggle="tab">Vos vidéos</a></li>
                     @endif
                 </ul>
                 <div class="tab-content">
-                    @if(count($score->comments) > 0)
-                        <div role="tabpanel" class="tab-pane active" id="commentaires-partition">
-                            <form class="reply_form" action="{{ route('ajax_comment') }}" onsubmit="return false">
-                                <div class="form-group">
-                                    <input type="text" id="u" class="form-control" placeholder="Votre pseudo..." pattern=".{3,}" required />
-                                </div>
-                                <div class="form-group">
-                                    <textarea class="form-control" id="c" placeholder="Votre commentaire..." pattern=".{3,}" required></textarea>
-                                </div>
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-primary reply_comment">Poster le commentaire</button>
-                                </div>
-                            </form>
+                    <div role="tabpanel" class="tab-pane active" id="commentaires-partition">
+                        <form class="reply_form" action="{{ route('ajax_comment') }}" onsubmit="return false">
+                            <div class="form-group">
+                                <input type="text" id="u" class="form-control" placeholder="Votre pseudo..." pattern=".{3,}" required />
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" id="c" placeholder="Votre commentaire..." pattern=".{3,}" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary reply_comment">Poster le commentaire</button>
+                            </div>
+                        </form>
+                        @if(count($score->comments) > 0)
                             @foreach($score->comments as $comment)
                                 @include('public._comments', array('comment' => $comment))
                             @endforeach
-                        </div>
-                    @endif
+                        @endif
+                    </div>
                     @if(!is_null($score->youtube_playlist_id))
                         <div role="tabpanel" class="tab-pane @if(count($score->comments)==0) active @endif" id="videos-piano"><iframe width="100%" height="400" src="https://www.youtube-nocookie.com/embed/videoseries?list={{ $score->youtube_playlist_id }}" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe></div>
                     @endif
@@ -428,7 +426,7 @@
                            if(data.success)
                            {
                                 var parent_zone = parent_id_str == '' ? form.parent() : form.parents(':eq(1)');
-                                
+
                                 parent_zone.append('<div class="scores__comment"><div id="'+data.id+'"><strong>'+$('#u', form).val()+'</strong> - A l\'instant<div>'+$('#c', form).val()+'</div>');
                                 $('#c, #u', form).val('');
                            }
