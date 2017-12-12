@@ -427,7 +427,7 @@
                            {
                                 var parent_zone = parent_id_str == '' ? form.parent() : form.parents(':eq(1)');
 
-                                parent_zone.append('<div class="scores__comment"><div id="'+data.id+'"><strong style="color:red">Votre commentaire sera visible publiquement lorsqu\'il sera validé par un administrateur</strong><strong>'+$('#u', form).val()+'</strong> - A l\'instant<div>'+$('#c', form).val()+'</div>');
+                                parent_zone.append('<div class="scores__comment"><div id="'+data.id+'"><strong style="color:red">Votre commentaire sera visible publiquement lorsqu\'il sera validé par un administrateur</strong><br /><strong>'+$('#u', form).val()+'</strong> - A l\'instant<div>'+$('#c', form).val()+'</div>');
                                 $('#c, #u', form).val('');
                            }
                         },
