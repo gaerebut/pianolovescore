@@ -85,8 +85,8 @@ Route::group( ['prefix' => 'sitemap' ], function()
 });
 
 // AJAX
-Route::post('ajax/score/rating', 'AjaxController@storeRating')->name('ajax_rating');
 Route::post('ajax/score/comment', 'AjaxController@storeComment')->name('ajax_comment');
+Route::post('ajax/score/rating', 'AjaxController@storeRating')->name('ajax_rating');
 
 // HOME CONTROLLER
 Route::get('/', 'HomeController@show')->name('home');

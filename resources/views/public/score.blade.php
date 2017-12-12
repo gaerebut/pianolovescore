@@ -419,16 +419,18 @@
                     {
                         parent_id_str = '&parent_id='+parent.attr('id');
                     }
-
                     $.ajax({
-                        url: $('#reply_form').attr('action'),
+                        url: form.attr('action'),
                         method: 'POST',
                         dataType: 'JSON',
                         data: 'score_id={{ $score->id }}'+parent_id_str+'&username='+$('#u', form).val()+'&comment=' + $('#c', form).val(),
                         success: function(data) {
                            if(data.success)
                            {
-                                form.parent().append('<div class="scores__comment"><div id="'+data.id+'"><strong>'+data.username+'</strong> - A l\'instant<div>'+data.comment+'</div>)');
+                                var parent_zone = parent_id_str == '' ? form.parent() : form.parents(':eq(1)');
+                                
+                                parent_zone.append('<div class="scores__comment"><div id="'+data.id+'"><strong>'+$('#u', form).val()+'</strong> - A l\'instant<div>'+$('#c', form).val()+'</div>');
+                                $('#c, #u', form).val('');
                            }
                         },
                         error: function(data) {

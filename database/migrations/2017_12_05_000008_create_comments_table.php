@@ -20,7 +20,7 @@ class CreateCommentsTable extends Migration
             $table->string('username', 190);
             $table->text('comment');
             $table->ipAddress('ip_address');
-            $table->boolean('is_online')->default(1);
+            $table->boolean('is_online')->default(0);
             $table->datetime('deleted_at')->nullable();
             $table->timestamps();
 
