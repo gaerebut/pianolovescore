@@ -51,6 +51,16 @@ Route::group( ['namespace' => 'Admin', 'prefix' => 'admin' ], function()
 			Route::get('/remove/{id_score}', 'ScoreController@remove')->name('admin_scores_remove');
 		});
 
+		Route::group( ['prefix' => 'comments' ], function()
+		{
+			Route::get('/', 'CommentController@show')->name('admin_comments');
+
+			Route::get('/online/{id_comment}', 'CommentController@setOnline')->name('admin_comments_online');
+			Route::get('/offline/{id_comment}', 'CommentController@setOffline')->name('admin_comments_offline');
+
+			Route::get('/remove/{id_comment}', 'CommentController@remove')->name('admin_comments_remove');
+		});
+
 		Route::group( ['prefix' => 'tips' ], function()
 		{
 			Route::get('/', 'TipController@show')->name('admin_tips');

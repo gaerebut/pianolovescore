@@ -21,6 +21,7 @@ class CreateCommentsTable extends Migration
             $table->text('comment');
             $table->ipAddress('ip_address');
             $table->boolean('is_online')->default(0);
+            $table->boolean('is_new')->default(1);
             $table->datetime('deleted_at')->nullable();
             $table->timestamps();
 
