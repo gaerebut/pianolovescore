@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use \App\Models\Score;
 use Illuminate\Http\Request;
-
 use App\Mail\Contactus;
 
 use Illuminate\Support\Facades\Mail;
