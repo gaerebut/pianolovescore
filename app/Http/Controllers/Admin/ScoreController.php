@@ -8,6 +8,7 @@ use App\Models\Keyword;
 use App\Scopes\IsOnlineScope;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Admin\AdminMasterController as BaseController;
+use File;
 
 class ScoreController extends BaseController
 {
@@ -52,13 +53,25 @@ class ScoreController extends BaseController
             'score_url.required'	=> 'Veuillez indiquer l\'url du fichier PDF de la partition',
         ]);
 
+        $author = Author::where('id', '=', $input['author_id'])->firstOrFail();
+        
+        if(!is_dir('img/scores/' . $author->slug))
+        {
+            File::makeDirectory('img/scores/' . $author->slug , 0777);
+        }
+
+        $extension = explode('.', $input['score_image']);
+        $score_image = $author->slug . '/' . $input['slug'] . '.' . $extension[count($extension)-1];
+
+        file_put_contents('img/scores/' . $score_image, file_get_contents($input['score_image']));
+
         $score = new Score();
         $score->title 				= ucfirst($input['title']);
         $score->description         = $input['description'];
         $score->slug 				= ucfirst($input['slug']);
         $score->author_id			= $input['author_id'];
         $score->is_online           = !empty($input['is_online']);
-        $score->score_image			= $input['score_image'];
+        $score->score_image			= $score_image;
         $score->score_url			= $input['score_url'];
         $score->score_sound_url		= $input['score_sound_url'];
         $score->nb_pages            = $input['nb_pages'];
@@ -123,7 +136,6 @@ class ScoreController extends BaseController
             'slug'			=> 'required|unique:scores,slug,' . $input['id'],
             'keywords'  	=> 'required',
             'author_id'     => 'required|exists:authors,id',
-            'score_image'  	=> 'required',
             'score_url'  	=> 'required'
         ],[
             'title.required'		=> 'Veuillez indiquer le titre de la partition',
@@ -132,17 +144,47 @@ class ScoreController extends BaseController
             'keywords.required'		=> 'Veuillez indiquer les mots clés',
             'author_id.required'	=> 'Veuillez indiquer un auteur pour la partition',
             'author_id.exists'		=> 'L\'auteur choisi pour la partition ne semble pas exister',
-            'score_image.required'	=> 'Veuillez indiquer l\'url de la miniature de la partition',
             'score_url.required'	=> 'Veuillez indiquer l\'url du fichier PDF de la partition',
         ]);
 
         $score = Score::withoutGlobalScope(IsOnlineScope::class)->where('id', '=', $input['id'])->firstOrFail();
+        
+        $author = Author::where('id', '=', $input['author_id'])->firstOrFail();
+        
+        if(!is_dir('img/scores/' . $author->slug))
+        {
+            File::makeDirectory('img/scores/' . $author->slug , 0777);
+        }
+
+        $score_image = $score->score_image;
+
+        if(!empty($input['score_image']))
+        {
+            $extension = explode('.', $input['score_image']);
+            $score_image = $author->slug . '/' . $input['slug'] . '.' . $extension[count($extension)-1];
+
+            file_put_contents('img/scores/' . $score_image, file_get_contents($input['score_image']));
+            chmod('img/scores/' . $score_image, 0777);
+
+            if($score_image != $score->score_image)
+            {
+                File::delete('img/scores/' . $score->score_image);
+            }
+        }
+        else if($score->slug != $input['slug'] || $score->author->id != $input['author_id'])
+        {
+            $extension = explode('.', $score->score_image); // extension of existing image file
+            $score_image = $author->slug . '/' . $input['slug'] . '.' . $extension[count($extension)-1];
+
+            File::move('img/scores/' . $score->score_image, 'img/scores/' . $score_image);
+        }
+
         $score->title 				= ucfirst($input['title']);
         $score->description         = $input['description'];
         $score->slug 				= ucfirst($input['slug']);
         $score->author_id			= $input['author_id'];
         $score->is_online           = !empty($input['is_online']);
-        $score->score_image			= $input['score_image'];
+        $score->score_image			= $score_image;
         $score->score_url			= $input['score_url'];
         $score->score_sound_url		= $input['score_sound_url'];
         $score->nb_pages            = $input['nb_pages'];
