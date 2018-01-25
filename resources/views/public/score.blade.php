@@ -41,8 +41,8 @@
                 <div class="row">
                     <div class="col-xs-offset-4 col-xs-4 col-md-offset-1 col-md-3">
                         <h4><strong>Télécharger gratuitement</strong></h4>
-                        <a href="{{ route('score_download', ['slug' => $score->slug]) }}">
-                            <img src="{{ URL::to('/') }}/img/pdf_download.png" class="scores__download"/>
+                        <a href="{{ route('score_download', ['slug' => $score->slug]) }}" title="Télécharger la partition gratuite {{ $score->title }} de {{ $score->author }}">
+                            <img src="{{ URL::to('/') }}/img/pdf_download.png" class="scores__download" alt="Télécharger la partition gratuite {{ $score->title }} de {{ $score->author }}" title="Télécharger la partition gratuite {{ $score->title }} de {{ $score->author }}""/>
                         </a>
                         <h6><strong>{{ $score->downloaded . str_plural(' téléchargement', $score->downloaded|1
                         )}}</strong></h6>
