@@ -57,7 +57,7 @@ class ScoreController extends BaseController
         
         if(!is_dir('img/scores/' . $author->slug))
         {
-            File::makeDirectory('img/scores/' . $author->slug , 0777);
+            File::makeDirectory('img/scores/' . $author->slug , 0777, true);
         }
 
         $extension = explode('.', $input['score_image']);
@@ -153,7 +153,7 @@ class ScoreController extends BaseController
         
         if(!is_dir('img/scores/' . $author->slug))
         {
-            File::makeDirectory('img/scores/' . $author->slug , 0777);
+            File::makeDirectory('img/scores/' . $author->slug , 0777, true);
         }
 
         $score_image = $score->score_image;
