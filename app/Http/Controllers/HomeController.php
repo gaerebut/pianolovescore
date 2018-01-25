@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 use App\Mail\Contactus;
 
 use Illuminate\Support\Facades\Mail;
+use App\Models\Score;
+use App\Models\Author;
+use App\Models\Trick;
 
 class HomeController extends Controller
 {
@@ -52,6 +55,23 @@ class HomeController extends Controller
         return view('public.contactus', [
             'breadcrumb_last_level' => 'Demande de contact envoyée',
             'sent'                  => true
+        ]);
+    }
+
+    public function search($q = null)
+    {
+        $keywords = Input::get('q', $q);
+
+        $scores = Score::search($keywords)->get();
+        $authors = Author::search($keywords)->get();
+        $tricks = Trick::search($keywords)->get();
+        
+        return view('public.search', [
+            'breadcrumb_last_level' => 'Rechercher une partition gratuite',
+            'keywords'              => $keywords,
+            'scores'                => $scores,
+            'authors'               => $authors,
+            'tricks'                => $tricks
         ]);
     }
 }

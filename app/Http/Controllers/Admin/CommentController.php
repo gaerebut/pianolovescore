@@ -69,7 +69,7 @@ class CommentController extends BaseController
         }
         else
         {
-            $this->setFlash( 'error', "Ce commentaire est introuvable" );
+            $this->setFlash( 'error', "Impossible de supprimer ce commentaire" );
         }
 
         return back();

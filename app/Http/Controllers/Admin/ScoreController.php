@@ -245,11 +245,11 @@ class ScoreController extends BaseController
     {
         if(Score::withoutGlobalScope(IsOnlineScope::class)->where('id', '=', $id_score)->delete())
         {
-            $this->setFlash( 'success', "La partition vient d'être créée" );
+            $this->setFlash( 'success', "La partition vient d'être supprimée" );
         }
         else
         {
-            $this->setFlash( 'error', "Cette partition est introuvable" );
+            $this->setFlash( 'error', "Impossible de supprimer cette partition" );
         }
 
         return back();

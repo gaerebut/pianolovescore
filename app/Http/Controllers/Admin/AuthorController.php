@@ -105,11 +105,11 @@ class AuthorController extends BaseController
     {
         if(Author::where('id', '=', $id_author)->delete())
         {
-            $this->setFlash( 'success', "L'auteur vient d'être créé" );
+            $this->setFlash( 'success', "L'auteur vient d'être supprimé" );
         }
         else
         {
-            $this->setFlash( 'error', "Cet auteur est introuvable" );
+            $this->setFlash( 'error', "Impossible de supprimer cet auteur" );
         }
 
         return back();

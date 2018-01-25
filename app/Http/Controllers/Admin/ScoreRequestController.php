@@ -71,11 +71,11 @@ class ScoreRequestController extends BaseController
     {
         if(ScoreRequest::where('id', '=', $id_scorerequest)->delete())
         {
-            $this->setFlash( 'success', "La demande de partition vient d'être traitée" );
+            $this->setFlash( 'success', "La demande de partition vient d'être supprimée" );
         }
         else
         {
-            $this->setFlash( 'error', "Cette demande de partition est introuvable" );
+            $this->setFlash( 'error', "Impossible de supprimer cette demande de partition" );
         }
 
         return back();

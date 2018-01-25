@@ -53,7 +53,7 @@
 			</tbody>
 		</table>
 	@else
-		<h2>Aucune partition de référence pour le moment.</h2>
+		<h2>Aucune partition n'est référencée pour le moment.</h2>
 	@endif
 @endsection
 @section('js_code')

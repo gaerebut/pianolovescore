@@ -9,29 +9,33 @@
 @endsection
 @section('main')
 	<div class="col-md-8 col-md-offset-2">
-		<form action="{{ route('admin_authors_edit_store') }}" method="post" class="form-horizontal">
+		<form action="{{ route('admin_tricks_add') }}" method="post" class="form-horizontal">
+			<div class="row text-right">
+				<label for="is_online" class="form-label">MISE EN LIGNE DE L'ASTUCE</label>
+				<input type="checkbox" id="is_online" name="is_online" value="1">
+			</div>
 			<div class="form-group">
-				<label for="lastname" class="col-sm-2 control-label">Nom</label>
+				<label for="title" class="col-sm-2 control-label">Titre</label>
 				<div class="col-sm-10">
-					<input type="text" class="form-control" id="lastname" name="lastname" placeholder="Nom" value="{{ $author->lastname }}" required>
+					<input type="text" class="form-control" id="title" name="title" placeholder="Titre" value="{{ old('title') }}" required>
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="firstname" class="col-sm-2 control-label">Prénom</label>
+				<label for="introduction" class="col-sm-2 control-label">Introduction</label>
 				<div class="col-sm-10">
-					<input type="text" class="form-control" id="firstname" name="firstname" placeholder="Prénom" value="{{ $author->firstname }}" required>
+					<textarea name="introduction" id="introduction">{{ old('introduction') }}</textarea>
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="description" class="col-sm-2 control-label">Description</label>
 				<div class="col-sm-10">
-					<textarea id="description" name="description">{{ $author->description }}</textarea>
+					<textarea name="description" id="description">{{ old('description') }}</textarea>
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="slug" class="col-sm-2 control-label">Identifiant URL</label>
 				<div class="col-sm-8">
-					<input type="text" class="form-control" id="slug" name="slug" placeholder="Exemple: Nom ou NOM Prénom"  value="{{ $author->slug }}" disabled required>
+					<input type="text" class="form-control" id="slug" name="slug" placeholder="Exemple: Titre"  value="{{ old('slug') }}" disabled required>
 				</div>
 				<div class="col-sm-2">
 					<a class="btn btn-warning pull-right" id="edit-slug">
@@ -40,21 +44,15 @@
 	                </a>
                	</div>
 			</div>
-			<div class="form-group">
-				<label for="birthday" class="col-sm-2 control-label">Date de naissance</label>
-				<div class="col-sm-10">
-					<input type="date" class="form-control" id="birthday" name="birthday" placeholder="01/01/1900" value="{{ $author->birthday }}" required>
-				</div>
-			</div>
-			<a href="{{ route('admin_authors') }}" class="btn btn-warning pull-left">
+
+			<a href="{{ route('admin_tricks') }}" class="btn btn-warning pull-left">
 				<span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
 				Annuler
 			</a>
 			<button type="submit" class="btn btn-success pull-right">
 				<span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span>
-				Modifier
+				Ajouter
 			</button>
-			<input type="hidden" name="id" value="{{ $author->id }}" />
 			{{ csrf_field() }}
 		</form>
 	</div>
@@ -66,12 +64,12 @@
 
 	<script type="text/javascript">
 	    $(function(){
-	    	$('#description').summernote({
-				placeholder: 'La description de l\'auteur doit être la plus longue possible. Attention : ne surtout pas faire de copier/coller de n\'importe quel texte !',
+	    	$('#introduction, #description').summernote({
+				placeholder: 'Ce texte doit être le plus long possible. Attention : ne surtout pas faire de copier/coller de n\'importe quel texte !',
 				height: 200
 			});
-				
-	        $( '#lastname' ).unbind().keyup( function()
+
+	        $( '#title' ).unbind().keyup( function()
 	        {
 	            var slug = sanitize( $( this ).val() );
 	            $( '#slug' ).val( slug );

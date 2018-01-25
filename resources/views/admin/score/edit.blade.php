@@ -39,7 +39,7 @@
 			<div class="form-group">
 				<label for="slug" class="col-sm-2 control-label">Identifiant URL</label>
 				<div class="col-sm-8">
-					<input type="text" class="form-control" id="slug" name="slug" placeholder="Exempe: Titre ou Titre Nom Auteur"  value="{{ $score->slug }}" disabled required>
+					<input type="text" class="form-control" id="slug" name="slug" placeholder="Exemple: Titre ou Titre Nom Auteur"  value="{{ $score->slug }}" disabled required>
 				</div>
 				<div class="col-sm-2">
 					<a class="btn btn-warning pull-right" id="edit-slug">
@@ -93,7 +93,7 @@
 				</div>
 			</div>
 
-			<a href="{{ route('admin_scores_add') }}" class="btn btn-warning pull-left">
+			<a href="{{ route('admin_scores') }}" class="btn btn-warning pull-left">
 				<span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
 				Annuler
 			</a>

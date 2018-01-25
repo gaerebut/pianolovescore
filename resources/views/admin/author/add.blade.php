@@ -31,7 +31,7 @@
 			<div class="form-group">
 				<label for="slug" class="col-sm-2 control-label">Identifiant URL</label>
 				<div class="col-sm-8">
-					<input type="text" class="form-control" id="slug" name="slug" placeholder="Exempe: Nom ou NOM Prénom"  value="{{ old('slug') }}" disabled required>
+					<input type="text" class="form-control" id="slug" name="slug" placeholder="Exemple: Nom ou NOM Prénom"  value="{{ old('slug') }}" disabled required>
 				</div>
 				<div class="col-sm-2">
 					<a class="btn btn-warning pull-right" id="edit-slug">

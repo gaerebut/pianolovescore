@@ -61,17 +61,17 @@ Route::group( ['namespace' => 'Admin', 'prefix' => 'admin' ], function()
 			Route::get('/remove/{id_comment}', 'CommentController@remove')->name('admin_comments_remove');
 		});
 
-		Route::group( ['prefix' => 'tips' ], function()
+		Route::group( ['prefix' => 'tricks' ], function()
 		{
-			Route::get('/', 'TipController@show')->name('admin_tips');
+			Route::get('/', 'TrickController@show')->name('admin_tricks');
 
-			Route::get('/add', 'TipController@showAdd')->name('admin_tips_add');
-			Route::post('/add', 'TipController@add')->name('admin_tips_add_store');
+			Route::get('/add', 'TrickController@showAdd')->name('admin_tricks_add');
+			Route::post('/add', 'TrickController@add')->name('admin_tricks_add_store');
 
-			Route::get('/edit/{id_tip}', 'TipController@showEdit')->name('admin_tips_edit');
-			Route::post('/edit', 'TipController@edit')->name('admin_tips_edit_store');
+			Route::get('/edit/{id_trick}', 'TrickController@showEdit')->name('admin_tricks_edit');
+			Route::post('/edit', 'TrickController@edit')->name('admin_tricks_edit_store');
 
-			Route::get('/remove/{id_tip}', 'TipController@remove')->name('admin_tips_remove');
+			Route::get('/remove/{id_trick}', 'TrickController@remove')->name('admin_tricks_remove');
 		});
 
 		Route::group( ['prefix' => 'scores-requests' ], function()
@@ -92,6 +92,7 @@ Route::group( ['prefix' => 'sitemap' ], function()
 	Route::get('categories', 'SitemapController@categories')->name('sitemap_categories');
 	Route::get('authors', 'SitemapController@authors')->name('sitemap_authors');
 	Route::get('scores', 'SitemapController@scores')->name('sitemap_scores');
+	Route::get('tricks', 'SitemapController@tricks')->name('sitemap_tricks');
 });
 
 // AJAX
@@ -101,19 +102,23 @@ Route::post('ajax/score/rating', 'AjaxController@storeRating')->name('ajax_ratin
 // HOME CONTROLLER
 Route::get('/', 'HomeController@show')->name('home');
 
+Route::post('/contact', 'HomeController@contactusSave')->name('contactus_submit');
+Route::get('/contact', 'HomeController@contactusShow')->name('contactus');
+
+Route::get('/rechercher', 'HomeController@search')->name('search');
+Route::get('/rechercher/{q}', 'HomeController@search')->name('search');
+
 // SCORE CONTROLLER
 Route::post('/demander-une-partition', 'ScoreController@requestSave')->name('score_request_submit');
 Route::get('/demander-une-partition', 'ScoreController@requestShow')->name('score_request');
-
-Route::post('/contact', 'HomeController@contactusSave')->name('contactus_submit');
-Route::get('/contact', 'HomeController@contactusShow')->name('contactus');
 
 Route::get('/telecharger/{slug}', 'ScoreController@download')->name('score_download');
 Route::get('/partitions/{slug_author}/{slug_score}', 'ScoreController@show')->name('score');
 Route::get('/partitions', 'ScoreController@showAll')->name('scores');
 
-Route::get('/rechercher', 'ScoreController@search')->name('search');
-Route::get('/rechercher/{q}', 'ScoreController@search')->name('search');
-
 //AUTHOR CONTROLLER
 Route::get('/partitions/{slug_author}', 'AuthorController@showScores')->name('author_scores');
+
+//TRICK CONTROLLER
+Route::get('/astuces/{slug}', 'TrickController@show')->name('trick');
+Route::get('/astuces', 'TrickController@showAll')->name('tricks');
