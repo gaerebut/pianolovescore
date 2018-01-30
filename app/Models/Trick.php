@@ -24,7 +24,7 @@ class Trick extends Model
 
     public function toSearchableArray()
     {
-        return array_only($this->toArray(), ['title', 'introduction', 'description']);
+        return array_only($this->toArray(), ['title', 'introduction']);
     }
 
     public function __toString()
