@@ -77,7 +77,7 @@ class TrickController extends BaseController
         
         $request->validate([    
             'title'         => 'required',
-            'slug'          => 'required|unique:tricks,slug,' . $input['id']',
+            'slug'          => 'required|unique:tricks,slug,' . $input['id'],
             'introduction'  => 'required',
             'description'   => 'required'
         ],[
