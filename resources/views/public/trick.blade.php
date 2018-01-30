@@ -4,7 +4,7 @@
 @section('description')Astuce sur Partition Gratuite de Piano - {{ $trick }} - Découvrez des astuces sur le piano pour vous perfectionner et améliorer votre technique @endsection
 
 @section('og_type')book @endsection
-@section('og_title')AStuce de Piano - {{ $trick }} - Partition Gratuite de Piano @endsection
+@section('og_title')Astuce de Piano - {{ $trick }} - Partition Gratuite de Piano @endsection
 @section('og_description')Astuce sur Partition Gratuite de Piano - {{ $trick }}. Trouvez les partitions libres de droits en libre accès, notez-les, commentez-les et faites des découvertes @endsection
 @section('og_image'){{ Request::url() }}{{ elixir('img/logo_full.png') }} @endsection
 
