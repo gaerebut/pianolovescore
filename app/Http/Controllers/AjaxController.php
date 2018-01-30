@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Rating;
 use App\Models\Score;
+use App\Models\Trick;
 use App\Models\Comment;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -66,30 +67,43 @@ class AjaxController extends Controller
     {
 
         $request->validate([
-            'score_id'      => 'int|required',
+            'score_id'      => 'int',
+            'trick_id'      => 'int',
             'username'      => 'string|required|max:150',
             'comment'       => 'string|required',
             'comment_id'    => 'int',
+            'section'       => 'string|required'
         ]);
 
         $input = $request->all();
-        $score = Score::where('id', '=', $input['score_id'])->first();
+        if($input['section'] =='score'){
+            $instance = Score::where('id', '=', $input['score_id'])->first();
+        }
+        elseif($input['section'] == 'trick'){
+            $instance = Trick::where('id', '=', $input['trick_id'])->first();
+        }
 
-        if($score){
+        if($instance){
             $ip_address = \Request::ip();
 
             $comment = new Comment();
-            if(!empty($input['parent_id']))
-            {
+            if(!empty($input['parent_id'])){
                 $comment->parent_id = $input['parent_id'];
             }
-            $comment->score_id = $score->id;
+
+            if($input['section'] =='score'){
+                $comment->score_id = $instance->id;
+            }
+            elseif($input['section'] == 'trick'){
+                $comment->trick_id = $instance->id;
+            }
+            
             $comment->ip_address = $ip_address;
             $comment->username = $input['username'];
             $comment->comment = $input['comment'];
             $comment->save();
 
-            $result = ['success' => true, 'id' => $score->id];
+            $result = ['success' => true, 'id' => $instance->id];
         }
         else{
             $result = ['success' => false, 'message' => 'Impossible de poster le commentaire'];

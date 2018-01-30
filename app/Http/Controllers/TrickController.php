@@ -23,7 +23,7 @@ class TrickController extends Controller
     {
         $tricks = Trick::orderBy('updated_at')->get();
 
-        return view('public.all_tricks', [
+        return view('public.tricks', [
             'breadcrumb_last_level' => 'Toutes les astuces de piano',
             'tricks'                => $tricks
         ]);

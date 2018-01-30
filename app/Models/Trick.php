@@ -31,4 +31,9 @@ class Trick extends Model
     {
         return $this->title;
     }
+
+    public function comments()
+    {
+        return $this->hasMany('App\Models\Comment')->WhereNull('parent_id');
+    }
 }

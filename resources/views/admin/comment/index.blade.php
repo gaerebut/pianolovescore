@@ -9,9 +9,10 @@
 			<thead>
 				<tr>
 					<th></th>
-					<th width="50%">Commentaire</th>
+					<th width="30%">Commentaire</th>
 					<th>Pseudo</th>
-					<th>Partition</th>
+					<th>Titre</th>
+					<th>Partition / Astuce
 					<th>Action</th>
 				</tr>
 			</thead>
@@ -22,7 +23,20 @@
 							<td><span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span></td>
 							<td>{{ $comment->comment }}</td>
 							<td>{{ $comment->username }}</td>
-							<td>{{ $comment->score . ' - ' . $comment->score->author }}</td>
+							<td>
+								@if($comment->score)
+									{{ $comment->score . ' - ' . $comment->score->author }}
+								@elseif($comment->trick)
+									{{ $comment->trick }}
+								@endif
+							</td>
+							<td>
+								@if($comment->score)
+									Partition
+								@elseif($comment->trick)
+									Astuce
+								@endif
+							</td>
 							<td>
 								<a href="{{ route('admin_comments_online',['id_comment'=>$comment->id]) }}" class="btn btn-primary" style="opacity: @if($comment->is_online) 1 @else 0.5 @endif">
 									<span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span>
@@ -45,7 +59,20 @@
 							<td></td>
 							<td>{{ $comment->comment }}</td>
 							<td>{{ $comment->username }}</td>
-							<td>{{ $comment->score . ' - ' . $comment->score->author }}</td>
+							<td>
+								@if($comment->score)
+									{{ $comment->score . ' - ' . $comment->score->author }}
+								@elseif($comment->trick)
+									{{ $comment->trick }}
+								@endif
+							</td>
+							<td>
+								@if($comment->score)
+									Partition
+								@elseif($comment->trick)
+									Astuce
+								@endif
+							</td>
 							<td>
 								<a href="{{ route('admin_comments_online',['id_comment'=>$comment->id]) }}" class="btn btn-primary" style="opacity: @if($comment->is_online) 1 @else 0.5 @endif">
 									<span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span>

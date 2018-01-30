@@ -5849,12 +5849,16 @@ main {
     display: inline-block; }
   main .homesection__subtitle:before {
     content: ' - '; }
-  main .scores__content .scores__title > h1, main .scores__content .scores__title h2 {
+  main .scores__content .scores__title > h1, main .scores__content .scores__title h2, main .scores__content .tricks_title > h1, main .scores__content .tricks_title h2 {
     margin-bottom: 30px;
     display: inline-block; }
-  main .scores__content .scores__title h2::before {
+  main .scores__content .scores__title h2::before, main .scores__content .tricks_title h2::before {
     content: '-';
     margin: 0px 5px; }
+  main .scores__content .tricks_description table {
+    width: 25%;
+    max-width: 100%;
+    margin: auto; }
   main .scores__content .scores__icon {
     margin-top: -100px;
     width: 100%; }

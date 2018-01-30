@@ -7,9 +7,9 @@
             <li>
                 <a href="{{ route('scores') }}">Partitions</a>
             </li>
-            <!-- <li>
+            <li>
                 <a href="{{ route('tricks') }}">Astuces</a>
-            </li> -->
+            </li>
             <li>
                 <a href="{{ route('score_request') }}">Demander une partition</a>
             </li>

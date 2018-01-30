@@ -28,7 +28,7 @@
         </div>
         <div class="row border-left-0 border-right-0 border-top-0">
             <div class="col-md-4 text-center">
-                <a data-fancybox="gallery" href="{{ $score->score_image }}">
+                <a data-fancybox="gallery" href="{{ URL::to('/') }}/img/scores/{{ $score->score_image }}">
                     <img src="{{ URL::to('/') }}/img/scores/{{ $score->score_image }}" class="scores__icon" itemprop="image" alt="Partition Gratuite {{ $score->title }} de {{ $score->author }}" title="Partition Gratuite {{ $score->title }} de {{ $score->author }}">
                 </a>
                 <h6><strong>Cliquez sur l'image pour l'agrandir</strong></h6>
@@ -421,7 +421,7 @@
                         url: form.attr('action'),
                         method: 'POST',
                         dataType: 'JSON',
-                        data: 'score_id={{ $score->id }}'+parent_id_str+'&username='+$('#u', form).val()+'&comment=' + $('#c', form).val(),
+                        data: 'section=score&score_id={{ $score->id }}'+parent_id_str+'&username='+$('#u', form).val()+'&comment=' + $('#c', form).val(),
                         success: function(data) {
                            if(data.success)
                            {

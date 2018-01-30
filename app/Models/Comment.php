@@ -23,6 +23,11 @@ class Comment extends Model
         return $this->belongsTo('App\Models\Score');
     }
 
+    public function trick()
+    {
+        return $this->belongsTo('App\Models\Trick');
+    }
+
     public function parent()
     {
         return $this->belongsTo('App\Models\Comment', 'parent_id');
