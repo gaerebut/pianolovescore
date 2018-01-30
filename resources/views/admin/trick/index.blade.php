@@ -24,7 +24,7 @@
 					<tr>
 						<td>{{ $trick->id }}</td>
 						<td>{{ $trick }}</td>
-						<td>{{ $trick->introduction }}</td>
+						<td>{!! $trick->introduction !!}</td>
 						<td>@if($trick->is_online) <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> @else <span class="glyphicon glyphicon-remove"></span> @endif</td>
 						<td>
 							<a href="{{ route('admin_tricks_edit',['id_trick'=>$trick->id]) }}" class="btn btn-primary">

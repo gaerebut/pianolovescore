@@ -95,7 +95,7 @@ class TrickController extends BaseController
         $trick->is_online           = !empty($input['is_online']);
         $trick->save();
 
-        $this->setFlash( 'success', 'L\astuce vient d\'être modifiée' );
+        $this->setFlash( 'success', 'L\'astuce vient d\'être modifiée' );
         return $this->show();
     }
 
