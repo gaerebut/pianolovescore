@@ -12,4 +12,8 @@
          <loc>{{ route('sitemap_scores') }}</loc>
         <lastmod>{{ $score->updated_at->tz('UTC')->toAtomString() }}</lastmod>
     </sitemap>
+    <sitemap>
+         <loc>{{ route('sitemap_tricks') }}</loc>
+        <lastmod>{{ $trick->updated_at->tz('UTC')->toAtomString() }}</lastmod>
+    </sitemap>
 </sitemapindex>
