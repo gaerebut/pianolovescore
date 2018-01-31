@@ -27,6 +27,18 @@
 				</div>
 			</div>
 			<div class="form-group">
+				<label for="difficulty" class="col-sm-2 control-label">Difficulté</label>
+				<div class="col-sm-10">
+					<select name="difficulty" id="difficulty" class="form-control label label-success">
+						<option value="1" class="label-info">Très facile</option>
+						<option value="2" class="label-primary">Facile</option>
+						<option value="3" class="label-success" selected>Intermédiaire</option>
+						<option value="4" class="label-warning">Difficile</option>
+						<option value="5" class="label-danger">Très difficile</option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
 				<label for="firstname" class="col-sm-2 control-label">Auteur</label>
 				<div class="col-sm-10">
 					<select name="author_id" class="form-control">
@@ -111,6 +123,11 @@
 	            $( '#slug' ).val( slug );
 	            $( '#keywords' ).val( keywords );
 	        } );
+
+	        $('#difficulty').on('change', function()
+	        {
+	        	$(this).attr('class', 'form-control label ' + $(this).children(":selected").attr('class'));
+	        });
 
 	        $( '#edit-slug' ).unbind().click( function()
 	        {

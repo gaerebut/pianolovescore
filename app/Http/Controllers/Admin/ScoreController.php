@@ -39,6 +39,7 @@ class ScoreController extends BaseController
             'title'			=> 'required',
             'slug'			=> 'required|unique:scores,slug',
             'keywords'  	=> 'required',
+            'difficulty'    => 'required',
             'author_id'     => 'required|exists:authors,id',
             'score_image'  	=> 'required',
             'score_url'  	=> 'required'
@@ -46,7 +47,8 @@ class ScoreController extends BaseController
             'title.required'		=> 'Veuillez indiquer le titre de la partition',
             'slug.required'			=> 'Veuillez indiquer l\'identifiant URL',
             'slug.unique'      		=> 'Cet identifiant URL existe déjà, veuillez en choisir un autre',
-            'keywords.required'		=> 'Veuillez indiquer les mots clés',
+            'keywords.required'     => 'Veuillez indiquer les mots clés',
+            'difficilty.required'	=> 'Veuillez indiquer une difficulté pour la partition',
             'author_id.required'	=> 'Veuillez indiquer un auteur pour la partition',
             'author_id.exists'		=> 'L\'auteur choisi pour la partition ne semble pas exister',
             'score_image.required'	=> 'Veuillez indiquer l\'url de la miniature de la partition',
@@ -74,6 +76,7 @@ class ScoreController extends BaseController
         $score->score_image			= $score_image;
         $score->score_url			= $input['score_url'];
         $score->score_sound_url		= $input['score_sound_url'];
+        $score->difficulty          = $input['difficulty'];
         $score->nb_pages            = $input['nb_pages'];
 
         if(!empty($input['score_sound_url']))
@@ -135,6 +138,7 @@ class ScoreController extends BaseController
             'title'			=> 'required',
             'slug'			=> 'required|unique:scores,slug,' . $input['id'],
             'keywords'  	=> 'required',
+            'difficulty'    => 'required',
             'author_id'     => 'required|exists:authors,id',
             'score_url'  	=> 'required'
         ],[
@@ -142,6 +146,7 @@ class ScoreController extends BaseController
             'slug.required'			=> 'Veuillez indiquer l\'identifiant URL',
             'slug.unique'      		=> 'Cet identifiant URL existe déjà, veuillez en choisir un autre',
             'keywords.required'		=> 'Veuillez indiquer les mots clés',
+            'difficilty.required'   => 'Veuillez indiquer une difficulté pour la partition',
             'author_id.required'	=> 'Veuillez indiquer un auteur pour la partition',
             'author_id.exists'		=> 'L\'auteur choisi pour la partition ne semble pas exister',
             'score_url.required'	=> 'Veuillez indiquer l\'url du fichier PDF de la partition',
@@ -187,6 +192,7 @@ class ScoreController extends BaseController
         $score->score_image			= $score_image;
         $score->score_url			= $input['score_url'];
         $score->score_sound_url		= $input['score_sound_url'];
+        $score->difficulty          = $input['difficulty'];
         $score->nb_pages            = $input['nb_pages'];
 
         if(!empty($input['score_sound_url']))

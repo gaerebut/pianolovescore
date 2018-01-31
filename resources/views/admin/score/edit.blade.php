@@ -27,6 +27,18 @@
 				</div>
 			</div>
 			<div class="form-group">
+				<label for="difficulty" class="col-sm-2 control-label">Difficulté</label>
+				<div class="col-sm-10">
+					<select name="difficulty" id="difficulty" class="form-control label label-@if($score->difficulty == 1)info @elseif($score->difficulty==2)primary @elseif($score->difficulty==3)success @elseif($score->difficulty==4)warning @elseif($score->difficulty==5)danger @endif">
+						<option value="1" class="label-info" @if($score->difficulty == 1) selected @endif>Très facile</option>
+						<option value="2" class="label-primary" @if($score->difficulty == 2) selected @endif>Facile</option>
+						<option value="3" class="label-success" @if($score->difficulty == 3) selected @endif>Intermédiaire</option>
+						<option value="4" class="label-warning" @if($score->difficulty == 4) selected @endif>Difficile</option>
+						<option value="5" class="label-danger" @if($score->difficulty == 5) selected @endif>Très difficile</option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
 				<label for="firstname" class="col-sm-2 control-label">Auteur</label>
 				<div class="col-sm-10">
 					<select name="author_id" class="form-control">
@@ -126,6 +138,11 @@
 	            $( '#slug' ).val( slug );
 	            $( '#keywords' ).val( keywords );
 	        } );
+
+	        $('#difficulty').on('change', function()
+	        {
+	        	$(this).attr('class', 'form-control label ' + $(this).children(":selected").attr('class'));
+	        });
 
 	        $( '#edit-slug' ).unbind().click( function()
 	        {

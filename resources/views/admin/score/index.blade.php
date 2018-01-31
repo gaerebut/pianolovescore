@@ -19,6 +19,7 @@
 					<th>Moyenne</th>
 					<th>Téléchargements</th>
 					<th>Mots clés</th>
+					<th>Difficulté</th>
 					<th>En ligne</th>
 					<th></th>
 				</tr>
@@ -36,6 +37,19 @@
 							@foreach($score->keywords as $keyword)
 								{{ $keyword . ' ' }}
 							@endforeach
+						</td>
+						<td>
+							@if($score->difficulty==1)
+								<span class="label label-info">Très facile</span>
+							@elseif($score->difficulty==2)
+								<span class="label label-primary">Facile</span>
+							@elseif($score->difficulty==3)
+								<span class="label label-success">Intermédiaire</span>
+							@elseif($score->difficulty==4)
+								<span class="label label-warning">Difficile</span>
+							@elseif($score->difficulty==5)
+								<span class="label label-danger">Très difficile</span>
+							@endif
 						</td>
 						<td>@if($score->is_online) <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> @else <span class="glyphicon glyphicon-remove"></span> @endif</td>
 						<td>
