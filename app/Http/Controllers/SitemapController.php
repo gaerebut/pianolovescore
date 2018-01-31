@@ -14,7 +14,7 @@ class SitemapController extends Controller
 	{
 		$author = Author::orderBy('updated_at', 'desc')->first();
 		$score = Score::orderBy('updated_at', 'desc')->first();
-		$TRICK = Trick::orderBy('updated_at', 'desc')->first();
+		$trick = Trick::orderBy('updated_at', 'desc')->first();
 
 		return response()->view('public.sitemap.index', [
 			'author' 	=> $author,
