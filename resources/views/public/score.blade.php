@@ -24,6 +24,13 @@
         <div class="col-md-offset-4 col-md-8">
             <div class="row scores__title">
                 <h1 itemprop="name">{{ $score->title }}</h1><h2><a href="{{ route('author_scores', ['slug_author'=>$score->author->slug]) }}" itemprop="author" itemscope itemtype="http://schema.org/Person" itemid="#author"><meta itemprop="name" content="{{ $score->author->fullname }}"/>{{ $score->author->fullname }}</a></h2>
+                <p>
+                    <span class="label label-info {{($score->difficulty==1)?'active':''}}">{{($score->difficulty==1)?'Partition très facile':'Très facile'}}</span>
+                    <span class="label label-primary {{($score->difficulty==2)?'active':''}}">{{($score->difficulty==2)?'Partition facile':'Facile'}}</span>
+                    <span class="label label-success {{($score->difficulty==3)?'active':''}}">{{($score->difficulty==3)?'Partition intermédiaire':'Intermédiaire'}}</span>
+                    <span class="label label-warning {{($score->difficulty==4)?'active':''}}">{{($score->difficulty==4)?'Partition difficile':'Difficile'}}</span>
+                    <span class="label label-danger {{($score->difficulty==5)?'active':''}}">{{($score->difficulty==5)?'Partition très difficile':'Très difficile'}}</span>
+                </p>
             </div>
         </div>
         <div class="row border-left-0 border-right-0 border-top-0">
@@ -49,7 +56,7 @@
                     </div>
                     <div class="col-xs-12 col-md-8" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
                         @if(!$user_already_vote)
-                            <h5>Quelle difficulté attribuez-vous à cette <strong>partition de piano</strong> ?</h5>
+                            <h5>Quelle note attribuez-vous à cette <strong>partition de piano</strong> ?</h5>
                         @else
                             <h5>Vous avez déjà voté pour cette <strong>partition gratuite</strong></h5>
                         @endif

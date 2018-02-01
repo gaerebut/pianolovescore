@@ -56,9 +56,9 @@ class HomeController extends Controller
         ]);
     }
 
-    public function search($q = null)
+    public function search(Request $request)
     {
-        $keywords = Input::get('q', $q);
+        $keywords = $request->input('q');
 
         $scores = Score::search($keywords)->get();
         $authors = Author::search($keywords)->get();

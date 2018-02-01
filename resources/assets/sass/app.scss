@@ -52,13 +52,30 @@ main{
 	.scores__content{
 		.scores__title, .tricks_title{
 			>h1,h2{
-				margin-bottom: 30px;
+				//margin-bottom: 30px;
 				display: inline-block;
 			}
 
 			h2::before{
 				content: '-';
 				margin:0px 5px;
+			}
+
+			p span
+			{
+				cursor: pointer;
+				
+				&.label
+				{
+					opacity: 0.5;
+	    			filter: alpha(opacity=50);
+				}
+
+				&.active, &:hover
+				{
+					opacity: 1;
+	    			filter: alpha(opacity=100);					
+				}
 			}
 		}
 
