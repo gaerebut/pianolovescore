@@ -82,8 +82,8 @@
 			<div class="form-group">
 				<label for="score_image" class="col-sm-2 control-label">URL miniature</label>
 				<div class="col-sm-10">
+					<input type="text" class="form-control" id="score_image" name="score_image" placeholder="http://www.nouvelleimage.com/miniature.png" value="{{ $score->score_image }}">
 					<img src="{{ URL::to('/') }}/img/scores/{{ $score->score_image }}" height="500"/>
-					<input type="text" class="form-control" id="score_image" name="score_image" placeholder="http://www.adressedusiteweb.com/miniature.png" value="{{ $score->score_image }}">
 				</div>
 			</div>
 			<div class="form-group">
