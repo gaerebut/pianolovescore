@@ -51,4 +51,13 @@ class SitemapController extends Controller
 			'tricks' => $tricks,
 		])->header('Content-Type', 'text/xml');
 	}
+
+	public function difficulties()
+	{
+		$score = Score::orderBy('updated_at', 'desc')->first();
+		return response()->view('public.sitemap.difficulties', [
+			'difficulties' => ['tres-faciles', 'faciles', 'intermediaires', 'difficiles', 'tres-difficiles'],
+			'score' => $score
+		])->header('Content-Type', 'text/xml');
+	}
 }

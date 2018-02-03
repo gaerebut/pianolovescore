@@ -93,6 +93,7 @@ Route::group( ['prefix' => 'sitemap' ], function()
 	Route::get('authors', 'SitemapController@authors')->name('sitemap_authors');
 	Route::get('scores', 'SitemapController@scores')->name('sitemap_scores');
 	Route::get('tricks', 'SitemapController@tricks')->name('sitemap_tricks');
+	Route::get('difficulties', 'SitemapController@difficulties')->name('sitemap_difficulties');
 });
 
 // AJAX
