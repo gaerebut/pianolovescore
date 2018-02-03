@@ -5854,14 +5854,6 @@ main {
   main .scores__content .scores__title h2::before, main .scores__content .tricks_title h2::before {
     content: '-';
     margin: 0px 5px; }
-  main .scores__content .scores__title p span, main .scores__content .tricks_title p span {
-    cursor: pointer; }
-    main .scores__content .scores__title p span.label, main .scores__content .tricks_title p span.label {
-      opacity: 0.5;
-      filter: alpha(opacity=50); }
-    main .scores__content .scores__title p span.active, main .scores__content .scores__title p span:hover, main .scores__content .tricks_title p span.active, main .scores__content .tricks_title p span:hover {
-      opacity: 1;
-      filter: alpha(opacity=100); }
   main .scores__content .tricks_description table {
     width: 25%;
     max-width: 100%;
@@ -5877,7 +5869,7 @@ main {
       margin-top: 50px; }
       main .scores__content .scores__infos .scores__audio audio {
         width: 70%; }
-    main .scores__content .scores__infos .scores__keywords aadmin {
+    main .scores__content .scores__infos .scores__keywords admin {
       margin: auto 5px; }
   main .scores__content .scores__rating__thanks {
     display: none;
@@ -5894,6 +5886,14 @@ main {
       padding-left: 10px; }
     main .scores__content .scores__comment .reply-form {
       margin-top: 10px; }
+  main .scores__content .difficulty {
+    opacity: 1; }
+    main .scores__content .difficulty a.label {
+      opacity: 0.5;
+      filter: alpha(opacity=50); }
+    main .scores__content .difficulty .active, main .scores__content .difficulty a.label:hover {
+      opacity: 1;
+      filter: alpha(opacity=100); }
   main .scores_request_summary:after {
     position: absolute;
     top: 15px;

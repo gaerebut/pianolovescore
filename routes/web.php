@@ -115,6 +115,8 @@ Route::get('/demander-une-partition', 'ScoreController@requestShow')->name('scor
 Route::get('/telecharger/{slug}', 'ScoreController@download')->name('score_download');
 Route::get('/partitions/{slug_author}/{slug_score}', 'ScoreController@show')->name('score');
 Route::get('/partitions', 'ScoreController@showAll')->name('scores');
+Route::get('/partitions/{difficulty}', 'ScoreController@showLevel')->name('scores_difficulty')
+->where(['difficulty' => 'tres-faciles|faciles|intermediaires|difficiles|tres-difficiles']);
 
 //AUTHOR CONTROLLER
 Route::get('/partitions/{slug_author}', 'AuthorController@showScores')->name('author_scores');

@@ -9,7 +9,17 @@
 @section('og_image'){{ Request::url() }}{{ elixir('img/logo_full.png') }} @endsection
 
 @section('main')
-    <?php \Carbon\Carbon::setLocale(config('app.locale')); ?>
+    @php
+    \Carbon\Carbon::setLocale(config('app.locale'));
+
+    $difficulties = [
+        1 => ['title' => 'Très facile', 'class' => 'info'],
+        2 => ['title' => 'Facile', 'class' => 'primary'],
+        3 => ['title' => 'Intermédiaire', 'class' => 'success'],
+        4 => ['title' => 'Difficile', 'class' => 'warning'],
+        5 => ['title' => 'Très difficile', 'class' => 'danger']
+    ];
+    @endphp
     <section class="homesection">
         <h1 class="homesection__title">Piano Love Score</h1>
         <h2 class="homesection__subtitle">Partitions Gratuites de Piano</h2>
@@ -39,6 +49,9 @@
             <tbody class="homesection__content">
                 @foreach($scores_new as $score)
                     <tr>
+                        <td width="5%">
+                            <span class="label label-{{ $difficulties[$score->difficulty]['class'] }}">{{ $difficulties[$score->difficulty]['title'] }}</span>
+                        </td>
                         <td>
                             <a href="{{ route('score', ['slug_author'=>$score->author->slug, 'slug_score'=>$score->slug])}}">{{ $score->title }}</a>
                         </td>
@@ -75,6 +88,9 @@
             <tbody class="homesection__content">
                 @foreach($scores_top as $score)
                     <tr>
+                        <td width="5%">
+                            <span class="label label-{{ $difficulties[$score->difficulty]['class'] }}">{{ $difficulties[$score->difficulty]['title'] }}</span>
+                        </td>
                         <td>
                             <a href="{{ route('score', ['slug_author'=>$score->author->slug, 'slug_score'=>$score->slug])}}">{{ $score->title }}</a>
                         </td>

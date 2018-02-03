@@ -60,23 +60,6 @@ main{
 				content: '-';
 				margin:0px 5px;
 			}
-
-			p span
-			{
-				cursor: pointer;
-				
-				&.label
-				{
-					opacity: 0.5;
-	    			filter: alpha(opacity=50);
-				}
-
-				&.active, &:hover
-				{
-					opacity: 1;
-	    			filter: alpha(opacity=100);					
-				}
-			}
 		}
 
 		.tricks_description{
@@ -102,7 +85,7 @@ main{
 			    audio{ width: 70%; }
 			}
 
-			.scores__keywords aadmin{ margin: auto 5px}
+			.scores__keywords admin{ margin: auto 5px}
 		}
 
 		.scores__rating__thanks{
@@ -128,6 +111,22 @@ main{
 			}
 
 			.reply-form{margin-top: 10px}
+		}
+
+		.difficulty{
+			opacity: 1;
+			
+			a.label
+			{
+				opacity: 0.5;
+    			filter: alpha(opacity=50);
+			}
+
+			.active, a.label:hover
+			{
+				opacity: 1;
+    			filter: alpha(opacity=100);					
+			}
 		}
 	}
 

@@ -16,6 +16,15 @@
     @include('includes.breadcrumb')
 @endsection
 @section('main')
+    @php
+    $difficulties = [
+        1 => ['title' => 'Très facile', 'class' => 'info'],
+        2 => ['title' => 'Facile', 'class' => 'primary'],
+        3 => ['title' => 'Intermédiaire', 'class' => 'success'],
+        4 => ['title' => 'Difficile', 'class' => 'warning'],
+        5 => ['title' => 'Très difficile', 'class' => 'danger']
+    ];
+    @endphp
     <section class="scores__content">
         <div class="col-lg-offset-2 col-lg-8">
             <div class="row scores__title">
@@ -61,6 +70,10 @@
                     <tr>
                         <td>
                             <a href="{{ route('score', ['composer_slug'=>$author->slug, 'score_slug'=>$current_score->slug]) }}">{{ $current_score }}</a>
+                        </td>
+                        <td>
+                        <td>
+                            <span class="label label-{{ $difficulties[$current_score->difficulty]['class'] }}">{{ $difficulties[$current_score->difficulty]['title'] }}</span>
                         </td>
                         <td>
                             @if(!is_null($current_score->avg_votes))

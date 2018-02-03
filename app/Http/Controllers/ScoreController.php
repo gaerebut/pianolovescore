@@ -36,6 +36,36 @@ class ScoreController extends Controller
         ]);
     }
 
+    public function showLevel($difficulty=null)
+    {
+        $arr_difficulties = [
+            'tres-faciles' => ['number' => 1, 'breadcrumb' => 'très faciles'],
+            'faciles' => ['number' => 2, 'breadcrumb' => 'faciles'],
+            'intermediaires' => ['number' => 3, 'breadcrumb' => 'intermédiaires'],
+            'difficiles' => ['number' => 4, 'breadcrumb' => 'difficiles'],
+            'tres-difficiles' => ['number' => 5, 'breadcrumb' => 'très difficiles']
+        ];
+
+        if(isset($arr_difficulties[$difficulty]))
+        {
+            $difficulty = $arr_difficulties[$difficulty];
+
+            $authors = Author::orderBy('lastname')->get();
+
+            return view('public.difficulty', [
+                'breadcrumb_last_level' => 'Les partitions gratuites ' . $difficulty['breadcrumb'],
+                'authors'               => $authors,
+                'difficulty'            => $difficulty['breadcrumb'],
+                'difficulty_number'     => $difficulty['number']
+            ]);
+        }
+        else
+        {
+            abort(404);
+        }
+
+    }
+
     public function requestShow()
     {
         return view('public.score_request', [

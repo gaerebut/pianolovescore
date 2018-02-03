@@ -24,12 +24,32 @@
         <div class="col-md-offset-4 col-md-8">
             <div class="row scores__title">
                 <h1 itemprop="name">{{ $score->title }}</h1><h2><a href="{{ route('author_scores', ['slug_author'=>$score->author->slug]) }}" itemprop="author" itemscope itemtype="http://schema.org/Person" itemid="#author"><meta itemprop="name" content="{{ $score->author->fullname }}"/>{{ $score->author->fullname }}</a></h2>
-                <p>
-                    <span class="label label-info {{($score->difficulty==1)?'active':''}}">{{($score->difficulty==1)?'Partition très facile':'Très facile'}}</span>
-                    <span class="label label-primary {{($score->difficulty==2)?'active':''}}">{{($score->difficulty==2)?'Partition facile':'Facile'}}</span>
-                    <span class="label label-success {{($score->difficulty==3)?'active':''}}">{{($score->difficulty==3)?'Partition intermédiaire':'Intermédiaire'}}</span>
-                    <span class="label label-warning {{($score->difficulty==4)?'active':''}}">{{($score->difficulty==4)?'Partition difficile':'Difficile'}}</span>
-                    <span class="label label-danger {{($score->difficulty==5)?'active':''}}">{{($score->difficulty==5)?'Partition très difficile':'Très difficile'}}</span>
+                <p class="difficulty">
+                    @if($score->difficulty==1)
+                        <span class="label label-info active">Partition très facile</span>
+                    @else
+                        <a href="{{ route('scores_difficulty', ['difficulty'=>'tres-faciles']) }}" title="Partitions gratuites de piano très faciles" class="label label-info">Partition très facile</a>
+                    @endif
+                    @if($score->difficulty==2)
+                        <span class="label label-primary active">Partition facile</span>
+                    @else
+                        <a href="{{ route('scores_difficulty', ['difficulty'=>'faciles']) }}" title="Partitions gratuites de piano faciles" class="label label-primary">Partition facile</a>
+                    @endif
+                    @if($score->difficulty==3)
+                        <span class="label label-success active">Partition intermédiaire</span>
+                    @else
+                        <a href="{{ route('scores_difficulty', ['difficulty'=>'intermediaires']) }}" title="Partitions gratuites de piano intermédiaires" class="label label-success">Partition intermédiaire</a>
+                    @endif
+                    @if($score->difficulty==4)
+                        <span class="label label-warning active">Partition difficile</span>
+                    @else
+                        <a href="{{ route('scores_difficulty', ['difficulty'=>'difficiles']) }}" title="Partitions gratuites de piano difficiles" class="label label-warning">Partition difficile</a>
+                    @endif
+                    @if($score->difficulty==5)
+                        <span class="label label-danger active">Partition très difficile</span>
+                    @else
+                        <a href="{{ route('scores_difficulty', ['difficulty'=>'tres-difficiles']) }}" title="Partitions gratuites de piano très difficiles" class="label label-danger">Partition très difficile</a>
+                    @endif
                 </p>
             </div>
         </div>
