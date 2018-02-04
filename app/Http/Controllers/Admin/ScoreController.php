@@ -14,7 +14,7 @@ class ScoreController extends BaseController
 {
     public function show()
     {
-    	$scores = Score::withoutGlobalScope(IsOnlineScope::class)->orderBy('id')->get();
+    	$scores = Score::withoutGlobalScope(IsOnlineScope::class)->orderBy('id', 'desc')->get();
 
     	return view('admin.score.index', [
     		'breadcrumb_last_level' => 'Partitions',
