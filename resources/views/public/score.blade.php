@@ -23,7 +23,7 @@
     <section class="scores__content" itemscope="" itemtype="http://schema.org/Book">
         <div class="col-md-offset-4 col-md-8">
             <div class="row scores__title">
-                <span class="pull-right">Partition postée le <time itemprop="dateCreated" datetime="{{ $score->created_at }}">{{ $score->created_at->formatLocalized('%A %d %B %Y') }}</time></span>
+                <span class="pull-right">Partition postée le <time itemprop="dateCreated" datetime="{{ $score->created_at }}">{{ $score->created_at->formatLocalized('%d/%m/%Y') }}</time></span>
                 <h1 itemprop="name">{{ $score->title }}</h1><h2><a href="{{ route('author_scores', ['slug_author'=>$score->author->slug]) }}" itemprop="author" itemscope itemtype="http://schema.org/Person" itemid="#author"><meta itemprop="name" content="{{ $score->author->fullname }}"/>{{ $score->author->fullname }}</a></h2>
                 <p class="difficulty">
                     @if($score->difficulty==1)
