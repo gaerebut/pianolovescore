@@ -1,6 +1,7 @@
 @extends('layouts.public')
 
 <?php
+    \Carbon\Carbon::setLocale(config('app.locale'));
     $count_tricks = count($tricks);
 ?>
 
@@ -31,6 +32,7 @@
                 </div>
                 <div class="row">
                     <p>{!! $trick->introduction !!}</p>
+                    <h5 class="pull-right">Astuce postée {{ $trick->created_at->diffForHumans() }}</h5>
                 </div>
             @endforeach
         </div>

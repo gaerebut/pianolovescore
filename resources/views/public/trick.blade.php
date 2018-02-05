@@ -22,6 +22,7 @@
     <section class="scores__content" itemscope="" itemtype="http://schema.org/Book">
         <div class="col-md-12">
             <div class="row tricks__title">
+                <p class="pull-right">Astuce postée le <time itemprop="dateCreated" datetime="{{ $trick->created_at }}">{{ $trick->created_at->formatLocalized('%A %d %B %Y') }}</time></p>
                 <h1 itemprop="name">{{ $trick }}</h1>
             </div>
         </div>
