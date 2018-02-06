@@ -11,6 +11,10 @@
 @section('breadcrumb')
     @include('includes.breadcrumb')
 @endsection
+@section('meta')
+    @parent
+    <link rel="canonical" href="{{ route('search', ['q'=>$keywords])}}" />
+@endsection
 @section('main')
     <?php \Carbon\Carbon::setLocale(config('app.locale')); ?>
     <section class="scores__content">

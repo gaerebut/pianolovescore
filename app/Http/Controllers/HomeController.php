@@ -56,10 +56,13 @@ class HomeController extends Controller
         ]);
     }
 
-    public function search(Request $request)
+    public function searchByForm(Request $request)
     {
-        $keywords = $request->input('q');
+       return $this->search($request->all()['q']);
+    }
 
+    public function search($keywords)
+    {
         $scores = Score::search($keywords)->get();
         $authors = Author::search($keywords)->get();
         $tricks = Trick::search($keywords)->get();

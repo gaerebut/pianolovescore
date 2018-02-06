@@ -7,13 +7,15 @@
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="robots" content="all">
 <title>@yield('title')</title>
-<meta name="description" content="@yield('description')">
 
+@section('meta')
+<meta name="description" content="@yield('description')">
 <meta property="og:url" 		content="{{ Request::url() }}" />
 <meta property="og:type" 		content="@yield('og_type')" />
 <meta property="og:title" 		content="@yield('og_title')" />
 <meta property="og:description"	content="@yield('og_description')" />
 <meta property="og:image"		content="@yield('og_image')" />
+@show
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-16559180-13"></script>
