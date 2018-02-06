@@ -105,7 +105,8 @@
                                 </form>
                                 <h3 class="scores__rating__thanks">Merci pour votre vote</h3>
                             @endif
-                            <div class="scores__rating__result">Moyenne : <strong class="avg_votes" itemprop="ratingValue"><?php echo round($score->avg_votes/20, 2); ?></strong>/5 (<strong class="count_votes" itemprop="reviewCount">{{ $score->count_votes }}</strong> votes)</div>
+                            <meta itemprop="worstRating" content = "1">
+                            <div class="scores__rating__result">Moyenne : <strong class="avg_votes" itemprop="ratingValue"><?php echo round($score->avg_votes/20, 2); ?></strong>/<span itemprop="bestRating">5</span> (<strong class="count_votes" itemprop="reviewCount">{{ $score->count_votes }}</strong> votes)</div>
                         </div>
                         @if(!is_null($score->score_sound_url))
                             <div class="scores__audio">
