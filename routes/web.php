@@ -107,7 +107,7 @@ Route::post('/contact', 'HomeController@contactusSave')->name('contactus_submit'
 Route::get('/contact', 'HomeController@contactusShow')->name('contactus');
 
 Route::get('/rechercher', 'HomeController@searchByForm')->name('search');
-Route::get('/rechercher/{q}', 'HomeController@search')->name('search');
+Route::get('/rechercher/{q}', 'HomeController@search')->name('searchByForm');
 
 // SCORE CONTROLLER
 Route::post('/demander-une-partition', 'ScoreController@requestSave')->name('score_request_submit');

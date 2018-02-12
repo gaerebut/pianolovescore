@@ -37,7 +37,7 @@
                         <thead>
                             <tr>
                                 <th colspan="2">
-                                    <h3>{{ $author }}</h3>
+                                    <h3><a href="{{ route('author_scores', ['slug_author'=>$author->slug]) }}">{{ $author }}</a></h3>
                                 </th>
                             </tr>
                         </thead>
