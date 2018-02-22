@@ -41,6 +41,7 @@ Route::group( ['namespace' => 'Admin', 'prefix' => 'admin' ], function()
 		Route::group( ['prefix' => 'scores' ], function()
 		{
 			Route::get('/', 'ScoreController@show')->name('admin_scores');
+			Route::get('/{id_author}-{difficulty}-{is_online}', 'ScoreController@showFiltered')->name('admin_scores_filtered');
 
 			Route::get('/add', 'ScoreController@showAdd')->name('admin_scores_add');
 			Route::post('/add', 'ScoreController@add')->name('admin_scores_add_store');

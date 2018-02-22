@@ -14,11 +14,47 @@ class ScoreController extends BaseController
 {
     public function show()
     {
+        $authors = Author::orderBy('lastname')->get();
     	$scores = Score::withoutGlobalScope(IsOnlineScope::class)->orderBy('id', 'desc')->get();
 
     	return view('admin.score.index', [
     		'breadcrumb_last_level' => 'Partitions',
-            'scores'				=> $scores
+            'authors'               => $authors,
+            'scores'				=> $scores,
+            'id_author'             => 0,
+            'difficulty'            => 0,
+            'is_online'             => 'n'
+        ]);
+    }
+
+    public function showFiltered($id_author = 0, $difficulty = 0, $is_online = 'n')
+    {
+
+        $authors = Author::orderBy('lastname')->get();
+
+        $scores = Score::withoutGlobalScope(IsOnlineScope::class)->orderBy('id', 'desc');
+        if($id_author > 0)
+        {
+            $scores->where('author_id', $id_author);
+        }
+
+        if($is_online != 'n')
+        {
+            $scores->where('is_online', $is_online);
+        }
+
+        if($difficulty > 0)
+        {
+            $scores->where('difficulty', $difficulty);
+        }
+
+        return view('admin.score.index', [
+            'breadcrumb_last_level' => 'Partitions',
+            'authors'               => $authors,
+            'scores'                => $scores->get(),
+            'id_author'             => $id_author,
+            'difficulty'            => $difficulty,
+            'is_online'             => $is_online
         ]);
     }
 

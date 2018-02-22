@@ -8,23 +8,45 @@
 		<span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
 		Ajouter une partition
 	</a>
-	@if(!empty($scores) && count($scores) > 0 )
-		<table class="table ">
-			<thead>
-				<tr>
-					<th>#</th>
-					<th>Nom</th>
-					<th>Auteur</th>
-					<th>Votes</th>
-					<th>Moyenne</th>
-					<th>Téléchargements</th>
-					<th>Mots clés</th>
-					<th>Difficulté</th>
-					<th>En ligne</th>
-					<th></th>
-				</tr>
-			</thead>
-			<tbody>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>Nom</th>
+				<th>Auteur<br />
+					<select id="id_author">
+						<option value="0" @if($id_author==0) selected @endif>Tous</option>
+						@foreach($authors as $author)
+							<option value="{{ $author->id }}" @if($id_author==$author->id) selected @endif>{{ $author }}</option>
+						@endforeach
+					</select>
+				</th>
+				<th>Votes</th>
+				<th>Moyenne</th>
+				<th>Téléchargements</th>
+				<th>Mots clés</th>
+				<th>Difficulté<br />
+					<select id="difficulty">
+						<option value="0" @if($difficulty==0) selected @endif>Toutes</option>
+						<option value="1" @if($difficulty==1) selected @endif>Très facile</option>
+						<option value="2" @if($difficulty==2) selected @endif>Facile</option>
+						<option value="3" @if($difficulty==3) selected @endif>Intermédiaire</option>
+						<option value="4" @if($difficulty==4) selected @endif>Difficile</option>
+						<option value="5" @if($difficulty==5) selected @endif>Très difficile</option>
+					</select>
+				</th>
+				<th>En ligne<br />
+					<select id="is_online">
+						<option value="n" @if($is_online=="n") selected @endif>Tous</option>
+						<option value="1" @if($is_online==1) selected @endif>En ligne</option>
+						<option value="2" @if($is_online==2) selected @endif>Hors ligne</option>
+					</select>
+				</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			@if(!empty($scores) && count($scores) > 0 )
 				@foreach($scores as $score)
 					<tr>
 						<td>{{ $score->id }}</td>
@@ -64,11 +86,13 @@
 						</td>
 					</tr>
 				@endforeach
-			</tbody>
-		</table>
-	@else
-		<h2>Aucune partition n'est référencée pour le moment.</h2>
-	@endif
+			@else
+				<tr>
+					<td colspan="10"><h2>Aucune partition n'est référencée pour le moment.</h2></td>
+				</tr>
+			@endif
+		</tbody>
+	</table>
 @endsection
 @section('js_code')
 	@parent
@@ -79,6 +103,15 @@
 			$('[data-toggle=confirmation]').confirmation({
 				rootSelector: '[data-toggle=confirmation]'
 			});
+
+			$('.table select').on('change', function(){
+				var route = "{{ route('admin_scores_filtered',['id_author'=>':id_author', 'difficulty'=>':difficulty','is_online'=>':is_online']) }}";
+
+				route = route.replace(':id_author', $('select#id_author').val());
+				route = route.replace(':difficulty', $('select#difficulty').val());
+				route = route.replace(':is_online', $('select#is_online').val());
+				window.location.href = route;
+			})
 		});
 	</script>
 @endsection
