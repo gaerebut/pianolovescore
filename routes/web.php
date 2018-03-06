@@ -52,6 +52,14 @@ Route::group( ['namespace' => 'Admin', 'prefix' => 'admin' ], function()
 			Route::get('/remove/{id_score}', 'ScoreController@remove')->name('admin_scores_remove');
 		});
 
+		Route::group( ['prefix' => 'glossaries' ], function()
+		{
+			Route::get('/{slug_glossary?}', 'GlossaryController@show')->name('admin_glossaries');
+			Route::post('/add', 'GlossaryController@add')->name('admin_glossaries_add_store');
+			Route::post('/edit', 'GlossaryController@edit')->name('admin_glossaries_edit_store');
+			Route::get('/remove/{id_glossary}', 'GlossaryController@remove')->name('admin_glossaries_remove');
+		});
+
 		Route::group( ['prefix' => 'comments' ], function()
 		{
 			Route::get('/', 'CommentController@show')->name('admin_comments');
@@ -122,6 +130,9 @@ Route::get('/partitions/{difficulty}', 'ScoreController@showLevel')->name('score
 
 //AUTHOR CONTROLLER
 Route::get('/partitions/{slug_author}', 'AuthorController@showScores')->name('author_scores');
+
+//LEXIQUE CONTROLLER
+Route::get('/lexique/{slug_glossary}', 'GlossaryController@showGlossary')->name('glossary');
 
 //TRICK CONTROLLER
 Route::get('/astuces/{slug}', 'TrickController@show')->name('trick');
