@@ -35,12 +35,12 @@
                 @php $cpt = 0; @endphp
                 @foreach($glossaries as $glossary)
                     <div class="row" id="{{ $glossary->slug }}">
-                        <div class="col-sm-2 glossary-image">
+                        <div class="col-sm-3 glossary-image">
                         @if(!is_null($glossary->image))
                             <img src="{{ URL::to('/') }}/img/glossaries/{{ $glossary->image }}" height="50" title="{{ $glossary }} - Lexique en {{ $letter }}" />
                         @endif
                         </div>
-                        <div class="col-sm-10">
+                        <div class="col-sm-9">
                             <h2>{{ $glossary }}</h2>
                             <p>{{ $glossary->description }}</p>
                         </div>
