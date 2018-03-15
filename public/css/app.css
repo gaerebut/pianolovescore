@@ -5894,6 +5894,9 @@ main {
     main .scores__content .difficulty .active, main .scores__content .difficulty a.label:hover {
       opacity: 1;
       filter: alpha(opacity=100); }
+  main .scores__content .glossary-image {
+    padding-top: 25px;
+    text-align: center; }
   main .scores_request_summary:after {
     position: absolute;
     top: 15px;

@@ -34,18 +34,18 @@
             @if(count($glossaries)>0)
                 @php $cpt = 0; @endphp
                 @foreach($glossaries as $glossary)
-                    <div class="row" id="{{ $glossary->slug }}-{{ $cpt++ }}">
-                        <div class="col-sm-2">
+                    <div class="row" id="{{ $glossary->slug }}">
+                        <div class="col-sm-2 glossary-image">
                         @if(!is_null($glossary->image))
-                            <img src="{{ URL::to('/') }}/img/glossaries/{{ $glossary->image }}" width="100%" title="{{ $glossary }} - Lexique en {{ $letter }}" />
+                            <img src="{{ URL::to('/') }}/img/glossaries/{{ $glossary->image }}" height="50" title="{{ $glossary }} - Lexique en {{ $letter }}" />
                         @endif
                         </div>
                         <div class="col-sm-10">
                             <h2>{{ $glossary }}</h2>
                             <p>{{ $glossary->description }}</p>
                         </div>
-                        <hr />
                     </div>
+                    <hr />
                 @endforeach
             @else
                 <h2>Il n'y a pas encore de définition pour la lettre <strong>{{ $letter }}</strong> du lexique</h2>
