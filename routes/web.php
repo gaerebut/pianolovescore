@@ -101,6 +101,7 @@ Route::group( ['prefix' => 'sitemap' ], function()
 	Route::get('categories', 'SitemapController@categories')->name('sitemap_categories');
 	Route::get('authors', 'SitemapController@authors')->name('sitemap_authors');
 	Route::get('scores', 'SitemapController@scores')->name('sitemap_scores');
+	Route::get('glossaries', 'SitemapController@glossaries')->name('sitemap_glossaries');
 	Route::get('tricks', 'SitemapController@tricks')->name('sitemap_tricks');
 	Route::get('difficulties', 'SitemapController@difficulties')->name('sitemap_difficulties');
 });
@@ -132,7 +133,7 @@ Route::get('/partitions/{difficulty}', 'ScoreController@showLevel')->name('score
 Route::get('/partitions/{slug_author}', 'AuthorController@showScores')->name('author_scores');
 
 //LEXIQUE CONTROLLER
-Route::get('/lexique/{slug_glossary?}', 'GlossaryController@show')->name('glossary');
+Route::get('/lexique/{letter?}', 'GlossaryController@show')->name('glossary');
 
 //TRICK CONTROLLER
 Route::get('/astuces/{slug}', 'TrickController@show')->name('trick');

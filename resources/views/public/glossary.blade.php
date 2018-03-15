@@ -26,7 +26,7 @@
                 @if($letter==chr(65+$i))
                     <button role="group" class="btn btn-primary">{{ chr(65+$i) }}</a></button>
                 @else
-                    <a href="{{ route('glossary', ['slug_glossary' => chr(65+$i)]) }}" role="group" class="btn btn-default" title="Lexique des mots commençant par la lettre {{ chr(65+$i) }} sur les partitions de piano">{{ chr(65+$i) }}</a>
+                    <a href="{{ route('glossary', ['letter' => chr(65+$i)]) }}" role="group" class="btn btn-default" title="Lexique des mots commençant par la lettre {{ chr(65+$i) }} sur les partitions de piano">{{ chr(65+$i) }}</a>
                 @endif
             @endfor
         </div>

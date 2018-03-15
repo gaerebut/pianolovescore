@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Author;
 use App\Models\Score;
 use App\Models\Trick;
+use App\Models\Glossary;
 
 use Illuminate\Http\Request;
 
@@ -14,11 +15,13 @@ class SitemapController extends Controller
 	{
 		$author = Author::orderBy('updated_at', 'desc')->first();
 		$score = Score::orderBy('updated_at', 'desc')->first();
+		$glossary = Glossary::orderBy('updated_at', 'desc')->first();
 		$trick = Trick::orderBy('updated_at', 'desc')->first();
 
 		return response()->view('public.sitemap.index', [
 			'author' 	=> $author,
 			'score' 	=> $score,
+			'glossary' 	=> $glossary,
 			'trick'		=> $trick
 		])->header('Content-Type', 'text/xml');
 	}
@@ -41,6 +44,14 @@ class SitemapController extends Controller
 		$scores = Score::get();
 		return response()->view('public.sitemap.scores', [
 			'scores' => $scores,
+		])->header('Content-Type', 'text/xml');
+	}
+
+	public function glossaries()
+	{
+		$glossaries = Glossary::get();
+		return response()->view('public.sitemap.glossaries', [
+			'glossaries' => $glossaries,
 		])->header('Content-Type', 'text/xml');
 	}
 

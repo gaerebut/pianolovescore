@@ -13,6 +13,10 @@
         <lastmod>{{ $score->updated_at->tz('UTC')->toAtomString() }}</lastmod>
     </sitemap>
     <sitemap>
+         <loc>{{ route('sitemap_glossaries') }}</loc>
+        <lastmod>{{ $glossary->updated_at->tz('UTC')->toAtomString() }}</lastmod>
+    </sitemap>
+    <sitemap>
          <loc>{{ route('sitemap_tricks') }}</loc>
         <lastmod>{{ $trick->updated_at->tz('UTC')->toAtomString() }}</lastmod>
     </sitemap>
