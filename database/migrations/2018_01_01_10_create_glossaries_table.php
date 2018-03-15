@@ -18,6 +18,7 @@ class CreateGlossariesTable extends Migration
             $table->string('slug', 150);
             $table->string('glossary', 100);
             $table->text('description');
+            $table->string('image', 190)->nullable();
             $table->timestamps();
         });
     }

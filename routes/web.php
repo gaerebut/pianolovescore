@@ -132,7 +132,7 @@ Route::get('/partitions/{difficulty}', 'ScoreController@showLevel')->name('score
 Route::get('/partitions/{slug_author}', 'AuthorController@showScores')->name('author_scores');
 
 //LEXIQUE CONTROLLER
-Route::get('/lexique/{slug_glossary}', 'GlossaryController@showGlossary')->name('glossary');
+Route::get('/lexique/{slug_glossary?}', 'GlossaryController@show')->name('glossary');
 
 //TRICK CONTROLLER
 Route::get('/astuces/{slug}', 'TrickController@show')->name('trick');

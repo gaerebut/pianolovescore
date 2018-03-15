@@ -79,7 +79,7 @@
 								<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
 								Editer
 							</a>
-							<a href="{{ route('admin_scores_remove',['id_score'=>$score->id]) }}" class="btn btn-danger" data-toggle="confirmation" data-title="Confirmation" data-btn-ok-label="Supprimer" data-btn-ok-class="btn-success" data-btn-cancel-label="Annuler"data-btn-cancel-class="btn-danger" data-content="Êtes-vous sûr de vouloir supprimer cet utilisateur ?" data-placement="right" data-singleton="true" data-popout="true">
+							<a href="{{ route('admin_scores_remove',['id_score'=>$score->id]) }}" class="btn btn-danger" data-toggle="confirmation" data-title="Confirmation" data-btn-ok-label="Supprimer" data-btn-ok-class="btn-success" data-btn-cancel-label="Annuler"data-btn-cancel-class="btn-danger" data-content="Êtes-vous sûr de vouloir supprimer cette partition ?" data-placement="right" data-singleton="true" data-popout="true">
 								<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
 								Supprimer
 							</a>

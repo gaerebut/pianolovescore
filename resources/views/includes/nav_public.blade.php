@@ -8,6 +8,9 @@
                 <a href="{{ route('scores') }}">Partitions</a>
             </li>
             <li>
+                <a href="{{ route('glossary') }}">Lexique</a>
+            </li>
+            <li>
                 <a href="{{ route('tricks') }}">Astuces</a>
             </li>
             <li>
