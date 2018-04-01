@@ -28,12 +28,12 @@
                 PianoLoveScore vous permet de télécharger des <a href="{{ route('home') }}">partitions gratuites de piano</a> au format PDF, de les noter en fonction de vos goûts, d'écouter leurs version audio et de partager votre expérience avec les autres membres.
             </p>
             <p>
-                Vous avez un niveau débutant ou intermédiaire, découvrez notre rubrique d'<a href="#">astuces gratuites</a> pour perfectionner votre technique au <strong>piano</strong>.
+                Vous avez un niveau débutant ou intermédiaire, découvrez notre rubrique d'<a href="{{ route('tricks') }}">astuces gratuites</a> pour perfectionner votre technique au <strong>piano</strong>.
             <p>
                 Les <strong>partitions gratuites</strong> présentent sur PianoLoveScore sont toutes des <strong>partitions libre de droits et légales</strong>.
             </p>
             <p>
-                Rejoingnez notre groupe Facebook <a href="#">Partition Gratuite Piano</a> et retrouvez les <strong>partitions de piano</strong>que les membres s'échangent gratuitement.
+                Rejoingnez notre groupe Facebook <a href="https://www.facebook.com/groups/partitio.gratuite/">Partition Gratuite Piano</a> et retrouvez les <strong>partitions de piano</strong>que les membres s'échangent gratuitement.
             </p>
         </div>
     </section>
