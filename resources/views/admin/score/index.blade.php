@@ -24,6 +24,7 @@
 				<th>Votes</th>
 				<th>Moyenne</th>
 				<th>Téléchargements</th>
+				<th>Longueur description</th>
 				<th>Mots clés</th>
 				<th>Difficulté<br />
 					<select id="difficulty">
@@ -54,6 +55,7 @@
 						<td>{{ $score->author }}</td>
 						<td>{{ $score->count_votes }}</td>
 						<td>{{ $score->avg_votes }}</td>
+						<td>{{ strlen($score->description) }}</td>
 						<td>{{ $score->downloaded }}</td>
 						<td>
 							@foreach($score->keywords as $keyword)
