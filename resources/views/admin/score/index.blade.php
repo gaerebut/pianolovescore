@@ -49,14 +49,14 @@
 		<tbody>
 			@if(!empty($scores) && count($scores) > 0 )
 				@foreach($scores as $score)
-					<tr>
+					<tr @if(strlen($score->description) == 0) style="background-color: rgba(255,0,0,0.5)" @endif>
 						<td>{{ $score->id }}</td>
 						<td>{{ $score }}</td>
 						<td>{{ $score->author }}</td>
 						<td>{{ $score->count_votes }}</td>
 						<td>{{ $score->avg_votes }}</td>
-						<td>{{ strlen($score->description) }}</td>
 						<td>{{ $score->downloaded }}</td>
+						<td @if(strlen($score->description) == 0) style="font-weight:bold; color:red" @endif>{{ strlen($score->description) }}</td>
 						<td>
 							@foreach($score->keywords as $keyword)
 								{{ $keyword . ' ' }}
