@@ -25,6 +25,13 @@
   gtag('js', new Date());
   gtag('config', 'UA-16559180-13');
 </script>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-0114331985290768",
+    enable_page_level_ads: true
+  });
+</script>
 
 @section('css')
 <link rel="stylesheet" href="{{ elixir('css/app.css') }}{{(config('app.env')=='local')?'?'.filemtime(public_path().'/css/app.css'):''}}">
