@@ -32,6 +32,8 @@
                 <a href="{{ route('scores_difficulty', ['difficulty'=>'tres-difficiles']) }}" title="Partitions gratuites de piano très difficiles" class="label label-danger">Très difficile</a>
             </h3>
             <table class="table table-condensed">
+                @php $count_global_scores = 0; @endphp
+
                 @foreach($authors as $author)
                     @if(count($author->scores)>0)
                         <thead>
@@ -47,7 +49,19 @@
                             $count_author_scores = count($author->scores);
                             $maximum_scores_showed = min($count_author_scores, $maximum_scores);
                             ?>
-                            @for($i=0; $i<$maximum_scores_showed; $i++)
+                            @for($i=0; $i<$maximum_scores_showed; $i++, $count_global_scores++)
+                                @if($count_global_scores%10 == 0)
+                                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                                    <ins class="adsbygoogle"
+                                         style="display:block"
+                                         data-ad-format="fluid"
+                                         data-ad-layout-key="-hp-7+2n-1d-69"
+                                         data-ad-client="ca-pub-0114331985290768"
+                                         data-ad-slot="9757399046"></ins>
+                                    <script>
+                                         (adsbygoogle = window.adsbygoogle || []).push({});
+                                    </script>
+                                @endif
                                 <?php $current_score = $author->scores[$i]; ?>
                                 <tr>
                                     <td>
