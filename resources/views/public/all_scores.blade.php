@@ -51,16 +51,20 @@
                             ?>
                             @for($i=0; $i<$maximum_scores_showed; $i++, $count_global_scores++)
                                 @if($count_global_scores%10 == 0)
-                                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                                    <ins class="adsbygoogle"
-                                         style="display:block"
-                                         data-ad-format="fluid"
-                                         data-ad-layout-key="-hp-7+2n-1d-69"
-                                         data-ad-client="ca-pub-0114331985290768"
-                                         data-ad-slot="9757399046"></ins>
-                                    <script>
-                                         (adsbygoogle = window.adsbygoogle || []).push({});
-                                    </script>
+                                    <tr>
+                                        <td colspan="4">
+                                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                                            <ins class="adsbygoogle"
+                                                 style="display:block"
+                                                 data-ad-format="fluid"
+                                                 data-ad-layout-key="-hp-7+2n-1d-69"
+                                                 data-ad-client="ca-pub-0114331985290768"
+                                                 data-ad-slot="9757399046"></ins>
+                                            <script>
+                                                 (adsbygoogle = window.adsbygoogle || []).push({});
+                                            </script>
+                                        </td>
+                                    </tr>
                                 @endif
                                 <?php $current_score = $author->scores[$i]; ?>
                                 <tr>
