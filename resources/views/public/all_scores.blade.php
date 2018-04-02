@@ -32,7 +32,7 @@
                 <a href="{{ route('scores_difficulty', ['difficulty'=>'tres-difficiles']) }}" title="Partitions gratuites de piano très difficiles" class="label label-danger">Très difficile</a>
             </h3>
             <table class="table table-condensed">
-                @php $count_global_scores = 0; @endphp
+                @php $count_global_scores = 1; @endphp
 
                 @foreach($authors as $author)
                     @if(count($author->scores)>0)
