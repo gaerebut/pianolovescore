@@ -110,11 +110,12 @@ Route::group( ['prefix' => 'sitemap' ], function()
 Route::post('ajax/score/comment', 'AjaxController@storeComment')->name('ajax_comment');
 Route::post('ajax/score/rating', 'AjaxController@storeRating')->name('ajax_rating');
 
-// HOME CONTROLLER
+/** COMMON ROUTES **/
 Route::get('/', 'HomeController@show')->name('home');
 
 Route::post('/contact', 'HomeController@contactusSave')->name('contactus_submit');
 Route::get('/contact', 'HomeController@contactusShow')->name('contactus');
+/** COMMON ROUTES **/
 
 Route::get('/rechercher', 'HomeController@searchByForm')->name('search');
 Route::get('/rechercher/{q}', 'HomeController@search')->name('searchByForm');
@@ -138,3 +139,28 @@ Route::get('/lexique/{letter?}', 'GlossaryController@show')->name('glossary');
 //TRICK CONTROLLER
 Route::get('/astuces/{slug}', 'TrickController@show')->name('trick');
 Route::get('/astuces', 'TrickController@showAll')->name('tricks');
+
+Route::domain('en.pianolovescore.dev')->group(function () {
+	Route::get('/search', 'HomeController@searchByForm')->name('search');
+	Route::get('/search/{q}', 'HomeController@search')->name('searchByForm');
+
+	// SCORE CONTROLLER
+	Route::post('/request-a-score', 'ScoreController@requestSave')->name('score_request_submit');
+	Route::get('/request-a-score', 'ScoreController@requestShow')->name('score_request');
+
+	Route::get('/download/{slug}', 'ScoreController@download')->name('score_download');
+	Route::get('/scores/{slug_author}/{slug_score}', 'ScoreController@show')->name('score');
+	Route::get('/scores', 'ScoreController@showAll')->name('scores');
+	Route::get('/scores/{difficulty}', 'ScoreController@showLevel')->name('scores_difficulty')
+	->where(['difficulty' => 'very-easy|easy|intermediate|hard|very-hard']);
+
+	//AUTHOR CONTROLLER
+	Route::get('/scores/{slug_author}', 'AuthorController@showScores')->name('author_scores');
+
+	//LEXIQUE CONTROLLER
+	Route::get('/glossary/{letter?}', 'GlossaryController@show')->name('glossary');
+
+	//TRICK CONTROLLER
+	Route::get('/tricks/{slug}', 'TrickController@show')->name('trick');
+	Route::get('/tricks', 'TrickController@showAll')->name('tricks');
+});
