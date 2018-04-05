@@ -11,10 +11,10 @@
             <div class="row">
                 <form action="{{ route('search', ['q'=>'']) }}" method="get">
                     <div class="col-sm-offset-3 col-sm-4">
-                        <input type="text" class="form-control" placeholder="Rechercher une partition gratuite, un compositeur..." name="q" pattern=".{2,20}" required/>
+                        <input type="text" class="form-control" placeholder="@lang('messages.header_search_score_composer')" name="q" pattern=".{2,20}" required/>
                     </div>
                     <div class="col-sm-2">
-                       <input type="submit" class="form-control" value="Rechercher" /> 
+                       <input type="submit" class="form-control" value="@lang('messages.header_search')" /> 
                     </div>
                 </form>
             </div>
@@ -29,7 +29,7 @@
             </article>
         </main>
         <footer class="container text-center">
-            ©2018 - pianolovescore.com - <a href="https://www.facebook.com/groups/partitio.gratuite/" target="_blank">Notre Groupe Facebook</a>
+            ©2018 - pianolovescore.com - <a href="https://www.facebook.com/groups/partitio.gratuite/" target="_blank">@lang('messages.footer_our_facebook_group')</a>
         </footer>
         @section('js_code')
             <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

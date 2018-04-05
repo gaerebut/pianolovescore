@@ -2,22 +2,22 @@
     <div class="navbar-collapse">
         <ul class="nav navbar-nav">
             <li>
-                <a href="{{ route('home') }}">Accueil</a>
+                <a href="{{ route('home') }}">@lang('messages.nav_homepage')</a>
             </li>
             <li>
-                <a href="{{ route('scores') }}">Partitions</a>
+                <a href="{{ route(__('routes.scores')) }}">@lang('messages.nav_scores')</a>
             </li>
             <li>
-                <a href="{{ route('glossary') }}">Lexique</a>
+                <a href="{{ route(__('routes.glossary')) }}">@lang('messages.nav_glossary')</a>
             </li>
             <li>
-                <a href="{{ route('tricks') }}">Astuces</a>
+                <a href="{{ route(__('routes.tricks')) }}">@lang('messages.nav_tricks')</a>
             </li>
             <li>
-                <a href="{{ route('score_request') }}">Demander une partition</a>
+                <a href="{{ route(__('routes.score_request')) }}">@lang('messages.nav_request_a_score')</a>
             </li>
             <li>
-                <a href="{{ route('contactus') }}">Contactez-nous</a>
+                <a href="{{ route('contact_us') }}">@lang('messages.nav_contact_us')</a>
             </li>
         </ul>
     </div>

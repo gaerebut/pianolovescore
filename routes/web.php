@@ -113,54 +113,59 @@ Route::post('ajax/score/rating', 'AjaxController@storeRating')->name('ajax_ratin
 /** COMMON ROUTES **/
 Route::get('/', 'HomeController@show')->name('home');
 
-Route::post('/contact', 'HomeController@contactusSave')->name('contactus_submit');
-Route::get('/contact', 'HomeController@contactusShow')->name('contactus');
+Route::post('/contact', 'HomeController@contactusSave')->name('contact_us_submit');
+Route::get('/contact', 'HomeController@contactusShow')->name('contact_us');
 /** COMMON ROUTES **/
 
-Route::get('/rechercher', 'HomeController@searchByForm')->name('search');
-Route::get('/rechercher/{q}', 'HomeController@search')->name('searchByForm');
+/** ROUTES : FR */
+Route::get('/rechercher', 'HomeController@searchByForm')->name('recherche');
+Route::get('/rechercher/{q}', 'HomeController@search')->name('recherche_par_formulaire');
 
 // SCORE CONTROLLER
-Route::post('/demander-une-partition', 'ScoreController@requestSave')->name('score_request_submit');
-Route::get('/demander-une-partition', 'ScoreController@requestShow')->name('score_request');
+Route::post('/demander-une-partition', 'ScoreController@requestSave')->name('demande_partition_envoi');
+Route::get('/demander-une-partition', 'ScoreController@requestShow')->name('demande_partition');
 
-Route::get('/telecharger/{slug}', 'ScoreController@download')->name('score_download');
-Route::get('/partitions/{slug_author}/{slug_score}', 'ScoreController@show')->name('score');
-Route::get('/partitions', 'ScoreController@showAll')->name('scores');
-Route::get('/partitions/{difficulty}', 'ScoreController@showLevel')->name('scores_difficulty')
+Route::get('/telecharger/{slug}', 'ScoreController@download')->name('partition_telechargement');
+Route::get('/partitions/{slug_author}/{slug_score}', 'ScoreController@show')->name('partition');
+Route::get('/partitions', 'ScoreController@showAll')->name('partitions');
+Route::get('/partitions/{difficulty}', 'ScoreController@showLevel')->name('partitions_difficultes')
 ->where(['difficulty' => 'tres-faciles|faciles|intermediaires|difficiles|tres-difficiles']);
 
 //AUTHOR CONTROLLER
-Route::get('/partitions/{slug_author}', 'AuthorController@showScores')->name('author_scores');
+Route::get('/partitions/{slug_author}', 'AuthorController@showScores')->name('auteur_partitions');
 
 //LEXIQUE CONTROLLER
-Route::get('/lexique/{letter?}', 'GlossaryController@show')->name('glossary');
+Route::get('/lexique/{letter?}', 'GlossaryController@show')->name('lexique');
 
 //TRICK CONTROLLER
-Route::get('/astuces/{slug}', 'TrickController@show')->name('trick');
-Route::get('/astuces', 'TrickController@showAll')->name('tricks');
+Route::get('/astuces/{slug}', 'TrickController@show')->name('astuce');
+Route::get('/astuces', 'TrickController@showAll')->name('astuces');
+/** ROUTES : FR */
 
-Route::domain('en.pianolovescore.dev')->group(function () {
-	Route::get('/search', 'HomeController@searchByForm')->name('search');
-	Route::get('/search/{q}', 'HomeController@search')->name('searchByForm');
 
-	// SCORE CONTROLLER
-	Route::post('/request-a-score', 'ScoreController@requestSave')->name('score_request_submit');
-	Route::get('/request-a-score', 'ScoreController@requestShow')->name('score_request');
 
-	Route::get('/download/{slug}', 'ScoreController@download')->name('score_download');
-	Route::get('/scores/{slug_author}/{slug_score}', 'ScoreController@show')->name('score');
-	Route::get('/scores', 'ScoreController@showAll')->name('scores');
-	Route::get('/scores/{difficulty}', 'ScoreController@showLevel')->name('scores_difficulty')
-	->where(['difficulty' => 'very-easy|easy|intermediate|hard|very-hard']);
 
-	//AUTHOR CONTROLLER
-	Route::get('/scores/{slug_author}', 'AuthorController@showScores')->name('author_scores');
+/** ROUTES : EN */
+Route::get('/search', 'HomeController@searchByForm')->name('search');
+Route::get('/search/{q}', 'HomeController@search')->name('search_by_form');
 
-	//LEXIQUE CONTROLLER
-	Route::get('/glossary/{letter?}', 'GlossaryController@show')->name('glossary');
+// SCORE CONTROLLER
+Route::post('/request-a-score', 'ScoreController@requestSave')->name('score_request_submit');
+Route::get('/request-a-score', 'ScoreController@requestShow')->name('score_request');
 
-	//TRICK CONTROLLER
-	Route::get('/tricks/{slug}', 'TrickController@show')->name('trick');
-	Route::get('/tricks', 'TrickController@showAll')->name('tricks');
-});
+Route::get('/download/{slug}', 'ScoreController@download')->name('score_download');
+Route::get('/scores/{slug_author}/{slug_score}', 'ScoreController@show')->name('score');
+Route::get('/scores', 'ScoreController@showAll')->name('scores');
+Route::get('/scores/{difficulty}', 'ScoreController@showLevel')->name('scores_difficulty')
+->where(['difficulty' => 'very-easy|easy|intermediate|hard|very-hard']);
+
+//AUTHOR CONTROLLER
+Route::get('/scores/{slug_author}', 'AuthorController@showScores')->name('author_scores');
+
+//LEXIQUE CONTROLLER
+Route::get('/glossary/{letter?}', 'GlossaryController@show')->name('glossary');
+
+//TRICK CONTROLLER
+Route::get('/tricks/{slug}', 'TrickController@show')->name('trick');
+Route::get('/tricks', 'TrickController@showAll')->name('tricks');
+/** ROUTES : EN */

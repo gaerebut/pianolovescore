@@ -21,28 +21,16 @@
     ];
     @endphp
     <section class="homesection">
-        <h1 class="homesection__title">{{ __('messages.home_title') }}</h1>
-        <h2 class="homesection__subtitle">{{ __('messages.home_subtitle') }}</h2>
-        <div class="homesection__content">
-            <p>
-                PianoLoveScore vous permet de télécharger des <a href="{{ route('home') }}">partitions gratuites de piano</a> au format PDF, de les noter en fonction de vos goûts, d'écouter leurs version audio et de partager votre expérience avec les autres membres.
-            </p>
-            <p>
-                Vous avez un niveau débutant ou intermédiaire, découvrez notre rubrique d'<a href="{{ route('tricks') }}">astuces gratuites</a> pour perfectionner votre technique au <strong>piano</strong>.
-            <p>
-                Les <strong>partitions gratuites</strong> présentent sur PianoLoveScore sont toutes des <strong>partitions libre de droits et légales</strong>.
-            </p>
-            <p>
-                Rejoingnez notre groupe Facebook <a href="https://www.facebook.com/groups/partitio.gratuite/">Partition Gratuite Piano</a> et retrouvez les <strong>partitions de piano</strong>que les membres s'échangent gratuitement.
-            </p>
-        </div>
+        <h1 class="homesection__title">@lang('messages.home_title')</h1>
+        <h2 class="homesection__subtitle">@lang('messages.home_subtitle')</h2>
+        <div class="homesection__content">@lang('messages.home_introduction')</div>
     </section>
     <section class="homesection">
         <table class="table table-condensed">
             <thead>
                 <tr>
                     <td colspan="4">
-                        <h3 class="homesection__title">Nouvelles Partitions Gratuites de Piano</h3>
+                        <h3 class="homesection__title">@lang('messages.home_scores_news')</h3>
                     </td>
                 </tr>
             </thead>
@@ -53,10 +41,10 @@
                             <span class="label label-{{ $difficulties[$score->difficulty]['class'] }}">{{ $difficulties[$score->difficulty]['title'] }}</span>
                         </td>
                         <td>
-                            <a href="{{ route('score', ['slug_author'=>$score->author->slug, 'slug_score'=>$score->slug])}}">{{ $score->title }}</a>
+                            <a href="{{ route( __('routes.score') , ['slug_author'=>$score->author->slug, 'slug_score'=>$score->slug])}}" title="@lang('messages.generic_score_of_author', ['score' => $score->title, 'author' => $score->author->fullname])">{{ $score->title }}</a>
                         </td>
                         <td>
-                            de <a href="{{ route('author_scores', ['slug_author'=>$score->author->slug]) }}">{{ $score->author }}</a>
+                            @lang('messages.generic_by') <a href="{{ route( __('routes.author_scores'), ['slug_author'=>$score->author->slug]) }}" title="@lang('messages.generic_author_scores', ['author' => $score->author])">{{ $score->author }}</a>
                         </td>
                         <td>
                             @if(!is_null($score->avg_votes))
@@ -81,7 +69,7 @@
             <thead>
                 <tr>
                     <td colspan="4">
-                        <h3 class="homesection__title">TOP Partitions Gratuites de Piano</h3>
+                        <h3 class="homesection__title">@lang('messages.home_scores_top')</h3>
                     </td>
                 </tr>
             </thead>
@@ -92,10 +80,10 @@
                             <span class="label label-{{ $difficulties[$score->difficulty]['class'] }}">{{ $difficulties[$score->difficulty]['title'] }}</span>
                         </td>
                         <td>
-                            <a href="{{ route('score', ['slug_author'=>$score->author->slug, 'slug_score'=>$score->slug])}}">{{ $score->title }}</a>
+                            <a href="{{ route( __('routes.score'), ['slug_author'=>$score->author->slug, 'slug_score'=>$score->slug])}}" title="@lang('messages.generic_score_of_author', ['score' => $score->title, 'author' => $score->author->fullname])">{{ $score->title }}</a>
                         </td>
                         <td>
-                            de <a href="{{ route('author_scores', ['slug_author'=>$score->author->slug]) }}">{{ $score->author }}</a>
+                            @lang('messages.generic_by') <a href="{{ route( __('routes.author_scores'), ['slug_author'=>$score->author->slug]) }}" title="@lang('messages.generic_author_scores', ['author' => $score->author])">{{ $score->author }}</a>
                         </td>
                         <td>
                             @if(!is_null($score->avg_votes))

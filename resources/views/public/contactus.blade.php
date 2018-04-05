@@ -32,7 +32,7 @@
                     <h4>Une réponse vous sera apportée par email</h4>
                 </div>
             @endif
-            <form action="{{ route('contactus_submit') }}" method="post" class="form-horizontal request">
+            <form action="{{ route('contact_us_submit') }}" method="post" class="form-horizontal request">
                 <div class="form-group">
                     <label for="contact_lastname" class="col-sm-2 control-label">Nom</label>
                     <div class="col-sm-4">
