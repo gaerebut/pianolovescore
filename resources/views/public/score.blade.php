@@ -24,34 +24,34 @@
         <div class="col-md-offset-4 col-md-8">
             <div class="row scores__title">
                 <div class="row text-right">
-                    <div class="col-md-12">Partition postée le <time itemprop="dateCreated" datetime="{{ $score->created_at }}">{{ $score->created_at->formatLocalized('%d/%m/%Y') }}</time></div>
+                    <div class="col-md-12">@lang('messages.score_posted_on') <time itemprop="dateCreated" datetime="{{ $score->created_at }}">{{ $score->created_at->formatLocalized('%d/%m/%Y') }}</time></div>
                 </div>
                 <h1 itemprop="name">{{ $score->title }}</h1><h2><a href="{{ route('author_scores', ['slug_author'=>$score->author->slug]) }}" itemprop="author" itemscope itemtype="http://schema.org/Person" itemid="#author"><meta itemprop="name" content="{{ $score->author->fullname }}"/>{{ $score->author->fullname }}</a></h2>
                 <p class="difficulty">
                     @if($score->difficulty==1)
-                        <span class="label label-info active">Partition très facile</span>
+                        <span class="label label-info active">@lang('messages.generic_sheet_very_easy')</span>
                     @else
-                        <a href="{{ route('scores_difficulty', ['difficulty'=>'tres-faciles']) }}" title="Partitions gratuites de piano très faciles" class="label label-info">Partition très facile</a>
+                        <a href="{{ route('scores_difficulty', ['difficulty'=>__('messages.generic_sheet_very_easy_href')]) }}" title="@lang('messages.generic_sheet_very_easy_title')" class="label label-info">@lang('messages.generic_sheet_very_easy')</a>
                     @endif
                     @if($score->difficulty==2)
-                        <span class="label label-primary active">Partition facile</span>
+                        <span class="label label-primary active">@lang('messages.generic_sheet_easy')</span>
                     @else
-                        <a href="{{ route('scores_difficulty', ['difficulty'=>'faciles']) }}" title="Partitions gratuites de piano faciles" class="label label-primary">Partition facile</a>
+                        <a href="{{ route('scores_difficulty', ['difficulty'=>__('messages.generic_sheet_easy_href')]) }}" title="@lang('messages.generic_sheet_easy_title')" class="label label-primary">@lang('messages.generic_sheet_easy')</a>
                     @endif
                     @if($score->difficulty==3)
-                        <span class="label label-success active">Partition intermédiaire</span>
+                        <span class="label label-success active">@lang('messages.generic_sheet_intermediate')</span>
                     @else
-                        <a href="{{ route('scores_difficulty', ['difficulty'=>'intermediaires']) }}" title="Partitions gratuites de piano intermédiaires" class="label label-success">Partition intermédiaire</a>
+                        <a href="{{ route('scores_difficulty', ['difficulty'=>__('messages.generic_sheet_intermediate_href')]) }}" title="@lang('messages.generic_sheet_intermediate_title')" class="label label-success">@lang('messages.generic_sheet_intermediate')</a>
                     @endif
                     @if($score->difficulty==4)
-                        <span class="label label-warning active">Partition difficile</span>
+                        <span class="label label-warning active">@lang('messages.generic_sheet_hard')</span>
                     @else
-                        <a href="{{ route('scores_difficulty', ['difficulty'=>'difficiles']) }}" title="Partitions gratuites de piano difficiles" class="label label-warning">Partition difficile</a>
+                        <a href="{{ route('scores_difficulty', ['difficulty'=>__('messages.generic_sheet_hard_href')]) }}" title="@lang('messages.generic_sheet_hard_title')" class="label label-warning">@lang('messages.generic_sheet_hard')</a>
                     @endif
                     @if($score->difficulty==5)
-                        <span class="label label-danger active">Partition très difficile</span>
+                        <span class="label label-danger active">@lang('messages.generic_sheet_very_hard')</span>
                     @else
-                        <a href="{{ route('scores_difficulty', ['difficulty'=>'tres-difficiles']) }}" title="Partitions gratuites de piano très difficiles" class="label label-danger">Partition très difficile</a>
+                        <a href="{{ route('scores_difficulty', ['difficulty'=>__('messages.generic_sheet_very_hard_href')]) }}" title="@lang('messages.generic_sheet_very_hard_title')" class="label label-danger">@lang('messages.generic_sheet_very_hard')</a>
                     @endif
                 </p>
             </div>
@@ -130,27 +130,37 @@
                         </mark></strong></h4>
                     </div>
                 @endif
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- Score2 -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-0114331985290768"
+                 data-ad-slot="7224768306"
+                 data-ad-format="auto"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
             </div>
         </div>
         <div class="row">
             <div class="card">
                 <ul class="nav nav-tabs" role="tablist">
-                    <li role="presentation" class="active"><a href="#commentaires-partition" aria-controls="commentsents-score" role="tab" data-toggle="tab">Commentaires</a></li>
+                    <li role="presentation" class="active"><a href="#sheet-comments" aria-controls="commentsents-score" role="tab" data-toggle="tab">@lang('messages.comment_comments')</a></li>
                     @if(!is_null($score->youtube_playlist_id))
-                        <li role="presentation" @if(count($score->comments)==0) class="active" @endif ><a href="#videos-piano" aria-controls="videos-piano" role="tab" data-toggle="tab">Vos vidéos</a></li>
+                        <li role="presentation" @if(count($score->comments)==0) class="active" @endif ><a href="#videos-piano" aria-controls="videos-piano" role="tab" data-toggle="tab">@lang('messages.comment_your_videos')</a></li>
                     @endif
                 </ul>
                 <div class="tab-content">
-                    <div role="tabpanel" class="tab-pane active" id="commentaires-partition">
+                    <div role="tabpanel" class="tab-pane active" id="sheet-comments">
                         <form class="reply_form" action="{{ route('ajax_comment') }}" onsubmit="return false">
                             <div class="form-group">
-                                <input type="text" id="u" class="form-control" placeholder="Votre pseudo..." pattern=".{3,}" required />
+                                <input type="text" id="u" class="form-control" placeholder="@lang('messages.comment_your_nickname')" pattern=".{3,}" required />
                             </div>
                             <div class="form-group">
-                                <textarea class="form-control" id="c" placeholder="Votre commentaire..." pattern=".{3,}" required></textarea>
+                                <textarea class="form-control" id="c" placeholder="@lang('messages.comment_your_comment')" pattern=".{3,}" required></textarea>
                             </div>
                             <div class="form-group">
-                                <button type="submit" class="btn btn-primary reply_comment">Poster le commentaire</button>
+                                <button type="submit" class="btn btn-primary reply_comment">@lang('messages.comment_post_comment')</button>
                             </div>
                         </form>
                         @if(count($score->comments) > 0)
@@ -166,214 +176,6 @@
             </div>
         </div>
     </section>
-    <!--
-    <section class="scores__alike">
-        <table class="table table-condensed">
-            <thead>
-                <tr>
-                    <td colspan="3">
-                        <h2>Partitions gratuites que vous aimerez également</h2>
-                    </td>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        <a href="/partitions/chopin/etude_n_2_op_34">Titre de la partition BLABLABLAB BAL BLA BLA BLAB LA BLAB LAB L</a>
-                    </td>
-                    <td>
-                        de <a href="/partitions/chopin/etude_n_2_op_34">Auteur NOM PRENOM</a>
-                    </td>
-                    <td>
-                        <div class="star-ratings-css">
-                            <div class="top" style="width: 50%">
-                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                            </div>
-                            <div class="bottom">
-                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="/partitions/chopin/etude_n_2_op_34">Titre de la partition BLABLABLAB BAL BLA BLA BLAB LA BLAB LAB L</a>
-                    </td>
-                    <td>
-                        de <a href="/partitions/chopin/etude_n_2_op_34">Auteur NOM PRENOM</a>
-                    </td>
-                    <td>
-                        <div class="star-ratings-css">
-                            <div class="top" style="width: 50%">
-                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                            </div>
-                            <div class="bottom">
-                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="/partitions/chopin/etude_n_2_op_34">Titre de la partition BLABLABLAB BAL BLA BLA BLAB LA BLAB LAB L</a>
-                    </td>
-                    <td>
-                        de <a href="/partitions/chopin/etude_n_2_op_34">Auteur NOM PRENOM</a>
-                    </td>
-                    <td>
-                        <div class="star-ratings-css">
-                            <div class="top" style="width: 50%">
-                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                            </div>
-                            <div class="bottom">
-                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="/partitions/chopin/etude_n_2_op_34">Titre de la partition BLABLABLAB BAL BLA BLA BLAB LA BLAB LAB L</a>
-                    </td>
-                    <td>
-                        de <a href="/partitions/chopin/etude_n_2_op_34">Auteur NOM PRENOM</a>
-                    </td>
-                    <td>
-                        <div class="star-ratings-css">
-                            <div class="top" style="width: 50%">
-                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                            </div>
-                            <div class="bottom">
-                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="/partitions/chopin/etude_n_2_op_34">Titre de la partition BLABLABLAB BAL BLA BLA BLAB LA BLAB LAB L</a>
-                    </td>
-                    <td>
-                        de <a href="/partitions/chopin/etude_n_2_op_34">Auteur NOM PRENOM</a>
-                    </td>
-                    <td>
-                        <div class="star-ratings-css">
-                            <div class="top" style="width: 50%">
-                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                            </div>
-                            <div class="bottom">
-                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-    <section class="scores__composer">
-        <table class="table">
-            <thead>
-                <tr>
-                    <td colspan="3">
-                        <h2>Autres partitions gratuites de Chopin</h2>
-                    </td>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        <a href="/partitions/chopin/etude_n_2_op_34">Titre de la partition BLABLABLAB BAL BLA BLA BLAB LA BLAB LAB L</a>
-                    </td>
-                    <td>
-                        de <a href="/partitions/chopin/etude_n_2_op_34">Auteur NOM PRENOM</a>
-                    </td>
-                    <td>
-                        <div class="star-ratings-css">
-                            <div class="top" style="width: 50%">
-                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                            </div>
-                            <div class="bottom">
-                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="/partitions/chopin/etude_n_2_op_34">Titre de la partition BLABLABLAB BAL BLA BLA BLAB LA BLAB LAB L</a>
-                    </td>
-                    <td>
-                        de <a href="/partitions/chopin/etude_n_2_op_34">Auteur NOM PRENOM</a>
-                    </td>
-                    <td>
-                        <div class="star-ratings-css">
-                            <div class="top" style="width: 50%">
-                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                            </div>
-                            <div class="bottom">
-                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="/partitions/chopin/etude_n_2_op_34">Titre de la partition BLABLABLAB BAL BLA BLA BLAB LA BLAB LAB L</a>
-                    </td>
-                    <td>
-                        de <a href="/partitions/chopin/etude_n_2_op_34">Auteur NOM PRENOM</a>
-                    </td>
-                    <td>
-                        <div class="star-ratings-css">
-                            <div class="top" style="width: 50%">
-                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                            </div>
-                            <div class="bottom">
-                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="/partitions/chopin/etude_n_2_op_34">Titre de la partition BLABLABLAB BAL BLA BLA BLAB LA BLAB LAB L</a>
-                    </td>
-                    <td>
-                        de <a href="/partitions/chopin/etude_n_2_op_34">Auteur NOM PRENOM</a>
-                    </td>
-                    <td>
-                        <div class="star-ratings-css">
-                            <div class="top" style="width: 50%">
-                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                            </div>
-                            <div class="bottom">
-                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="/partitions/chopin/etude_n_2_op_34">Titre de la partition BLABLABLAB BAL BLA BLA BLAB LA BLAB LAB L</a>
-                    </td>
-                    <td>
-                        de <a href="/partitions/chopin/etude_n_2_op_34">Auteur NOM PRENOM</a>
-                    </td>
-                    <td>
-                        <div class="star-ratings-css">
-                            <div class="top" style="width: 50%">
-                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                            </div>
-                            <div class="bottom">
-                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-    -->
 @endsection
 @section('js_code')
     <script src="//load.sumome.com/" data-sumo-site-id="492cf06dd4417e64435c1585751ab4124d7c3fbfcf4021d3dfba6cbcc0a43f9e" async="async"></script>
@@ -430,7 +232,7 @@
                 else
                 {
                     commentForm.addClass('collapse');
-                    $(this).html('Répondre');
+                    $(this).html('@lang("messages.comment_reply")');
                 }
             });
 
@@ -458,7 +260,7 @@
                            {
                                 var parent_zone = parent_id_str == '' ? form.parent() : form.parents(':eq(1)');
 
-                                parent_zone.append('<div class="scores__comment"><div id="'+data.id+'"><strong style="color:red">Votre commentaire sera visible publiquement lorsqu\'il sera validé par un administrateur</strong><br /><strong>'+$('#u', form).val()+'</strong> - A l\'instant<div>'+$('#c', form).val()+'</div>');
+                                parent_zone.append('<div class="scores__comment"><div id="'+data.id+'"><strong style="color:red">@lang("messages.comment_posted_wait")</strong><br /><strong>'+$('#u', form).val()+'</strong> - @lang("messages.comment_just_now")<div>'+$('#c', form).val()+'</div>');
                                 $('#c, #u', form).val('');
                            }
                         },
