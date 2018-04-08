@@ -1,11 +1,11 @@
 @extends('layouts.public')
 
-@section('title'){{ $score->title }} de {{ $score->author }} - Partition Gratuite de Piano @endsection
-@section('description')Partition Gratuite de Piano - {{ $score->title }} de {{ $score->author }} - Téléchargez gratuitement cette partition @endsection
+@section('title')@lang('titles.score', ['title' => $score->title, 'author' => $score->author])@endsection
+@section('description')@lang('descriptions.score', ['title' => $score->title, 'author' => $score->author]) @endsection
 
 @section('og_type')book @endsection
-@section('og_title'){{ $score->title }} de {{ $score->author}} - Partition Gratuite de Piano @endsection
-@section('og_description')Télécharger la partition gratuite de piano: {{ $score->title }} de {{ $score->author}}. Trouvez les partitions libres de droits en libre accès, notez-les, commentez-les et faites des découvertes @endsection
+@section('og_title')@lang('titles.score', ['title' => $score->title, 'author' => $score->author])@endsection
+@section('og_description')@lang('descriptions.score', ['title' => $score->title, 'author' => $score->author])@endsection
 @section('og_image'){{ $score->score_image }} @endsection
 
 @section('css')
@@ -24,34 +24,34 @@
         <div class="col-md-offset-4 col-md-8">
             <div class="row scores__title">
                 <div class="row text-right">
-                    <div class="col-md-12">@lang('messages.score_posted_on') <time itemprop="dateCreated" datetime="{{ $score->created_at }}">{{ $score->created_at->formatLocalized('%d/%m/%Y') }}</time></div>
+                    <div class="col-md-12">@lang('messages.score.posted_on') <time itemprop="dateCreated" datetime="{{ $score->created_at }}">{{ $score->created_at->formatLocalized('%d/%m/%Y') }}</time></div>
                 </div>
                 <h1 itemprop="name">{{ $score->title }}</h1><h2><a href="{{ route('author_scores', ['slug_author'=>$score->author->slug]) }}" itemprop="author" itemscope itemtype="http://schema.org/Person" itemid="#author"><meta itemprop="name" content="{{ $score->author->fullname }}"/>{{ $score->author->fullname }}</a></h2>
                 <p class="difficulty">
                     @if($score->difficulty==1)
-                        <span class="label label-info active">@lang('messages.generic_sheet_very_easy')</span>
+                        <span class="label label-info active">@lang('generic.sheet_very_easy')</span>
                     @else
-                        <a href="{{ route('scores_difficulty', ['difficulty'=>__('messages.generic_sheet_very_easy_href')]) }}" title="@lang('messages.generic_sheet_very_easy_title')" class="label label-info">@lang('messages.generic_sheet_very_easy')</a>
+                        <a href="{{ route('scores_difficulty', ['difficulty'=>__('generic.sheet_very_easy_href')]) }}" title="@lang('generic.sheet_very_easy_title')" class="label label-info">@lang('generic.sheet_very_easy')</a>
                     @endif
                     @if($score->difficulty==2)
-                        <span class="label label-primary active">@lang('messages.generic_sheet_easy')</span>
+                        <span class="label label-primary active">@lang('generic.sheet_easy')</span>
                     @else
-                        <a href="{{ route('scores_difficulty', ['difficulty'=>__('messages.generic_sheet_easy_href')]) }}" title="@lang('messages.generic_sheet_easy_title')" class="label label-primary">@lang('messages.generic_sheet_easy')</a>
+                        <a href="{{ route('scores_difficulty', ['difficulty'=>__('generic.sheet_easy_href')]) }}" title="@lang('generic.sheet_easy_title')" class="label label-primary">@lang('generic.sheet_easy')</a>
                     @endif
                     @if($score->difficulty==3)
-                        <span class="label label-success active">@lang('messages.generic_sheet_intermediate')</span>
+                        <span class="label label-success active">@lang('generic.sheet_intermediate')</span>
                     @else
-                        <a href="{{ route('scores_difficulty', ['difficulty'=>__('messages.generic_sheet_intermediate_href')]) }}" title="@lang('messages.generic_sheet_intermediate_title')" class="label label-success">@lang('messages.generic_sheet_intermediate')</a>
+                        <a href="{{ route('scores_difficulty', ['difficulty'=>__('generic.sheet_intermediate_href')]) }}" title="@lang('generic.sheet_intermediate_title')" class="label label-success">@lang('generic.sheet_intermediate')</a>
                     @endif
                     @if($score->difficulty==4)
-                        <span class="label label-warning active">@lang('messages.generic_sheet_hard')</span>
+                        <span class="label label-warning active">@lang('generic.sheet_hard')</span>
                     @else
-                        <a href="{{ route('scores_difficulty', ['difficulty'=>__('messages.generic_sheet_hard_href')]) }}" title="@lang('messages.generic_sheet_hard_title')" class="label label-warning">@lang('messages.generic_sheet_hard')</a>
+                        <a href="{{ route('scores_difficulty', ['difficulty'=>__('generic.sheet_hard_href')]) }}" title="@lang('generic.sheet_hard_title')" class="label label-warning">@lang('generic.sheet_hard')</a>
                     @endif
                     @if($score->difficulty==5)
-                        <span class="label label-danger active">@lang('messages.generic_sheet_very_hard')</span>
+                        <span class="label label-danger active">@lang('generic.sheet_very_hard')</span>
                     @else
-                        <a href="{{ route('scores_difficulty', ['difficulty'=>__('messages.generic_sheet_very_hard_href')]) }}" title="@lang('messages.generic_sheet_very_hard_title')" class="label label-danger">@lang('messages.generic_sheet_very_hard')</a>
+                        <a href="{{ route('scores_difficulty', ['difficulty'=>__('generic.sheet_very_hard_href')]) }}" title="@lang('generic.sheet_very_hard_title')" class="label label-danger">@lang('generic.sheet_very_hard')</a>
                     @endif
                 </p>
             </div>
@@ -59,29 +59,29 @@
         <div class="row border-left-0 border-right-0 border-top-0">
             <div class="col-md-4 text-center">
                 <a data-fancybox="gallery" href="{{ URL::to('/') }}/img/scores/{{ $score->score_image }}">
-                    <img src="{{ URL::to('/') }}/img/scores/{{ $score->score_image }}" class="scores__icon" itemprop="image" alt="Partition Gratuite {{ $score->title }} de {{ $score->author }}" title="Partition Gratuite {{ $score->title }} de {{ $score->author }}">
+                    <img src="{{ URL::to('/') }}/img/scores/{{ $score->score_image }}" class="scores__icon" itemprop="image" alt="{{ $score->title }} @lang('generic.by') {{ $score->author }}" title="@lang('messages.score.free_sheet') {{ $score->title }} @lang('generic.by') {{ $score->author }}">
                 </a>
-                <h6><strong>Cliquez sur l'image pour l'agrandir</strong></h6>
+                <h6><strong>@lang('messages.score.enlarge_image')</strong></h6>
             </div>
             <div class="col-md-8 scores__infos">
                 <div class="row text-left">
                     <p itemprop="description">{!! $score->description !!}</p>
-                    <p>Cette oeuvre contient <span itemprop="numberOfPages">{{ $score->nb_pages }}</span> {{ str_plural('page', $score->nb_pages) }}</h6>
+                    <p>@lang('messages.score.nb_pages') <span itemprop="numberOfPages">{{ $score->nb_pages }}</span> {{ str_plural('page', $score->nb_pages) }}</h6>
                 </div>
                 <div class="row">
                     <div class="col-xs-offset-4 col-xs-4 col-md-offset-1 col-md-3">
-                        <h4><strong>Télécharger gratuitement</strong></h4>
-                        <a href="{{ route('score_download', ['slug' => $score->slug]) }}" title="Télécharger la partition gratuite {{ $score->title }} de {{ $score->author }}">
-                            <img src="{{ URL::to('/') }}/img/pdf_download.png" class="scores__download" alt="Télécharger la partition gratuite {{ $score->title }} de {{ $score->author }}" title="Télécharger la partition gratuite {{ $score->title }} de {{ $score->author }}""/>
+                        <h4><strong>@lang('messages.score.free_download')</strong></h4>
+                        <a href="{{ route('score_download', ['slug' => $score->slug]) }}" title="@lang('messages.score.download_free_sheet') {{ $score->title }} @lang('generic.by') {{ $score->author }}">
+                            <img src="{{ URL::to('/') }}/img/pdf_download.png" class="scores__download" alt="@lang('messages.score.download_free_sheet') {{ $score->title }} @lang('generic.by') {{ $score->author }}" title="@lang('messages.score.download_free_sheet') {{ $score->title }} @lang('generic.by') {{ $score->author }}""/>
                         </a>
-                        <h6><strong>{{ $score->downloaded . str_plural(' téléchargement', $score->downloaded|1
+                        <h6><strong>{{ $score->downloaded . ' ' . str_plural(__('generic.download'), $score->downloaded|1
                         )}}</strong></h6>
                     </div>
                     <div class="col-xs-12 col-md-8" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
                         @if(!$user_already_vote)
-                            <h5>Quelle note attribuez-vous à cette <strong>partition de piano</strong> ?</h5>
+                            <h5>@lang('messages.score.rate')</h5>
                         @else
-                            <h5>Vous avez déjà voté pour cette <strong>partition gratuite</strong></h5>
+                            <h5>@lang('messages.score.already_rate')</h5>
                         @endif
                         <div class="stars">
                             <div class="star-ratings-css result @if(!$user_already_vote) off @endif">
@@ -105,17 +105,17 @@
                                     <input class="star star-1" id="star-1" type="radio" name="star" value="1"/>
                                     <label class="star star-1" for="star-1"></label>
                                 </form>
-                                <h3 class="scores__rating__thanks">Merci pour votre vote</h3>
+                                <h3 class="scores__rating__thanks">@lang('messages.score.thanks_rate')</h3>
                             @endif
                             <meta itemprop="worstRating" content = "1">
-                            <div class="scores__rating__result">Moyenne : <strong class="avg_votes" itemprop="ratingValue"><?php echo round($score->avg_votes/20, 2); ?></strong>/<span itemprop="bestRating">5</span> (<strong class="count_votes" itemprop="reviewCount">{{ $score->count_votes }}</strong> votes)</div>
+                            <div class="scores__rating__result">{{ ucfirst(__('generic.average')) }} : <strong class="avg_votes" itemprop="ratingValue"><?php echo round($score->avg_votes/20, 2); ?></strong>/<span itemprop="bestRating">5</span> (<strong class="count_votes" itemprop="reviewCount">{{ $score->count_votes }}</strong> votes)</div>
                         </div>
                         @if(!is_null($score->score_sound_url))
                             <div class="scores__audio">
-                                <h4>Ecoutez ci-dessous <strong>{{ $score->title }}</strong> de <strong>{{ $score->author->lastname }}</strong></h4>
+                                <h4>@lang('messages.score.listen') <strong>{{ $score->title }}</strong> @lang('generic.by') <strong>{{ $score->author->lastname }}</strong></h4>
                                 <audio controls="controls" preload="metadata" controlsList="nodownload" itemprop="audio">
                                     <source src="{{ $score->score_sound_url }}" type="audio/{{ $score->score_sound_format }}" />
-                                    Votre navigateur n'est pas compatible
+                                    @lang('generic.browser_compatible')
                                 </audio>
                             </div>
                         @endif

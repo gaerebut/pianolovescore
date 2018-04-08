@@ -1,6 +1,6 @@
 @extends('layouts.public')
 
-@section('title')Partition Gratuite de Piano : Téléchargez des partitions de piano gratuitement @endsection
+@section('title')@lang('title.home')@endsection
 @section('description')Partition Gratuite de Piano : Partitions Gratuites Piano, Téléchargements, Auteurs, Compositeurs, Astuces @endsection
 
 @section('og_type')book @endsection
@@ -21,16 +21,16 @@
     ];
     @endphp
     <section class="homesection">
-        <h1 class="homesection__title">@lang('messages.home_title')</h1>
-        <h2 class="homesection__subtitle">@lang('messages.home_subtitle')</h2>
-        <div class="homesection__content">@lang('messages.home_introduction')</div>
+        <h1 class="homesection__title">@lang('messages.home.title')</h1>
+        <h2 class="homesection__subtitle">@lang('messages.home.subtitle')</h2>
+        <div class="homesection__content">@lang('messages.home.introduction')</div>
     </section>
     <section class="homesection">
         <table class="table table-condensed">
             <thead>
                 <tr>
                     <td colspan="4">
-                        <h3 class="homesection__title">@lang('messages.home_scores_news')</h3>
+                        <h3 class="homesection__title">@lang('messages.home.scores_news')</h3>
                     </td>
                 </tr>
             </thead>
@@ -41,10 +41,10 @@
                             <span class="label label-{{ $difficulties[$score->difficulty]['class'] }}">{{ $difficulties[$score->difficulty]['title'] }}</span>
                         </td>
                         <td>
-                            <a href="{{ route( __('routes.score') , ['slug_author'=>$score->author->slug, 'slug_score'=>$score->slug])}}" title="@lang('messages.generic_score_of_author', ['score' => $score->title, 'author' => $score->author->fullname])">{{ $score->title }}</a>
+                            <a href="{{ route( __('routes.score') , ['slug_author'=>$score->author->slug, 'slug_score'=>$score->slug])}}" title="@lang('generic.score_of_author', ['score' => $score->title, 'author' => $score->author->fullname])">{{ $score->title }}</a>
                         </td>
                         <td>
-                            @lang('messages.generic_by') <a href="{{ route( __('routes.author_scores'), ['slug_author'=>$score->author->slug]) }}" title="@lang('messages.generic_author_scores', ['author' => $score->author])">{{ $score->author }}</a>
+                            @lang('generic.by') <a href="{{ route( __('routes.author_scores'), ['slug_author'=>$score->author->slug]) }}" title="@lang('generic.author_scores', ['author' => $score->author])">{{ $score->author }}</a>
                         </td>
                         <td>
                             @if(!is_null($score->avg_votes))
@@ -69,7 +69,7 @@
             <thead>
                 <tr>
                     <td colspan="4">
-                        <h3 class="homesection__title">@lang('messages.home_scores_top')</h3>
+                        <h3 class="homesection__title">@lang('messages.home.scores_top')</h3>
                     </td>
                 </tr>
             </thead>
@@ -80,10 +80,10 @@
                             <span class="label label-{{ $difficulties[$score->difficulty]['class'] }}">{{ $difficulties[$score->difficulty]['title'] }}</span>
                         </td>
                         <td>
-                            <a href="{{ route( __('routes.score'), ['slug_author'=>$score->author->slug, 'slug_score'=>$score->slug])}}" title="@lang('messages.generic_score_of_author', ['score' => $score->title, 'author' => $score->author->fullname])">{{ $score->title }}</a>
+                            <a href="{{ route( __('routes.score'), ['slug_author'=>$score->author->slug, 'slug_score'=>$score->slug])}}" title="@lang('generic.score_of_author', ['score' => $score->title, 'author' => $score->author->fullname])">{{ $score->title }}</a>
                         </td>
                         <td>
-                            @lang('messages.generic_by') <a href="{{ route( __('routes.author_scores'), ['slug_author'=>$score->author->slug]) }}" title="@lang('messages.generic_author_scores', ['author' => $score->author])">{{ $score->author }}</a>
+                            @lang('generic.by') <a href="{{ route( __('routes.author_scores'), ['slug_author'=>$score->author->slug]) }}" title="@lang('generic.author_scores', ['author' => $score->author])">{{ $score->author }}</a>
                         </td>
                         <td>
                             @if(!is_null($score->avg_votes))

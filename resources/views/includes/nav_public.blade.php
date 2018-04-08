@@ -2,22 +2,22 @@
     <div class="navbar-collapse">
         <ul class="nav navbar-nav">
             <li>
-                <a href="{{ route('home') }}">@lang('messages.nav_homepage')</a>
+                <a href="{{ route('home') }}">@lang('nav.homepage')</a>
             </li>
             <li>
-                <a href="{{ route(__('routes.scores')) }}">@lang('messages.nav_scores')</a>
+                <a href="{{ route(__('routes.scores')) }}">@lang('nav.scores')</a>
             </li>
             <li>
-                <a href="{{ route(__('routes.glossary')) }}">@lang('messages.nav_glossary')</a>
+                <a href="{{ route(__('routes.glossary')) }}">@lang('nav.glossary')</a>
             </li>
             <li>
-                <a href="{{ route(__('routes.tricks')) }}">@lang('messages.nav_tricks')</a>
+                <a href="{{ route(__('routes.tricks')) }}">@lang('nav.tricks')</a>
             </li>
             <li>
-                <a href="{{ route(__('routes.score_request')) }}">@lang('messages.nav_request_a_score')</a>
+                <a href="{{ route(__('routes.score_request')) }}">@lang('nav.request_a_score')</a>
             </li>
             <li>
-                <a href="{{ route('contact_us') }}">@lang('messages.nav_contact_us')</a>
+                <a href="{{ route('contact_us') }}">@lang('nav.contact_us')</a>
             </li>
         </ul>
     </div>

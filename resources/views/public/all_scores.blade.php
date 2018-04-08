@@ -1,6 +1,6 @@
 @extends('layouts.public')
 
-@section('title')Les partitions Gratuites de Piano sur PianoLoveScore @endsection
+@section('title')@lang('title.all_scores')@endsection
 @section('description')Partitions Gratuites de Piano par Auteurs sur Piano Love Score. Téléchargez et notez les partitions après les avoir téléchargées @endsection
 
 @section('og_type')book @endsection
