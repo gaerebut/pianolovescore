@@ -24,7 +24,7 @@ class TrickController extends Controller
         $tricks = Trick::orderBy('updated_at')->get();
 
         return view('public.tricks', [
-            'breadcrumb_last_level' => 'Toutes les astuces de piano',
+            'breadcrumb_last_level' => __('messages.tip.all_tips'),
             'tricks'                => $tricks
         ]);
     }

@@ -4,6 +4,7 @@ return [
 	'header_search_composer'	=> 'Rechercher une partition gratuite, un compositeur...',
 	'header_search'				=> 'Rechercher',
 	'footer_our_facebook_group'	=> 'Notre groupe Facebook',
+    'search_free_sheet'         => 'Rechercher une partition gratuite',
 
 	'comment' => [
 		'comments'		=> 'Commentaires',
@@ -23,6 +24,8 @@ return [
     	'scores_top'	=> 'TOP Partitions Gratuites de Piano',
     ],
     'score' => [
+        'all_scores'            => 'Toutes les partitions gratuites de piano',
+        'all_scores_level'      => 'Les partitions gratuites :level',
     	'posted_on' 			=> 'Partition postée le',
     	'free_sheet'			=> 'Partition Gratuite',
     	'enlarge_image'			=> "Cliquez sur l'image pour l'agrandir",
@@ -33,5 +36,24 @@ return [
     	'download_free_sheet'	=> 'Télécharger la partition gratuite',
    		'thanks_rate'			=> 'Merci pour votre vote',
     	'listen'				=> 'Ecoutez',
+    ],
+    'score_request' => [
+        'sent' => 'Demande de partition envoyée'
+    ],
+    'contact' => [
+        'page_description'  => "<p>Remplissez le formulaire ci-dessous pour contacter l'équipe</p><p>Une réponse vous sera apportée par email dans les plus brefs délais</p>",
+        'sent_description'  => '<h4>Votre message à bien été envoyé.</h4><h4>Une réponse vous sera apportée par email</h4>',
+        'sent'              => 'Demande de contact envoyée',
+        'object_sample'     => 'Exemple : Amélioration / Bug / Problème / Question ...',
+        'response_email'    => 'Une réponse vous sera apportée par email',
+        'hello'             => 'Bonjour, '
+   ],
+    'tip' => [
+        'all_tips'      => 'Toutes les astuces de piano',
+        'piano_tips'    => 'Astuces de Piano',
+        'posted'        => 'Astuce postée',
+    ],
+    'glossary' => [
+        'in' => 'Lexique en :letter',
     ],
 ];

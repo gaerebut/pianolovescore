@@ -25,7 +25,7 @@ class HomeController extends Controller
     public function contactusShow()
     {
         return view('public.contactus', [
-            'breadcrumb_last_level' => 'Contactez-nous'
+            'breadcrumb_last_level' => __('nav.contact_us')
         ]);
     }
 
@@ -39,19 +39,19 @@ class HomeController extends Controller
             'message'				=> 'required',
             'g-recaptcha-response'  => 'required|captcha'
         ],[
-            'contact_lastname.required'     => 'Veuillez indiquer votre nom',
-            'contact_lastname.required'     => 'Veuillez indiquer votre prénom',
-            'contact_email.required' 		=> 'Veuillez indiquer votre adresse email',
-            'subject.required'              => 'Veuillez indiquer un objet',
-            'message.required'              => 'Veuillez indiquer un message',
-            'g-recaptcha-response.required' => 'Veuillez confirmer que vous n\'êtes pas un robot',
-            'g-recaptcha-response.captcha'  => 'La confirmation anti-robot a échoué. Veuillez réessayer.'
+            'contact_lastname.required'     => __('error.missed.lastname'),
+            'contact_lastname.required'     => __('error.missed.firstname'),
+            'contact_email.required' 		=> __('error.missed.email'),
+            'subject.required'              => __('error.missed.object'),
+            'message.required'              => __('error.missed.message'),
+            'g-recaptcha-response.required' => __('error.missed.captcha'),
+            'g-recaptcha-response.captcha'  => __('error.wrong.captcha')
         ]);
 
         Mail::to( 'gaetan.rebut@gmail.com' )->send( new Contactus($request->all()));
 
         return view('public.contactus', [
-            'breadcrumb_last_level' => 'Demande de contact envoyée',
+            'breadcrumb_last_level' => __('messages.contact.sent'),
             'sent'                  => true
         ]);
     }
@@ -68,7 +68,7 @@ class HomeController extends Controller
         $tricks = Trick::search($keywords)->get();
         
         return view('public.search', [
-            'breadcrumb_last_level' => 'Rechercher une partition gratuite',
+            'breadcrumb_last_level' => __('messages.search_free_sheet'),
             'keywords'              => $keywords,
             'scores'                => $scores,
             'authors'               => $authors,

@@ -5,11 +5,12 @@
     $count_tricks = count($tricks);
 ?>
 
-@section('title')Astuces sur Piano Love Score - {{ $count_tricks . ($count_tricks>1?' astuces':' astuce') }} @endsection
+@section('title')@lang('title.tricks', ['nb_tricks' => $count_tricks . ' 
+' . str_plural(__('generic.tip'), $count_tricks)])@endsection
 @section('description')Retrouvez l'ensemble des astuces de piano sur PianoLoveScore pour perfectionner votre technique au piano @endsection
 
 @section('og_type')books @endsection
-@section('og_title')Astuces de Piano @endsection
+@section('og_title')@lang('messages.tip.piano_tips')@endsection
 @section('og_description')Astuces de piano. Trouvez les astuces de piano, commentez-les et faites des découvertes.@endsection
 @section('og_image'){{ Request::url() }}{{ elixir('img/logo_full.png') }} @endsection
 
@@ -20,7 +21,8 @@
     <section class="scores__content">
         <div class="col-lg-offset-2 col-lg-8">
             <div class="row scores__title">
-                <h1>Astuces de Piano</h1><h2>{{ $count_tricks }} <?php echo $count_tricks>1?'astuces':'astuce'; ?></h2>
+                <h1>@lang('messages.tip.piano_tips')</h1><h2>{{ $count_tricks . ' 
+' . str_plural(__('generic.tip'), $count_tricks) }}</h2>
             </div>
         </div>
         <div class="col-lg-offset-2 col-lg-8">
@@ -32,7 +34,7 @@
                 </div>
                 <div class="row">
                     <p>{!! $trick->introduction !!}</p>
-                    <h5 class="pull-right">Astuce postée {{ $trick->created_at->diffForHumans() }}</h5>
+                    <h5 class="pull-right">@lang('messages.tip.posted') {{ $trick->created_at->diffForHumans() }}</h5>
                 </div>
             @endforeach
         </div>

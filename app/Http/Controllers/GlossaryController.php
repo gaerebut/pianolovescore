@@ -12,7 +12,7 @@ class GlossaryController extends Controller
     	$glossaries = Glossary::where('glossary', 'like', $letter . '%')->orderBy('id')->get();
 
     	return view('public.glossary', [
-    		'breadcrumb_last_level' => 'Lexique en ' . $letter,
+    		'breadcrumb_last_level' => __('messages.glossary.in', ['letter' => $letter]),
             'letter'                => $letter,
             'glossaries'			=> $glossaries
         ]);

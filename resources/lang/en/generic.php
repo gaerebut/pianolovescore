@@ -8,6 +8,13 @@ return [
 	'average'			=> 'average',
 	'vote'				=> 'vote',
 	'browser_compatible'=> 'Your browser is not compatible',
+	'tip'				=> 'tip',
+
+	'very_easy'		=> 'very easy',
+	'easy'			=> 'easy',
+	'intermediate'	=> 'intermediate',
+	'hard'			=> 'hard',
+	'very_hard'		=> 'very hard',
 
 	'sheet_very_easy'		=> 'Very easy sheet',
 	'sheet_easy'			=> 'Easy sheet',
@@ -26,4 +33,11 @@ return [
     'sheet_intermediaire_title'	=> 'Intermediate free piano sheet music',
     'sheet_hard_title'			=> 'Hard free piano sheet music',
     'sheet_very_hard_title'		=> 'Very hard free piano sheet music',
+
+    'lastname'	=> 'last name',
+    'firstname' => 'First name',
+    'email'		=> 'Email',
+    'object'	=> 'Object',
+    'message'	=> 'Message',
+    'send'		=> 'Send'
 ];

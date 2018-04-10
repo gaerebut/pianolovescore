@@ -53,11 +53,11 @@ class AjaxController extends Controller
 	    		$result = ['success' => true, 'avg_votes' => $score->avg_votes, 'count_votes' => $score->count_votes];
 	    	}
 	    	else{
-	    		$result = ['success' => false, 'message' => 'Vous avez déjà noté cette partition'];
+	    		$result = ['success' => false, 'message' => __('messages.score.already_rate')];
 	    	}
     	}
     	else{
-    		$result = ['success' => false, 'message' => 'La partition demandée est introuvable'];
+    		$result = ['success' => false, 'message' => __('error.score_not_found')];
     	}
 
     	return $result;

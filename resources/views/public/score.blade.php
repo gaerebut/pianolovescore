@@ -1,10 +1,10 @@
 @extends('layouts.public')
 
-@section('title')@lang('titles.score', ['title' => $score->title, 'author' => $score->author])@endsection
+@section('title')@lang('title.score', ['title' => $score->title, 'author' => $score->author])@endsection
 @section('description')@lang('descriptions.score', ['title' => $score->title, 'author' => $score->author]) @endsection
 
 @section('og_type')book @endsection
-@section('og_title')@lang('titles.score', ['title' => $score->title, 'author' => $score->author])@endsection
+@section('og_title')@lang('title.score', ['title' => $score->title, 'author' => $score->author])@endsection
 @section('og_description')@lang('descriptions.score', ['title' => $score->title, 'author' => $score->author])@endsection
 @section('og_image'){{ $score->score_image }} @endsection
 
@@ -145,22 +145,22 @@
         <div class="row">
             <div class="card">
                 <ul class="nav nav-tabs" role="tablist">
-                    <li role="presentation" class="active"><a href="#sheet-comments" aria-controls="commentsents-score" role="tab" data-toggle="tab">@lang('messages.comment_comments')</a></li>
+                    <li role="presentation" class="active"><a href="#sheet-comments" aria-controls="commentsents-score" role="tab" data-toggle="tab">@lang('messages.comment.comments')</a></li>
                     @if(!is_null($score->youtube_playlist_id))
-                        <li role="presentation" @if(count($score->comments)==0) class="active" @endif ><a href="#videos-piano" aria-controls="videos-piano" role="tab" data-toggle="tab">@lang('messages.comment_your_videos')</a></li>
+                        <li role="presentation" @if(count($score->comments)==0) class="active" @endif ><a href="#videos-piano" aria-controls="videos-piano" role="tab" data-toggle="tab">@lang('messages.comment.your_videos')</a></li>
                     @endif
                 </ul>
                 <div class="tab-content">
                     <div role="tabpanel" class="tab-pane active" id="sheet-comments">
                         <form class="reply_form" action="{{ route('ajax_comment') }}" onsubmit="return false">
                             <div class="form-group">
-                                <input type="text" id="u" class="form-control" placeholder="@lang('messages.comment_your_nickname')" pattern=".{3,}" required />
+                                <input type="text" id="u" class="form-control" placeholder="@lang('messages.comment.your_nickname')" pattern=".{3,}" required />
                             </div>
                             <div class="form-group">
-                                <textarea class="form-control" id="c" placeholder="@lang('messages.comment_your_comment')" pattern=".{3,}" required></textarea>
+                                <textarea class="form-control" id="c" placeholder="@lang('messages.comment.your_comment')" pattern=".{3,}" required></textarea>
                             </div>
                             <div class="form-group">
-                                <button type="submit" class="btn btn-primary reply_comment">@lang('messages.comment_post_comment')</button>
+                                <button type="submit" class="btn btn-primary reply_comment">@lang('messages.comment.post_comment')</button>
                             </div>
                         </form>
                         @if(count($score->comments) > 0)
@@ -232,7 +232,7 @@
                 else
                 {
                     commentForm.addClass('collapse');
-                    $(this).html('@lang("messages.comment_reply")');
+                    $(this).html('@lang("messages.comment.reply")');
                 }
             });
 
@@ -260,7 +260,7 @@
                            {
                                 var parent_zone = parent_id_str == '' ? form.parent() : form.parents(':eq(1)');
 
-                                parent_zone.append('<div class="scores__comment"><div id="'+data.id+'"><strong style="color:red">@lang("messages.comment_posted_wait")</strong><br /><strong>'+$('#u', form).val()+'</strong> - @lang("messages.comment_just_now")<div>'+$('#c', form).val()+'</div>');
+                                parent_zone.append('<div class="scores__comment"><div id="'+data.id+'"><strong style="color:red">@lang("messages.comment.posted_wait")</strong><br /><strong>'+$('#u', form).val()+'</strong> - @lang("messages.comment.just_now")<div>'+$('#c', form).val()+'</div>');
                                 $('#c, #u', form).val('');
                            }
                         },

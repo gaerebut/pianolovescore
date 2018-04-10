@@ -1,6 +1,6 @@
 @extends('layouts.public')
 
-@section('title')Demande de partition gratuite sur Piano Love Score @endsection
+@section('title')@lang('title.score_request')@endsection
 @section('description')Demandez une partition gratuite de piano que vous cherchez et un administrateur vous la postera en ligne @endsection
 
 @section('og_type')book @endsection

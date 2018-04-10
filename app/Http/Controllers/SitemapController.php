@@ -67,7 +67,7 @@ class SitemapController extends Controller
 	{
 		$score = Score::orderBy('updated_at', 'desc')->first();
 		return response()->view('public.sitemap.difficulties', [
-			'difficulties' => ['tres-faciles', 'faciles', 'intermediaires', 'difficiles', 'tres-difficiles'],
+			'difficulties' => [__('generic.sheet_very_easy_href'), __('generic.sheet_easy_href'), __('generic.sheet_intermediate_href'), __('generic.sheet_hard_href'), __('generic.sheet_very_hard_href')],
 			'score' => $score
 		])->header('Content-Type', 'text/xml');
 	}

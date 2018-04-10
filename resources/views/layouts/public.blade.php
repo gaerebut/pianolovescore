@@ -11,7 +11,7 @@
             <div class="row">
                 <form action="{{ route('search', ['q'=>'']) }}" method="get">
                     <div class="col-sm-offset-3 col-sm-4">
-                        <input type="text" class="form-control" placeholder="@lang('messages.header_search_score_composer')" name="q" pattern=".{2,20}" required/>
+                        <input type="text" class="form-control" placeholder="@lang('messages.header_search_composer')" name="q" pattern=".{2,20}" required/>
                     </div>
                     <div class="col-sm-2">
                        <input type="submit" class="form-control" value="@lang('messages.header_search')" /> 

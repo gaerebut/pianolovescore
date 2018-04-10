@@ -8,6 +8,13 @@ return [
 	'average'			=> 'average',
 	'vote'				=> 'vote',
 	'browser_compatible'=> "Votre navigateur n'est pas compatible",
+	'tip'				=> 'astuce',
+
+	'very_easy'		=> 'très faciles',
+	'easy'			=> 'faciles',
+	'intermediate'	=> 'intermédiaires',
+	'hard'			=> 'difficiles',
+	'very_hard'		=> 'très difficiles',
 
 	'sheet_very_easy'		=> 'Partition très facile',
 	'sheet_easy'			=> 'Partition facile',
@@ -26,4 +33,11 @@ return [
     'sheet_intermediaire_title'	=> 'Partitions gratuites de piano intermédiaires',
     'sheet_hard_title'			=> 'Partitions gratuites de piano difficiles',
     'sheet_very_hard_title'		=> 'Partitions gratuites de piano très difficiles',
+
+    'lastname'	=> 'Nom',
+    'firstname' => 'Prénom',
+    'email'		=> 'Email',
+    'object'	=> 'Objet',
+    'message'	=> 'Message',
+    'send'		=> 'Envoyer'
 ];

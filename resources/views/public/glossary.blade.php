@@ -1,6 +1,6 @@
 @extends('layouts.public')
 
-@section('title')Lexique en {{ $letter }} des partitions de piano @endsection
+@section('title')@lang('title.glossary', ['letter' => $letter])@endsection
 @section('description')Retrouvez la définition des différents symboles que vous trouvez sur les partitions de piano. Comprenez maintenant chacun des signes présents sur les partitions gratuites de piano. @endsection
 
 @section('og_type')books @endsection

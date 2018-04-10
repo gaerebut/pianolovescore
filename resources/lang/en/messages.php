@@ -2,8 +2,9 @@
 
 return [
 	'header_search_composer'	=> 'Find a free sheet music, a composer ...',
-	'header_search'					=> 'Search',
-	'footer_our_facebook_group'		=> 'Our Facebook group',
+	'header_search'				=> 'Search',
+	'footer_our_facebook_group'	=> 'Our Facebook group',
+    'search_free_sheet'         => 'Search free sheet',
 
 	'comment' => [
 		'comments'		=> 'Comments',
@@ -23,6 +24,8 @@ return [
     	'scores_top'	=> 'TOP Free Piano Sheet Music',
 	],
 	'score' => [
+        'all_scores'            => 'All free piano sheet',
+        'all_scores_level'      => ':level free piano sheet',
 		'posted_on'				=> 'Sheet posted on',
     	'free_sheet'			=> 'Free sheet',
     	'enlarge_image'			=> 'Click on the image to enlarge',
@@ -34,4 +37,23 @@ return [
     	'thanks_rate'			=> 'Thank you for rating',
    	 	'listen'				=> 'Listen',
 	],
+    'score_request' => [
+        'sent' => 'Piano sheet request sent'
+    ],
+    'contact' => [
+    	'page_description'  => "<p>Fill out the form below to contact the team support</p><p>An answer will be provided by email as soon as possible</p>",
+        'sent_description'  => '<h4>Message sent.</h4><h4>An answer will be provided by email</h4>',
+        'sent' 				=> 'Contact request sent',
+        'object_sample'     => 'Example: Improvement / Bug / Problem / Question ...',
+        'response_email'    => 'An answer will be provided by email',
+        'hello'				=> 'Hello, '
+    ],
+    'tip' => [
+    	'all_tips'		=> 'All piano tips',
+        'piano_tips'    => 'Piano Tips',
+        'posted'		=> 'Tip posted',
+    ],
+    'glossary' => [
+        'in' => 'Lexicon in :letter',
+    ],
 ];

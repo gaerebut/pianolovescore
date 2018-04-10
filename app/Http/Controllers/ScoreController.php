@@ -31,7 +31,7 @@ class ScoreController extends Controller
         $authors = Author::orderBy('lastname')->get();
 
         return view('public.all_scores', [
-            'breadcrumb_last_level' => 'Toutes les partitions gratuites de piano',
+            'breadcrumb_last_level' => __('messages.score.all_scores'),
             'authors'               => $authors
         ]);
     }
@@ -39,11 +39,11 @@ class ScoreController extends Controller
     public function showLevel($difficulty=null)
     {
         $arr_difficulties = [
-            'tres-faciles' => ['number' => 1, 'breadcrumb' => 'très faciles'],
-            'faciles' => ['number' => 2, 'breadcrumb' => 'faciles'],
-            'intermediaires' => ['number' => 3, 'breadcrumb' => 'intermédiaires'],
-            'difficiles' => ['number' => 4, 'breadcrumb' => 'difficiles'],
-            'tres-difficiles' => ['number' => 5, 'breadcrumb' => 'très difficiles']
+            __('generic.sheet_very_easy_href') => ['number' => 1, 'breadcrumb' => __('generic.very_easy')],
+            __('generic.sheet_easy_href') => ['number' => 2, 'breadcrumb' => __('generic.easy')],
+            __('generic.sheet_intermediate_href') => ['number' => 3, 'breadcrumb' => __('generic.intermediate')],
+            __('generic.sheet_hard_href') => ['number' => 4, 'breadcrumb' => __('generic.hard')],
+            __('generic.sheet_very_hard_href') => ['number' => 5, 'breadcrumb' => __('generic.very_hard')]
         ];
 
         if(isset($arr_difficulties[$difficulty]))
@@ -53,7 +53,7 @@ class ScoreController extends Controller
             $authors = Author::orderBy('lastname')->get();
 
             return view('public.difficulty', [
-                'breadcrumb_last_level' => 'Les partitions gratuites ' . $difficulty['breadcrumb'],
+                'breadcrumb_last_level' => __('messages.score.all_scores_level', ['level' =>  $difficulty['breadcrumb']]),
                 'authors'               => $authors,
                 'difficulty'            => $difficulty['breadcrumb'],
                 'difficulty_number'     => $difficulty['number']
@@ -69,7 +69,7 @@ class ScoreController extends Controller
     public function requestShow()
     {
         return view('public.score_request', [
-            'breadcrumb_last_level' => 'Demander une partition'
+            'breadcrumb_last_level' => __('nav.request_a_score')
         ]);
     }
 
@@ -83,13 +83,13 @@ class ScoreController extends Controller
             'author'                => 'required',
             'g-recaptcha-response'  => 'required|captcha'
         ],[
-            'contact_lastname.required'     => 'Veuillez indiquer votre nom',
-            'contact_lastname.required'     => 'Veuillez indiquer votre prénom',
-            'contact_email.required'        => 'Veuillez indiquer votre adresse email',
-            'title.required'                => 'Veuillez indiquer un titre',
-            'author.required'               => 'Veuillez indiquer un auteur',
-            'g-recaptcha-response.required' => 'Veuillez confirmer que vous n\'êtes pas un robot',
-            'g-recaptcha-response.captcha'  => 'La confirmation anti-robot a échoué. Veuillez réessayer.'
+            'contact_lastname.required'     => __('error.missed.lastname'),
+            'contact_lastname.required'     => __('error.missed.firstname'),
+            'contact_email.required'        => __('error.missed.email'),
+            'title.required'                => __('error.missed.titre'),
+            'author.required'               => __('error.missed.author'),
+            'g-recaptcha-response.required' => __('error.missed.captcha'),
+            'g-recaptcha-response.captcha'  => __('error.wrong.captcha')
         ]);
         $input = $request->all();
 
@@ -102,7 +102,7 @@ class ScoreController extends Controller
         $score_request->save();
 
         return view('public.score_request', [
-            'breadcrumb_last_level' => 'Demande de partition envoyée',
+            'breadcrumb_last_level' => __('messages.score_request.sent'),
             'sent'                  => true
         ]);
     }
