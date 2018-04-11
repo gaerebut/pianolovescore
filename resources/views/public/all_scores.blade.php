@@ -14,22 +14,22 @@
 @section('main')
     @php
     $difficulties = [
-        1 => ['title' => 'Très facile', 'class' => 'info'],
-        2 => ['title' => 'Facile', 'class' => 'primary'],
-        3 => ['title' => 'Intermédiaire', 'class' => 'success'],
-        4 => ['title' => 'Difficile', 'class' => 'warning'],
-        5 => ['title' => 'Très difficile', 'class' => 'danger']
+        1 => ['title' => __('generic.very_easy_2'), 'class' => 'info'],
+        2 => ['title' => __('generic.easy_2'), 'class' => 'primary'],
+        3 => ['title' => __('generic.intermediate_2'), 'class' => 'success'],
+        4 => ['title' => __('generic.hard_2'), 'class' => 'warning'],
+        5 => ['title' => __('generic.very_hard_2'), 'class' => 'danger']
     ];
     @endphp
     <section class="scores__content">
         <div class="col-lg-offset-2 col-lg-8">
             <h3 class="difficulty">
-                <p>Filtrer par difficulté</p>
-                <a href="{{ route('scores_difficulty', ['difficulty'=>'tres-faciles']) }}" title="Partitions gratuites de piano très faciles" class="label label-info">Très facile</a>
-                <a href="{{ route('scores_difficulty', ['difficulty'=>'faciles']) }}" title="Partitions gratuites de piano faciles" class="label label-primary">Partition facile</a>
-                <a href="{{ route('scores_difficulty', ['difficulty'=>'intermediaires']) }}" title="Partitions gratuites de piano intermédiaires" class="label label-success">Intermédiaire</a>
-                <a href="{{ route('scores_difficulty', ['difficulty'=>'difficiles']) }}" title="Partitions gratuites de piano difficiles" class="label label-warning">Difficile</a>
-                <a href="{{ route('scores_difficulty', ['difficulty'=>'tres-difficiles']) }}" title="Partitions gratuites de piano très difficiles" class="label label-danger">Très difficile</a>
+                <p>@lang('messages.score.filter_by_difficulty')</p>
+                <a href="{{ route('scores_difficulty', ['difficulty'=>__('generic.sheet_very_easy_href')]) }}" title="@lang('generic.sheet_very_easy_title')" class="label label-info">@lang('generic.very_easy_2')</a>
+                <a href="{{ route('scores_difficulty', ['difficulty'=>__('generic.sheet_easy_href')]) }}" title="@lang('generic.sheet_easy_title')" class="label label-primary">@lang('generic.easy_2')</a>
+                <a href="{{ route('scores_difficulty', ['difficulty'=>__('generic.sheet_intermediate_href')]) }}" title="@lang('generic.sheet_intermediate_title')" class="label label-success">@lang('generic.intermediate_2')</a>
+                <a href="{{ route('scores_difficulty', ['difficulty'=>__('generic.sheet_hard_href')]) }}" title="@lang('generic.sheet_hard_title')" class="label label-warning">@lang('generic.hard_2')</a>
+                <a href="{{ route('scores_difficulty', ['difficulty'=>__('generic.sheet_very_hard_href')]) }}" title="@lang('generic.sheet_very_hard_title')" class="label label-danger">@lang('generic.very_hard_2')</a>
             </h3>
             <table class="table table-condensed">
                 @php $count_global_scores = 1; @endphp
@@ -87,7 +87,7 @@
                                         @endif
                                     </td>
                                     <td class="scores__listing_downloaded">
-                                        <img src="{{ URL::to('/') }}/img/pdf_download.png" /><strong>{{ $current_score->downloaded }} fois</strong>
+                                        <img src="{{ URL::to('/') }}/img/pdf_download.png" /><strong> {{ $current_score->downloaded . ' ' . __('generic.time') }}</strong>
                                     </td>
                                 </tr>
                             @endfor
@@ -97,7 +97,7 @@
                                 <tr>
                                     <td colspan="3">
                                         <a href="{{ route('author_scores', ['slug_author'=>$author->slug]) }}" class="btn btn-default btn-lg">
-                                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Voir les {{ $count_author_scores-$maximum_scores }} autres partitions gratuites de {{ $author->fullname }}
+                                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span> @lang('messages.score.see_other_of_author', ['nb_score' => $count_author_scores-$maximum_scores, 'author' => $author->fullname])
                                         </a>
                                     </td>
                                 </tr>

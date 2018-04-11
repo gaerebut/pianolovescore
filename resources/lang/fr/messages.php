@@ -36,6 +36,9 @@ return [
     	'download_free_sheet'	=> 'Télécharger la partition gratuite',
    		'thanks_rate'			=> 'Merci pour votre vote',
     	'listen'				=> 'Ecoutez',
+        'no_score_difficulty'   => "Il n'y a aucune partition gratuite de piano de cette difficulté pour le moment",
+        'filter_by_difficulty'  => 'Filter par difficulté',
+        'see_other_of_author'   => 'Voir les :nb_score autres partitions gratuites de :author',
     ],
     'score_request' => [
         'sent' => 'Demande de partition envoyée'

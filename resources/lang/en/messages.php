@@ -36,6 +36,9 @@ return [
     	'download_free_sheet'	=> 'Download free sheet',
     	'thanks_rate'			=> 'Thank you for rating',
    	 	'listen'				=> 'Listen',
+   	 	'no_score_difficulty'	=> 'There are no free piano sheet of this difficulty',
+   	 	'filter_by_difficulty'	=> 'Filter by difficulty',
+        'see_other_of_author'   => 'See :nb_score more free piano sheet by :author',
 	],
     'score_request' => [
         'sent' => 'Piano sheet request sent'

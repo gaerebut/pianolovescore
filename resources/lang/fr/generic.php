@@ -2,6 +2,7 @@
 
 return [
 	'by'				=> 'de',
+	'time'				=> 'fois',
 	'author_scores'		=> 'Partitions gratuites de piano de :author',
 	'score_of_author'	=> ':score, partition gratuite de piano de :author',
 	'download'			=> 'téléchargement',
@@ -11,16 +12,26 @@ return [
 	'tip'				=> 'astuce',
 
 	'very_easy'		=> 'très faciles',
+	'very_easy_2'	=> 'Très facile',
 	'easy'			=> 'faciles',
+	'easy_2'		=> 'Facile',
 	'intermediate'	=> 'intermédiaires',
+	'intermediate_2'=> 'Intermédiaire',
 	'hard'			=> 'difficiles',
+	'hard_2'		=> 'Difficile',
 	'very_hard'		=> 'très difficiles',
+	'very_hard_2'	=> 'Très difficile',
 
 	'sheet_very_easy'		=> 'Partition très facile',
+	'sheet_very_easy_2'		=> 'Partitions très faciles',
 	'sheet_easy'			=> 'Partition facile',
+	'sheet_easy_2'			=> 'Partitions faciles',
 	'sheet_intermediate'	=> 'Partition intermédiaire',
+	'sheet_intermediate_2'	=> 'Partitions intermédiaires',
 	'sheet_hard'			=> 'Partition difficile',
+	'sheet_hard_2'			=> 'Partitions difficiles',
 	'sheet_very_hard'		=> 'Partition très difficile',
+	'sheet_very_hard_2'		=> 'Partitions très difficiles',
 
 	'sheet_very_easy_href'		=> 'tres-faciles',
     'sheet_easy_href'			=> 'faciles',

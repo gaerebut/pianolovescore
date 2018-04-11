@@ -16,29 +16,29 @@
         <div class="col-lg-offset-2 col-lg-8">
             <h3 class="difficulty">
                 @if($difficulty_number==1)
-                    <span class="label label-info active">Partitions très faciles</span>
+                    <span class="label label-info active">@lang('generic.sheet_very_easy_2')</span>
                 @else
-                    <a href="{{ route('scores_difficulty', ['difficulty'=>'tres-faciles']) }}" title="Partitions gratuites de piano très faciles" class="label label-info">Très facile</a>
+                    <a href="{{ route('scores_difficulty', ['difficulty'=>__('generic.sheet_very_easy_href')]) }}" title="@lang('generic.sheet_very_easy_title')" class="label label-info">@lang('generic.very_easy_2')</a>
                 @endif
                 @if($difficulty_number==2)
-                    <span class="label label-primary active">Partitions faciles</span>
+                    <span class="label label-primary active">@lang('generic.sheet_easy_2')</span>
                 @else
-                    <a href="{{ route('scores_difficulty', ['difficulty'=>'faciles']) }}" title="Partitions gratuites de piano faciles" class="label label-primary">Faciles</a>
+                    <a href="{{ route('scores_difficulty', ['difficulty'=>__('generic.sheet_easy_href')]) }}" title="@lang('generic.sheet_easy_title')" class="label label-primary">@lang('generic.easy_2')</a>
                 @endif
                 @if($difficulty_number==3)
-                    <span class="label label-success active">Partitions intermédiaires</span>
+                    <span class="label label-success active">@lang('generic.sheet_intermediate_2')</span>
                 @else
-                    <a href="{{ route('scores_difficulty', ['difficulty'=>'intermediaires']) }}" title="Partitions gratuites de piano intermédiaires" class="label label-success">Intermédiaire</a>
+                    <a href="{{ route('scores_difficulty', ['difficulty'=>__('generic.sheet_intermediate_href')]) }}" title="@lang('generic.sheet_intermediate_title')" class="label label-success">@lang('generic.intermediate_2')</a>
                 @endif
                 @if($difficulty_number==4)
-                    <span class="label label-warning active">Partitions difficiles</span>
+                    <span class="label label-warning active">@lang('generic.sheet_hard_2')</span>
                 @else
-                    <a href="{{ route('scores_difficulty', ['difficulty'=>'difficiles']) }}" title="Partitions gratuites de piano difficiles" class="label label-warning">Difficile</a>
+                    <a href="{{ route('scores_difficulty', ['difficulty'=>__('generic.sheet_hard_href')]) }}" title="@lang('generic.sheet_hard_title')" class="label label-warning">@lang('generic.hard_2')</a>
                 @endif
                 @if($difficulty_number==5)
-                    <span class="label label-danger active">Partitions très difficiles</span>
+                    <span class="label label-danger active">@lang('generic.sheet_very_hard_2')</span>
                 @else
-                    <a href="{{ route('scores_difficulty', ['difficulty'=>'tres-difficiles']) }}" title="Partitions gratuites de piano très difficiles" class="label label-danger">Très difficile</a>
+                    <a href="{{ route('scores_difficulty', ['difficulty'=>__('generic.sheet_very_hard_href')]) }}" title="@lang('generic.sheet_very_hard_title')" class="label label-danger">@lang('generic.very_hard_2')</a>
                 @endif
             </h3>
             <table class="table table-condensed">
@@ -95,7 +95,7 @@
                 @endforeach
 
                 @if(!$have_score)
-                    <h2>Il n'y a aucune partition gratuite de piano de cette difficulté pour le moment</h2>
+                    <h2>@lang('messages.score.no_score_difficulty')</h2>
                 @endif
             </table>
         </div>
