@@ -10,6 +10,8 @@ return [
 	'vote'				=> 'vote',
 	'browser_compatible'=> "Votre navigateur n'est pas compatible",
 	'tip'				=> 'astuce',
+	'free_sheet'		=> 'partition gratuite',
+	'free_sheet_2'		=> 'partitions gratuites',
 
 	'very_easy'		=> 'très faciles',
 	'very_easy_2'	=> 'Très facile',

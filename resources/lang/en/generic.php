@@ -10,6 +10,8 @@ return [
 	'vote'				=> 'vote',
 	'browser_compatible'=> 'Your browser is not compatible',
 	'tip'				=> 'tip',
+	'free_sheet'		=> 'free sheet',
+	'free_sheet_2'		=> 'free sheet',
 
 	'very_easy'		=> 'very easy',
 	'very_easy_2'	=> 'Very easy',

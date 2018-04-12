@@ -18,17 +18,17 @@
 @section('main')
     @php
     $difficulties = [
-        1 => ['title' => 'Très facile', 'class' => 'info'],
-        2 => ['title' => 'Facile', 'class' => 'primary'],
-        3 => ['title' => 'Intermédiaire', 'class' => 'success'],
-        4 => ['title' => 'Difficile', 'class' => 'warning'],
-        5 => ['title' => 'Très difficile', 'class' => 'danger']
+        1 => ['title' => __('generic.very_easy_2'), 'class' => 'info'],
+        2 => ['title' => __('generic.easy_2'), 'class' => 'primary'],
+        3 => ['title' => __('generic.intermediate_2'), 'class' => 'success'],
+        4 => ['title' => __('generic.hard_2'), 'class' => 'warning'],
+        5 => ['title' => __('generic.very_hard_2'), 'class' => 'danger']
     ];
     @endphp
     <section class="scores__content">
         <div class="col-lg-offset-2 col-lg-8">
             <div class="row scores__title">
-                <h1>{{ $author->fullname }}</h1><h2>{{ $count_scores }} <?php echo $count_scores>1?'partitions gratuites':'partition gratuite'; ?></h2>
+                <h1>{{ $author->fullname }}</h1><h2>{{ $count_scores }} <?php echo $count_scores>1?__('generic.free_sheet_2'):__('generic.free_sheet'); ?></h2>
             </div>
             <div class="row text-left">
                 <p>{!! $author->description !!}</p>
@@ -88,7 +88,7 @@
                             @endif
                         </td>
                         <td class="scores__listing_downloaded">
-                            <img src="{{ URL::to('/') }}/img/pdf_download.png" /><strong>{{ $current_score->downloaded }} fois</strong>
+                            <img src="{{ URL::to('/') }}/img/pdf_download.png" /><strong>{{ $current_score->downloaded . ' ' . str_plural(__('generic.time'), $current_score->downloaded|1) }}</strong>
                         </td>
                     </tr>
                     @if(empty($author->scores[$i+1]))

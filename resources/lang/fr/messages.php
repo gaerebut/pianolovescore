@@ -57,6 +57,15 @@ return [
         'posted'        => 'Astuce postée',
     ],
     'glossary' => [
-        'in' => 'Lexique en :letter',
+        'title'         => 'Lexique des partitions de Piano',
+        'in'            => 'Lexique en :letter',
+        'word_letter'   => 'Lexique des mots commençant par la lettre :letter sur les partitions de piano',
+        'no_definition' => "Il n'y a pas encore de définition pour la lettre <strong>:letter</strong> du lexique",
     ],
+    'search' => [
+        'result_for'            => 'Résultat de la recherche pour',
+        'free_sheet_found'      => 'partition gratuite trouvée',
+        'free_sheet_found_2'    => 'partitions gratuites trouvées',
+        'author_composer'       => 'auteur / compositeur',
+    ]
 ];

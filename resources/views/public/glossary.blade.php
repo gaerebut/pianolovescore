@@ -18,7 +18,7 @@
     <section class="scores__content">
         <div class="col-lg-offset-2 col-lg-8">
             <div class="row scores__title">
-                <h1>Lexique des partitions de Piano</h1>
+                <h1>@lang('messages.glossary.title')</h1>
             </div>
         </div>
         <div class="col-sm-12 btn-toolbar center-block" role="toolbar" aria-label="Glossaries">
@@ -26,7 +26,7 @@
                 @if($letter==chr(65+$i))
                     <button role="group" class="btn btn-primary">{{ chr(65+$i) }}</a></button>
                 @else
-                    <a href="{{ route('glossary', ['letter' => chr(65+$i)]) }}" role="group" class="btn btn-default" title="Lexique des mots commençant par la lettre {{ chr(65+$i) }} sur les partitions de piano">{{ chr(65+$i) }}</a>
+                    <a href="{{ route('glossary', ['letter' => chr(65+$i)]) }}" role="group" class="btn btn-default" title="@lang('message.glossary.word_letter', ['letter' => chr(65+$i)])">{{ chr(65+$i) }}</a>
                 @endif
             @endfor
         </div>
@@ -37,7 +37,7 @@
                     <div class="row" id="{{ $glossary->slug }}">
                         <div class="col-sm-3 glossary-image">
                         @if(!is_null($glossary->image))
-                            <img src="{{ URL::to('/') }}/img/glossaries/{{ $glossary->image }}" height="50" title="{{ $glossary }} - Lexique en {{ $letter }}" />
+                            <img src="{{ URL::to('/') }}/img/glossaries/{{ $glossary->image }}" height="50" title="{{ $glossary }} - @lang('messages.glossary.in', ['letter => $letter'])" />
                         @endif
                         </div>
                         <div class="col-sm-9">
@@ -48,7 +48,7 @@
                     <hr />
                 @endforeach
             @else
-                <h2>Il n'y a pas encore de définition pour la lettre <strong>{{ $letter }}</strong> du lexique</h2>
+                <h2>@lang('messages.glossary.no_definition')</h2>
             @endif
         </div>
     </section>

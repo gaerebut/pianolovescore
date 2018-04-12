@@ -19,13 +19,13 @@
     <?php \Carbon\Carbon::setLocale(config('app.locale')); ?>
     <section class="scores__content">
         @if(count($scores) > 0 || count($authors)>0)
-            <h2>Résultat de la recherche pour "{{ $keywords }}"</h2>
+            <h2>@lang('messages.search.result_for') "{{ $keywords }}"</h2>
             @if(count($scores) > 0)
                 <table class="table table-condensed">
                     <thead>
                         <tr>
                             <td colspan="4">
-                                <h3 class="homesection__title">{{ count($scores) }} {{ count($scores)>1?'partitions gratuites trouvées':'partition gratuite trouvée' }} :</h3>
+                                <h3 class="homesection__title">{{ count($scores) }} {{ count($scores)>1?__('messages.search.free_sheet_found_2'):__('messages.search.free_sheet_found') }} :</h3>
                             </td>
                         </tr>
                     </thead>
@@ -36,7 +36,7 @@
                                     <a href="{{ route('score', ['slug_author'=>$score->author->slug, 'slug_score'=>$score->slug])}}">{{ $score->title }}</a>
                                 </td>
                                 <td>
-                                    de <a href="{{ route('author_scores', ['slug_author'=>$score->author->slug]) }}">{{ $score->author }}</a>
+                                    @lang('generic.by') <a href="{{ route('author_scores', ['slug_author'=>$score->author->slug]) }}">{{ $score->author }}</a>
                                 </td>
                                 <td>
                                     @if(!is_null($score->avg_votes))
@@ -62,7 +62,7 @@
                     <thead>
                         <tr>
                             <td colspan="2">
-                                <h3 class="homesection__title">{{ count($authors) }} {{ count($authors)>1?'auteurs/compositeurs':'auteur/compositeur'}} :</h3>
+                                <h3 class="homesection__title">{{ count($authors) . ' ' . str_plural(__('messages.search.author_composer'), count($authors)) }} :</h3>
                             </td>
                         </tr>
                     </thead>
@@ -73,7 +73,7 @@
                                     <a href="{{ route('author_scores', ['slug_author'=>$author->slug]) }}">{{ $author->fullname }}</a>
                                 </td>
                                 <td>
-                                    {{ count($author->scores) }} partitions gratuites</a>
+                                    {{ count($author->scores) . ' ' . __('generic.free_sheet_2') }}</a>
                                 </td>
                             </tr>
                         @endforeach

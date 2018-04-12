@@ -87,7 +87,7 @@
                                         @endif
                                     </td>
                                     <td class="scores__listing_downloaded">
-                                        <img src="{{ URL::to('/') }}/img/pdf_download.png" /><strong> {{ $current_score->downloaded . ' ' . __('generic.time') }}</strong>
+                                        <img src="{{ URL::to('/') }}/img/pdf_download.png" /><strong> {{ $current_score->downloaded . ' ' . str_plural(__('generic.time'), $current_score->downloaded|1) }}</strong>
                                     </td>
                                 </tr>
                             @endfor

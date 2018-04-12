@@ -57,6 +57,15 @@ return [
         'posted'		=> 'Tip posted',
     ],
     'glossary' => [
-        'in' => 'Lexicon in :letter',
+    	'title'			=> 'Piano Sheet Music Glossary',
+        'in' 			=> 'Lexicon in :letter',
+        'word_letter'   => 'Glossary of words beginning with the :letter letter on piano sheet music',
+        'no_definition' => 'There is still no definition for the :letter letter on the lexicon',
     ],
+    'search' => [
+    	'result_for'			=> 'Search result for',
+    	'free_sheet_found'		=> 'free sheet found',
+    	'free_sheet_found_2'	=> 'free sheet found',
+    	'author_composer'		=> 'author / composer',
+    ]
 ];
