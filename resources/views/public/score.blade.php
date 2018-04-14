@@ -123,7 +123,7 @@
                 </div>
                 @if(count($score->keywords) > 1)
                     <div class="row scores__keywords text-left">
-                        <h4>Recherches associées : <strong><mark>
+                        <h4>@lang('messages.score.associated_researches') : <strong><mark>
                             @foreach($score->keywords as $keyword)
                                 <a href="{{ route(__('routes.search'), ['q' => $keyword->keyword]) }}">#{{ $keyword }}</a>
                             @endforeach

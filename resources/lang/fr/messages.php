@@ -40,6 +40,7 @@ return [
         'no_score_difficulty'   => "Il n'y a aucune partition gratuite de piano de cette difficulté pour le moment",
         'filter_by_difficulty'  => 'Filter par difficulté',
         'see_other_of_author'   => 'Voir les :nb_score autres partitions gratuites de :author',
+        'associated_researches' => 'Recherches associées',
     ],
     'score_request' => [
         'description'   => '<p>Vous ne trouvez pas votre <strong>partition de piano</strong> sur PianoLoveScore ?</p><p>Demandez-la !</p><p>Rentrez toutes les informations pour la décrire et nous nous efforcerons de vous le proposer <strong>gratuitement</strong></p><p>ATTENTION: seules les <strong>partitions légales et libres de droits</strong> se verront publiées.</p>',

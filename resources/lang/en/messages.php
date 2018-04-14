@@ -40,6 +40,7 @@ return [
    	 	'no_score_difficulty'	=> 'There are no free piano sheet of this difficulty',
    	 	'filter_by_difficulty'	=> 'Filter by difficulty',
         'see_other_of_author'   => 'See :nb_score more free piano sheet by :author',
+        'associated_researches' => 'Associated researches'
 	],
     'score_request' => [
     	'description'	=> '<p>Can not find your <strong>piano sheet</strong> on PianoLoveScore ?</p><p>Ask for it !</p><p>Enter all the information to describe it and we will try to offer it <strong>for free</strong></p><p>WARNING : only <strong>legal and royalty-free piano sheet</strong> will be published.</p>',
