@@ -1,11 +1,11 @@
 @extends('layouts.public')
 
 @section('title')@lang('title.score_request')@endsection
-@section('description')Demandez une partition gratuite de piano que vous cherchez et un administrateur vous la postera en ligne @endsection
+@section('description')@lang('description.score_request')@endsection
 
 @section('og_type')book @endsection
 @section('og_title')@lang('title.score_request')@endsection
-@section('og_description')Vous recherchez une partition gratuite de piano ? Demandez-la et nous vous la mettrons à disposition. @endsection
+@section('og_description')@lang('description.score_request')@endsection
 @section('og_image'){{ Request::url() }}{{ elixir('img/logo_full.png') }} @endsection
 
 @section('breadcrumb')
@@ -31,7 +31,7 @@
                     <h4>Un email vous sera envoyé quand elle sera traitée</h4>
                 </div>
             @endif
-            <form action="{{ route('score_request_submit') }}" method="post" class="form-horizontal request">
+            <form action="{{ route(__('routes.score_request_submit')) }}" method="post" class="form-horizontal request">
                 <div class="form-group">
                     <label for="contact_lastname" class="col-sm-2 control-label">@lang('generic.lastname')</label>
                     <div class="col-sm-4">

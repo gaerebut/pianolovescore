@@ -12,7 +12,7 @@
 	    	{
 	    		@endphp
 		        <url>
-		            <loc>{{ route('glossary', ['letter' => $letter]) }}</loc>
+		            <loc>{{ route(__('routes.glossary'), ['letter' => $letter]) }}</loc>
 		            <lastmod>{{ $glossary->updated_at->tz('UTC')->toAtomString() }}</lastmod>
 		            <changefreq>weekly</changefreq>
 		            <priority>0.7</priority>

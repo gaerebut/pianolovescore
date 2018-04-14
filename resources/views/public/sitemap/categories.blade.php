@@ -7,13 +7,13 @@
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>{{ route('score_request') }}</loc>
+        <loc>{{ route(__('routes.score_request')) }}</loc>
         <lastmod>2017-11-17T21:21:21+00:00</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>{{ route('scores') }}</loc>
+        <loc>{{ route(__('routes.scores')) }}</loc>
         <lastmod>2017-11-17T21:21:21+00:00</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>

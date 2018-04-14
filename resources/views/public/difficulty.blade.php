@@ -1,11 +1,11 @@
 @extends('layouts.public')
 
 @section('title')@lang('title.difficulty', ['difficulty' => $difficulty])@endsection
-@section('description')Partitions Gratuites de Piano {{ $difficulty }} par Auteurs sur Piano Love Score. Téléchargez et notez les partitions {{ $difficulty }} après les avoir téléchargées @endsection
+@section('description')@lang('description.difficulty', ['difficulty' => $difficulty])@endsection
 
 @section('og_type')book @endsection
 @section('og_title')@lang('title.difficulty', ['difficulty' => $difficulty])@endsection
-@section('og_description')Téléchargement de partitions gratuites de piano {{ $difficulty }}. Trouvez les partitions {{ $difficulty }} libres de droits en libre accès, notez-les, commentez-les et faites des découvertes @endsection
+@section('og_description')@lang('description.difficulty', ['difficulty' => $difficulty])@endsection
 @section('og_image'){{ Request::url() }}{{ elixir('img/logo_full.png') }} @endsection
 
 @section('breadcrumb')
@@ -18,27 +18,27 @@
                 @if($difficulty_number==1)
                     <span class="label label-info active">@lang('generic.sheet_very_easy_2')</span>
                 @else
-                    <a href="{{ route('scores_difficulty', ['difficulty'=>__('generic.sheet_very_easy_href')]) }}" title="@lang('generic.sheet_very_easy_title')" class="label label-info">@lang('generic.very_easy_2')</a>
+                    <a href="{{ route(__('routes.scores_difficulty'), ['difficulty'=>__('generic.sheet_very_easy_href')]) }}" title="@lang('generic.sheet_very_easy_title')" class="label label-info">@lang('generic.very_easy_2')</a>
                 @endif
                 @if($difficulty_number==2)
                     <span class="label label-primary active">@lang('generic.sheet_easy_2')</span>
                 @else
-                    <a href="{{ route('scores_difficulty', ['difficulty'=>__('generic.sheet_easy_href')]) }}" title="@lang('generic.sheet_easy_title')" class="label label-primary">@lang('generic.easy_2')</a>
+                    <a href="{{ route(__('routes.scores_difficulty'), ['difficulty'=>__('generic.sheet_easy_href')]) }}" title="@lang('generic.sheet_easy_title')" class="label label-primary">@lang('generic.easy_2')</a>
                 @endif
                 @if($difficulty_number==3)
                     <span class="label label-success active">@lang('generic.sheet_intermediate_2')</span>
                 @else
-                    <a href="{{ route('scores_difficulty', ['difficulty'=>__('generic.sheet_intermediate_href')]) }}" title="@lang('generic.sheet_intermediate_title')" class="label label-success">@lang('generic.intermediate_2')</a>
+                    <a href="{{ route(__('routes.scores_difficulty'), ['difficulty'=>__('generic.sheet_intermediate_href')]) }}" title="@lang('generic.sheet_intermediate_title')" class="label label-success">@lang('generic.intermediate_2')</a>
                 @endif
                 @if($difficulty_number==4)
                     <span class="label label-warning active">@lang('generic.sheet_hard_2')</span>
                 @else
-                    <a href="{{ route('scores_difficulty', ['difficulty'=>__('generic.sheet_hard_href')]) }}" title="@lang('generic.sheet_hard_title')" class="label label-warning">@lang('generic.hard_2')</a>
+                    <a href="{{ route(__('routes.scores_difficulty'), ['difficulty'=>__('generic.sheet_hard_href')]) }}" title="@lang('generic.sheet_hard_title')" class="label label-warning">@lang('generic.hard_2')</a>
                 @endif
                 @if($difficulty_number==5)
                     <span class="label label-danger active">@lang('generic.sheet_very_hard_2')</span>
                 @else
-                    <a href="{{ route('scores_difficulty', ['difficulty'=>__('generic.sheet_very_hard_href')]) }}" title="@lang('generic.sheet_very_hard_title')" class="label label-danger">@lang('generic.very_hard_2')</a>
+                    <a href="{{ route(__('routes.scores_difficulty'), ['difficulty'=>__('generic.sheet_very_hard_href')]) }}" title="@lang('generic.sheet_very_hard_title')" class="label label-danger">@lang('generic.very_hard_2')</a>
                 @endif
             </h3>
             <table class="table table-condensed">
@@ -68,7 +68,7 @@
                                 @endif
                                 <tr>
                                     <td>
-                                        <a href="{{ route('score', ['composer_slug'=>$author->slug, 'score_slug'=>$score->slug]) }}">{{ $score }}</a>
+                                        <a href="{{ route(__('routes.score'), ['composer_slug'=>$author->slug, 'score_slug'=>$score->slug]) }}">{{ $score }}</a>
                                     </td>
                                     <td>
                                         @if(!is_null($score->avg_votes))

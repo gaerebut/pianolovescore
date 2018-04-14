@@ -1,7 +1,7 @@
 @extends('layouts.public')
 
 @section('title')@lang('title.trick', ['trick' => $trick])@endsection
-@section('description')Astuce sur Partition Gratuite de Piano - {{ $trick }} - Découvrez des astuces sur le piano pour vous perfectionner et améliorer votre technique @endsection
+@section('description')@lang('description.trick', ['trick' => $trick])@endsection
 
 @section('og_type')book @endsection
 @section('og_title')@lang('title.trick', ['trick' => $trick])@endsection

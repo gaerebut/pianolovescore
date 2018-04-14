@@ -1,11 +1,11 @@
 @extends('layouts.public')
 
 @section('title')@lang('title.all_scores')@endsection
-@section('description')Partitions Gratuites de Piano par Auteurs sur Piano Love Score. Téléchargez et notez les partitions après les avoir téléchargées @endsection
+@section('description')@lang('description.all_scores')@endsection
 
 @section('og_type')book @endsection
 @section('og_title')@lang('title.all_scores')@endsection
-@section('og_description')Téléchargement de partitions gratuites de piano. Trouvez les partitions libres de droits en libre accès, notez-les, commentez-les et faites des découvertes @endsection
+@section('og_description')@lang('description.all_scores')@endsection
 @section('og_image'){{ Request::url() }}{{ elixir('img/logo_full.png') }} @endsection
 
 @section('breadcrumb')
@@ -25,11 +25,11 @@
         <div class="col-lg-offset-2 col-lg-8">
             <h3 class="difficulty">
                 <p>@lang('messages.score.filter_by_difficulty')</p>
-                <a href="{{ route('scores_difficulty', ['difficulty'=>__('generic.sheet_very_easy_href')]) }}" title="@lang('generic.sheet_very_easy_title')" class="label label-info">@lang('generic.very_easy_2')</a>
-                <a href="{{ route('scores_difficulty', ['difficulty'=>__('generic.sheet_easy_href')]) }}" title="@lang('generic.sheet_easy_title')" class="label label-primary">@lang('generic.easy_2')</a>
-                <a href="{{ route('scores_difficulty', ['difficulty'=>__('generic.sheet_intermediate_href')]) }}" title="@lang('generic.sheet_intermediate_title')" class="label label-success">@lang('generic.intermediate_2')</a>
-                <a href="{{ route('scores_difficulty', ['difficulty'=>__('generic.sheet_hard_href')]) }}" title="@lang('generic.sheet_hard_title')" class="label label-warning">@lang('generic.hard_2')</a>
-                <a href="{{ route('scores_difficulty', ['difficulty'=>__('generic.sheet_very_hard_href')]) }}" title="@lang('generic.sheet_very_hard_title')" class="label label-danger">@lang('generic.very_hard_2')</a>
+                <a href="{{ route(__('routes.scores_difficulty'), ['difficulty'=>__('generic.sheet_very_easy_href')]) }}" title="@lang('generic.sheet_very_easy_title')" class="label label-info">@lang('generic.very_easy_2')</a>
+                <a href="{{ route(__('routes.scores_difficulty'), ['difficulty'=>__('generic.sheet_easy_href')]) }}" title="@lang('generic.sheet_easy_title')" class="label label-primary">@lang('generic.easy_2')</a>
+                <a href="{{ route(__('routes.scores_difficulty') ['difficulty'=>__('generic.sheet_intermediate_href')]) }}" title="@lang('generic.sheet_intermediate_title')" class="label label-success">@lang('generic.intermediate_2')</a>
+                <a href="{{ route(__('routes.scores_difficulty'), ['difficulty'=>__('generic.sheet_hard_href')]) }}" title="@lang('generic.sheet_hard_title')" class="label label-warning">@lang('generic.hard_2')</a>
+                <a href="{{ route(__('routes.scores_difficulty'), ['difficulty'=>__('generic.sheet_very_hard_href')]) }}" title="@lang('generic.sheet_very_hard_title')" class="label label-danger">@lang('generic.very_hard_2')</a>
             </h3>
             <table class="table table-condensed">
                 @php $count_global_scores = 1; @endphp
@@ -39,7 +39,7 @@
                         <thead>
                             <tr>
                                 <th colspan="2">
-                                    <h3><a href="{{ route('author_scores', ['slug_author'=>$author->slug]) }}">{{ $author }}</a></h3>
+                                    <h3><a href="{{ route(__('routes.author_scores'), ['slug_author'=>$author->slug]) }}">{{ $author }}</a></h3>
                                 </th>
                             </tr>
                         </thead>
@@ -69,7 +69,7 @@
                                 <?php $current_score = $author->scores[$i]; ?>
                                 <tr>
                                     <td>
-                                        <a href="{{ route('score', ['composer_slug'=>$author->slug, 'score_slug'=>$current_score->slug]) }}">{{ $current_score }}</a>
+                                        <a href="{{ route(__('routes.score'), ['composer_slug'=>$author->slug, 'score_slug'=>$current_score->slug]) }}">{{ $current_score }}</a>
                                     </td>
                                     <td>
                                         <span class="label label-{{ $difficulties[$current_score->difficulty]['class'] }}">{{ $difficulties[$current_score->difficulty]['title'] }}</span>
@@ -96,7 +96,7 @@
                             <tbody>
                                 <tr>
                                     <td colspan="3">
-                                        <a href="{{ route('author_scores', ['slug_author'=>$author->slug]) }}" class="btn btn-default btn-lg">
+                                        <a href="{{ route(__('routes.author_scores'), ['slug_author'=>$author->slug]) }}" class="btn btn-default btn-lg">
                                             <span class="glyphicon glyphicon-star" aria-hidden="true"></span> @lang('messages.score.see_other_of_author', ['nb_score' => $count_author_scores-$maximum_scores, 'author' => $author->fullname])
                                         </a>
                                     </td>

@@ -6,7 +6,7 @@
 ?>
 
 @section('title')@lang('title.tricks', ['nb_tricks' => $count_tricks . ' ' . str_plural(__('generic.tip'), $count_tricks)])@endsection
-@section('description')Retrouvez l'ensemble des astuces de piano sur PianoLoveScore pour perfectionner votre technique au piano @endsection
+@section('description')@lang('description.tricks')@endsection
 
 @section('og_type')books @endsection
 @section('og_title')@lang('title.tricks', ['nb_tricks' => $count_tricks . ' ' . str_plural(__('generic.tip'), $count_tricks)])@endsection
@@ -27,7 +27,7 @@
             @foreach($tricks as $trick)
                 <div class="row">
                     <h3>
-                        <a href="{{ route('trick', ['slug'=>$trick->slug]) }}">{{ $trick }}</a>
+                        <a href="{{ route(__('routes.trick'), ['slug'=>$trick->slug]) }}">{{ $trick }}</a>
                     </h3>
                 </div>
                 <div class="row">

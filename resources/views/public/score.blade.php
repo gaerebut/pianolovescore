@@ -1,11 +1,11 @@
 @extends('layouts.public')
 
 @section('title')@lang('title.score', ['title' => $score->title, 'author' => $score->author])@endsection
-@section('description')@lang('descriptions.score', ['title' => $score->title, 'author' => $score->author]) @endsection
+@section('description')@lang('description.score', ['title' => $score->title, 'author' => $score->author]) @endsection
 
 @section('og_type')book @endsection
 @section('og_title')@lang('title.score', ['title' => $score->title, 'author' => $score->author])@endsection
-@section('og_description')@lang('descriptions.score', ['title' => $score->title, 'author' => $score->author])@endsection
+@section('og_description')@lang('description.score', ['title' => $score->title, 'author' => $score->author])@endsection
 @section('og_image'){{ $score->score_image }} @endsection
 
 @section('css')
@@ -26,32 +26,32 @@
                 <div class="row text-right">
                     <div class="col-md-12">@lang('messages.score.posted_on') <time itemprop="dateCreated" datetime="{{ $score->created_at }}">{{ $score->created_at->formatLocalized('%d/%m/%Y') }}</time></div>
                 </div>
-                <h1 itemprop="name">{{ $score->title }}</h1><h2><a href="{{ route('author_scores', ['slug_author'=>$score->author->slug]) }}" itemprop="author" itemscope itemtype="http://schema.org/Person" itemid="#author"><meta itemprop="name" content="{{ $score->author->fullname }}"/>{{ $score->author->fullname }}</a></h2>
+                <h1 itemprop="name">{{ $score->title }}</h1><h2><a href="{{ route(__('routes.author_scores'), ['slug_author'=>$score->author->slug]) }}" itemprop="author" itemscope itemtype="http://schema.org/Person" itemid="#author"><meta itemprop="name" content="{{ $score->author->fullname }}"/>{{ $score->author->fullname }}</a></h2>
                 <p class="difficulty">
                     @if($score->difficulty==1)
                         <span class="label label-info active">@lang('generic.sheet_very_easy')</span>
                     @else
-                        <a href="{{ route('scores_difficulty', ['difficulty'=>__('generic.sheet_very_easy_href')]) }}" title="@lang('generic.sheet_very_easy_title')" class="label label-info">@lang('generic.sheet_very_easy')</a>
+                        <a href="{{ route(__('routes.scores_difficulty'), ['difficulty'=>__('generic.sheet_very_easy_href')]) }}" title="@lang('generic.sheet_very_easy_title')" class="label label-info">@lang('generic.sheet_very_easy')</a>
                     @endif
                     @if($score->difficulty==2)
                         <span class="label label-primary active">@lang('generic.sheet_easy')</span>
                     @else
-                        <a href="{{ route('scores_difficulty', ['difficulty'=>__('generic.sheet_easy_href')]) }}" title="@lang('generic.sheet_easy_title')" class="label label-primary">@lang('generic.sheet_easy')</a>
+                        <a href="{{ route(__('routes.scores_difficulty'), ['difficulty'=>__('generic.sheet_easy_href')]) }}" title="@lang('generic.sheet_easy_title')" class="label label-primary">@lang('generic.sheet_easy')</a>
                     @endif
                     @if($score->difficulty==3)
                         <span class="label label-success active">@lang('generic.sheet_intermediate')</span>
                     @else
-                        <a href="{{ route('scores_difficulty', ['difficulty'=>__('generic.sheet_intermediate_href')]) }}" title="@lang('generic.sheet_intermediate_title')" class="label label-success">@lang('generic.sheet_intermediate')</a>
+                        <a href="{{ route(__('routes.scores_difficulty'), ['difficulty'=>__('generic.sheet_intermediate_href')]) }}" title="@lang('generic.sheet_intermediate_title')" class="label label-success">@lang('generic.sheet_intermediate')</a>
                     @endif
                     @if($score->difficulty==4)
                         <span class="label label-warning active">@lang('generic.sheet_hard')</span>
                     @else
-                        <a href="{{ route('scores_difficulty', ['difficulty'=>__('generic.sheet_hard_href')]) }}" title="@lang('generic.sheet_hard_title')" class="label label-warning">@lang('generic.sheet_hard')</a>
+                        <a href="{{ route(__('routes.scores_difficulty'), ['difficulty'=>__('generic.sheet_hard_href')]) }}" title="@lang('generic.sheet_hard_title')" class="label label-warning">@lang('generic.sheet_hard')</a>
                     @endif
                     @if($score->difficulty==5)
                         <span class="label label-danger active">@lang('generic.sheet_very_hard')</span>
                     @else
-                        <a href="{{ route('scores_difficulty', ['difficulty'=>__('generic.sheet_very_hard_href')]) }}" title="@lang('generic.sheet_very_hard_title')" class="label label-danger">@lang('generic.sheet_very_hard')</a>
+                        <a href="{{ route(__('routes.scores_difficulty'), ['difficulty'=>__('generic.sheet_very_hard_href')]) }}" title="@lang('generic.sheet_very_hard_title')" class="label label-danger">@lang('generic.sheet_very_hard')</a>
                     @endif
                 </p>
             </div>
@@ -125,7 +125,7 @@
                     <div class="row scores__keywords text-left">
                         <h4>Recherches associées : <strong><mark>
                             @foreach($score->keywords as $keyword)
-                                <a href="{{ route('search', ['q' => $keyword->keyword]) }}">#{{ $keyword }}</a>
+                                <a href="{{ route(__('routes.search'), ['q' => $keyword->keyword]) }}">#{{ $keyword }}</a>
                             @endforeach
                         </mark></strong></h4>
                     </div>

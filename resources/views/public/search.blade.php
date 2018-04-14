@@ -1,11 +1,11 @@
 @extends('layouts.public')
 
 @section('title')@lang('title.search', ['keywords' => $keywords])@endsection
-@section('description')Recherche de '{{ $keywords }}' parmis les partitions gratuites de piano, auteurs et astuces de piano @endsection
+@section('description')@lang('description.search', ['keywords' => $keywords'])@endsection
 
 @section('og_type')book @endsection
 @section('og_title')@lang('title.search', ['keywords' => $keywords])@endsection
-@section('og_description')Recherchez une partitions gratuite de piano ou un auteur sur PianoLoveScore. Téléchargez les partitions gratuitement. @endsection
+@section('og_description')@lang('description.search', ['keywords' => $keywords'])@endsection
 @section('og_image'){{ Request::url() }}{{ elixir('img/logo_full.png') }} @endsection
 
 @section('breadcrumb')
@@ -13,7 +13,7 @@
 @endsection
 @section('meta')
     @parent
-    <link rel="canonical" href="{{ route('search', ['q'=>$keywords])}}" />
+    <link rel="canonical" href="{{ route(__('routes.search'), ['q'=>$keywords])}}" />
 @endsection
 @section('main')
     <?php \Carbon\Carbon::setLocale(config('app.locale')); ?>
@@ -33,10 +33,10 @@
                         @foreach($scores as $score)
                             <tr>
                                 <td>
-                                    <a href="{{ route('score', ['slug_author'=>$score->author->slug, 'slug_score'=>$score->slug])}}">{{ $score->title }}</a>
+                                    <a href="{{ route(__('routes.score'), ['slug_author'=>$score->author->slug, 'slug_score'=>$score->slug])}}">{{ $score->title }}</a>
                                 </td>
                                 <td>
-                                    @lang('generic.by') <a href="{{ route('author_scores', ['slug_author'=>$score->author->slug]) }}">{{ $score->author }}</a>
+                                    @lang('generic.by') <a href="{{ route(__('routes.author_scores'), ['slug_author'=>$score->author->slug]) }}">{{ $score->author }}</a>
                                 </td>
                                 <td>
                                     @if(!is_null($score->avg_votes))
@@ -70,7 +70,7 @@
                         @foreach($authors as $author)
                             <tr>
                                 <td>
-                                    <a href="{{ route('author_scores', ['slug_author'=>$author->slug]) }}">{{ $author->fullname }}</a>
+                                    <a href="{{ route(__('routes.author_scores'), ['slug_author'=>$author->slug]) }}">{{ $author->fullname }}</a>
                                 </td>
                                 <td>
                                     {{ count($author->scores) . ' ' . __('generic.free_sheet_2') }}</a>

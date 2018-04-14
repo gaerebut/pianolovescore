@@ -5,11 +5,11 @@
 ?>
 
 @section('title')@lang('title.author', ['author' => $author, 'author_fullname' => $author->fullname])@endsection
-@section('description')Retrouvez l'ensemble des partitions gratuites de piano de {{ $author->fullname }} sur PianoLoveScore et téléchargez-les @endsection
+@section('description')@lang('description.author', ['author' => $author->fullname])@endsection
 
 @section('og_type')books.author @endsection
 @section('og_title')@lang('title.author', ['author' => $author, 'author_fullname' => $author->fullname])@endsection
-@section('og_description')Téléchargement de partitions gratuites de piano de {{ $author }}. Trouvez les partitions libres de droits en libre accès, notez-les, commentez-les et faites des découvertes @endsection
+@section('og_description')@lang('description.author', ['author' => $author->fullname])@endsection
 @section('og_image'){{ Request::url() }}{{ elixir('img/logo_full.png') }} @endsection
 
 @section('breadcrumb')
@@ -69,7 +69,7 @@
                     @endif
                     <tr>
                         <td>
-                            <a href="{{ route('score', ['composer_slug'=>$author->slug, 'score_slug'=>$current_score->slug]) }}">{{ $current_score }}</a>
+                            <a href="{{ route(__('routes.score'), ['composer_slug'=>$author->slug, 'score_slug'=>$current_score->slug]) }}">{{ $current_score }}</a>
                         </td>
                         <td>
                         <td>

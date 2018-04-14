@@ -1,15 +1,15 @@
 @extends('layouts.public')
 
 @section('title')@lang('title.glossary', ['letter' => $letter])@endsection
-@section('description')Retrouvez la définition des différents symboles que vous trouvez sur les partitions de piano. Comprenez maintenant chacun des signes présents sur les partitions gratuites de piano. @endsection
+@section('description')@lang('description.glossary')@endsection
 
 @section('og_type')books @endsection
 @section('og_title')@lang('title.glossary', ['letter' => $letter])@endsection
-@section('og_description')Comprenez chacun des différents symboles présents sur vos partitions de piano. @endsection
+@section('og_description')@lang('description.glossary')@endsection
 @section('og_image'){{ Request::url() }}{{ elixir('img/logo_full.png') }} @endsection
 @section('meta')
     @parent
-    <link rel="canonical" href="{{ route('glossary', ['slug_glossary' => $letter]) }}" />
+    <link rel="canonical" href="{{ route(__('routes.glossary'), ['slug_glossary' => $letter]) }}" />
 @endsection
 @section('breadcrumb')
     @include('includes.breadcrumb')
@@ -26,7 +26,7 @@
                 @if($letter==chr(65+$i))
                     <button role="group" class="btn btn-primary">{{ chr(65+$i) }}</a></button>
                 @else
-                    <a href="{{ route('glossary', ['letter' => chr(65+$i)]) }}" role="group" class="btn btn-default" title="@lang('message.glossary.word_letter', ['letter' => chr(65+$i)])">{{ chr(65+$i) }}</a>
+                    <a href="{{ route(__('routes.glossary'), ['letter' => chr(65+$i)]) }}" role="group" class="btn btn-default" title="@lang('message.glossary.word_letter', ['letter' => chr(65+$i)])">{{ chr(65+$i) }}</a>
                 @endif
             @endfor
         </div>
