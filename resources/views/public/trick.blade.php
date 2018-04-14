@@ -22,7 +22,7 @@
     <section class="scores__content" itemscope="" itemtype="http://schema.org/Book">
         <div class="col-md-12">
             <div class="row tricks__title">
-                <p class="pull-right">Astuce postée le <time itemprop="dateCreated" datetime="{{ $trick->created_at }}">{{ $trick->created_at->formatLocalized('%d/%m/%Y') }}</time></p>
+                <p class="pull-right">@lang('messages.tip.posted') <time itemprop="dateCreated" datetime="{{ $trick->created_at }}">{{ $trick->created_at->formatLocalized('%d/%m/%Y') }}</time></p>
                 <h1 itemprop="name">{{ $trick }}</h1>
             </div>
         </div>
@@ -39,19 +39,19 @@
         <div class="row">
             <div class="card">
                 <ul class="nav nav-tabs" role="tablist">
-                    <li role="presentation" class="active"><a href="#commentaires-astuce" aria-controls="commentsents-trick" role="tab" data-toggle="tab">Commentaires</a></li>
+                    <li role="presentation" class="active"><a href="#commentaires-astuce" aria-controls="commentsents-trick" role="tab" data-toggle="tab">@lang('messages.comment.comments')</a></li>
                 </ul>
                 <div class="tab-content">
                     <div role="tabpanel" class="tab-pane active" id="commentaires-astuce">
                         <form class="reply_form" action="{{ route('ajax_comment') }}" onsubmit="return false">
                             <div class="form-group">
-                                <input type="text" id="u" class="form-control" placeholder="Votre pseudo..." pattern=".{3,}" required />
+                                <input type="text" id="u" class="form-control" placeholder="@lang('messages.comment.your_nickname')" pattern=".{3,}" required />
                             </div>
                             <div class="form-group">
-                                <textarea class="form-control" id="c" placeholder="Votre commentaire..." pattern=".{3,}" required></textarea>
+                                <textarea class="form-control" id="c" placeholder="@lang('messages.comment.your_comment')" pattern=".{3,}" required></textarea>
                             </div>
                             <div class="form-group">
-                                <button type="submit" class="btn btn-primary reply_comment">Poster le commentaire</button>
+                                <button type="submit" class="btn btn-primary reply_comment">@lang('messages.comment.post_comment')</button>
                             </div>
                         </form>
                         @if(count($trick->comments) > 0)
@@ -86,12 +86,12 @@
                 if(commentForm.hasClass('collapse'))
                 {
                     commentForm.removeClass('collapse');
-                    $(this).html('Fermer');
+                    $(this).html("@lang('messages.comment.close')");
                 }
                 else
                 {
                     commentForm.addClass('collapse');
-                    $(this).html('Répondre');
+                    $(this).html("@lang('messages.comment.reply')");
                 }
             });
 
@@ -119,7 +119,7 @@
                            {
                                 var parent_zone = parent_id_str == '' ? form.parent() : form.parents(':eq(1)');
 
-                                parent_zone.append('<div class="scores__comment"><div id="'+data.id+'"><strong style="color:red">Votre commentaire sera visible publiquement lorsqu\'il sera validé par un administrateur</strong><br /><strong>'+$('#u', form).val()+'</strong> - A l\'instant<div>'+$('#c', form).val()+'</div>');
+                                parent_zone.append('<div class="scores__comment"><div id="'+data.id+'"><strong style="color:red">@lang("messages.comment.posted_wait")</strong><br /><strong>'+$('#u', form).val()+'</strong> - @lang("messages.comment.just_now")<div>'+$('#c', form).val()+'</div>');
                                 $('#c, #u', form).val('');
                            }
                         },

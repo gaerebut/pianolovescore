@@ -47,7 +47,7 @@ return [
     'sheet_hard_title'			=> 'Hard free piano sheet music',
     'sheet_very_hard_title'		=> 'Very hard free piano sheet music',
 
-    'lastname'	=> 'last name',
+    'lastname'	=> 'Last name',
     'firstname' => 'First name',
     'email'		=> 'Email',
     'object'	=> 'Object',

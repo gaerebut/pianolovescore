@@ -15,6 +15,7 @@ return [
 		'post_comment'	=> 'Post comment',
 		'posted_wait'	=> 'Your comment will be visible when it will be validated by an administrator',
 		'just_now'		=> 'Just now',
+		'close'			=> 'Close',
 	],
 	'home' => [
 		'title'			=> "Piano Love Score",
@@ -41,7 +42,11 @@ return [
         'see_other_of_author'   => 'See :nb_score more free piano sheet by :author',
 	],
     'score_request' => [
-        'sent' => 'Piano sheet request sent'
+    	'description'	=> '<p>Can not find your <strong>piano sheet</strong> on PianoLoveScore ?</p><p>Ask for it !</p><p>Enter all the information to describe it and we will try to offer it <strong>for free</strong></p><p>WARNING : only <strong>legal and royalty-free piano sheet</strong> will be published.</p>',
+        'sent' 			=> 'Piano sheet request sent',
+        'title'			=> 'Title',
+        'author'		=> 'Author',
+        'comment'		=> 'Comment (optional)',
     ],
     'contact' => [
     	'page_description'  => "<p>Fill out the form below to contact the team support</p><p>An answer will be provided by email as soon as possible</p>",
@@ -67,5 +72,6 @@ return [
     	'free_sheet_found'		=> 'free sheet found',
     	'free_sheet_found_2'	=> 'free sheet found',
     	'author_composer'		=> 'author / composer',
+    	'no_result'				=> 'We did not find any author / composer and no free piano sheet music for',
     ]
 ];

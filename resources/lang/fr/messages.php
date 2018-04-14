@@ -15,6 +15,7 @@ return [
 		'post_comment'	=> 'Poster le commentaire',
 		'posted_wait'	=> "Votre commentaire sera visible publiquement lorsqu'il sera validé par un administrateur",
 		'just_now'		=> "A l'instant",
+        'close'         => 'Fermer',
 	],
     'home' => [
     	'title'			=> 'Piano Love Score',
@@ -41,7 +42,11 @@ return [
         'see_other_of_author'   => 'Voir les :nb_score autres partitions gratuites de :author',
     ],
     'score_request' => [
-        'sent' => 'Demande de partition envoyée'
+        'description'   => '<p>Vous ne trouvez pas votre <strong>partition de piano</strong> sur PianoLoveScore ?</p><p>Demandez-la !</p><p>Rentrez toutes les informations pour la décrire et nous nous efforcerons de vous le proposer <strong>gratuitement</strong></p><p>ATTENTION: seules les <strong>partitions légales et libres de droits</strong> se verront publiées.</p>',
+        'sent'          => 'Demande de partition envoyée',
+        'title'         => 'Titre',
+        'author'        => 'Auteur',
+        'comment'       => 'Commentaire (optionnel)',
     ],
     'contact' => [
         'page_description'  => "<p>Remplissez le formulaire ci-dessous pour contacter l'équipe</p><p>Une réponse vous sera apportée par email dans les plus brefs délais</p>",
@@ -67,5 +72,6 @@ return [
         'free_sheet_found'      => 'partition gratuite trouvée',
         'free_sheet_found_2'    => 'partitions gratuites trouvées',
         'author_composer'       => 'auteur / compositeur',
+        'no_result'             => "Nous n'avons trouvé aucun auteur/compositeur et aucune partition gratuite de piano pour la recherche",
     ]
 ];

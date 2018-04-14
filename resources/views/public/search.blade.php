@@ -81,7 +81,7 @@
                 </table>
             @endif
         @else
-            <h2>Nous n'avons trouvé aucun auteur/compositeur et aucune partition gratuite de piano pour la recherche "{{ $keywords }}"</h2>
+            <h2>@lang('messages.search.no_result') "{{ $keywords }}"</h2>
         @endif
     </section>
 @endsection
