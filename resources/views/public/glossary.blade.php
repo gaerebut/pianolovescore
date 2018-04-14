@@ -4,7 +4,7 @@
 @section('description')Retrouvez la définition des différents symboles que vous trouvez sur les partitions de piano. Comprenez maintenant chacun des signes présents sur les partitions gratuites de piano. @endsection
 
 @section('og_type')books @endsection
-@section('og_title')Lexique des symboles de partitions de Piano @endsection
+@section('og_title')@lang('title.glossary', ['letter' => $letter])@endsection
 @section('og_description')Comprenez chacun des différents symboles présents sur vos partitions de piano. @endsection
 @section('og_image'){{ Request::url() }}{{ elixir('img/logo_full.png') }} @endsection
 @section('meta')

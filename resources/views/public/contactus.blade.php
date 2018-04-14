@@ -4,7 +4,7 @@
 @section('description')Demandez une partition gratuite de piano que vous cherchez et un administrateur vous la postera en ligne @endsection
 
 @section('og_type')book @endsection
-@section('og_title')Demandez une partition gratuite de piano @endsection
+@section('og_title')@lang('title.contact_us')@endsection
 @section('og_description')Vous recherchez une partition gratuite de piano ? Demandez-la et nous vous la mettrons à disposition. @endsection
 @section('og_image'){{ Request::url() }}{{ elixir('img/logo_full.png') }} @endsection
 

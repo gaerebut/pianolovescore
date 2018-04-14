@@ -5,12 +5,11 @@
     $count_tricks = count($tricks);
 ?>
 
-@section('title')@lang('title.tricks', ['nb_tricks' => $count_tricks . ' 
-' . str_plural(__('generic.tip'), $count_tricks)])@endsection
+@section('title')@lang('title.tricks', ['nb_tricks' => $count_tricks . ' ' . str_plural(__('generic.tip'), $count_tricks)])@endsection
 @section('description')Retrouvez l'ensemble des astuces de piano sur PianoLoveScore pour perfectionner votre technique au piano @endsection
 
 @section('og_type')books @endsection
-@section('og_title')@lang('messages.tip.piano_tips')@endsection
+@section('og_title')@lang('title.tricks', ['nb_tricks' => $count_tricks . ' ' . str_plural(__('generic.tip'), $count_tricks)])@endsection
 @section('og_description')Astuces de piano. Trouvez les astuces de piano, commentez-les et faites des découvertes.@endsection
 @section('og_image'){{ Request::url() }}{{ elixir('img/logo_full.png') }} @endsection
 
@@ -21,8 +20,7 @@
     <section class="scores__content">
         <div class="col-lg-offset-2 col-lg-8">
             <div class="row scores__title">
-                <h1>@lang('messages.tip.piano_tips')</h1><h2>{{ $count_tricks . ' 
-' . str_plural(__('generic.tip'), $count_tricks) }}</h2>
+                <h1>@lang('messages.tip.piano_tips')</h1><h2>{{ $count_tricks . ' ' . str_plural(__('generic.tip'), $count_tricks) }}</h2>
             </div>
         </div>
         <div class="col-lg-offset-2 col-lg-8">

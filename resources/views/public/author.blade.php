@@ -8,7 +8,7 @@
 @section('description')Retrouvez l'ensemble des partitions gratuites de piano de {{ $author->fullname }} sur PianoLoveScore et téléchargez-les @endsection
 
 @section('og_type')books.author @endsection
-@section('og_title')Partitions Gratuites de Piano de {{ $author }} @endsection
+@section('og_title')@lang('title.author', ['author' => $author, 'author_fullname' => $author->fullname])@endsection
 @section('og_description')Téléchargement de partitions gratuites de piano de {{ $author }}. Trouvez les partitions libres de droits en libre accès, notez-les, commentez-les et faites des découvertes @endsection
 @section('og_image'){{ Request::url() }}{{ elixir('img/logo_full.png') }} @endsection
 

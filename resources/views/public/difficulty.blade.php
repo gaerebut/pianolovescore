@@ -4,7 +4,7 @@
 @section('description')Partitions Gratuites de Piano {{ $difficulty }} par Auteurs sur Piano Love Score. Téléchargez et notez les partitions {{ $difficulty }} après les avoir téléchargées @endsection
 
 @section('og_type')book @endsection
-@section('og_title')Partitions Gratuites de Piano {{ $difficulty }} sur PianoLoveScore @endsection
+@section('og_title')@lang('title.difficulty', ['difficulty' => $difficulty])@endsection
 @section('og_description')Téléchargement de partitions gratuites de piano {{ $difficulty }}. Trouvez les partitions {{ $difficulty }} libres de droits en libre accès, notez-les, commentez-les et faites des découvertes @endsection
 @section('og_image'){{ Request::url() }}{{ elixir('img/logo_full.png') }} @endsection
 
