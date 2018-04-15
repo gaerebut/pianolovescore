@@ -119,7 +119,7 @@
                            {
                                 var parent_zone = parent_id_str == '' ? form.parent() : form.parents(':eq(1)');
 
-                                parent_zone.append('<div class="scores__comment"><div id="'+data.id+'"><strong style="color:red">@lang("messages.comment.posted_wait")</strong><br /><strong>'+$('#u', form).val()+'</strong> - @lang("messages.comment.just_now")<div>'+$('#c', form).val()+'</div>');
+                                parent_zone.append("<div class=\"scores__comment\"><div id=\""+data.id+"\"><strong style=\"color:red\">@lang('messages.comment.posted_wait')</strong><br /><strong>"+$('#u', form).val()+"</strong> - @lang('messages.comment.just_now')<div>"+$('#c', form).val()+"</div>");
                                 $('#c, #u', form).val('');
                            }
                         },

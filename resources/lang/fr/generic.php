@@ -6,7 +6,7 @@ return [
 	'author_scores'		=> 'Partitions gratuites de piano de :author',
 	'score_of_author'	=> ':score, partition gratuite de piano de :author',
 	'download'			=> 'téléchargement',
-	'average'			=> 'average',
+	'average'			=> 'moyenne',
 	'vote'				=> 'vote',
 	'browser_compatible'=> "Votre navigateur n'est pas compatible",
 	'tip'				=> 'astuce',
