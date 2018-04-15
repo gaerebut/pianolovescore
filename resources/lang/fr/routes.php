@@ -8,7 +8,7 @@ return[
 	'score_download'		=> 'partition_telechargement',
 	'score'					=> 'partition',
 	'scores'				=> 'partitions',
-	'scores_difficulty'		=> 'partition_difficulte',
+	'scores_difficulty'		=> 'partitions_difficulte',
 	'author_scores'			=> 'auteur_partitions',
 	'glossary'				=> 'lexique',	
 	'trick'					=> 'astuce',
