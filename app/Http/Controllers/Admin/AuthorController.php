@@ -43,7 +43,8 @@ class AuthorController extends BaseController
 
         $author = new Author();
         $author->slug           = ucfirst($input['slug']);
-        $author->description    = $input['description'];
+        $author->description_fr = $input['description_fr'];
+        $author->description_en = $input['description_en'];
         $author->lastname       = ucfirst($input['lastname']);
         $author->firstname 	    = ucfirst($input['firstname']);
         $author->fullname 	    = $author->firstname . ' ' . $author->lastname;
@@ -90,7 +91,8 @@ class AuthorController extends BaseController
 
         $author = Author::where('id', '=', $input['id'])->firstOrFail();
         $author->slug           = ucfirst($input['slug']);
-        $author->description    = $input['description'];
+        $author->description_fr = $input['description_fr'];
+        $author->description_en = $input['description_en'];
         $author->lastname       = ucfirst($input['lastname']);
         $author->firstname      = ucfirst($input['firstname']);
         $author->fullname       = $author->firstname . ' ' . $author->lastname;

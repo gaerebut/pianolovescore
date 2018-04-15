@@ -31,7 +31,8 @@
                 <h1>{{ $author->fullname }}</h1><h2>{{ $count_scores }} <?php echo $count_scores>1?__('generic.free_sheet_2'):__('generic.free_sheet'); ?></h2>
             </div>
             <div class="row text-left">
-                <p>{!! $author->description !!}</p>
+                @php $description = 'description_' . App::getLocale(); @endphp
+                <p>{!! $author->$description !!}</p>
             </div>
         </div>
         <div class="col-lg-offset-2 col-lg-8">
