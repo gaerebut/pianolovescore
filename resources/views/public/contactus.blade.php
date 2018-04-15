@@ -29,7 +29,7 @@
                     @lang('messages.contact.sent')
                 </div>
             @endif
-            <form action="{{ route(__('routes.contact_us_submit')) }}" method="post" class="form-horizontal request">
+            <form action="{{ route('contact_us_submit') }}" method="post" class="form-horizontal request">
                 <div class="form-group">
                     <label for="contact_lastname" class="col-sm-2 control-label">@lang('generic.lastname')</label>
                     <div class="col-sm-4">

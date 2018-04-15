@@ -1,11 +1,11 @@
 @extends('layouts.public')
 
 @section('title')@lang('title.search', ['keywords' => $keywords])@endsection
-@section('description')@lang('description.search', ['keywords' => $keywords'])@endsection
+@section('description')@lang('description.search', ['keywords' => $keywords]) @endsection
 
 @section('og_type')book @endsection
 @section('og_title')@lang('title.search', ['keywords' => $keywords])@endsection
-@section('og_description')@lang('description.search', ['keywords' => $keywords'])@endsection
+@section('og_description')@lang('description.search', ['keywords' => $keywords])@endsection
 @section('og_image'){{ Request::url() }}{{ elixir('img/logo_full.png') }} @endsection
 
 @section('breadcrumb')
