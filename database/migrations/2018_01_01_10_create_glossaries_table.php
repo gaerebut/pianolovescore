@@ -15,9 +15,12 @@ class CreateGlossariesTable extends Migration
     {
         Schema::create('glossaries', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('slug', 150);
-            $table->string('glossary', 100);
-            $table->text('description');
+            $table->string('slug_fr', 150);
+            $table->string('slug_en', 150);
+            $table->string('glossary_fr', 100);
+            $table->string('glossary_en', 100);
+            $table->text('description_fr');
+            $table->text('descriptio_en');
             $table->string('image', 190)->nullable();
             $table->timestamps();
         });

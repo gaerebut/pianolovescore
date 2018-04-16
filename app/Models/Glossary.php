@@ -16,11 +16,11 @@ class Glossary extends Model
 
     public function toSearchableArray()
     {
-        return array_only($this->toArray(), ['glossary']);
+        return array_only($this->toArray(), ['glossary_fr']);
     }
 
     public function __toString()
     {
-    	return $this->glossary;
+    	return $this->glossary_fr;
     }
 }

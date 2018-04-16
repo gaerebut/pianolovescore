@@ -13,7 +13,7 @@ class GlossaryController extends BaseController
     {
         $letter = strtoupper($letter[0]);
 
-    	$glossaries = Glossary::where('glossary', 'like', $letter . '%')->orderBy('id')->get();
+    	$glossaries = Glossary::where('glossary_fr', 'like', $letter . '%')->orderBy('id')->get();
 
     	return view('admin.glossary.index', [
     		'breadcrumb_last_level' => 'Lexique en ' . $letter,
@@ -25,14 +25,21 @@ class GlossaryController extends BaseController
     public function add(Request $request)
     {
     	$request->validate([    
-            'glossary'      => 'required',
-            'description'   => 'required',
-            'slug'          => 'required|unique:glossaries,slug'
+            'glossary_fr'      => 'required',
+            'glossary_en'      => 'required',
+            'description_fr'   => 'required',
+            'description_en'   => 'required',
+            'slug_fr'          => 'required|unique:glossaries,slug_fr',
+            'slug_en'          => 'required|unique:glossaries,slug_en'
         ],[
-            'glossary.required'	    => 'Veuillez indiquer le mot à ajouter au lexique',
-            'description.required'  => 'Veuillez mettre une description pour ce mot',
-            'slug.required'		    => 'Veuillez indiquer l\'identifiant URL',
-            'slug.unique'		    => 'Cet identifiant URL existe déjà, veuillez en choisir un autre',
+            'glossary_fr.required'      => 'Veuillez indiquer le mot français à ajouter au lexique',
+            'glossary_en.required'      => 'Veuillez indiquer le mot anglais à ajouter au lexique',
+            'description_fr.required'   => 'Veuillez mettre une description française pour ce mot',
+            'description_en.required'   => 'Veuillez mettre une description anglaise pour ce mot',
+            'slug_fr.required'          => 'Veuillez indiquer l\'identifiant URL en français',
+            'slug_en.required'		    => 'Veuillez indiquer l\'identifiant URL en anglais',
+            'slug_fr.unique'            => 'Cet identifiant URL en français existe déjà, veuillez en choisir un autre',
+            'slug_en.unique'		    => 'Cet identifiant URL en anglais existe déjà, veuillez en choisir un autre',
         ]);
         $input = $request->all();
 
@@ -46,9 +53,12 @@ class GlossaryController extends BaseController
         }
 
         $glossary = new Glossary();
-        $glossary->glossary         = ucfirst($input['glossary']);
-        $glossary->slug             = ucfirst($input['slug']);
-        $glossary->description      = $input['description'];
+        $glossary->glossary_fr         = ucfirst($input['glossary_fr']);
+        $glossary->glossary_en         = ucfirst($input['glossary_en']);
+        $glossary->slug_fr             = ucfirst($input['slug_fr']);
+        $glossary->slug_en             = ucfirst($input['slug_en']);
+        $glossary->description_fr      = $input['description_fr'];
+        $glossary->description_en      = $input['description_en'];
         $glossary->image            = $glossary_image;
         $glossary->save();
 
@@ -60,15 +70,22 @@ class GlossaryController extends BaseController
     {
         $input = $request->all();
 
-        $request->validate([    
-            'glossary'      => 'required',
-            'description'   => 'required',
-            'slug'          => 'required|unique:glossaries,slug,' . $input['id']
+        $request->validate([
+            'glossary_fr'      => 'required',
+            'glossary_en'      => 'required',
+            'description_fr'   => 'required',
+            'description_en'   => 'required',
+            'slug_fr'          => 'required|unique:glossaries,slug_fr,' . $input['id'],
+            'slug_en'          => 'required|unique:glossaries,slug_en,' . $input['id']
         ],[
-            'glossary.required'     => 'Veuillez indiquer le mot à ajouter au lexique',
-            'description.required'  => 'Veuillez mettre une description pour ce mot',
-            'slug.required'         => 'Veuillez indiquer l\'identifiant URL',
-            'slug.unique'           => 'Cet identifiant URL existe déjà, veuillez en choisir un autre',
+            'glossary_fr.required'      => 'Veuillez indiquer le mot français à ajouter au lexique',
+            'glossary_en.required'      => 'Veuillez indiquer le mot anglais à ajouter au lexique',
+            'description_fr.required'   => 'Veuillez mettre une description française pour ce mot',
+            'description_en.required'   => 'Veuillez mettre une description anglaise pour ce mot',
+            'slug_fr.required'          => 'Veuillez indiquer l\'identifiant URL en français',
+            'slug_en.required'          => 'Veuillez indiquer l\'identifiant URL en anglais',
+            'slug_fr.unique'            => 'Cet identifiant URL en français existe déjà, veuillez en choisir un autre',
+            'slug_en.unique'            => 'Cet identifiant URL en anglais existe déjà, veuillez en choisir un autre',
         ]);
         
 
@@ -89,10 +106,10 @@ class GlossaryController extends BaseController
                 File::delete('img/glossaries/' . $glossary->image);
             }
         }
-        else if($glossary->slug != $input['slug'])
+        else if($glossary->slug_fr != $input['slug_fr'])
         {
             $extension = explode('.', $glossary->image); // extension of existing image file
-            $glossary_image = $input['slug'] . '.' . $extension[count($extension)-1];
+            $glossary_image = $input['slug_fr'] . '.' . $extension[count($extension)-1];
 
             File::move('img/glossaries/' . $glossary->image, 'img/glossaries/' . $glossary_image);
         }
@@ -101,9 +118,12 @@ class GlossaryController extends BaseController
             File::delete('img/glossaries/' . $glossary->image);
         }
 
-        $glossary->glossary         = ucfirst($input['glossary']);
-        $glossary->slug             = ucfirst($input['slug']);
-        $glossary->description      = $input['description'];
+        $glossary->glossary_fr         = ucfirst($input['glossary_fr']);
+        $glossary->glossary_en         = ucfirst($input['glossary_en']);
+        $glossary->slug_fr             = ucfirst($input['slug_fr']);
+        $glossary->slug_en             = ucfirst($input['slug_en']);
+        $glossary->description_fr      = $input['description_fr'];
+        $glossary->description_en      = $input['description_en'];
         $glossary->image            = $glossary_image;
         $glossary->save();
 

@@ -34,21 +34,26 @@
             @if(count($glossaries)>0)
                 @php $cpt = 0; @endphp
                 @foreach($glossaries as $glossary)
-                    <div class="row" id="{{ $glossary->slug }}">
+                    @php
+                    $slug = 'slug_' . App::getLocale();
+                    $title = 'glossary_' . App::getLocale();
+                    $description = 'description' . App::getLocale();
+                    @endphp
+                    <div class="row" id="{{ $glossary->$slug }}">
                         <div class="col-sm-3 glossary-image">
                         @if(!is_null($glossary->image))
-                            <img src="{{ URL::to('/') }}/img/glossaries/{{ $glossary->image }}" height="50" title="{{ $glossary }} - @lang('messages.glossary.in', ['letter => $letter'])" />
+                            <img src="{{ URL::to('/') }}/img/glossaries/{{ $glossary->image }}" height="50" title="{{ $glossary->$title }} - @lang('messages.glossary.in', ['letter' => $letter])" />
                         @endif
                         </div>
                         <div class="col-sm-9">
-                            <h2>{{ $glossary }}</h2>
-                            <p>{{ $glossary->description }}</p>
+                            <h2>{{ $glossary->$title }}</h2>
+                            <p>{{ $glossary->$description }}</p>
                         </div>
                     </div>
                     <hr />
                 @endforeach
             @else
-                <h2>@lang('messages.glossary.no_definition')</h2>
+                <h2>@lang('messages.glossary.no_definition', ['letter' => $letter])</h2>
             @endif
         </div>
     </section>

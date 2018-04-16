@@ -9,7 +9,7 @@ class GlossaryController extends Controller
     {
         $letter = strtoupper($letter[0]);
 
-    	$glossaries = Glossary::where('glossary', 'like', $letter . '%')->orderBy('id')->get();
+    	$glossaries = Glossary::where('glossary_' . \App::getLocale(), 'like', $letter . '%')->orderBy('id')->get();
 
     	return view('public.glossary', [
     		'breadcrumb_last_level' => __('messages.glossary.in', ['letter' => $letter]),

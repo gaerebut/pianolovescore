@@ -65,7 +65,7 @@ return [
     'glossary' => [
         'title'         => 'Lexique des partitions de Piano',
         'in'            => 'Lexique en :letter',
-        'word_letter'   => 'Lexique des mots commençant par la lettre :letter sur les partitions de piano',
+        'word_letter'   => 'Lexique des mots commençant par la lettre <strong>:letter</strong> sur les partitions de piano',
         'no_definition' => "Il n'y a pas encore de définition pour la lettre <strong>:letter</strong> du lexique",
     ],
     'search' => [

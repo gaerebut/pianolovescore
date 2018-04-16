@@ -65,8 +65,8 @@ return [
     'glossary' => [
     	'title'			=> 'Piano Sheet Music Glossary',
         'in' 			=> 'Lexicon in :letter',
-        'word_letter'   => 'Glossary of words beginning with the :letter letter on piano sheet music',
-        'no_definition' => 'There is still no definition for the :letter letter on the lexicon',
+        'word_letter'   => 'Glossary of words beginning with the <strong>:letter</strong> letter on piano sheet music',
+        'no_definition' => 'There is still no definition for the <strong>:letter</strong> letter on the lexicon',
     ],
     'search' => [
     	'result_for'			=> 'Search result for',
