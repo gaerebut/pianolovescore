@@ -37,7 +37,7 @@
                     @php
                     $slug = 'slug_' . App::getLocale();
                     $title = 'glossary_' . App::getLocale();
-                    $description = 'description' . App::getLocale();
+                    $description = 'description_' . App::getLocale();
                     @endphp
                     <div class="row" id="{{ $glossary->$slug }}">
                         <div class="col-sm-3 glossary-image">
