@@ -9,7 +9,7 @@
                 <h1 class="text-center logo">PianoLoveScore</h1>
             </div>
             <div class="row">
-                <form action="{{ route('search', ['q'=>'']) }}" method="get">
+                <form action="{{ route(__('routes.search'), ['q'=>'']) }}" method="get">
                     <div class="col-sm-offset-3 col-sm-4">
                         <input type="text" class="form-control" placeholder="@lang('messages.header_search_composer')" name="q" pattern=".{2,20}" required/>
                     </div>

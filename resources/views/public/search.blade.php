@@ -13,6 +13,8 @@
 @endsection
 @section('meta')
     @parent
+    @php $other_lang = App::getLocale() == 'fr' ? 'en' : 'fr'; @endphp
+    <link rel="alternate" hreflang="{{ $other_lang }}" href="{{ route(__('routes.search', [], $other_lang), ['q'=>$keywords])}}"/>
     <link rel="canonical" href="{{ route(__('routes.search'), ['q'=>$keywords])}}" />
 @endsection
 @section('main')

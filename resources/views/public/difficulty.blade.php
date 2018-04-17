@@ -7,7 +7,12 @@
 @section('og_title')@lang('title.difficulty', ['difficulty' => $difficulty])@endsection
 @section('og_description')@lang('description.difficulty', ['difficulty' => $difficulty])@endsection
 @section('og_image'){{ Request::url() }}{{ elixir('img/logo_full.png') }} @endsection
-
+@section('meta')
+    @parent
+    @php $other_lang = App::getLocale() == 'fr' ? 'en' : 'fr'; @endphp
+    <link rel="alternate" hreflang="{{ $other_lang }}" href="{{ route(__('routes.scores_difficulty', [], $other_lang), ['difficulty' => $difficulty])}}"/>
+    <link rel="canonical" href="{{ route(__('routes.scores_difficulty'), ['difficulty' => $difficulty])}}" />
+@endsection
 @section('breadcrumb')
     @include('includes.breadcrumb')
 @endsection

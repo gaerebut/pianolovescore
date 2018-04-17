@@ -7,7 +7,12 @@
 @section('og_title')@lang('title.score', ['title' => $score->title, 'author' => $score->author])@endsection
 @section('og_description')@lang('description.score', ['title' => $score->title, 'author' => $score->author])@endsection
 @section('og_image'){{ $score->score_image }} @endsection
-
+@section('meta')
+    @parent
+    @php $other_lang = App::getLocale() == 'fr' ? 'en' : 'fr'; @endphp
+    <link rel="alternate" hreflang="{{ $other_lang }}" href="{{ route(__('routes.score', [], $other_lang), ['slug_author' => $score->author->slug, 'slug_score' => $score->slug])}}"/>
+    <link rel="canonical" href="{{ route(__('routes.score'), ['slug_author' => $score->author->slug, 'slug_score' => $score->slug])}}" />
+@endsection
 @section('css')
     @parent
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css" />
@@ -17,9 +22,17 @@
 @section('breadcrumb')
     @include('includes.breadcrumb')
 @endsection
+@section('meta')
+    @parent
+    @php
+    $new_lang = App::getLocale() == 'fr' ? 'en' : 'fr';
+    App::setLocale($new_lang);
+    @endphp
+    <link rel="alternate" hreflang="{{ $new_lang }}" href="{{ route(__('routes.score'), ['slug_author'=>$score->author->slug, 'slug_score'=>$score->slug])}}"/>
+    @php App::setLocale($new_lang == 'fr' ? 'en' : 'fr' ); @endphp
+@endsection
 @section('main')
     <?php \Carbon\Carbon::setLocale(config('app.locale')); ?>
-
     <section class="scores__content" itemscope="" itemtype="http://schema.org/Book">
         <div class="col-md-offset-4 col-md-8">
             <div class="row scores__title">

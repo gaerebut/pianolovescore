@@ -7,7 +7,12 @@
 @section('og_title')@lang('title.score_request')@endsection
 @section('og_description')@lang('description.score_request')@endsection
 @section('og_image'){{ Request::url() }}{{ elixir('img/logo_full.png') }} @endsection
-
+@section('meta')
+    @parent
+    @php $other_lang = App::getLocale() == 'fr' ? 'en' : 'fr'; @endphp
+    <link rel="alternate" hreflang="{{ $other_lang }}" href="{{ route(__('routes.score_request', [], $other_lang))}}"/>
+    <link rel="canonical" href="{{ route(__('routes.score_request'))}}" />
+@endsection
 @section('breadcrumb')
     @include('includes.breadcrumb')
 @endsection

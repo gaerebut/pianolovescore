@@ -12,7 +12,12 @@
 @section('og_title')@lang('title.tricks', ['nb_tricks' => $count_tricks . ' ' . str_plural(__('generic.tip'), $count_tricks)])@endsection
 @section('og_description')Astuces de piano. Trouvez les astuces de piano, commentez-les et faites des découvertes.@endsection
 @section('og_image'){{ Request::url() }}{{ elixir('img/logo_full.png') }} @endsection
-
+@section('meta')
+    @parent
+    @php $other_lang = App::getLocale() == 'fr' ? 'en' : 'fr'; @endphp
+    <link rel="alternate" hreflang="{{ $other_lang }}" href="{{ route(__('routes.tricks', [], $other_lang))}}"/>
+    <link rel="canonical" href="{{ route(__('routes.tricks'))}}" />
+@endsection
 @section('breadcrumb')
     @include('includes.breadcrumb')
 @endsection

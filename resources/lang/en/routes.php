@@ -13,4 +13,11 @@ return[
 	'glossary'				=> 'glossary',	
 	'trick'					=> 'trick',
 	'tricks'				=> 'tricks',
+
+	'sitemap_categories'	=> 'sitemap_categories',
+	'sitemap_authors'		=> 'sitemap_authors',
+	'sitemap_scores'		=> 'sitemap_scores',
+	'sitemap_glossaries'	=> 'sitemap_glossaries',
+	'sitemap_tricks'		=> 'sitemap_tricks',
+	'sitemap_difficulties'	=> 'sitemap_difficulties'
 ];

@@ -95,17 +95,6 @@ Route::group( ['namespace' => 'Admin', 'prefix' => 'admin' ], function()
 	} );
 } );
 
-Route::group( ['prefix' => 'sitemap' ], function()
-{
-	Route::get('/', 'SitemapController@index')->name('sitemap');
-	Route::get('categories', 'SitemapController@categories')->name('sitemap_categories');
-	Route::get('authors', 'SitemapController@authors')->name('sitemap_authors');
-	Route::get('scores', 'SitemapController@scores')->name('sitemap_scores');
-	Route::get('glossaries', 'SitemapController@glossaries')->name('sitemap_glossaries');
-	Route::get('tricks', 'SitemapController@tricks')->name('sitemap_tricks');
-	Route::get('difficulties', 'SitemapController@difficulties')->name('sitemap_difficulties');
-});
-
 // AJAX
 Route::post('ajax/score/comment', 'AjaxController@storeComment')->name('ajax_comment');
 Route::post('ajax/score/rating', 'AjaxController@storeRating')->name('ajax_rating');
@@ -117,55 +106,75 @@ Route::post('/contact', 'HomeController@contactusSave')->name('contact_us_submit
 Route::get('/contact', 'HomeController@contactusShow')->name('contact_us');
 /** COMMON ROUTES **/
 
-/** ROUTES : FR */
-Route::get('/rechercher', 'HomeController@searchByForm')->name('recherche');
-Route::get('/rechercher/{q}', 'HomeController@search')->name('recherche_par_formulaire');
+Route::group(array('domain' => 'pianolovescore.' . (env('APP_ENV') == 'production'?'com':'dev')), function(){	/** ROUTES : FR */
+	Route::get('/rechercher', 'HomeController@searchByForm')->name('recherche');
+	Route::get('/rechercher/{q}', 'HomeController@search')->name('recherche_par_formulaire');
 
-// SCORE CONTROLLER
-Route::post('/demander-une-partition', 'ScoreController@requestSave')->name('demande_partition_envoi');
-Route::get('/demander-une-partition', 'ScoreController@requestShow')->name('demande_partition');
+	// SCORE CONTROLLER
+	Route::post('/demander-une-partition', 'ScoreController@requestSave')->name('demande_partition_envoi');
+	Route::get('/demander-une-partition', 'ScoreController@requestShow')->name('demande_partition');
 
-Route::get('/telecharger/{slug}', 'ScoreController@download')->name('partition_telechargement');
-Route::get('/partitions/{slug_author}/{slug_score}', 'ScoreController@show')->name('partition');
-Route::get('/partitions', 'ScoreController@showAll')->name('partitions');
-Route::get('/partitions/{difficulty}', 'ScoreController@showLevel')->name('partitions_difficulte')
-->where(['difficulty' => 'tres-faciles|faciles|intermediaires|difficiles|tres-difficiles']);
+	Route::get('/telecharger/{slug}', 'ScoreController@download')->name('partition_telechargement');
+	Route::get('/partitions/{slug_author}/{slug_score}', 'ScoreController@show')->name('partition');
+	Route::get('/partitions', 'ScoreController@showAll')->name('partitions');
+	Route::get('/partitions/{difficulty}', 'ScoreController@showLevel')->name('partitions_difficulte')
+	->where(['difficulty' => 'tres-faciles|faciles|intermediaires|difficiles|tres-difficiles']);
 
-//AUTHOR CONTROLLER
-Route::get('/partitions/{slug_author}', 'AuthorController@showScores')->name('auteur_partitions');
+	//AUTHOR CONTROLLER
+	Route::get('/partitions/{slug_author}', 'AuthorController@showScores')->name('auteur_partitions');
 
-//LEXIQUE CONTROLLER
-Route::get('/lexique/{letter?}', 'GlossaryController@show')->name('lexique');
+	//LEXIQUE CONTROLLER
+	Route::get('/lexique/{letter?}', 'GlossaryController@show')->name('lexique');
 
-//TRICK CONTROLLER
-Route::get('/astuces/{slug}', 'TrickController@show')->name('astuce');
-Route::get('/astuces', 'TrickController@showAll')->name('astuces');
-/** ROUTES : FR */
+	//TRICK CONTROLLER
+	Route::get('/astuces/{slug}', 'TrickController@show')->name('astuce');
+	Route::get('/astuces', 'TrickController@showAll')->name('astuces');
 
+	Route::group( ['prefix' => 'sitemap' ], function()
+	{
+		Route::get('/', 'SitemapController@index')->name('sitemap');
+		Route::get('categories', 'SitemapController@categories')->name('sitemap_categories');
+		Route::get('auteurs', 'SitemapController@authors')->name('sitemap_auteurs');
+		Route::get('partitions', 'SitemapController@scores')->name('sitemap_partitions');
+		Route::get('lexiques', 'SitemapController@glossaries')->name('sitemap_lexiques');
+		Route::get('astuces', 'SitemapController@tricks')->name('sitemap_astuces');
+		Route::get('difficultes', 'SitemapController@difficulties')->name('sitemap_difficultes');
+	});
+});
 
+Route::group(array('domain' => 'en.pianolovescore.' . (env('APP_ENV') == 'production'?'com':'dev')), function() {
+	/** ROUTES : EN */
+	Route::get('/search', 'HomeController@searchByForm')->name('search');
+	Route::get('/search/{q}', 'HomeController@search')->name('search_by_form');
 
+	// SCORE CONTROLLER
+	Route::post('/request-a-score', 'ScoreController@requestSave')->name('score_request_submit');
+	Route::get('/request-a-score', 'ScoreController@requestShow')->name('score_request');
 
-/** ROUTES : EN */
-Route::get('/search', 'HomeController@searchByForm')->name('search');
-Route::get('/search/{q}', 'HomeController@search')->name('search_by_form');
+	Route::get('/download/{slug}', 'ScoreController@download')->name('score_download');
+	Route::get('/scores/{slug_author}/{slug_score}', 'ScoreController@show')->name('score');
+	Route::get('/scores', 'ScoreController@showAll')->name('scores');
+	Route::get('/scores/{difficulty}', 'ScoreController@showLevel')->name('scores_difficulty')
+	->where(['difficulty' => 'very-easy|easy|intermediate|hard|very-hard']);
 
-// SCORE CONTROLLER
-Route::post('/request-a-score', 'ScoreController@requestSave')->name('score_request_submit');
-Route::get('/request-a-score', 'ScoreController@requestShow')->name('score_request');
+	//AUTHOR CONTROLLER
+	Route::get('/scores/{slug_author}', 'AuthorController@showScores')->name('author_scores');
 
-Route::get('/download/{slug}', 'ScoreController@download')->name('score_download');
-Route::get('/scores/{slug_author}/{slug_score}', 'ScoreController@show')->name('score');
-Route::get('/scores', 'ScoreController@showAll')->name('scores');
-Route::get('/scores/{difficulty}', 'ScoreController@showLevel')->name('scores_difficulty')
-->where(['difficulty' => 'very-easy|easy|intermediate|hard|very-hard']);
+	//LEXIQUE CONTROLLER
+	Route::get('/glossary/{letter?}', 'GlossaryController@show')->name('glossary');
 
-//AUTHOR CONTROLLER
-Route::get('/scores/{slug_author}', 'AuthorController@showScores')->name('author_scores');
-
-//LEXIQUE CONTROLLER
-Route::get('/glossary/{letter?}', 'GlossaryController@show')->name('glossary');
-
-//TRICK CONTROLLER
-Route::get('/tricks/{slug}', 'TrickController@show')->name('trick');
-Route::get('/tricks', 'TrickController@showAll')->name('tricks');
-/** ROUTES : EN */
+	//TRICK CONTROLLER
+	Route::get('/tricks/{slug}', 'TrickController@show')->name('trick');
+	Route::get('/tricks', 'TrickController@showAll')->name('tricks');
+	
+	Route::group( ['prefix' => 'sitemap' ], function()
+	{
+		Route::get('/', 'SitemapController@index')->name('sitemap');
+		Route::get('categories', 'SitemapController@categories')->name('sitemap_categories');
+		Route::get('authors', 'SitemapController@authors')->name('sitemap_authors');
+		Route::get('scores', 'SitemapController@scores')->name('sitemap_scores');
+		Route::get('glossaries', 'SitemapController@glossaries')->name('sitemap_glossaries');
+		Route::get('tricks', 'SitemapController@tricks')->name('sitemap_tricks');
+		Route::get('difficulties', 'SitemapController@difficulties')->name('sitemap_difficulties');
+	});
+});

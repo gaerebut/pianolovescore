@@ -9,7 +9,9 @@
 @section('og_image'){{ Request::url() }}{{ elixir('img/logo_full.png') }} @endsection
 @section('meta')
     @parent
-    <link rel="canonical" href="{{ route(__('routes.glossary'), ['slug_glossary' => $letter]) }}" />
+    @php $other_lang = App::getLocale() == 'fr' ? 'en' : 'fr'; @endphp
+    <link rel="alternate" hreflang="{{ $other_lang }}" href="{{ route(__('routes.glossary', [], $other_lang), ['slug_glossary' => $letter])}}"/>
+    <link rel="canonical" href="{{ route(__('routes.glossary'), ['slug_glossary' => $letter])}}" />
 @endsection
 @section('breadcrumb')
     @include('includes.breadcrumb')

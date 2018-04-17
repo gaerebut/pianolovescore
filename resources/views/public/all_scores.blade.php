@@ -11,6 +11,12 @@
 @section('breadcrumb')
     @include('includes.breadcrumb')
 @endsection
+@section('meta')
+    @parent
+    @php $other_lang = App::getLocale() == 'fr' ? 'en' : 'fr'; @endphp
+    <link rel="alternate" hreflang="{{ $other_lang }}" href="{{ route(__('routes.scores', [], $other_lang))}}"/>
+    <link rel="canonical" href="{{ route(__('routes.scores'))}}" />
+@endsection
 @section('main')
     @php
     $difficulties = [

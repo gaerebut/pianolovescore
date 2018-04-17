@@ -13,4 +13,11 @@ return[
 	'glossary'				=> 'lexique',	
 	'trick'					=> 'astuce',
 	'tricks'				=> 'astuces',
+
+	'sitemap_categories'	=> 'sitemap_categories',
+	'sitemap_authors'		=> 'sitemap_auteurs',
+	'sitemap_scores'		=> 'sitemap_partitions',
+	'sitemap_glossaries'	=> 'sitemap_lexiques',
+	'sitemap_tricks'		=> 'sitemap_astuces',
+	'sitemap_difficulties'	=> 'sitemap_difficultes'
 ];
