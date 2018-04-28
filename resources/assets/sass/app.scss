@@ -33,6 +33,25 @@ header {
 			padding: 0 100px;
 			border-top: 2px solid #4267b2;
 			border-bottom: 2px solid #4267b2;
+
+			li.lang{
+				> a{
+					padding: 0 !important;
+					opacity: 0.5;
+    				filter: alpha(opacity=50);
+    				
+    				&:hover{
+    					opacity: 1;
+    					filter: alpha(opacity=100);
+    				}
+    			}
+
+				img{
+					height: 30px;
+					width: 30px;
+					margin: 10px;
+				}
+			}
 		}
 
 		.navbar-collapse {

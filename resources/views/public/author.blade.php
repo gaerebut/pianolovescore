@@ -17,8 +17,11 @@
 @endsection
 @section('meta')
     @parent
-    @php $other_lang = App::getLocale() == 'fr' ? 'en' : 'fr'; @endphp
-    <link rel="alternate" hreflang="{{ $other_lang }}" href="{{ route(__('routes.author_scores', [], $other_lang), ['slug_author'=>$author->slug])}}"/>
+    @php
+        $other_lang = App::getLocale() == 'fr' ? 'en' : 'fr';
+        $alternate_route = route(__('routes.author_scores', [], $other_lang), ['slug_author'=>$author->slug]);
+    @endphp
+    <link rel="alternate" hreflang="{{ $other_lang }}" href="{{ $alternate_route }}"/>
     <link rel="canonical" href="{{ route(__('routes.author_scores'), ['slug_author'=>$author->slug])}}" />
 @endsection
 @section('main')

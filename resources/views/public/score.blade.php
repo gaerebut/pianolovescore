@@ -9,8 +9,11 @@
 @section('og_image'){{ $score->score_image }} @endsection
 @section('meta')
     @parent
-    @php $other_lang = App::getLocale() == 'fr' ? 'en' : 'fr'; @endphp
-    <link rel="alternate" hreflang="{{ $other_lang }}" href="{{ route(__('routes.score', [], $other_lang), ['slug_author' => $score->author->slug, 'slug_score' => $score->slug])}}"/>
+    @php
+        $other_lang = App::getLocale() == 'fr' ? 'en' : 'fr';
+        $alternate_route = route(__('routes.score', [], $other_lang), ['slug_author' => $score->author->slug, 'slug_score' => $score->slug]);
+    @endphp
+    <link rel="alternate" hreflang="{{ $other_lang }}" href="{{ $alternate_route }}"/>
     <link rel="canonical" href="{{ route(__('routes.score'), ['slug_author' => $score->author->slug, 'slug_score' => $score->slug])}}" />
 @endsection
 @section('css')
@@ -21,15 +24,6 @@
 @endsection
 @section('breadcrumb')
     @include('includes.breadcrumb')
-@endsection
-@section('meta')
-    @parent
-    @php
-    $new_lang = App::getLocale() == 'fr' ? 'en' : 'fr';
-    App::setLocale($new_lang);
-    @endphp
-    <link rel="alternate" hreflang="{{ $new_lang }}" href="{{ route(__('routes.score'), ['slug_author'=>$score->author->slug, 'slug_score'=>$score->slug])}}"/>
-    @php App::setLocale($new_lang == 'fr' ? 'en' : 'fr' ); @endphp
 @endsection
 @section('main')
     <?php \Carbon\Carbon::setLocale(config('app.locale')); ?>

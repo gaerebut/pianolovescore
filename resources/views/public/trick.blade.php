@@ -5,12 +5,15 @@
 
 @section('og_type')book @endsection
 @section('og_title')@lang('title.trick', ['trick' => $trick])@endsection
-@section('og_description')Astuce sur Partition Gratuite de Piano - {{ $trick }}. Trouvez les partitions libres de droits en libre accès, notez-les, commentez-les et faites des découvertes @endsection
+@section('og_description')@lang('description.trick', ['trick' => $trick])@endsection
 @section('og_image'){{ Request::url() }}{{ elixir('img/logo_full.png') }} @endsection
 @section('meta')
     @parent
-    @php $other_lang = App::getLocale() == 'fr' ? 'en' : 'fr'; @endphp
-    <link rel="alternate" hreflang="{{ $other_lang }}" href="{{ route(__('routes.trick', [], $other_lang), ['slug' => $trick->slug])}}"/>
+    @php
+        $other_lang = App::getLocale() == 'fr' ? 'en' : 'fr';
+        $alternate_route = route(__('routes.trick', [], $other_lang), ['slug' => $trick->slug]);
+    @endphp
+    <link rel="alternate" hreflang="{{ $other_lang }}" href="{{ $alternate_route }}"/>
     <link rel="canonical" href="{{ route(__('routes.trick'), ['slug' => $trick->slug])}}" />
 @endsection
 @section('css')

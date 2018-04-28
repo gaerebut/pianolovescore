@@ -9,8 +9,11 @@
 @section('og_image'){{ Request::url() }}{{ elixir('img/logo_full.png') }} @endsection
 @section('meta')
     @parent
-    @php $other_lang = App::getLocale() == 'fr' ? 'en' : 'fr'; @endphp
-    <link rel="alternate" hreflang="{{ $other_lang }}" href="{{ route(__('routes.scores_difficulty', [], $other_lang), ['difficulty' => $difficulty])}}"/>
+    @php
+        $other_lang = App::getLocale() == 'fr' ? 'en' : 'fr';
+        $alternate_route = route(__('routes.scores_difficulty', [], $other_lang), ['difficulty' => $difficulty]);
+    @endphp
+    <link rel="alternate" hreflang="{{ $other_lang }}" href="{{ $alternate_route }}"/>
     <link rel="canonical" href="{{ route(__('routes.scores_difficulty'), ['difficulty' => $difficulty])}}" />
 @endsection
 @section('breadcrumb')

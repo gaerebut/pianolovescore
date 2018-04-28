@@ -100,13 +100,13 @@ Route::post('ajax/score/comment', 'AjaxController@storeComment')->name('ajax_com
 Route::post('ajax/score/rating', 'AjaxController@storeRating')->name('ajax_rating');
 
 /** COMMON ROUTES **/
-Route::get('/', 'HomeController@show')->name('home');
-
 Route::post('/contact', 'HomeController@contactusSave')->name('contact_us_submit');
 Route::get('/contact', 'HomeController@contactusShow')->name('contact_us');
 /** COMMON ROUTES **/
 
-Route::group(array('domain' => 'pianolovescore.' . (env('APP_ENV') == 'production'?'com':'dev')), function(){	/** ROUTES : FR */
+Route::group(array('domain' => 'pianolovescore.' . (env('APP_ENV') == 'production'?'com':'dev')), function(){		/** ROUTES : FR */
+	Route::get('/', 'HomeController@show')->name('accueil');
+
 	Route::get('/rechercher', 'HomeController@searchByForm')->name('recherche');
 	Route::get('/rechercher/{q}', 'HomeController@search')->name('recherche_par_formulaire');
 
@@ -144,6 +144,8 @@ Route::group(array('domain' => 'pianolovescore.' . (env('APP_ENV') == 'productio
 
 Route::group(array('domain' => 'en.pianolovescore.' . (env('APP_ENV') == 'production'?'com':'dev')), function() {
 	/** ROUTES : EN */
+	Route::get('/', 'HomeController@show')->name('home');
+
 	Route::get('/search', 'HomeController@searchByForm')->name('search');
 	Route::get('/search/{q}', 'HomeController@search')->name('search_by_form');
 

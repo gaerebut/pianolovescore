@@ -7,7 +7,14 @@
 @section('og_title')@lang('title.home')@endsection
 @section('og_description')@lang('description.home')@endsection
 @section('og_image'){{ Request::url() }}{{ elixir('img/logo_full.png') }} @endsection
-
+@section('meta')
+    @parent
+    @php
+        $other_lang = App::getLocale() == 'fr' ? 'en' : 'fr';
+        $alternate_route = route(__('routes.home', [], $other_lang));
+    @endphp
+    <link rel="alternate" hreflang="{{ $other_lang }}" href="{{ $alternate_route }}"/>
+@endsection
 @section('main')
     @php
     \Carbon\Carbon::setLocale(config('app.locale'));

@@ -1,6 +1,7 @@
 <?php
 
 return[
+	'home' 					=> 'home',
 	'search' 				=> 'search',
 	'search_by_form'		=> 'search_by_form',
 	'score_request'			=> 'score_request',

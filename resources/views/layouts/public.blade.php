@@ -18,15 +18,11 @@
                     </div>
                 </form>
             </div>
-            <div class="row">
-                @include('includes.nav_public')
-            </div>
+            <div class="row">@include('includes.nav_public')</div>
         </header>
         <main class="container">
             @yield('breadcrumb')
-            <article>
-                @yield('main')
-            </article>
+            <article>@yield('main')</article>
         </main>
         <footer class="container text-center">
             ©2018 - pianolovescore.com - <a href="https://www.facebook.com/groups/partitio.gratuite/" target="_blank">@lang('messages.footer_our_facebook_group')</a>

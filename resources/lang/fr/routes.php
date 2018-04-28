@@ -1,6 +1,7 @@
 <?php
 
 return[
+	'home' 					=> 'accueil',
 	'search' 				=> 'recherche',
 	'search_by_form'		=> 'recherche_par_formulaire',
 	'score_request'			=> 'demande_partition',
