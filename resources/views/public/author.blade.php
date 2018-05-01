@@ -85,7 +85,7 @@
                         <td>
                             <span class="label label-{{ $difficulties[$current_score->difficulty]['class'] }}">{{ $difficulties[$current_score->difficulty]['title'] }}</span>
                         </td>
-                        <td>
+                        <td class="star-rating">
                             @if(!is_null($current_score->avg_votes))
                                 <div class="star-ratings-css">
                                     <div class="top" style="width: {{ $current_score->avg_votes }}%">

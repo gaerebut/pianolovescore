@@ -5829,17 +5829,20 @@ header .navbar {
     padding: 0 100px;
     border-top: 2px solid #4267b2;
     border-bottom: 2px solid #4267b2; }
-    header .navbar .navbar-nav li.lang > a {
-      padding: 0 !important;
-      opacity: 0.5;
-      filter: alpha(opacity=50); }
-      header .navbar .navbar-nav li.lang > a:hover {
-        opacity: 1;
-        filter: alpha(opacity=100); }
-    header .navbar .navbar-nav li.lang img {
-      height: 30px;
-      width: 30px;
-      margin: 10px; }
+    header .navbar .navbar-nav li.lang {
+      margin: auto;
+      width: 100px; }
+      header .navbar .navbar-nav li.lang > a {
+        padding: 0 !important;
+        opacity: 0.5;
+        filter: alpha(opacity=50); }
+        header .navbar .navbar-nav li.lang > a:hover {
+          opacity: 1;
+          filter: alpha(opacity=100); }
+      header .navbar .navbar-nav li.lang img {
+        height: 30px;
+        width: 30px;
+        margin: 10px; }
   header .navbar .navbar-collapse {
     text-align: center;
     padding: 0; }
@@ -5898,7 +5901,11 @@ main {
     main .scores__content .scores__comment .reply-form {
       margin-top: 10px; }
   main .scores__content .difficulty {
-    opacity: 1; }
+    opacity: 1;
+    text-align: center; }
+    main .scores__content .difficulty a.label, main .scores__content .difficulty .active, main .scores__content .difficulty a.label:hover {
+      font-size: 70%;
+      line-height: 2; }
     main .scores__content .difficulty a.label {
       opacity: 0.5;
       filter: alpha(opacity=50); }
@@ -5943,7 +5950,13 @@ footer {
 /********************/
 @media (max-width: 767px) {
   .navbar .navbar-nav {
-    width: 100%; } }
+    width: 100%; }
+  table .star-rating {
+    display: none; }
+  .scores__title h2, .tricks_title h2 {
+    display: block !important; }
+    .scores__title h2::before, .tricks_title h2::before {
+      display: none; } }
 
 @media (max-width: 991px) {
   main .scores__content .scores__title, main .scores__content .scores__icon {

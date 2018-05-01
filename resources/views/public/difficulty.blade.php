@@ -78,7 +78,7 @@
                                     <td>
                                         <a href="{{ route(__('routes.score'), ['composer_slug'=>$author->slug, 'score_slug'=>$score->slug]) }}">{{ $score }}</a>
                                     </td>
-                                    <td>
+                                    <td class="star-rating">
                                         @if(!is_null($score->avg_votes))
                                             <div class="star-ratings-css">
                                                 <div class="top" style="width: {{ $score->avg_votes }}%">
