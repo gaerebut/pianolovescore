@@ -2,7 +2,7 @@
     <div class="navbar-collapse">
         <ul class="nav navbar-nav">
             <li>
-                <a href="{{ route('home') }}">@lang('nav.homepage')</a>
+                <a href="{{ route(__('routes.home')) }}">@lang('nav.homepage')</a>
             </li>
             <li>
                 <a href="{{ route(__('routes.scores')) }}">@lang('nav.scores')</a>
