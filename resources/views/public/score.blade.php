@@ -26,7 +26,17 @@
     @include('includes.breadcrumb')
 @endsection
 @section('main')
-    <?php \Carbon\Carbon::setLocale(config('app.locale')); ?>
+    <?php
+    \Carbon\Carbon::setLocale(config('app.locale'));
+
+    $difficulties = [
+        1 => ['title' => __('generic.very_easy_2'), 'class' => 'info'],
+        2 => ['title' => __('generic.easy_2'), 'class' => 'primary'],
+        3 => ['title' => __('generic.intermediate_2'), 'class' => 'success'],
+        4 => ['title' => __('generic.hard_2'), 'class' => 'warning'],
+        5 => ['title' => __('generic.very_hard_2'), 'class' => 'danger']
+    ];
+    ?>
     <section class="scores__content" itemscope="" itemtype="http://schema.org/Book">
         <div class="col-md-offset-4 col-md-8">
             <div class="row scores__title">
@@ -78,7 +88,7 @@
                 <div class="row">
                     <div class="col-xs-offset-4 col-xs-4 col-md-offset-1 col-md-3">
                         <h4><strong>@lang('messages.score.free_download')</strong></h4>
-                        <a href="{{ route('score_download', ['slug' => $score->slug]) }}" title="@lang('messages.score.download_free_sheet') {{ $score->title }} @lang('generic.by') {{ $score->author }}">
+                        <a href="{{ route(__('routes.score_download'), ['slug' => $score->slug]) }}" title="@lang('messages.score.download_free_sheet') {{ $score->title }} @lang('generic.by') {{ $score->author }}">
                             <img src="{{ URL::to('/') }}/img/pdf_download.png" class="scores__download" alt="@lang('messages.score.download_free_sheet') {{ $score->title }} @lang('generic.by') {{ $score->author }}" title="@lang('messages.score.download_free_sheet') {{ $score->title }} @lang('generic.by') {{ $score->author }}""/>
                         </a>
                         <h6><strong>{{ $score->downloaded . ' ' . str_plural(__('generic.download'), $score->downloaded|1
@@ -149,6 +159,48 @@
             </script>
             </div>
         </div>
+        @if(!empty($scores_similar))
+            <div class="row">
+                <div class="col-lg-offset-2 col-lg-8">
+                    <table class="table table-condensed">
+                        <thead>
+                            <tr>
+                                <td colspan="4">
+                                    <h3 class="homesection__title">@lang('messages.score.scores_similar')</h3>
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody class="homesection__content">
+                            @foreach($scores_similar as $score)
+                                <tr>
+                                    <td width="5%">
+                                        <span class="label label-{{ $difficulties[$score->difficulty]['class'] }}">{{ $difficulties[$score->difficulty]['title'] }}</span>
+                                    </td>
+                                    <td>
+                                        <a href="{{ route( __('routes.score') , ['slug_author'=>$score->author->slug, 'slug_score'=>$score->slug])}}" title="@lang('generic.score_of_author', ['score' => $score->title, 'author' => $score->author->fullname])">{{ $score->title }}</a>
+                                    </td>
+                                    <td class="star-rating">
+                                        @if(!is_null($score->avg_votes))
+                                            <div class="star-ratings-css">
+                                                <div class="top" style="width: {{ $score->avg_votes }}%">
+                                                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                                </div>
+                                                <div class="bottom">
+                                                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                                </div>
+                                            </div>
+                                        @endif
+                                    </td>
+                                    <td class="scores__listing_downloaded">
+                                        <img src="{{ URL::to('/') }}/img/pdf_download.png" /><strong>{{ $score->downloaded . ' ' . str_plural(__('generic.time'), $score->downloaded|1) }}</strong>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        @endif
         <div class="row">
             <div class="card">
                 <ul class="nav nav-tabs" role="tablist">

@@ -6,6 +6,12 @@
 		},
 		{
 			"path": "/var/www/fioulooker/nodejs"
+		},
+		{
+			"path": "/var/www/fioulooker"
+		},
+		{
+			"path": "/var/www/mdl2x"
 		}
 	]
 }

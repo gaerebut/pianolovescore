@@ -16,16 +16,18 @@
 					<th>Nom</th>
 					<th>Prénom</th>
 					<th>Nombre de partitions</th>
+					<th>Descriptions FR / EN</th>
 					<th></th>
 				</tr>
 			</thead>
 			<tbody>
 				@foreach($authors as $author)
-					<tr>
+					<tr @if(strlen($author->description_fr) == 0 || strlen($author->description_en) == 0) style="background-color: rgba(255,0,0,0.4)" @endif>
 						<td>{{ $author->id }}</td>
 						<td>{{ $author->lastname }}</td>
 						<td>{{ $author->firstname }}</td>
 						<td>{{ count($author->scores) }}</td>
+						<td>{{ strlen(strip_tags(preg_replace("/\s/", "",$author->description_fr))) }} / {{ strlen(strip_tags(preg_replace("/\s/", "",$author->description_en))) }}</td>
 						<td>
 							<a href="{{ route('admin_authors_edit',['id_author'=>$author->id]) }}" class="btn btn-primary">
 								<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>

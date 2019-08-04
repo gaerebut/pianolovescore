@@ -12,4 +12,5 @@ return [
 	'search'		=> "Recherche de ':keywords' parmis les partitions gratuites de piano, auteurs et astuces de piano",
 	'trick'			=> 'Astuce sur Partition Gratuite de Piano - :trick - Découvrez des astuces sur le piano pour vous perfectionner et améliorer votre technique',
 	'tricks'		=> "Retrouvez l'ensemble des astuces de piano sur PianoLoveScore pour perfectionner votre technique au piano",
+	'legals'		=> 'Mentions légales du site pianolovescore.com',
 ];

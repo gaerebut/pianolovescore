@@ -14,6 +14,8 @@ return[
 	'glossary'				=> 'lexique',	
 	'trick'					=> 'astuce',
 	'tricks'				=> 'astuces',
+	'contact'				=> 'contact_us',
+	'legals'				=> 'mentions_legales',
 
 	'sitemap_categories'	=> 'sitemap_categories',
 	'sitemap_authors'		=> 'sitemap_auteurs',

@@ -57,7 +57,8 @@ class AuthorController extends BaseController
 
     public function showEdit($id_author)
     {
-        $author = Author::where('id', '=', $id_author)->firstOrFail();
+        $author = Author::where('id', $id_author)->firstOrFail();
+       
         if($author)
         {
             return view('admin.author.edit', [

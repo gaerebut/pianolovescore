@@ -40,14 +40,13 @@
                 <h1>{{ $author->fullname }}</h1><h2>{{ $count_scores }} <?php echo $count_scores>1?__('generic.free_sheet_2'):__('generic.free_sheet'); ?></h2>
             </div>
             <div class="row text-left">
-                @php $description = 'description_' . App::getLocale(); @endphp
-                <p>{!! $author->$description !!}</p>
+                <p>{!! $author->description !!}</p>
             </div>
         </div>
         <div class="col-lg-offset-2 col-lg-8">
             <table class="table table-condensed">
                 <?php
-                    $current_letter = 'A';
+                    $current_letter = null;
                     $first_score_of_this_letter = true;
                 ?>
 

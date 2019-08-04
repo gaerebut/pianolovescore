@@ -30,13 +30,13 @@
     <section class="homesection">
         <h1 class="homesection__title">@lang('messages.home.title')</h1>
         <h2 class="homesection__subtitle">@lang('messages.home.subtitle')</h2>
-        <div class="homesection__content">@lang('messages.home.introduction')</div>
+        <div class="homesection__content">@lang('messages.home.introduction', ['route_home' => route(__('routes.home')),'route_tricks' => route(__('routes.tricks'))])</div>
     </section>
     <section class="homesection">
         <table class="table table-condensed">
             <thead>
                 <tr>
-                    <td colspan="4">
+                    <td colspan="5">
                         <h3 class="homesection__title">@lang('messages.home.scores_news')</h3>
                     </td>
                 </tr>

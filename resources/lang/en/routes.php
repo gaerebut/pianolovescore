@@ -14,6 +14,8 @@ return[
 	'glossary'				=> 'glossary',	
 	'trick'					=> 'trick',
 	'tricks'				=> 'tricks',
+	'contact'				=> 'contact_us',
+	'legals'				=> 'legals',
 
 	'sitemap_categories'	=> 'sitemap_categories',
 	'sitemap_authors'		=> 'sitemap_authors',

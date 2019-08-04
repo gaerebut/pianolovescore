@@ -18,4 +18,16 @@
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
+    <url>
+        <loc>{{ route(__('routes.contact')) }}</loc>
+        <lastmod>2018-10-10T21:20:36+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>{{ route(__('routes.legals')) }}</loc>
+        <lastmod>2018-10-10T21:21:21+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
 </urlset>

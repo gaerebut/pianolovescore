@@ -33,9 +33,15 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="description" class="col-sm-2 control-label">Description</label>
+				<label for="description_fr" class="col-sm-2 control-label">Description FR</label>
 				<div class="col-sm-10">
-					<textarea name="description" id="description">{{ old('description') }}</textarea>
+					<textarea name="description_fr" id="description_fr">{{ old('description_fr') }}</textarea>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="description_en" class="col-sm-2 control-label">Description EN</label>
+				<div class="col-sm-10">
+					<textarea name="description_en" id="description_en">{{ old('description_en') }}</textarea>
 				</div>
 			</div>
 			<div class="form-group">
@@ -121,7 +127,7 @@
     		@endfor }
     		var current_author_scores = scores_exists[{{ $authors[0]->id }}];
 
-	    	$('#description').summernote({
+	    	$('#description_fr, #description_en').summernote({
 				placeholder: 'La description de la partition doit être la plus longue possible. Attention : ne surtout pas faire de copier/coller de n\'importe quel texte !',
 				height: 200
 			});

@@ -11,5 +11,6 @@ return [
 	'score_request' => 'Request for free sheet on Piano Love Score',
 	'search'		=> ':keywords - Find free piano sheet on PianoLoveScore',
 	'trick'			=> 'Piano tip - :trick - Free piano sheet',
-	'tricks'		=> 'Free piano tips on Piano Love Score - :nb_tricks'
+	'tricks'		=> 'Free piano tips on Piano Love Score - :nb_tricks',
+	'legals'		=> 'Legals - Free Piano Sheet',
 ];

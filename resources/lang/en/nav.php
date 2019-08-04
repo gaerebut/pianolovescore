@@ -7,4 +7,5 @@ return [
 	'tricks'			=> 'Tips',
 	'request_a_score'	=> 'Request a sheet',
 	'contact_us'		=> 'Contact us',
+	'legals'			=> 'Legals',
 ];

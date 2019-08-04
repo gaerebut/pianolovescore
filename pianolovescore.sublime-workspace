@@ -4,6 +4,82 @@
 		"selected_items":
 		[
 			[
+				"arr_ke",
+				"array_key_exists"
+			],
+			[
+				"stations",
+				"stations_prices"
+			],
+			[
+				"r",
+				"respond"
+			],
+			[
+				"alternate",
+				"alternate_route"
+			],
+			[
+				"hard",
+				"Hard"
+			],
+			[
+				"scores",
+				"scores_exists"
+			],
+			[
+				"count",
+				"count_scores"
+			],
+			[
+				"score",
+				"score_count"
+			],
+			[
+				"autho",
+				"author_count"
+			],
+			[
+				"have",
+				"have_score_difficulty"
+			],
+			[
+				"di",
+				"difficulty"
+			],
+			[
+				"diffi",
+				"difficulty"
+			],
+			[
+				"score_ima",
+				"score_image_extension"
+			],
+			[
+				"parent_",
+				"parent_id_str"
+			],
+			[
+				"Score",
+				"ScoreRequestAccepted"
+			],
+			[
+				"keywor",
+				"keyword_exist"
+			],
+			[
+				"first",
+				"first_score_of_this_letter"
+			],
+			[
+				"star-",
+				"star-ratings-css"
+			],
+			[
+				"json",
+				"json_encode"
+			],
+			[
 				"scor",
 				"scores__icon"
 			],
@@ -46,10 +122,6 @@
 			[
 				"current",
 				"current_stations_fuels"
-			],
-			[
-				"stations",
-				"stations_owner_to_delete"
 			],
 			[
 				"stations_ow",
@@ -228,37 +300,46 @@
 	"buffers":
 	[
 		{
+			"file": "resources/views/admin/author/edit.blade.php",
+			"settings":
+			{
+				"buffer_size": 3762,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Http/Controllers/Admin/AuthorController.php",
+			"settings":
+			{
+				"buffer_size": 4107,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "resources/views/public/author.blade.php",
+			"settings":
+			{
+				"buffer_size": 5182,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "resources/views/public/score.blade.php",
 			"settings":
 			{
-				"buffer_size": 13067,
+				"buffer_size": 17866,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "resources/views/includes/head.blade.php",
+			"file": "resources/views/public/all_scores.blade.php",
 			"settings":
 			{
-				"buffer_size": 766,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "resources/views/public/home.blade.php",
-			"settings":
-			{
-				"buffer_size": 9519,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "resources/views/layouts/common.blade.php",
-			"settings":
-			{
-				"buffer_size": 1129,
+				"buffer_size": 7587,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -267,34 +348,7 @@
 			"file": "resources/assets/sass/app.scss",
 			"settings":
 			{
-				"buffer_size": 1398,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "resources/assets/sass/_rating.scss",
-			"settings":
-			{
-				"buffer_size": 1024,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "package.json",
-			"settings":
-			{
-				"buffer_size": 1194,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "gulpfile.js",
-			"settings":
-			{
-				"buffer_size": 213,
+				"buffer_size": 4773,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -307,8 +361,8 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 152.0,
-		"last_filter": "install",
+		"height": 32.0,
+		"last_filter": "",
 		"selected_items":
 		[
 			[
@@ -348,7 +402,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 485.0
+		"width": 449.0
 	},
 	"console":
 	{
@@ -369,155 +423,194 @@
 	"expanded_folders":
 	[
 		"/var/www/pianolovescore",
+		"/var/www/pianolovescore/app",
+		"/var/www/pianolovescore/app/Http",
+		"/var/www/pianolovescore/app/Http/Controllers",
+		"/var/www/pianolovescore/app/Http/Controllers/Admin",
+		"/var/www/pianolovescore/public",
+		"/var/www/pianolovescore/public/css",
+		"/var/www/pianolovescore/resources",
 		"/var/www/pianolovescore/resources/assets",
-		"/var/www/pianolovescore/resources/assets/js",
 		"/var/www/pianolovescore/resources/assets/sass",
+		"/var/www/pianolovescore/resources/lang/en",
+		"/var/www/pianolovescore/resources/lang/fr",
 		"/var/www/pianolovescore/resources/views",
-		"/var/www/pianolovescore/resources/views/common",
-		"/var/www/pianolovescore/resources/views/includes",
-		"/var/www/pianolovescore/resources/views/layouts",
-		"/var/www/pianolovescore/resources/views/public"
+		"/var/www/pianolovescore/resources/views/admin",
+		"/var/www/pianolovescore/resources/views/admin/author",
+		"/var/www/pianolovescore/resources/views/public",
+		"/var/www/pianolovescore/routes",
+		"/var/www/fioulooker/inc",
+		"/var/www/fioulooker/inc/pages"
 	],
 	"file_history":
 	[
-		"/var/www/pianolovescore/resources/assets/sass/_rating.scss",
-		"/var/www/pianolovescore/public/js/all.js",
-		"/var/www/pianolovescore/resources/views/layouts/common.blade.php",
-		"/var/www/pianolovescore/public/css/rating.css",
-		"/var/www/pianolovescore/gulpfile.js",
-		"/var/www/pianolovescore/resources/views/includes/breadcrumb.blade.php",
+		"/var/www/pianolovescore/public/css/app.css",
+		"/var/www/pianolovescore/app/Http/Controllers/Admin/TrickController.php",
+		"/var/www/pianolovescore/app/Http/Controllers/Admin/ScoreController.php",
+		"/var/www/fioulooker/inc/nav.inc.php",
+		"/var/www/fioulooker/index.php",
+		"/var/www/fioulooker/inc/pages/avg_department.php",
+		"/var/www/pianolovescore/resources/lang/en/messages.php",
+		"/var/www/pianolovescore/resources/lang/fr/messages.php",
+		"/var/www/pianolovescore/resources/views/layouts/public.blade.php",
 		"/var/www/pianolovescore/resources/views/public/home.blade.php",
-		"/var/www/pianolovescore/routes/web.php",
+		"/var/www/fioulooker/check_sms.php",
 		"/var/www/pianolovescore/resources/views/includes/head.blade.php",
-		"/var/www/pianolovescore/resources/views/includes/nav.blade.php",
-		"/var/www/pianolovescore/resources/views/layouts/nav.blade.php",
-		"/home/gaetan/.config/sublime-text-3/Packages/Gulp/Gulp.sublime-settings",
-		"/var/www/pianolovescore/public/css/common.css",
-		"/var/www/pianolovescore/resources/assets/sass/_responsive.scss",
-		"/var/www/pianolovescore/package.json",
-		"/var/www/pianolovescore/resources/assets/sass/_variables.scss",
-		"/var/www/pianolovescore/resources/views/welcome.blade.php",
-		"/var/www/pianolovescore/config/app.php",
-		"/var/www/pianolovescore/.env",
-		"/var/www/pianolovescore/webpack.mix.js",
-		"/var/www/pianolovescore/config/.env",
-		"/var/www/pianolovescore/.htaccess",
+		"/var/www/pianolovescore/resources/views/includes/nav_public.blade.php",
+		"/var/www/pianolovescore/routes/web.php",
+		"/var/www/fioulooker/ajax_search.php",
+		"/var/www/fioulooker/css/home.css",
 		"/var/www/pianolovescore/sftp-config.json",
 		"/home/gaetan/.config/sublime-text-3/Packages/User/SFTP.errors.log",
-		"/var/www/pianolovescore/download.php",
-		"/var/www/pianolovescore/scss/common.scss",
-		"/var/www/pianolovescore/css/common.scss",
-		"/home/gaetan/.config/sublime-text-3/Packages/User/SublimeOnSaveBuild.sublime-settings",
-		"/home/gaetan/.config/sublime-text-3/Packages/SublimeOnSaveBuild/SublimeOnSaveBuild.sublime-settings",
-		"/var/www/pianolovescore/.sassbuilder-config",
-		"/var/www/pianolovescore/scss/.sassbuilder-config.json",
-		"/var/www/pianolovescore/.sassbuilder-config.json",
-		"/media/gaetan/Données/wamp/www/les_ducs/config.rb",
-		"/var/www/pianolovescore/scss/config.rb",
-		"/var/www/pianolovescore/config.rb",
-		"/var/www/pianolovescore/scss/common.css",
-		"/media/gaetan/Système/Users/Adymic/Desktop/repair.bat",
-		"/var/www/fioulooker/admin/stations/add/add.php",
-		"/var/www/fioulooker/check_sms.php",
+		"/var/www/fioulooker/inc/menu.inc.php",
+		"/var/www/fioulooker/css/stats.css",
+		"/var/www/fioulooker/js/jquery.sumoselect.min.js",
+		"/var/www/fioulooker/css/sumoselect.css",
+		"/var/www/pianolovescore/resources/views/public/difficulty.blade.php",
+		"/var/www/pianolovescore/resources/views/public/author.blade.php",
+		"/var/www/pianolovescore/resources/views/public/all_scores.blade.php",
+		"/var/www/fioulooker/master.php",
+		"/var/www/pianolovescore/resources/assets/sass/app.scss",
+		"/var/www/pianolovescore/resources/views/public/tricks.blade.php",
+		"/var/www/pianolovescore/resources/views/public/trick.blade.php",
+		"/var/www/pianolovescore/resources/lang/en/routes.php",
+		"/var/www/pianolovescore/resources/lang/fr/routes.php",
+		"/var/www/pianolovescore/resources/views/public/score.blade.php",
+		"/var/www/pianolovescore/resources/views/public/search.blade.php",
+		"/var/www/pianolovescore/resources/views/public/score_request.blade.php",
+		"/var/www/pianolovescore/resources/views/public/glossary.blade.php",
+		"/var/www/pianolovescore/resources/views/public/contactus.blade.php",
+		"/var/www/pianolovescore/resources/views/public/sitemap/index.blade.php",
+		"/var/www/pianolovescore/app/Models/Glossary.php",
+		"/var/www/pianolovescore/app/Http/Controllers/GlossaryController.php",
+		"/var/www/pianolovescore/resources/views/admin/glossary/index.blade.php",
+		"/var/www/pianolovescore/app/Http/Controllers/Admin/GlossaryController.php",
+		"/var/www/pianolovescore/app/Http/Controllers/Admin/AuthorController.php",
+		"/var/www/pianolovescore/resources/views/admin/author/add.blade.php",
+		"/var/www/pianolovescore/resources/views/admin/author/edit.blade.php",
+		"/var/www/pianolovescore/database/migrations/2018_01_01_10_create_glossaries_table.php",
+		"/var/www/pianolovescore/database/migrations/2018_01_01_03_create_authors_table.php",
+		"/var/www/pianolovescore/resources/lang/fr/generic.php",
+		"/var/www/pianolovescore/resources/lang/en/description.php",
+		"/var/www/pianolovescore/resources/views/public/_comments.blade.php",
+		"/var/www/pianolovescore/resources/views/public/sitemap/tricks.blade.php",
+		"/var/www/pianolovescore/resources/views/public/sitemap/scores.blade.php",
+		"/var/www/pianolovescore/resources/views/public/sitemap/glossaries.blade.php",
+		"/var/www/pianolovescore/resources/views/public/sitemap/difficulties.blade.php",
+		"/var/www/pianolovescore/resources/views/public/sitemap/categories.blade.php",
+		"/var/www/pianolovescore/resources/views/public/sitemap/authors.blade.php",
+		"/var/www/pianolovescore/resources/lang/fr/description.php",
+		"/var/www/pianolovescore/resources/lang/en/generic.php",
+		"/var/www/pianolovescore/resources/lang/fr/title.php",
+		"/var/www/pianolovescore/resources/lang/en/title.php",
+		"/var/www/pianolovescore/resources/lang/en/error.php",
+		"/var/www/pianolovescore/resources/lang/fr/error.php",
+		"/var/www/pianolovescore/app/Http/Controllers/AjaxController.php",
+		"/var/www/pianolovescore/app/Http/Controllers/ScoreController.php",
+		"/var/www/pianolovescore/app/Http/Controllers/HomeController.php",
+		"/var/www/pianolovescore/app/Http/Controllers/TrickController.php",
+		"/var/www/pianolovescore/app/Http/Controllers/SitemapController.php",
+		"/var/www/pianolovescore/resources/lang/fr/descriptions.php",
+		"/var/www/pianolovescore/resources/lang/en/descriptions.php",
+		"/var/www/pianolovescore/resources/lang/fr/nav.php",
+		"/var/www/pianolovescore/resources/lang/en/nav.php",
+		"/var/www/pianolovescore/app/Http/Kernel.php",
+		"/var/www/pianolovescore/config/app.php",
+		"/var/www/pianolovescore/app/Http/Middleware/LangMiddleware.php",
+		"/var/www/pianolovescore/resources/views/admin/score/index.blade.php",
+		"/var/www/pianolovescore/.gitignore",
+		"/var/www/pianolovescore/resources/assets/js/app.js",
+		"/var/www/pianolovescore/resources/views/admin/score/add.blade.php",
+		"/var/www/pianolovescore/resources/views/includes/nav_admin.blade.php",
+		"/var/www/pianolovescore/.env",
+		"/var/www/pianolovescore/config/constants.php",
+		"/var/www/pianolovescore/resources/views/admin/score/edit.blade.php",
+		"/var/www/pianolovescore/gulpfile.js",
+		"/var/www/pianolovescore/database/migrations/2018_01_01_04_create_scores_table.php",
+		"/var/www/pianolovescore/resources/views/admin/comment/index.blade.php",
+		"/var/www/pianolovescore/app/Models/Comment.php",
+		"/var/www/pianolovescore/app/Models/Keyword.php",
+		"/var/www/pianolovescore/app/Models/Trick.php",
+		"/var/www/pianolovescore/database/migrations/2018_01_01_09_create_comments_table.php",
+		"/var/www/pianolovescore/resources/views/admin/trick/add.blade.php",
+		"/var/www/pianolovescore/resources/views/admin/trick/edit.blade.php",
+		"/var/www/pianolovescore/resources/views/admin/trick/index.blade.php",
+		"/var/www/pianolovescore/app/Http/Controllers/Admin/ScoreRequestController.php",
+		"/var/www/pianolovescore/app/Http/Controllers/Admin/CommentController.php",
+		"/var/www/pianolovescore/database/migrations/2018_01_25_000009_create_tricks_table.php",
+		"/var/www/pianolovescore/app/Models/Score.php",
+		"/var/www/pianolovescore/vendor/laravel/framework/src/Illuminate/Container/Container.php",
+		"/var/www/pianolovescore/config/session.php",
+		"/var/www/pianolovescore/database/migrations/2017_12_05_000008_create_comments_table.php",
+		"/var/www/pianolovescore/database/seeds/CommentsTableSeeder.php",
+		"/var/www/pianolovescore/storage/framework/views/092e7be8a6c628624df1ff50fb0c34ae63e1a907.php",
+		"/var/www/pianolovescore/database/seeds/DatabaseSeeder.php",
+		"/var/www/pianolovescore/database/migrations/2017_10_26_000004_create_scores_table.php",
+		"/var/www/pianolovescore/config/filesystems.php",
+		"/var/www/pianolovescore/database/seeds/ScoresTableSeeder.php",
+		"/var/www/pianolovescore/app/Scopes/IsOnlineOrUpdatedScope.php",
+		"/var/www/pianolovescore/database/seeds/ScoresRequestTableSeeder.php",
+		"/var/www/pianolovescore/public/robot_auto_add.js",
 		"/var/www/fioulooker/check_dgccrf.php",
-		"/var/www/fioulooker/config.inc.php",
-		"/var/www/fioulooker/css/bootstrap.css",
-		"/var/www/fioulooker/nodejs/check_dgccrf.js",
-		"/var/www/fioulooker/admin/home/index.php",
-		"/var/www/fioulooker/admin/users/add/index.php",
-		"/var/www/fioulooker/admin/users/add/add.php",
-		"/var/www/fioulooker/nodejs/test.js",
-		"/var/www/fioulooker/test/app.js",
-		"/var/www/fioulooker/class/sms.class.php",
-		"/var/www/fioulooker/class/pdo.class.php",
-		"/var/www/fioulooker/admin/index.php",
-		"/var/www/fioulooker/admin/users/edit/edit.php",
-		"/var/www/fioulooker/admin/users/edit/index.php",
-		"/var/www/fioulooker/admin/users/search_station.ajax.php",
-		"/var/www/fioulooker/admin/nav.inc.php",
-		"/var/www/fioulooker/.htaccess",
-		"/var/www/fioulooker/admin/.htaccess",
-		"/var/www/fioulooker/admin/.htpasswd",
-		"/var/www/fioulooker/admin/users/index.php",
-		"/var/www/fioulooker/js/common.js",
-		"/var/www/fioulooker/update/price.php",
-		"/var/www/fioulooker/admin/users/delete.php",
-		"/var/www/fioulooker/admin/stations/add/index.php",
-		"/var/www/fioulooker/admin/stations/delete.php",
-		"/var/www/fioulooker/admin/stations/edit/index.php",
-		"/var/www/fioulooker/admin/services/edit/edit.php",
-		"/var/www/fioulooker/admin/signs/edit/edit.php",
-		"/var/www/fioulooker/admin/services/add/add.php",
-		"/var/www/fioulooker/admin/stations/edit/edit.php",
-		"/var/www/fioulooker/st-project",
-		"/media/gaetan/Système/Users/Adymic/Desktop/CFEnet, le Centre de Formalités des Entreprises sur le net.url",
-		"/var/www/fioulooker/update.php",
-		"/var/www/fioulooker/udpate/price.php",
-		"/var/www/fioulooker/class/free_mobile.class.php",
-		"/home/gaetan/Téléchargements/users_stations.sql",
-		"/var/www/fioulooker/tmp/PrixCarburants_instantane.xml",
-		"/var/www/fioulooker/index.php",
-		"/var/www/fioulooker/free_mobile.class.php",
-		"/var/www/fioulooker/sms.php",
-		"/var/www/fioulooker/SMS/config.inc.php",
-		"/var/www/fioulooker/SMS/sms.class.php",
-		"/home/gaetan/Bureau/PrixCarburants_instantane.xml",
-		"/home/gaetan/Téléchargements/fioulooker.sql",
-		"/media/gaetan/Données/wamp/www/SAMM/php/class/admin.class.php",
-		"/media/gaetan/Données/wamp/www/SAMM/index2.php",
-		"/media/gaetan/Données/wamp/www/les_ducs/inc/pages/presentation-enterprise.html",
-		"/media/gaetan/Données/wamp/www/les_ducs/inc/function.inc.php",
-		"/media/gaetan/Données/wamp/www/les_ducs/inc/config.inc.php",
-		"/media/gaetan/Données/wamp/www/les_ducs/inc/page.inc.php",
-		"/media/gaetan/Données/wamp/www/les_ducs/index.php",
-		"/media/gaetan/Données/wamp/www/les_ducs/inc/nav.inc.php",
-		"/media/gaetan/Données/wamp/www/les_ducs/inc/meta.inc.php",
-		"/media/gaetan/Données/wamp/www/les_ducs/inc/header.inc.php",
-		"/var/www/fioulooker/tmp/INTERMARCHE BEUZEVILLE.txt",
-		"/var/www/fioulooker/tmp/MARKET PONT-AUDEMER.txt",
-		"/var/www/mdl2x/app/Console/Commands/ElasticIndexing.php",
-		"/var/www/mdl2x/resources/views/public/model.blade.php",
-		"/var/www/mdl2x/app/Http/Controllers/WebsiteController.php",
-		"/var/www/mdl2x/vendor/elasticsearch/elasticsearch/README.md",
-		"/var/www/mdl2x/config/elasticsearch.php",
-		"/var/www/mdl2x/config/app.php",
-		"/var/www/mdl2x/app/Console/Kernel.php",
-		"/var/www/mdl2x/vendor/shift31/laravel-elasticsearch/src/Shift31/LaravelElasticsearch/ElasticsearchServiceProvider.php",
-		"/var/www/mdl2x/routes/breadcrumbs.php",
-		"/var/www/mdl2x/routes/web.php",
-		"/var/www/mdl2x/resources/views/public/index.blade.php",
-		"/var/www/mdl2x/resources/views/public/category.blade.php",
-		"/var/www/mdl2x/resources/views/admin/menu/edit.blade.php",
-		"/var/www/mdl2x/app/Http/Controllers/Admin/MenuController.php",
-		"/var/www/mdl2x/database/migrations/2016_11_12_161856_create_models_table.php",
-		"/var/www/mdl2x/app/Http/Controllers/Admin/ModelController.php",
-		"/var/www/mdl2x/resources/views/admin/model/add.blade.php",
-		"/var/www/mdl2x/resources/views/admin/model/edit.blade.php",
-		"/var/www/mdl2x/resources/views/public/common/hotline.blade.php",
-		"/var/www/mdl2x/resources/views/layouts/public.blade.php",
-		"/var/www/mdl2x/resources/views/layouts/admin.blade.php",
-		"/var/www/mdl2x/config/breadcrumbs.php",
-		"/var/www/mdl2x/app/Providers/RouteServiceProvider.php",
-		"/var/www/mdl2x/app/Models/Menu.php",
-		"/var/www/mdl2x/composer.json",
-		"/var/www/mdl2x/resources/views/public/common/button-account.blade.php",
-		"/var/www/mdl2x/resources/views/public/common/footer.blade.php",
-		"/var/www/mdl2x/resources/views/admin/index.blade.php",
-		"/var/www/mdl2x/resources/views/admin/menu/index.blade.php",
-		"/var/www/mdl2x/resources/views/admin/message/index.twig",
-		"/var/www/mdl2x/resources/views/admin/menu/add.blade.php",
-		"/var/www/mdl2x/resources/views/admin/model/index.blade.php",
-		"/var/www/mdl2x/resources/views/admin/user/add.blade.php"
+		"/var/www/pianolovescore/resources/views/includes/breadcrumb.blade.php",
+		"/var/www/pianolovescore/database/migrations/2017_11_28_000008_create_videos_playlists_table.php",
+		"/var/www/pianolovescore/resources/views/errors/404.blade.php",
+		"/var/www/pianolovescore/app/Models/Author.php",
+		"/var/www/pianolovescore/database/migrations/2017_10_26_000003_create_authors_table.php",
+		"/var/www/pianolovescore/app/Http/Scopes/IsOnlineScope.php",
+		"/var/www/pianolovescore/app/Scopes/IsOnlineScope.php",
+		"/var/www/pianolovescore/database/seeds/UsersTableSeeder.php",
+		"/var/www/pianolovescore/public/robots.txt",
+		"/var/www/pianolovescore/.htaccess",
+		"/var/www/pianolovescore/resources/views/emails/contactus.blade.php",
+		"/var/www/pianolovescore/app/Mail/Contactus.php",
+		"/var/www/pianolovescore/resources/views/public/contact.blade.php",
+		"/var/www/pianolovescore/resources/views/layouts/admin.blade.php",
+		"/var/www/pianolovescore/database/migrations/2014_10_12_000001_create_password_resets_table.php",
+		"/var/www/pianolovescore/database/migrations/2014_10_12_000000_create_users_table.php",
+		"/var/www/pianolovescore/database/migrations/2017_11_05_093817_create_scores_requests_table.php",
+		"/var/www/pianolovescore/config/scout.php",
+		"/var/www/pianolovescore/app/Mail/ScoreRequest.php",
+		"/var/www/pianolovescore/composer.json"
 	],
 	"find":
 	{
-		"height": 34.0
+		"height": 38.0
 	},
 	"find_in_files":
 	{
-		"height": 108.0,
+		"height": 117.0,
 		"where_history":
 		[
+			"/var/www/pianolovescore/resources/views",
+			"/var/www/pianolovescore/resources/views/public",
+			"/var/www/pianolovescore",
+			"/var/www/pianolovescore/resources/views",
+			"/var/www/pianolovescore/resources/views/public",
+			"/var/www/pianolovescore",
+			"/var/www/pianolovescore/vendor",
+			"/var/www/pianolovescore/app",
+			"/var/www/pianolovescore",
+			"/var/www/pianolovescore/app",
+			"/var/www/pianolovescore/app/Models",
+			"/var/www/pianolovescore/database",
+			"/var/www/pianolovescore/database/seeds",
+			"/var/www/pianolovescore",
+			"/var/www/pianolovescore/app",
+			"/var/www/pianolovescore/config",
+			"/var/www/pianolovescore/database",
+			"/var/www/pianolovescore",
+			"/var/www/pianolovescore/resources/views/public",
+			"/var/www/pianolovescore",
+			"/var/www/pianolovescore/config",
+			"/var/www/pianolovescore/resources",
+			"/var/www/pianolovescore/app",
+			"/var/www/pianolovescore",
+			"/var/www/pianolovescore/resources/views",
+			"/var/www/pianolovescore/resources/assets",
+			"/var/www/pianolovescore",
+			"/var/www/pianolovescore/vendor",
+			"/var/www/pianolovescore",
 			"/var/www/fioulooker",
 			"/var/www/mdl2x/vendor/elasticsearch/elasticsearch",
 			"/var/www/mdl2x/resources",
@@ -535,134 +628,134 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"screen-xs",
-			"screen-xd",
-			"href=\"#\"",
-			">",
-			"border-bottom: 1px solid",
-			"elix",
-			"pianolovescore",
-			"button",
-			"own",
-			"owner",
-			"pro",
-			"owner",
-			"propri",
-			"$$",
-			"user_",
-			"activa",
-			"underline",
-			"text-dec",
-			"panel-footer",
-			"50",
-			"return",
-			"balance",
-			"stations_own",
-			"station_own",
-			"foreach($stations_owner_to_delete as $station_id)\n\t\t\t{\n\t\t\t\t$insert_user_station = $pdo->prepare('INSERT INTO stations_owners(station_id, user_id) VALUES(:station_id, :user_id)');\n\t\t\t\t$insert_user_station->execute([\n\t\t\t\t\t'station_id' \t=> $station_id,\n\t\t\t\t\t'user_id'\t\t=> $user_id\n\t\t\t\t]);\n\t\t\t}",
-			"js_str_station_id",
-			"Ajouter",
-			"add",
-			"owner",
-			" class=\"done\"",
-			"class=\"done\"",
-			"fuels_he",
-			"fuel_head",
-			"class",
-			"deleteStationClick",
-			"station",
-			"user",
-			"foreach",
-			"toggle",
-			"badge",
-			"click",
-			"avail",
-			"availa",
-			"users",
-			"not",
-			"noti",
-			"bootstra",
-			"fuel_id",
-			"clone",
-			"fuel_id",
-			"f",
-			"sign_form",
-			"){+\n",
-			"se",
-			"serv",
-			"service",
-			"/>\n",
-			"sign",
-			"signs",
-			"prix",
-			"rup",
-			"ruptu",
-			"pdo",
-			"noti",
-			"noptif",
-			"select_notifications",
-			"./",
-			"/***/\n",
-			"servicesStationsExist",
-			"cleanString",
-			"include",
-			"2",
-			"servicesStationsExist",
-			"station_fuel",
-			"fuels",
-			"update",
-			"cities",
-			"services_stations_to_add",
-			"cleanString",
-			"servicesStationsExist",
-			"pvd",
-			"free_mobile",
-			"die",
-			"recipien",
-			"delete",
-			"updated_at",
-			"update",
-			"notifi",
-			"updated_at",
-			"fuel_id",
-			"station_id",
-			"user_id",
-			"avg_notify_delay",
-			"fuel",
-			"fuel_name",
-			"prices",
-			"creat",
-			"created",
-			"updated_at",
-			"crea",
-			"last_creat",
-			"s",
-			"FETCH_UNIQUE",
-			"transa",
-			"sms_mode",
-			"mode",
-			"sending_time",
-			"sending",
-			"set_sendin",
-			"sending_t",
-			"sending_d",
-			"dif",
-			"defe",
-			"def",
-			"deff",
-			" .'&",
-			"01",
-			"sms_mode",
-			"DB_TYPE",
-			"sms_recipients",
-			"87160001",
-			"timer",
-			"service_station_to_add",
-			"92330002",
-			"%",
-			"92330002",
-			"ob_flush();",
-			"time()"
+			"white-space:normal",
+			"white-space:normal !important",
+			"white-space:normal !important;",
+			"btn",
+			"!=",
+			"__(",
+			"a href",
+			"js_code",
+			"#636b6f",
+			"body",
+			"php",
+			"')'",
+			"div",
+			"home",
+			"@php $other_lang = App::getLocale() == 'fr' ? 'en' : 'fr'; @endphp",
+			"opaci",
+			";\n",
+			"li",
+			"))",
+			"description",
+			"avera",
+			"contact",
+			"partition_difficulte",
+			"difficult",
+			"route(",
+			"__('routes.",
+			"route",
+			"__('routes.",
+			"a href",
+			"ah ref",
+			"a href",
+			"ucf",
+			"filtrer",
+			"titles.",
+			"messages.comment_",
+			"comment.",
+			"comments_",
+			"comment_",
+			"comment._",
+			"comment.",
+			"score_",
+			"home_",
+			"comment_",
+			"messages.score_",
+			"messages.home_",
+			"home_",
+			"score_",
+			"comment_",
+			"home_",
+			"score_",
+			"messages.generic_",
+			"'generic_",
+			"messages.nav_",
+			"Sheet",
+			"for",
+			"respons",
+			"commentaire",
+			"comment",
+			"__(",
+			"route",
+			"glossary",
+			"canonical",
+			"canoni",
+			"description",
+			"center",
+			"align",
+			"'')",
+			"mot",
+			"length",
+			"firstname",
+			"auteur",
+			"orderBy",
+			"opact",
+			"count",
+			"){\n",
+			"score_im",
+			"title",
+			"quelle",
+			"score",
+			"star",
+			"all",
+			"score",
+			"_add",
+			"scor",
+			"score",
+			"exe",
+			"scores",
+			"tip",
+			"mkdir",
+			"store",
+			"author",
+			"isOn",
+			"getClosure",
+			"getClosure(",
+			"build(",
+			"files",
+			"file",
+			"files",
+			"FILES",
+			"Container.php",
+			"container.php",
+			"file",
+			"File",
+			"files",
+			"img ",
+			"score",
+			"<form",
+			"form",
+			"rating_form",
+			"form",
+			"reply",
+			"reply-form",
+			"add-comment",
+			"border",
+			"level",
+			"Carbon",
+			"Comments",
+			"showForAComposer",
+			"nb_pages",
+			"PDF",
+			"NOCAPTCHA_SITEKEY",
+			"NOCAPTCHA",
+			"NOCAPTCAH",
+			": ",
+			"border",
+			"scores__listing_downloaded",
+			"scout",
+			"\t\t\n"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -670,6 +763,18 @@
 		"regex": false,
 		"replace_history":
 		[
+			"@php\n        $other_lang = App::getLocale() == 'fr' ? 'en' : 'fr';\n        $alternate_route = \n    @endphp",
+			"messages.comment.",
+			"",
+			"messages.score.",
+			"messages.home.",
+			"home.",
+			"score.",
+			"comment.",
+			"",
+			"generic.",
+			"'",
+			"nav.",
 			"href=\"partitions/chopin/etude_n_2_op_34\"",
 			"",
 			"modified_at",
@@ -715,55 +820,24 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 5,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "resources/views/public/score.blade.php",
+					"file": "resources/views/admin/author/edit.blade.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 13067,
+						"buffer_size": 3762,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								12827,
-								12827
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 4757.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "resources/views/includes/head.blade.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 766,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								275,
-								275
+								3762,
+								3762
 							]
 						],
 						"settings":
@@ -771,10 +845,44 @@
 							"incomplete_sync": null,
 							"remote_loading": false,
 							"synced": false,
-							"syntax": "Packages/PHP/PHP.sublime-syntax"
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1755.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/Http/Controllers/Admin/AuthorController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4107,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2552,
+								2552
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1188.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 4,
@@ -782,19 +890,19 @@
 				},
 				{
 					"buffer": 2,
-					"file": "resources/views/public/home.blade.php",
+					"file": "resources/views/public/author.blade.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9519,
+						"buffer_size": 5182,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1576,
-								1576
+								2241,
+								2241
 							]
 						],
 						"settings":
@@ -807,98 +915,93 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 224.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "resources/views/layouts/common.blade.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1129,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1094,
-								1094
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 54.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 1,
-			"sheets":
-			[
-				{
-					"buffer": 4,
-					"file": "resources/assets/sass/app.scss",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1398,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								718,
-								718
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 646.0,
+						"translation.y": 792.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "resources/assets/sass/_rating.scss",
+					"buffer": 3,
+					"file": "resources/views/public/score.blade.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1024,
+						"buffer_size": 17866,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								707,
-								707
+								5943,
+								5943
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1862.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "resources/views/public/all_scores.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7587,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2920,
+								2920
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1848.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "resources/assets/sass/app.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4773,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3258,
+								3258
 							]
 						],
 						"settings":
@@ -907,78 +1010,14 @@
 							"incomplete_sync": null,
 							"remote_loading": false,
 							"synced": false,
-							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
+							"syntax": "Packages/Sass/Syntaxes/SCSS.sublime-syntax",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 498.0,
+						"translation.y": 3960.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "package.json",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1194,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1179,
-								1179
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "gulpfile.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 213,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								201,
-								201
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -986,11 +1025,11 @@
 	],
 	"incremental_find":
 	{
-		"height": 27.0
+		"height": 30.0
 	},
 	"input":
 	{
-		"height": 31.0
+		"height": 35.0
 	},
 	"layout":
 	{
@@ -1001,18 +1040,11 @@
 				0,
 				1,
 				1
-			],
-			[
-				1,
-				0,
-				2,
-				1
 			]
 		],
 		"cols":
 		[
 			0.0,
-			0.583804709979,
 			1.0
 		],
 		"rows":
@@ -1042,7 +1074,7 @@
 	"project": "pianolovescore.sublime-project",
 	"replace":
 	{
-		"height": 62.0
+		"height": 56.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -1069,12 +1101,12 @@
 	},
 	"select_symbol":
 	{
-		"height": 0.0,
+		"height": 392.0,
 		"last_filter": "",
 		"selected_items":
 		[
 		],
-		"width": 0.0
+		"width": 1274.0
 	},
 	"selected_group": 0,
 	"settings":
@@ -1084,7 +1116,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 310.0,
+	"side_bar_width": 250.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

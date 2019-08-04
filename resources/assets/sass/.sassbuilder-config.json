@@ -1,0 +1,11 @@
+{
+    "project_path": "/var/www/pianolovescore/resources/assets/sass",
+	"output_path": "/var/www/pianolovescore/public/css",
+	"options": {
+		"cache":         false,
+		"debug":         false,
+		"line-comments": false,
+		"line-numbers":  false,
+		"style":         "compressed"
+	}
+}

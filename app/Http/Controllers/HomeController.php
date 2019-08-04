@@ -22,6 +22,13 @@ class HomeController extends Controller
         ]);
     }
 
+    public function legalsShow()
+    {
+        return view('public.legals', [
+            'breadcrumb_last_level' => __('nav.legals')
+        ]);
+    }
+
     public function contactusShow()
     {
         return view('public.contactus', [

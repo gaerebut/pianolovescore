@@ -12,4 +12,5 @@ return [
 	'search'		=> "Search for ':keywords' in free piano sheet music, piano authors and piano tips",
 	'trick'			=> 'Tip on Free Piano Score - :trick - Discover tips on the piano to improve your technique and piano level',
 	'tricks'		=> 'Find all piano tricks on PianoLoveScore to perfect your piano technique',
+	'legals'		=> 'Legals of pianolovescore.com website',
 ];

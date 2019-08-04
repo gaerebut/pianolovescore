@@ -11,5 +11,6 @@ return [
 	'score_request' => 'Demande de partitions gratuites sur Piano Love Score',
 	'search'		=> ':keywords - Recherche de partitions gratuites de piano sur PianoLoveScore',
 	'trick'			=> 'Astuce de Piano - :trick - Partition Gratuite de Piano',
-	'tricks'		=> 'Astuces gratuites de piano sur Piano Love Score - :nb_tricks'
+	'tricks'		=> 'Astuces gratuites de piano sur Piano Love Score - :nb_tricks',
+	'legals'		=> 'Mentions légales - Partitions gratuites de piano',
 ];
