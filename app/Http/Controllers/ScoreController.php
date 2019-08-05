@@ -132,6 +132,8 @@ class ScoreController extends Controller
         $score->downloaded = $score->downloaded + 1;
         $score->save();
 
-        return \Redirect::to($score->score_url);
+        $file = basename($score->score_url);
+        header("Content-disposition:attachment; filename=$file");
+        readfile($score_url);
     }
 }
