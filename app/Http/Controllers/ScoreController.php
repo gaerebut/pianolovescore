@@ -116,6 +116,7 @@ class ScoreController extends Controller
 
     public function download($slug_score)
     {
+        /*
         $score = Score::where('slug', '=', $slug_score)->firstOrFail();
 
         $file = uniqid() . '.pdf';
@@ -127,8 +128,11 @@ class ScoreController extends Controller
         header('Content-Disposition: attachment; filename="' . basename($score->author->lastname . ' - ' . $score->title . '.pdf"'));
 
         readfile($file);
+        */
 
         $score->downloaded = $score->downloaded + 1;
         $score->save();
+
+        return response()->download($score->score_url, basename($score->author->lastname . ' - ' . $score->title . '.pdf"')->deleteFileAfterSend(true);
     }
 }
