@@ -31,6 +31,9 @@
             ©2018 - pianolovescore.com - <a href="https://www.facebook.com/partitions.gratuites.piano" target="_blank">@lang('messages.footer_our_facebook_page')</a> - <a href="{{ route(__('routes.legals')) }}">@lang('nav.legals')</a> - <a href="{{ route('contact_us') }}">@lang('nav.contact_us')</a>
         </footer>
         @section('js_code')
+            <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+            <script src="/js/bootstrap.min.js" type="text/javascript"></script>
             <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
             <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
             <!--[if lt IE 9]>

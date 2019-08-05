@@ -31,11 +31,7 @@ class RequestContext
     private $httpPort;
     private $httpsPort;
     private $queryString;
-
-    /**
-     * @var array
-     */
-    private $parameters = array();
+    private $parameters = [];
 
     /**
      * @param string $baseUrl     The base URL
@@ -61,8 +57,6 @@ class RequestContext
 
     /**
      * Updates the RequestContext information based on a HttpFoundation Request.
-     *
-     * @param Request $request A Request instance
      *
      * @return $this
      */
@@ -322,7 +316,7 @@ class RequestContext
      */
     public function hasParameter($name)
     {
-        return array_key_exists($name, $this->parameters);
+        return \array_key_exists($name, $this->parameters);
     }
 
     /**

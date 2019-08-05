@@ -237,10 +237,8 @@
     </section>
 @endsection
 @section('js_code')
+    @parent
     <script src="//load.sumome.com/" data-sumo-site-id="492cf06dd4417e64435c1585751ab4124d7c3fbfcf4021d3dfba6cbcc0a43f9e" async="async"></script>
-    <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
-    <script src="/js/bootstrap.min.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(function(){
             $.ajaxSetup({

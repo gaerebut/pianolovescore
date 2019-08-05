@@ -299,6 +299,7 @@
 	},
 	"buffers":
 	[
+<<<<<<< HEAD
 		{
 			"file": "resources/views/admin/author/edit.blade.php",
 			"settings":
@@ -353,16 +354,18 @@
 				"line_ending": "Unix"
 			}
 		}
+=======
+>>>>>>> 4c52ac7145266b25245644b8801d98a67714a83b
 	],
 	"build_system": "",
-	"build_system_choices":
-	[
-	],
-	"build_varint": "",
 	"command_palette":
 	{
+<<<<<<< HEAD
 		"height": 32.0,
 		"last_filter": "",
+=======
+		"height": 152.0,
+>>>>>>> 4c52ac7145266b25245644b8801d98a67714a83b
 		"selected_items":
 		[
 			[
@@ -406,10 +409,7 @@
 	},
 	"console":
 	{
-		"height": 0.0,
-		"history":
-		[
-		]
+		"height": 0.0
 	},
 	"distraction_free":
 	{
@@ -420,6 +420,7 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
+<<<<<<< HEAD
 	"expanded_folders":
 	[
 		"/var/www/pianolovescore",
@@ -460,6 +461,35 @@
 		"/var/www/pianolovescore/routes/web.php",
 		"/var/www/fioulooker/ajax_search.php",
 		"/var/www/fioulooker/css/home.css",
+=======
+	"file_history":
+	[
+		"/var/www/pianolovescore/package.json",
+		"/home/gaetan/Bureau/log_motoplus",
+		"/var/www/pianolovescore/resources/views/layouts/common.blade.php",
+		"/var/www/pianolovescore/resources/views/public/home.blade.php",
+		"/var/www/pianolovescore/resources/views/includes/head.blade.php",
+		"/var/www/pianolovescore/resources/views/public/score.blade.php",
+		"/var/www/pianolovescore/gulpfile.js",
+		"/var/www/pianolovescore/resources/assets/sass/_rating.scss",
+		"/var/www/pianolovescore/resources/assets/sass/app.scss",
+		"/var/www/pianolovescore/public/js/all.js",
+		"/var/www/pianolovescore/public/css/rating.css",
+		"/var/www/pianolovescore/resources/views/includes/breadcrumb.blade.php",
+		"/var/www/pianolovescore/routes/web.php",
+		"/var/www/pianolovescore/resources/views/includes/nav.blade.php",
+		"/var/www/pianolovescore/resources/views/layouts/nav.blade.php",
+		"/home/gaetan/.config/sublime-text-3/Packages/Gulp/Gulp.sublime-settings",
+		"/var/www/pianolovescore/public/css/common.css",
+		"/var/www/pianolovescore/resources/assets/sass/_responsive.scss",
+		"/var/www/pianolovescore/resources/assets/sass/_variables.scss",
+		"/var/www/pianolovescore/resources/views/welcome.blade.php",
+		"/var/www/pianolovescore/config/app.php",
+		"/var/www/pianolovescore/.env",
+		"/var/www/pianolovescore/webpack.mix.js",
+		"/var/www/pianolovescore/config/.env",
+		"/var/www/pianolovescore/.htaccess",
+>>>>>>> 4c52ac7145266b25245644b8801d98a67714a83b
 		"/var/www/pianolovescore/sftp-config.json",
 		"/home/gaetan/.config/sublime-text-3/Packages/User/SFTP.errors.log",
 		"/var/www/fioulooker/inc/menu.inc.php",
@@ -552,6 +582,7 @@
 		"/var/www/pianolovescore/database/seeds/ScoresRequestTableSeeder.php",
 		"/var/www/pianolovescore/public/robot_auto_add.js",
 		"/var/www/fioulooker/check_dgccrf.php",
+<<<<<<< HEAD
 		"/var/www/pianolovescore/resources/views/includes/breadcrumb.blade.php",
 		"/var/www/pianolovescore/database/migrations/2017_11_28_000008_create_videos_playlists_table.php",
 		"/var/www/pianolovescore/resources/views/errors/404.blade.php",
@@ -572,6 +603,93 @@
 		"/var/www/pianolovescore/config/scout.php",
 		"/var/www/pianolovescore/app/Mail/ScoreRequest.php",
 		"/var/www/pianolovescore/composer.json"
+=======
+		"/var/www/fioulooker/config.inc.php",
+		"/var/www/fioulooker/css/bootstrap.css",
+		"/var/www/fioulooker/nodejs/check_dgccrf.js",
+		"/var/www/fioulooker/admin/home/index.php",
+		"/var/www/fioulooker/admin/users/add/index.php",
+		"/var/www/fioulooker/admin/users/add/add.php",
+		"/var/www/fioulooker/nodejs/test.js",
+		"/var/www/fioulooker/test/app.js",
+		"/var/www/fioulooker/class/sms.class.php",
+		"/var/www/fioulooker/class/pdo.class.php",
+		"/var/www/fioulooker/admin/index.php",
+		"/var/www/fioulooker/admin/users/edit/edit.php",
+		"/var/www/fioulooker/admin/users/edit/index.php",
+		"/var/www/fioulooker/admin/users/search_station.ajax.php",
+		"/var/www/fioulooker/admin/nav.inc.php",
+		"/var/www/fioulooker/.htaccess",
+		"/var/www/fioulooker/admin/.htaccess",
+		"/var/www/fioulooker/admin/.htpasswd",
+		"/var/www/fioulooker/admin/users/index.php",
+		"/var/www/fioulooker/js/common.js",
+		"/var/www/fioulooker/update/price.php",
+		"/var/www/fioulooker/admin/users/delete.php",
+		"/var/www/fioulooker/admin/stations/add/index.php",
+		"/var/www/fioulooker/admin/stations/delete.php",
+		"/var/www/fioulooker/admin/stations/edit/index.php",
+		"/var/www/fioulooker/admin/services/edit/edit.php",
+		"/var/www/fioulooker/admin/signs/edit/edit.php",
+		"/var/www/fioulooker/admin/services/add/add.php",
+		"/var/www/fioulooker/admin/stations/edit/edit.php",
+		"/var/www/fioulooker/st-project",
+		"/media/gaetan/Système/Users/Adymic/Desktop/CFEnet, le Centre de Formalités des Entreprises sur le net.url",
+		"/var/www/fioulooker/update.php",
+		"/var/www/fioulooker/udpate/price.php",
+		"/var/www/fioulooker/class/free_mobile.class.php",
+		"/home/gaetan/Téléchargements/users_stations.sql",
+		"/var/www/fioulooker/tmp/PrixCarburants_instantane.xml",
+		"/var/www/fioulooker/index.php",
+		"/var/www/fioulooker/free_mobile.class.php",
+		"/var/www/fioulooker/sms.php",
+		"/var/www/fioulooker/SMS/config.inc.php",
+		"/var/www/fioulooker/SMS/sms.class.php",
+		"/home/gaetan/Bureau/PrixCarburants_instantane.xml",
+		"/home/gaetan/Téléchargements/fioulooker.sql",
+		"/media/gaetan/Données/wamp/www/SAMM/php/class/admin.class.php",
+		"/media/gaetan/Données/wamp/www/SAMM/index2.php",
+		"/media/gaetan/Données/wamp/www/les_ducs/inc/pages/presentation-enterprise.html",
+		"/media/gaetan/Données/wamp/www/les_ducs/inc/function.inc.php",
+		"/media/gaetan/Données/wamp/www/les_ducs/inc/config.inc.php",
+		"/media/gaetan/Données/wamp/www/les_ducs/inc/page.inc.php",
+		"/media/gaetan/Données/wamp/www/les_ducs/index.php",
+		"/media/gaetan/Données/wamp/www/les_ducs/inc/nav.inc.php",
+		"/media/gaetan/Données/wamp/www/les_ducs/inc/meta.inc.php",
+		"/media/gaetan/Données/wamp/www/les_ducs/inc/header.inc.php",
+		"/var/www/fioulooker/tmp/INTERMARCHE BEUZEVILLE.txt",
+		"/var/www/fioulooker/tmp/MARKET PONT-AUDEMER.txt",
+		"/var/www/mdl2x/app/Console/Commands/ElasticIndexing.php",
+		"/var/www/mdl2x/resources/views/public/model.blade.php",
+		"/var/www/mdl2x/app/Http/Controllers/WebsiteController.php",
+		"/var/www/mdl2x/vendor/elasticsearch/elasticsearch/README.md",
+		"/var/www/mdl2x/config/elasticsearch.php",
+		"/var/www/mdl2x/config/app.php",
+		"/var/www/mdl2x/app/Console/Kernel.php",
+		"/var/www/mdl2x/vendor/shift31/laravel-elasticsearch/src/Shift31/LaravelElasticsearch/ElasticsearchServiceProvider.php",
+		"/var/www/mdl2x/routes/breadcrumbs.php",
+		"/var/www/mdl2x/routes/web.php",
+		"/var/www/mdl2x/resources/views/public/index.blade.php",
+		"/var/www/mdl2x/resources/views/public/category.blade.php",
+		"/var/www/mdl2x/resources/views/admin/menu/edit.blade.php",
+		"/var/www/mdl2x/app/Http/Controllers/Admin/MenuController.php",
+		"/var/www/mdl2x/database/migrations/2016_11_12_161856_create_models_table.php",
+		"/var/www/mdl2x/app/Http/Controllers/Admin/ModelController.php",
+		"/var/www/mdl2x/resources/views/admin/model/add.blade.php",
+		"/var/www/mdl2x/resources/views/admin/model/edit.blade.php",
+		"/var/www/mdl2x/resources/views/public/common/hotline.blade.php",
+		"/var/www/mdl2x/resources/views/layouts/public.blade.php",
+		"/var/www/mdl2x/resources/views/layouts/admin.blade.php",
+		"/var/www/mdl2x/config/breadcrumbs.php",
+		"/var/www/mdl2x/app/Providers/RouteServiceProvider.php",
+		"/var/www/mdl2x/app/Models/Menu.php",
+		"/var/www/mdl2x/composer.json",
+		"/var/www/mdl2x/resources/views/public/common/button-account.blade.php",
+		"/var/www/mdl2x/resources/views/public/common/footer.blade.php",
+		"/var/www/mdl2x/resources/views/admin/index.blade.php",
+		"/var/www/mdl2x/resources/views/admin/menu/index.blade.php",
+		"/var/www/mdl2x/resources/views/admin/message/index.twig"
+>>>>>>> 4c52ac7145266b25245644b8801d98a67714a83b
 	],
 	"find":
 	{
@@ -579,6 +697,7 @@
 	},
 	"find_in_files":
 	{
+<<<<<<< HEAD
 		"height": 117.0,
 		"where_history":
 		[
@@ -611,6 +730,13 @@
 			"/var/www/pianolovescore",
 			"/var/www/pianolovescore/vendor",
 			"/var/www/pianolovescore",
+=======
+		"height": 0.0,
+		"where_history":
+		[
+			"/var/www/pianolovescore/public",
+			"/var/www/pianolovescore/resources",
+>>>>>>> 4c52ac7145266b25245644b8801d98a67714a83b
 			"/var/www/fioulooker",
 			"/var/www/mdl2x/vendor/elasticsearch/elasticsearch",
 			"/var/www/mdl2x/resources",
@@ -628,6 +754,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+<<<<<<< HEAD
 			"white-space:normal",
 			"white-space:normal !important",
 			"white-space:normal !important;",
@@ -756,6 +883,136 @@
 			"scores__listing_downloaded",
 			"scout",
 			"\t\t\n"
+=======
+			"menu-hamburger",
+			"ham",
+			"hamb",
+			"hamburger",
+			"hamberger",
+			"hambe",
+			"hamb",
+			"depe",
+			"axios",
+			"screen-xs",
+			"screen-xd",
+			"href=\"#\"",
+			">",
+			"border-bottom: 1px solid",
+			"elix",
+			"pianolovescore",
+			"button",
+			"own",
+			"owner",
+			"pro",
+			"owner",
+			"propri",
+			"$$",
+			"user_",
+			"activa",
+			"underline",
+			"text-dec",
+			"panel-footer",
+			"50",
+			"return",
+			"balance",
+			"stations_own",
+			"station_own",
+			"foreach($stations_owner_to_delete as $station_id)\n			{\n				$insert_user_station = $pdo->prepare('INSERT INTO stations_owners(station_id, user_id) VALUES(:station_id, :user_id)');\n				$insert_user_station->execute([\n					'station_id' 	=> $station_id,\n					'user_id'		=> $user_id\n				]);\n			}",
+			"js_str_station_id",
+			"Ajouter",
+			"add",
+			"owner",
+			" class=\"done\"",
+			"class=\"done\"",
+			"fuels_he",
+			"fuel_head",
+			"class",
+			"deleteStationClick",
+			"station",
+			"user",
+			"foreach",
+			"toggle",
+			"badge",
+			"click",
+			"avail",
+			"availa",
+			"users",
+			"not",
+			"noti",
+			"bootstra",
+			"fuel_id",
+			"clone",
+			"fuel_id",
+			"f",
+			"sign_form",
+			"){+\n",
+			"se",
+			"serv",
+			"service",
+			"/>\n",
+			"sign",
+			"signs",
+			"prix",
+			"rup",
+			"ruptu",
+			"pdo",
+			"noti",
+			"noptif",
+			"select_notifications",
+			"./",
+			"/***/\n",
+			"servicesStationsExist",
+			"cleanString",
+			"include",
+			"2",
+			"servicesStationsExist",
+			"station_fuel",
+			"fuels",
+			"update",
+			"cities",
+			"services_stations_to_add",
+			"cleanString",
+			"servicesStationsExist",
+			"pvd",
+			"free_mobile",
+			"die",
+			"recipien",
+			"delete",
+			"updated_at",
+			"update",
+			"notifi",
+			"updated_at",
+			"fuel_id",
+			"station_id",
+			"user_id",
+			"avg_notify_delay",
+			"fuel",
+			"fuel_name",
+			"prices",
+			"creat",
+			"created",
+			"updated_at",
+			"crea",
+			"last_creat",
+			"s",
+			"FETCH_UNIQUE",
+			"transa",
+			"sms_mode",
+			"mode",
+			"sending_time",
+			"sending",
+			"set_sendin",
+			"sending_t",
+			"sending_d",
+			"dif",
+			"defe",
+			"def",
+			"deff",
+			" .'&",
+			"01",
+			"sms_mode",
+			"DB_TYPE"
+>>>>>>> 4c52ac7145266b25245644b8801d98a67714a83b
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -820,6 +1077,7 @@
 	"groups":
 	[
 		{
+<<<<<<< HEAD
 			"selected": 5,
 			"sheets":
 			[
@@ -1020,6 +1278,10 @@
 					"stack_index": 0,
 					"type": "text"
 				}
+=======
+			"sheets":
+			[
+>>>>>>> 4c52ac7145266b25245644b8801d98a67714a83b
 			]
 		}
 	],
@@ -1070,8 +1332,6 @@
 	{
 		"height": 100.0
 	},
-	"pinned_build_system": "Packages/SASS Build/SASS - Compressed.sublime-build",
-	"project": "pianolovescore.sublime-project",
 	"replace":
 	{
 		"height": 56.0
@@ -1080,7 +1340,6 @@
 	"select_file":
 	{
 		"height": 0.0,
-		"last_filter": "",
 		"selected_items":
 		[
 			[
@@ -1093,12 +1352,12 @@
 	"select_project":
 	{
 		"height": 0.0,
-		"last_filter": "",
 		"selected_items":
 		[
 		],
 		"width": 0.0
 	},
+<<<<<<< HEAD
 	"select_symbol":
 	{
 		"height": 392.0,
@@ -1112,13 +1371,20 @@
 	"settings":
 	{
 	},
+=======
+>>>>>>> 4c52ac7145266b25245644b8801d98a67714a83b
 	"show_minimap": true,
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
+<<<<<<< HEAD
 	"side_bar_width": 250.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
 	}
+=======
+	"side_bar_width": 310.0,
+	"status_bar_visible": true
+>>>>>>> 4c52ac7145266b25245644b8801d98a67714a83b
 }
