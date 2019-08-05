@@ -133,6 +133,6 @@ class ScoreController extends Controller
         $score->downloaded = $score->downloaded + 1;
         $score->save();
 
-        return response()->download($score->score_url, basename($score->author->lastname . ' - ' . $score->title . '.pdf"')->deleteFileAfterSend(true);
+        return response()->download($score->score_url, basename($score->author->lastname . ' - ' . $score->title . '.pdf"'))->deleteFileAfterSend(true);
     }
 }
