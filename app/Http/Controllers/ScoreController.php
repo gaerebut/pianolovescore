@@ -132,7 +132,7 @@ class ScoreController extends Controller
         $score->downloaded = $score->downloaded + 1;
         $score->save();
 
-        $file = basename($score->author->lastname . ' - ' . $score->title . '.pdf"');
+        $file = basename($score->author->lastname . ' - ' . $score->title . '.pdf');
         header("Content-disposition:attachment; filename=$file");
         readfile($score_url);
     }
