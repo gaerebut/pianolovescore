@@ -82,7 +82,7 @@
     </section>
 @endsection
 @section('js_code')
-    <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+    @parent
     {!! NoCaptcha::renderJs() !!}
     <script type="text/javascript">
         $(function(){

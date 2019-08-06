@@ -94,7 +94,7 @@
                         <h6><strong>{{ $score->downloaded . ' ' . str_plural(__('generic.download'), $score->downloaded|1
                         )}}</strong></h6>
                     </div>
-                    <div class="col-xs-12 col-md-8" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+                    <div class="col-xs-12 col-md-8" @if($score->count_votes > 0)itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating" @endif >
                         @if(!$user_already_vote)
                             <h5>@lang('messages.score.rate')</h5>
                         @else
@@ -124,8 +124,10 @@
                                 </form>
                                 <h3 class="scores__rating__thanks">@lang('messages.score.thanks_rate')</h3>
                             @endif
-                            <meta itemprop="worstRating" content = "1">
-                            <div class="scores__rating__result">{{ ucfirst(__('generic.average')) }} : <strong class="avg_votes" itemprop="ratingValue"><?php echo round($score->avg_votes/20, 2); ?></strong>/<span itemprop="bestRating">5</span> (<strong class="count_votes" itemprop="reviewCount">{{ $score->count_votes }}</strong> votes)</div>
+                            @if($score->count_votes > 0)
+                                <meta itemprop="worstRating" content = "1">
+                            @endif
+                            <div class="scores__rating__result">{{ ucfirst(__('generic.average')) }} : <strong class="avg_votes" @if($score->count_votes > 0)itemprop="ratingValue" @endif><?php echo round($score->avg_votes/20, 2); ?></strong>/<span @if($score->count_votes > 0)itemprop="bestRating" @endif>5</span> (<strong class="count_votes" @if($score->count_votes > 0)itemprop="reviewCount" @endif>{{ $score->count_votes }}</strong> votes)</div>
                         </div>
                         @if(!is_null($score->score_sound_url))
                             <div class="scores__audio">
@@ -171,18 +173,18 @@
                             </tr>
                         </thead>
                         <tbody class="homesection__content">
-                            @foreach($scores_similar as $score)
+                            @foreach($scores_similar as $other_score)
                                 <tr>
                                     <td width="5%">
-                                        <span class="label label-{{ $difficulties[$score->difficulty]['class'] }}">{{ $difficulties[$score->difficulty]['title'] }}</span>
+                                        <span class="label label-{{ $difficulties[$other_score->difficulty]['class'] }}">{{ $difficulties[$other_score->difficulty]['title'] }}</span>
                                     </td>
                                     <td>
-                                        <a href="{{ route( __('routes.score') , ['slug_author'=>$score->author->slug, 'slug_score'=>$score->slug])}}" title="@lang('generic.score_of_author', ['score' => $score->title, 'author' => $score->author->fullname])">{{ $score->title }}</a>
+                                        <a href="{{ route( __('routes.score') , ['slug_author'=>$other_score->author->slug, 'slug_score'=>$other_score->slug])}}" title="@lang('generic.score_of_author', ['score' => $other_score->title, 'author' => $other_score->author->fullname])">{{ $other_score->title }}</a>
                                     </td>
                                     <td class="star-rating">
-                                        @if(!is_null($score->avg_votes))
+                                        @if(!is_null($other_score->avg_votes))
                                             <div class="star-ratings-css">
-                                                <div class="top" style="width: {{ $score->avg_votes }}%">
+                                                <div class="top" style="width: {{ $other_score->avg_votes }}%">
                                                     <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                                                 </div>
                                                 <div class="bottom">
@@ -192,7 +194,7 @@
                                         @endif
                                     </td>
                                     <td class="scores__listing_downloaded">
-                                        <img src="{{ URL::to('/') }}/img/pdf_download.png" /><strong>{{ $score->downloaded . ' ' . str_plural(__('generic.time'), $score->downloaded|1) }}</strong>
+                                        <img src="{{ URL::to('/') }}/img/pdf_download.png" /><strong>{{ $other_score->downloaded . ' ' . str_plural(__('generic.time'), $other_score->downloaded|1) }}</strong>
                                     </td>
                                 </tr>
                             @endforeach
@@ -238,7 +240,6 @@
 @endsection
 @section('js_code')
     @parent
-    <script src="//load.sumome.com/" data-sumo-site-id="492cf06dd4417e64435c1585751ab4124d7c3fbfcf4021d3dfba6cbcc0a43f9e" async="async"></script>
     <script type="text/javascript">
         $(function(){
             $.ajaxSetup({

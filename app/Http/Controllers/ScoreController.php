@@ -117,18 +117,6 @@ class ScoreController extends Controller
     public function download($slug_score)
     {
         $score = Score::where('slug', '=', $slug_score)->firstOrFail();
-        /*
-        $file = uniqid() . '.pdf';
-        file_put_contents($file, file_get_contents($score->score_url));
-
-        header('Content-Description: File Transfer');
-        header('Content-Type: application/pdf', true);
-        header('Content-Length: ' . filesize($file));
-        header('Content-Disposition: attachment; filename="' . basename($score->author->lastname . ' - ' . $score->title . '.pdf"'));
-
-        readfile($file);
-        */
-
         $score->downloaded = $score->downloaded + 1;
         $score->save();
 
