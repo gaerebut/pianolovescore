@@ -36,8 +36,8 @@
 </script>
 
 @section('css')
-<link rel="stylesheet" href="{{ elixir('css/app.css') }}{{(config('app.env')=='local')?'?'.filemtime(public_path().'/css/app.css'):''}}">
-<link rel="icon" type="image/png" href="img/favicon.png" />
+<link rel="stylesheet" href="{{ elixir('css/app.css') }}{{(config('app.env')=='local')?'?'.filemtime(public_path().'/css/app.css'):''}}" as="style" />
+<link rel="preload" as="style" onload="this.rel = 'icon'" type="image/png" href="img/favicon.png">
 <!--[if IE]><link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" /><![endif]-->
-<link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+<!--<link rel="preload" as="font" onload="this.rel = 'stylesheet'" href="https://fonts.googleapis.com/css?family=Raleway:100,600" />-->
 @show

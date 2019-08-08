@@ -11,7 +11,7 @@
 		        		<span itemprop="name">{{ ucfirst(Request::segment($i))}}</span>
 		        	</a>
 		        @else
-		        	<span itemscope itemtype="http://schema.org/Thing" itemprop="item" id="@if(empty($breadcrumb_last_level))Page introuvable @else{{$breadcrumb_last_level}}@endif">
+		        	<span itemscope itemtype="http://schema.org/Thing" itemprop="item" id="@if(empty($breadcrumb_last_level))Page introuvable @else $breadcrumb_last_level @endif">
 		        		<span itemprop="name">@if(empty($breadcrumb_last_level)) Page introuvable @else {{ $breadcrumb_last_level }} @endif</span>
 		        	</span>
 		        @endif
