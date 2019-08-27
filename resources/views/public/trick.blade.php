@@ -18,7 +18,7 @@
 @endsection
 @section('css')
     @parent
-    <link rel="preload" as="style" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <link rel="preload" as="style" href="//maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
     <link rel="preload" as="style" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 @endsection
 @section('breadcrumb')
@@ -27,7 +27,7 @@
 @section('main')
     <?php \Carbon\Carbon::setLocale(config('app.locale')); ?>
 
-    <section class="scores__content" itemscope="" itemtype="http://schema.org/Book">
+    <section class="scores__content" itemscope="" itemtype="//schema.org/Book">
         <div class="col-md-12">
             <div class="row tricks__title">
                 <p class="pull-right">@lang('messages.tip.posted') <time itemprop="dateCreated" datetime="{{ $trick->created_at }}">{{ $trick->created_at->formatLocalized('%d/%m/%Y') }}</time></p>

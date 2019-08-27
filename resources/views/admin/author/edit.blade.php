@@ -5,7 +5,7 @@
 @endsection
 @section('css')
     @parent
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.css" rel="stylesheet">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.css" rel="stylesheet">
 @endsection
 @section('main')
 	<div class="col-md-8 col-md-offset-2">
@@ -67,7 +67,7 @@
 @endsection
 @section('js_code')
 	@parent
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.js"></script>
 	<script src="{{ elixir( '/js/sanitize.js' ) }}"></script>
 
 	<script type="text/javascript">

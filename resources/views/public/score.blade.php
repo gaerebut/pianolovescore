@@ -19,7 +19,7 @@
 @section('css')
     @parent
     <link rel="preload" as="style" onload="this.rel = 'stylesheet'" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
-    <link rel="preload" as="style" onload="this.rel = 'stylesheet'" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <link rel="preload" as="style" onload="this.rel = 'stylesheet'" href="//maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
     <!--<link rel="preload" as="style" onload="this.rel = 'stylesheet'" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">-->
 @endsection
 @section('breadcrumb')
@@ -37,13 +37,13 @@
         5 => ['title' => __('generic.very_hard_2'), 'class' => 'danger']
     ];
     ?>
-    <section class="scores__content" itemscope="" itemtype="http://schema.org/Book">
+    <section class="scores__content" itemscope="" itemtype="//schema.org/Book">
         <div class="col-md-offset-4 col-md-8">
             <div class="row scores__title">
                 <div class="row text-right">
                     <div class="col-md-12">@lang('messages.score.posted_on') <time itemprop="dateCreated" datetime="{{ $score->created_at }}">{{ $score->created_at->formatLocalized('%d/%m/%Y') }}</time></div>
                 </div>
-                <h1 itemprop="name">{{ $score->title }}</h1><h2><a href="{{ route(__('routes.author_scores'), ['slug_author'=>$score->author->slug]) }}" itemprop="author" itemscope itemtype="http://schema.org/Person" itemid="#author"><meta itemprop="name" content="{{ $score->author->fullname }}"/>{{ $score->author->fullname }}</a></h2>
+                <h1 itemprop="name">{{ $score->title }}</h1><h2><a href="{{ route(__('routes.author_scores'), ['slug_author'=>$score->author->slug]) }}" itemprop="author" itemscope itemtype="//schema.org/Person" itemid="#author"><meta itemprop="name" content="{{ $score->author->fullname }}"/>{{ $score->author->fullname }}</a></h2>
                 <p class="difficulty">
                     @if($score->difficulty==1)
                         <span class="label label-info active">@lang('generic.sheet_very_easy')</span>
@@ -94,7 +94,7 @@
                         <h6><strong>{{ $score->downloaded . ' ' . str_plural(__('generic.download'), $score->downloaded|1
                         )}}</strong></h6>
                     </div>
-                    <div class="col-xs-12 col-md-8" @if($score->count_votes > 0)itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating" @endif >
+                    <div class="col-xs-12 col-md-8" @if($score->count_votes > 0)itemprop="aggregateRating" itemscope itemtype="//schema.org/AggregateRating" @endif >
                         @if(!$user_already_vote)
                             <h5>@lang('messages.score.rate')</h5>
                         @else
