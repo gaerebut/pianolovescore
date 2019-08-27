@@ -135,7 +135,7 @@ Route::group(array('domain' => 'pianolovescore.' . (env('APP_ENV') == 'productio
 	Route::group( ['prefix' => 'sitemap' ], function()
 	{
 		Route::get('/', 'SitemapController@index')->name('sitemap');
-		Route::get('categories', 'SitemapController@categories')->name('sitemap_categories');
+		Route::get('categories', 'SitemapController@categories')->name('sitemap_categorie');
 		Route::get('auteurs', 'SitemapController@authors')->name('sitemap_auteurs');
 		Route::get('partitions', 'SitemapController@scores')->name('sitemap_partitions');
 		Route::get('lexiques', 'SitemapController@glossaries')->name('sitemap_lexiques');
@@ -176,7 +176,7 @@ Route::group(array('domain' => 'en.pianolovescore.' . (env('APP_ENV') == 'produc
 	Route::group( ['prefix' => 'sitemap' ], function()
 	{
 		Route::get('/', 'SitemapController@index')->name('sitemap');
-		Route::get('categories', 'SitemapController@categories')->name('sitemap_categories');
+		Route::get('categories', 'SitemapController@categories')->name('sitemap_category');
 		Route::get('authors', 'SitemapController@authors')->name('sitemap_authors');
 		Route::get('scores', 'SitemapController@scores')->name('sitemap_scores');
 		Route::get('glossaries', 'SitemapController@glossaries')->name('sitemap_glossaries');
