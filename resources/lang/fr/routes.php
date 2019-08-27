@@ -17,7 +17,7 @@ return[
 	'contact'				=> 'contact_us',
 	'legals'				=> 'mentions_legales',
 
-	'sitemap_category'		=> 'sitemap_categories',
+	'sitemap_categories'	=> 'sitemap_categorie',
 	'sitemap_authors'		=> 'sitemap_auteurs',
 	'sitemap_scores'		=> 'sitemap_partitions',
 	'sitemap_glossaries'	=> 'sitemap_lexiques',
