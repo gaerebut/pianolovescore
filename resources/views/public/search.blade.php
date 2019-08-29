@@ -41,7 +41,7 @@
                                     <a href="{{ route(__('routes.score'), ['slug_author'=>$score->author->slug, 'slug_score'=>$score->slug])}}">{{ $score->title }}</a>
                                 </td>
                                 <td>
-                                    @lang('generic.by') <a href="{{ route(__('routes.author_scores'), ['slug_author'=>$score->author->slug]) }}">{{ $score->author }}</a>
+                                    <a href="{{ route(__('routes.author_scores'), ['slug_author'=>$score->author->slug]) }}">{{ $score->author }}</a>
                                 </td>
                                 <td>
                                     @if(!is_null($score->avg_votes))

@@ -89,7 +89,7 @@
                     <div class="col-xs-offset-4 col-xs-4 col-md-offset-1 col-md-3">
                         <h4><strong>@lang('messages.score.free_download')</strong></h4>
                         <a href="{{ route(__('routes.score_download'), ['slug' => $score->slug]) }}" title="@lang('messages.score.download_free_sheet') {{ $score->title }} @lang('generic.by') {{ $score->author }}">
-                            <img src="{{ URL::to('/') }}/img/pdf_download.png" class="scores__download" alt="@lang('messages.score.download_free_sheet') {{ $score->title }} @lang('generic.by') {{ $score->author }}" title="@lang('messages.score.download_free_sheet') {{ $score->title }} @lang('generic.by') {{ $score->author }}""/>
+                            <img src="{{ URL::to('/') }}/img/pdf_download.png" class="scores__download" alt="@lang('messages.score.download_free_sheet') {{ $score->title }} @lang('generic.by') {{ $score->author }}" title="@lang('messages.score.download_free_sheet') {{ $score->title }} {{ $score->author }}""/>
                         </a>
                         <h6><strong>{{ $score->downloaded . ' ' . str_plural(__('generic.download'), $score->downloaded|1
                         )}}</strong></h6>
