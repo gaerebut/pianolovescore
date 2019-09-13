@@ -40,9 +40,9 @@
 							</td>
 							<td>
 								@if($comment->score)
-									{{ $comment->score->createdAt|date('Y-m-d') }}
+									{{ $comment->score->created_at|date('d-m-Y') }}
 								@elseif($comment->trick)
-									{{ $comment->trick->createdAt|date('Y-m-d') }}
+									{{ $comment->trick->created_at|date('d-m-Y') }}
 								@endif
 							</td>
 							<td>
