@@ -13,7 +13,6 @@
 					<th>Pseudo</th>
 					<th>Titre</th>
 					<th>Partition / Astuce</th>
-					<th>Date</th>
 					<th>Action</th>
 				</tr>
 			</thead>
@@ -36,13 +35,6 @@
 									Partition
 								@elseif($comment->trick)
 									Astuce
-								@endif
-							</td>
-							<td>
-								@if($comment->score)
-									{{ $comment->score->created_at|date('d-m-Y') }}
-								@elseif($comment->trick)
-									{{ $comment->trick->created_at|date('d-m-Y') }}
 								@endif
 							</td>
 							<td>
