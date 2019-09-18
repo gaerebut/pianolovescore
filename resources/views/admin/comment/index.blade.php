@@ -22,7 +22,7 @@
 					@foreach($new_comments as $comment)
 						<tr>
 							<td><span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span></td>
-							<td>{{ $comment->created_at->formatLocalized('%d/%m/%Y') }}</td>
+							<td>{{ $comment->created_at }}</td>
 							<td>{{ $comment->comment }}</td>
 							<td>{{ $comment->username }}</td>
 							<td>
