@@ -24,9 +24,9 @@
 							<td><span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span></td>
 							<td>
 								@if($comment->score)
-									$comment->score->created_at->formatLocalized('%d/%m/%Y')
+									{{ $comment->score->created_at->formatLocalized('%d/%m/%Y') }}
 								@elseif($comment->trick)
-									$comment->trick->created_at->formatLocalized('%d/%m/%Y')
+									{{ $comment->trick->created_at->formatLocalized('%d/%m/%Y') }}
 								@endif
 							</td>
 							<td>{{ $comment->comment }}</td>
