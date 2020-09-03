@@ -5,7 +5,7 @@
 @endsection
 @section('css')
     @parent
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.css" rel="stylesheet">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.css" rel="stylesheet">
 @endsection
 @section('main')
 	<div class="col-md-8 col-md-offset-2">
@@ -33,9 +33,15 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="description" class="col-sm-2 control-label">Description</label>
+				<label for="description_fr" class="col-sm-2 control-label">Description FR</label>
 				<div class="col-sm-10">
-					<textarea name="description" id="description">{{ old('description') }}</textarea>
+					<textarea name="description_fr" id="description_fr">{{ old('description_fr') }}</textarea>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="description_en" class="col-sm-2 control-label">Description EN</label>
+				<div class="col-sm-10">
+					<textarea name="description_en" id="description_en">{{ old('description_en') }}</textarea>
 				</div>
 			</div>
 			<div class="form-group">
@@ -107,7 +113,7 @@
 @endsection
 @section('js_code')
 	@parent
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.js"></script>
 	<script src="{{ elixir( '/js/sanitize.js' ) }}"></script>
 
 	<script type="text/javascript">
@@ -121,7 +127,7 @@
     		@endfor }
     		var current_author_scores = scores_exists[{{ $authors[0]->id }}];
 
-	    	$('#description').summernote({
+	    	$('#description_fr, #description_en').summernote({
 				placeholder: 'La description de la partition doit être la plus longue possible. Attention : ne surtout pas faire de copier/coller de n\'importe quel texte !',
 				height: 200
 			});

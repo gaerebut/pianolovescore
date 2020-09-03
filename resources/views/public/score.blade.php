@@ -1,7 +1,7 @@
 @extends('layouts.public')
 
 @section('title')@lang('title.score', ['title' => $score->title, 'author' => $score->author])@endsection
-@section('description')@lang('description.score', ['title' => $score->title, 'author' => $score->author]) @endsection
+@section('description')@lang('description.score', ['title' => $score->title, 'author' => $score->author, 'description' => str_limit(strip_tags($score->description), 175)]) @endsection
 
 @section('og_type')book @endsection
 @section('og_title')@lang('title.score', ['title' => $score->title, 'author' => $score->author])@endsection
@@ -18,22 +18,32 @@
 @endsection
 @section('css')
     @parent
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css" />
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link rel="preload" as="style" onload="this.rel = 'stylesheet'" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+    <link rel="preload" as="style" onload="this.rel = 'stylesheet'" href="//maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <!--<link rel="preload" as="style" onload="this.rel = 'stylesheet'" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">-->
 @endsection
 @section('breadcrumb')
     @include('includes.breadcrumb')
 @endsection
 @section('main')
-    <?php \Carbon\Carbon::setLocale(config('app.locale')); ?>
-    <section class="scores__content" itemscope="" itemtype="http://schema.org/Book">
+    <?php
+    \Carbon\Carbon::setLocale(config('app.locale'));
+
+    $difficulties = [
+        1 => ['title' => __('generic.very_easy_2'), 'class' => 'info'],
+        2 => ['title' => __('generic.easy_2'), 'class' => 'primary'],
+        3 => ['title' => __('generic.intermediate_2'), 'class' => 'success'],
+        4 => ['title' => __('generic.hard_2'), 'class' => 'warning'],
+        5 => ['title' => __('generic.very_hard_2'), 'class' => 'danger']
+    ];
+    ?>
+    <section class="scores__content" itemscope itemtype="http://schema.org/SheetMusic">
         <div class="col-md-offset-4 col-md-8">
             <div class="row scores__title">
                 <div class="row text-right">
                     <div class="col-md-12">@lang('messages.score.posted_on') <time itemprop="dateCreated" datetime="{{ $score->created_at }}">{{ $score->created_at->formatLocalized('%d/%m/%Y') }}</time></div>
                 </div>
-                <h1 itemprop="name">{{ $score->title }}</h1><h2><a href="{{ route(__('routes.author_scores'), ['slug_author'=>$score->author->slug]) }}" itemprop="author" itemscope itemtype="http://schema.org/Person" itemid="#author"><meta itemprop="name" content="{{ $score->author->fullname }}"/>{{ $score->author->fullname }}</a></h2>
+                <h1 itemprop="name">{{ $score->title }}</h1><h2><a href="{{ route(__('routes.author_scores'), ['slug_author'=>$score->author->slug]) }}" itemprop="author" itemscope itemtype="//schema.org/Person"><meta itemprop="knowsAbout" content="{{ route(__('routes.author_scores'), ['slug_author'=>$score->author->slug]) }}"/><meta itemprop="name" content="{{ $score->author->fullname }}"/>{{ $score->author->fullname }}</a></h2>
                 <p class="difficulty">
                     @if($score->difficulty==1)
                         <span class="label label-info active">@lang('generic.sheet_very_easy')</span>
@@ -67,30 +77,31 @@
             <div class="col-md-4 text-center">
                 <a data-fancybox="gallery" href="{{ URL::to('/') }}/img/scores/{{ $score->score_image }}">
                     <img src="{{ URL::to('/') }}/img/scores/{{ $score->score_image }}" class="scores__icon" itemprop="image" alt="{{ $score->title }} @lang('generic.by') {{ $score->author }}" title="@lang('messages.score.free_sheet') {{ $score->title }} @lang('generic.by') {{ $score->author }}">
+                    <meta itemprop="thumbnailUrl" content="{{ URL::to('/') }}/img/scores/{{ $score->score_image }}"/>
                 </a>
                 <h6><strong>@lang('messages.score.enlarge_image')</strong></h6>
             </div>
             <div class="col-md-8 scores__infos">
                 <div class="row text-left">
                     <p itemprop="description">{!! $score->description !!}</p>
-                    <p>@lang('messages.score.nb_pages') <span itemprop="numberOfPages">{{ $score->nb_pages }}</span> {{ str_plural('page', $score->nb_pages) }}</h6>
+                    <p>@lang('messages.score.nb_pages') {{ $score->nb_pages }} {{ str_plural('page', $score->nb_pages) }}</h6>
                 </div>
                 <div class="row">
                     <div class="col-xs-offset-4 col-xs-4 col-md-offset-1 col-md-3">
                         <h4><strong>@lang('messages.score.free_download')</strong></h4>
-                        <a href="{{ route('score_download', ['slug' => $score->slug]) }}" title="@lang('messages.score.download_free_sheet') {{ $score->title }} @lang('generic.by') {{ $score->author }}">
-                            <img src="{{ URL::to('/') }}/img/pdf_download.png" class="scores__download" alt="@lang('messages.score.download_free_sheet') {{ $score->title }} @lang('generic.by') {{ $score->author }}" title="@lang('messages.score.download_free_sheet') {{ $score->title }} @lang('generic.by') {{ $score->author }}""/>
+                        <a href="{{ route(__('routes.score_download'), ['slug' => $score->slug]) }}" title="@lang('messages.score.download_free_sheet') {{ $score->title }} @lang('generic.by') {{ $score->author }}">
+                            <img src="{{ URL::to('/') }}/img/pdf_download.png" class="scores__download" alt="@lang('messages.score.download_free_sheet') {{ $score->title }} @lang('generic.by') {{ $score->author }}" title="@lang('messages.score.download_free_sheet') {{ $score->title }} {{ $score->author }}""/>
                         </a>
                         <h6><strong>{{ $score->downloaded . ' ' . str_plural(__('generic.download'), $score->downloaded|1
                         )}}</strong></h6>
                     </div>
-                    <div class="col-xs-12 col-md-8" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+                    <div class="col-xs-12 col-md-8">
                         @if(!$user_already_vote)
                             <h5>@lang('messages.score.rate')</h5>
                         @else
                             <h5>@lang('messages.score.already_rate')</h5>
                         @endif
-                        <div class="stars">
+                        <div class="stars" @if($score->count_votes > 0)itemprop="aggregateRating" itemscope itemtype="//schema.org/aggregateRating" @endif>
                             <div class="star-ratings-css result @if(!$user_already_vote) off @endif">
                                 <div class="top" style="width: {{ $score->avg_votes }}%">
                                     <span></span><span></span><span></span><span></span><span></span>
@@ -114,14 +125,18 @@
                                 </form>
                                 <h3 class="scores__rating__thanks">@lang('messages.score.thanks_rate')</h3>
                             @endif
-                            <meta itemprop="worstRating" content = "1">
-                            <div class="scores__rating__result">{{ ucfirst(__('generic.average')) }} : <strong class="avg_votes" itemprop="ratingValue"><?php echo round($score->avg_votes/20, 2); ?></strong>/<span itemprop="bestRating">5</span> (<strong class="count_votes" itemprop="reviewCount">{{ $score->count_votes }}</strong> votes)</div>
+                            @if($score->count_votes > 0)
+                                <meta itemprop="worstRating" content = "1">
+                            @endif
+                            <div class="scores__rating__result">{{ ucfirst(__('generic.average')) }} : <strong class="avg_votes" @if($score->count_votes > 0)itemprop="ratingValue" @endif><?php echo round($score->avg_votes/20, 2); ?></strong>/<span @if($score->count_votes > 0)itemprop="bestRating" @endif>5</span> (<strong class="count_votes" @if($score->count_votes > 0)itemprop="reviewCount" @endif>{{ $score->count_votes }}</strong> votes)</div>
                         </div>
                         @if(!is_null($score->score_sound_url))
-                            <div class="scores__audio">
+                            <div class="scores__audio" itemprop="associatedMedia" itemscope itemtype="//schema.org/MediaObject">
                                 <h4>@lang('messages.score.listen') <strong>{{ $score->title }}</strong> @lang('generic.by') <strong>{{ $score->author->lastname }}</strong></h4>
-                                <audio controls="controls" preload="metadata" controlsList="nodownload" itemprop="audio">
+                                <audio controls="controls" preload="metadata" controlsList="nodownload" >
                                     <source src="{{ $score->score_sound_url }}" type="audio/{{ $score->score_sound_format }}" />
+                                    <meta itemprop="encodingFormat" content="audio/{{ $score->score_sound_format }}" />
+                                    <meta itemprop="embedUrl" content="{{ $score->score_sound_url }}" />
                                     @lang('generic.browser_compatible')
                                 </audio>
                             </div>
@@ -149,6 +164,48 @@
             </script>
             </div>
         </div>
+        @if(!empty($scores_similar))
+            <div class="row">
+                <div class="col-lg-offset-2 col-lg-8">
+                    <table class="table table-condensed">
+                        <thead>
+                            <tr>
+                                <td colspan="4">
+                                    <h3 class="homesection__title">@lang('messages.score.scores_similar')</h3>
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody class="homesection__content">
+                            @foreach($scores_similar as $other_score)
+                                <tr>
+                                    <td width="5%">
+                                        <span class="label label-{{ $difficulties[$other_score->difficulty]['class'] }}">{{ $difficulties[$other_score->difficulty]['title'] }}</span>
+                                    </td>
+                                    <td>
+                                        <a href="{{ route( __('routes.score') , ['slug_author'=>$other_score->author->slug, 'slug_score'=>$other_score->slug])}}" title="@lang('generic.score_of_author', ['score' => $other_score->title, 'author' => $other_score->author->fullname])">{{ $other_score->title }}</a>
+                                    </td>
+                                    <td class="star-rating">
+                                        @if(!is_null($other_score->avg_votes))
+                                            <div class="star-ratings-css">
+                                                <div class="top" style="width: {{ $other_score->avg_votes }}%">
+                                                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                                </div>
+                                                <div class="bottom">
+                                                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                                </div>
+                                            </div>
+                                        @endif
+                                    </td>
+                                    <td class="scores__listing_downloaded">
+                                        <img src="{{ URL::to('/') }}/img/pdf_download.png" alt="@lang('messages.score.download_free_sheet') - PDF"/><strong>{{ $other_score->downloaded . ' ' . str_plural(__('generic.time'), $other_score->downloaded|1) }}</strong>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        @endif
         <div class="row">
             <div class="card">
                 <ul class="nav nav-tabs" role="tablist">
@@ -186,7 +243,6 @@
 @endsection
 @section('js_code')
     @parent
-    <script src="//load.sumome.com/" data-sumo-site-id="492cf06dd4417e64435c1585751ab4124d7c3fbfcf4021d3dfba6cbcc0a43f9e" async="async"></script>
     <script type="text/javascript">
         $(function(){
             $.ajaxSetup({

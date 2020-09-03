@@ -3,7 +3,7 @@
 return [
 	'header_search_composer'	=> 'Find a free sheet music, a composer ...',
 	'header_search'				=> 'Search',
-	'footer_our_facebook_group'	=> 'Our Facebook group',
+	'footer_our_facebook_page'	=> 'Our Facebook page',
     'search_free_sheet'         => 'Search free sheet',
 
 	'comment' => [
@@ -20,9 +20,10 @@ return [
 	'home' => [
 		'title'			=> "Piano Love Score",
    	 	'subtitle'		=> "Free Sheet Piano",
-   	 	'introduction'	=> "<p>PianoLoveScore allows you to download <a href=\"" . route('home') . "\">free piano sheet music</a> in PDF format, rate them according to your tastes, listen to their audio version and share your experience with other members.</p><p>Whether you're beginner or professional on music, you'll find <a href=\"" . route( __('tricks')) . "\">free tips</a> pfor perfecting your <strong>piano</strong> technique..</p><p><strong>Free sheet music</strong> on PianoLoveScore are all <strong>legal and royalty free piano sheet music.</strong>.</p><p>Join our Facebook group <a href=\"https://www.facebook.com/groups/partitio.gratuite/\">Free Sheet Music Piano</a> and find the <strong>piano sheet music</strong> that members share for free.</p>",
+   	 	'introduction'	=> '<p>PianoLoveScore allows you to download <a href=":route_home">free piano sheet music</a> in PDF format, rate them according to your tastes, listen to their audio version and share your experience with other members.</p><p>Whether you\'re beginner or professional on music, you\'ll find <a href=":route_tricks">free tips</a> pfor perfecting your <strong>piano</strong> technique..</p><p><strong>Free sheet music</strong> on PianoLoveScore are all <strong>legal and royalty free piano sheet music.</strong>.</p>',
     	'scores_news'	=> 'NEW Free Piano Sheet Music',
     	'scores_top'	=> 'TOP Free Piano Sheet Music',
+        'partners'      => 'Partners',
 	],
 	'score' => [
         'all_scores'            => 'All free piano sheet',
@@ -40,7 +41,8 @@ return [
    	 	'no_score_difficulty'	=> 'There are no free piano sheet of this difficulty',
    	 	'filter_by_difficulty'	=> 'Filter by difficulty',
         'see_other_of_author'   => 'See :nb_score more free piano sheet by :author',
-        'associated_researches' => 'Associated researches'
+        'associated_researches' => 'Associated researches',
+        'scores_similar'        => 'You will also like these scores...'
 	],
     'score_request' => [
     	'description'	=> '<p>Can not find your <strong>piano sheet</strong> on PianoLoveScore ?</p><p>Ask for it !</p><p>Enter all the information to describe it and we will try to offer it <strong>for free</strong></p><p>WARNING : only <strong>legal and royalty-free piano sheet</strong> will be published.</p>',

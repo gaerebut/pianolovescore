@@ -1,3 +1,8 @@
+@php
+    $other_lang = App::getLocale() == 'fr' ? 'en' : 'fr';
+    $alternate_route = route(__('routes.contact', [], $other_lang));
+@endphp
+
 @extends('layouts.public')
 
 @section('title')@lang('title.contact_us')@endsection
@@ -7,7 +12,10 @@
 @section('og_title')@lang('title.contact_us')@endsection
 @section('og_description')@lang('description.contactus')@endsection
 @section('og_image'){{ Request::url() }}{{ elixir('img/logo_full.png') }} @endsection
-
+@section('meta')
+    @parent
+    <link rel="alternate" hreflang="{{ $other_lang }}" href="{{ $alternate_route }}"/>
+@endsection
 @section('breadcrumb')
     @include('includes.breadcrumb')
 @endsection
@@ -74,7 +82,7 @@
     </section>
 @endsection
 @section('js_code')
-    <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+    @parent
     {!! NoCaptcha::renderJs() !!}
     <script type="text/javascript">
         $(function(){

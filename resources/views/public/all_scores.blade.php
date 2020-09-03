@@ -40,14 +40,15 @@
                 <a href="{{ route(__('routes.scores_difficulty'), ['difficulty'=>__('generic.sheet_hard_href')]) }}" title="@lang('generic.sheet_hard_title')" class="label label-warning">@lang('generic.hard_2')</a>
                 <a href="{{ route(__('routes.scores_difficulty'), ['difficulty'=>__('generic.sheet_very_hard_href')]) }}" title="@lang('generic.sheet_very_hard_title')" class="label label-danger">@lang('generic.very_hard_2')</a>
             </h3>
-            <table class="table table-condensed">
+            
                 @php $count_global_scores = 1; @endphp
 
                 @foreach($authors as $author)
                     @if(count($author->scores)>0)
+                        <table class="table table-condensed">
                         <thead>
                             <tr>
-                                <th colspan="2">
+                                <th colspan="4">
                                     <h3><a href="{{ route(__('routes.author_scores'), ['slug_author'=>$author->slug]) }}">{{ $author }}</a></h3>
                                 </th>
                             </tr>
@@ -100,18 +101,18 @@
                                     </td>
                                 </tr>
                             @endfor
-                        </tbody>
-                        @if($count_author_scores > $maximum_scores)
-                            <tbody>
+
+                            @if($count_author_scores > $maximum_scores)
                                 <tr>
-                                    <td colspan="3">
+                                    <td colspan="4">
                                         <a href="{{ route(__('routes.author_scores'), ['slug_author'=>$author->slug]) }}" class="btn btn-default btn-lg">
                                             <span class="glyphicon glyphicon-star" aria-hidden="true"></span> @lang('messages.score.see_other_of_author', ['nb_score' => $count_author_scores-$maximum_scores, 'author' => $author->fullname])
                                         </a>
                                     </td>
                                 </tr>
+                            @endif
                             </tbody>
-                        @endif
+                        </table>
                     @endif
                 @endforeach
             </table>

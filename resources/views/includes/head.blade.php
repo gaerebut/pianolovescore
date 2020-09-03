@@ -8,6 +8,7 @@
 <meta http-equiv="Content-Language" content="{{ app()->getLocale() }}" />
 
 <meta name="robots" content="all">
+<meta name="google-site-verification" content="BbEFar3EFRwM0LkGmKZCBtratfry1rUavCeUl40-HAY" />
 <title>@yield('title')</title>
 
 @section('meta')
@@ -36,8 +37,8 @@
 </script>
 
 @section('css')
-<link rel="stylesheet" href="{{ elixir('css/app.css') }}{{(config('app.env')=='local')?'?'.filemtime(public_path().'/css/app.css'):''}}">
-<link rel="icon" type="image/png" href="img/favicon.png" />
-<!--[if IE]><link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" /><![endif]-->
-<link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="{{ elixir('css/app.css') }}{{(config('app.env')=='local')?'?'.filemtime(public_path().'/css/app.css'):''}}" as="style" />
+<link rel="preload" as="image" onload="this.rel = 'icon'" href="/img/favicon.png">
+<!--[if IE]><link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico" /><![endif]-->
+<!--<link rel="preload" as="font" onload="this.rel = 'stylesheet'" href="https://fonts.googleapis.com/css?family=Raleway:100,600" />-->
 @show

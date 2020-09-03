@@ -18,8 +18,8 @@
 @endsection
 @section('css')
     @parent
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link rel="preload" as="style" href="//maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <link rel="preload" as="style" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 @endsection
 @section('breadcrumb')
     @include('includes.breadcrumb')
@@ -27,7 +27,7 @@
 @section('main')
     <?php \Carbon\Carbon::setLocale(config('app.locale')); ?>
 
-    <section class="scores__content" itemscope="" itemtype="http://schema.org/Book">
+    <section class="scores__content" itemscope="" itemtype="//schema.org/Book">
         <div class="col-md-12">
             <div class="row tricks__title">
                 <p class="pull-right">@lang('messages.tip.posted') <time itemprop="dateCreated" datetime="{{ $trick->created_at }}">{{ $trick->created_at->formatLocalized('%d/%m/%Y') }}</time></p>
@@ -74,10 +74,7 @@
     </section>
 @endsection
 @section('js_code')
-    <script src="//load.sumome.com/" data-sumo-site-id="492cf06dd4417e64435c1585751ab4124d7c3fbfcf4021d3dfba6cbcc0a43f9e" async="async"></script>
-    <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
-    <script src="/js/bootstrap.min.js" type="text/javascript"></script>
+    @parent
     <script type="text/javascript">
         $(function(){
             $.ajaxSetup({

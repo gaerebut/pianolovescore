@@ -24,7 +24,7 @@
 				<th>Votes</th>
 				<th>Moyenne</th>
 				<th>Téléchargements</th>
-				<th>Longueur description</th>
+				<th>Longueur description FR / EN</th>
 				<th>Mots clés</th>
 				<th>Difficulté<br />
 					<select id="difficulty">
@@ -49,15 +49,15 @@
 		<tbody>
 			@if(!empty($scores) && count($scores) > 0 )
 				@foreach($scores as $score)
-					<tr @if(strlen($score->description) == 0) style="background-color: rgba(255,0,0,0.5)" @endif>
+					<tr @if(strlen($score->description_fr) == 0 || strlen($score->description_en) == 0) style="background-color: rgba(255,0,0,0.4)" @endif>
 						<td>{{ $score->id }}</td>
 						<td>{{ $score }}</td>
 						<td>{{ $score->author }}</td>
 						<td>{{ $score->count_votes }}</td>
 						<td>{{ $score->avg_votes }}</td>
 						<td>{{ $score->downloaded }}</td>
-						<td @if(strlen($score->description) == 0) style="font-weight:bold; color:red" @endif>{{ strlen($score->description) }}</td>
-						<td>
+						<td><span @if(strlen($score->description_fr) == 0) style="font-weight:bold; color:red" @endif>{{ strlen($score->description_fr) }}</span>/<span @if(strlen($score->description_en) == 0) style="font-weight:bold; color:red" ]@endif>{{ strlen($score->description_en) }}</span></td>
+						<td> 
 							@foreach($score->keywords as $keyword)
 								{{ $keyword . ' ' }}
 							@endforeach

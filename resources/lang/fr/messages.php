@@ -3,7 +3,7 @@
 return [
 	'header_search_composer'	=> 'Rechercher une partition gratuite, un compositeur...',
 	'header_search'				=> 'Rechercher',
-	'footer_our_facebook_group'	=> 'Notre groupe Facebook',
+	'footer_our_facebook_page'	=> 'Notre page Facebook',
     'search_free_sheet'         => 'Rechercher une partition gratuite',
 
 	'comment' => [
@@ -20,9 +20,10 @@ return [
     'home' => [
     	'title'			=> 'Piano Love Score',
     	'subtitle'		=> 'Partitions Gratuites de Piano',
-    	'introduction'	=> "<p>PianoLoveScore vous permet de télécharger des <a href=\"" . route('home') . "\">partitions gratuites de piano</a> au format PDF, de les noter en fonction de vos goûts, d'écouter leurs version audio et de partager votre expérience avec les autres membres.</p><p>Que vous débutiez ou que vous soyez professionnel, vous trouverez des <a href=\"" . route('tricks') . "\">astuces gratuites</a> pour perfectionner votre technique au <strong>piano</strong>.</p><p>Les <strong>partitions gratuites</strong> présentes sur PianoLoveScore sont toutes des <strong>partitions de piano légales et libres de droits</strong>.</p><p>Rejoignez notre groupe Facebook <a href=\"https://www.facebook.com/groups/partitio.gratuite/\">Partition Gratuite Piano</a> et retrouvez les <strong>partitions de piano</strong> que les membres s'échangent gratuitement.</p>",
+    	'introduction'	=> '<p>PianoLoveScore vous permet de télécharger des <a href=":route_home">partitions gratuites de piano</a> au format PDF, de les noter en fonction de vos goûts, d\'écouter leurs version audio et de partager votre expérience avec les autres membres.</p><p>Que vous débutiez ou que vous soyez professionnel, vous trouverez des <a href=":route_tricks">astuces gratuites</a> pour perfectionner votre technique au <strong>piano</strong>.</p><p>Les <strong>partitions gratuites</strong> présentes sur PianoLoveScore sont toutes des <strong>partitions de piano légales et libres de droits</strong>.</p>',
     	'scores_news'	=> 'Nouvelles Partitions Gratuites de Piano',
     	'scores_top'	=> 'TOP Partitions Gratuites de Piano',
+        'partners'      => 'Partenaires',
     ],
     'score' => [
         'all_scores'            => 'Toutes les partitions gratuites de piano',
@@ -41,6 +42,7 @@ return [
         'filter_by_difficulty'  => 'Filter par difficulté',
         'see_other_of_author'   => 'Voir les :nb_score autres partitions gratuites de :author',
         'associated_researches' => 'Recherches associées',
+        'scores_similar'        => 'Vous aimerez également ces partitions...'
     ],
     'score_request' => [
         'description'   => '<p>Vous ne trouvez pas votre <strong>partition de piano</strong> sur PianoLoveScore ?</p><p>Demandez-la !</p><p>Rentrez toutes les informations pour la décrire et nous nous efforcerons de vous le proposer <strong>gratuitement</strong></p><p>ATTENTION: seules les <strong>partitions légales et libres de droits</strong> se verront publiées.</p>',

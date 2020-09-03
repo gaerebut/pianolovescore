@@ -12,7 +12,7 @@
 					<th width="30%">Commentaire</th>
 					<th>Pseudo</th>
 					<th>Titre</th>
-					<th>Partition / Astuce
+					<th>Partition / Astuce</th>
 					<th>Action</th>
 				</tr>
 			</thead>
