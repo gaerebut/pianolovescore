@@ -18,10 +18,17 @@ class ScoreController extends Controller
             ['score_id', '=', $score->id],
             ['ip_address', '=', \Request::ip()]
         ])->count();
+        $scores_similar = Score::where([
+            ['author_id', '=', $score->author->id],
+            ['id', '<>', $score->id]
+            ])->orderBy('avg_votes', 'desc')->orderBy('count_votes', 'desc')->limit(\Config::get('constants.public_scores_maximum_scores_same_author'))->get();
+
+        $score->description = $score['description_' . \App::getLocale()];
 
         return view('public.score', [
             'breadcrumb_last_level' => $score,
             'score'                 => $score,
+            'scores_similar'        => $scores_similar,
             'user_already_vote'     => (bool)$rate
         ]);
     }
@@ -110,18 +117,10 @@ class ScoreController extends Controller
     public function download($slug_score)
     {
         $score = Score::where('slug', '=', $slug_score)->firstOrFail();
-
-        $file = uniqid() . '.pdf';
-        file_put_contents($file, file_get_contents($score->score_url));
-
-        header('Content-Description: File Transfer');
-        header('Content-Type: application/octet-stream');
-        header('Content-Length: ' . filesize($file));
-        header('Content-Disposition: attachment; filename=' . basename($score->author->lastname . ' - ' . $score->title . '.pdf'));
-
-        readfile($file);
-
         $score->downloaded = $score->downloaded + 1;
         $score->save();
+
+        header('Content-disposition:attachment; filename="' . basename($score->author->lastname . ' - ' . $score->title . '.pdf') . '"');
+        readfile($score->score_url);
     }
 }

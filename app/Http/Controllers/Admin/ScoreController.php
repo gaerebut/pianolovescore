@@ -105,7 +105,8 @@ class ScoreController extends BaseController
 
         $score = new Score();
         $score->title 				= ucfirst($input['title']);
-        $score->description         = $input['description'];
+        $score->description_fr      = $input['description_fr'];
+        $score->description_en      = $input['description_en'];
         $score->slug 				= ucfirst($input['slug']);
         $score->author_id			= $input['author_id'];
         $score->is_online           = !empty($input['is_online']);
@@ -221,7 +222,8 @@ class ScoreController extends BaseController
         }
 
         $score->title 				= ucfirst($input['title']);
-        $score->description         = $input['description'];
+        $score->description_fr      = $input['description_fr'];
+        $score->description_en      = $input['description_en'];
         $score->slug 				= ucfirst($input['slug']);
         $score->author_id			= $input['author_id'];
         $score->is_online           = !empty($input['is_online']);

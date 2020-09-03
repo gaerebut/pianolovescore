@@ -17,7 +17,8 @@ class CreateScoresTable extends Migration
             $table->increments('id');
             $table->string('slug', 190)->unique();
             $table->string('title', 190);
-            $table->text('description')->nullable();
+            $table->text('description_fr')->nullable();
+            $table->text('description_en')->nullable();
             $table->integer('author_id')->unsigned();
             $table->string('score_image', 190);
             $table->string('score_url', 190);

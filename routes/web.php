@@ -107,6 +107,8 @@ Route::get('/contact', 'HomeController@contactusShow')->name('contact_us');
 Route::group(array('domain' => 'pianolovescore.' . (env('APP_ENV') == 'production'?'com':'dev')), function(){		/** ROUTES : FR */
 	Route::get('/', 'HomeController@show')->name('accueil');
 
+	Route::get('/mentions-legales', 'HomeController@legalsShow')->name('mentions_legales');
+
 	Route::get('/rechercher', 'HomeController@searchByForm')->name('recherche');
 	Route::get('/rechercher/{q}', 'HomeController@search')->name('recherche_par_formulaire');
 
@@ -133,7 +135,7 @@ Route::group(array('domain' => 'pianolovescore.' . (env('APP_ENV') == 'productio
 	Route::group( ['prefix' => 'sitemap' ], function()
 	{
 		Route::get('/', 'SitemapController@index')->name('sitemap');
-		Route::get('categories', 'SitemapController@categories')->name('sitemap_categories');
+		Route::get('categories', 'SitemapController@categories')->name('sitemap_categorie');
 		Route::get('auteurs', 'SitemapController@authors')->name('sitemap_auteurs');
 		Route::get('partitions', 'SitemapController@scores')->name('sitemap_partitions');
 		Route::get('lexiques', 'SitemapController@glossaries')->name('sitemap_lexiques');
@@ -145,6 +147,8 @@ Route::group(array('domain' => 'pianolovescore.' . (env('APP_ENV') == 'productio
 Route::group(array('domain' => 'en.pianolovescore.' . (env('APP_ENV') == 'production'?'com':'dev')), function() {
 	/** ROUTES : EN */
 	Route::get('/', 'HomeController@show')->name('home');
+
+	Route::get('/legals', 'HomeController@legalsShow')->name('legals');
 
 	Route::get('/search', 'HomeController@searchByForm')->name('search');
 	Route::get('/search/{q}', 'HomeController@search')->name('search_by_form');
@@ -172,7 +176,7 @@ Route::group(array('domain' => 'en.pianolovescore.' . (env('APP_ENV') == 'produc
 	Route::group( ['prefix' => 'sitemap' ], function()
 	{
 		Route::get('/', 'SitemapController@index')->name('sitemap');
-		Route::get('categories', 'SitemapController@categories')->name('sitemap_categories');
+		Route::get('categories', 'SitemapController@categories')->name('sitemap_category');
 		Route::get('authors', 'SitemapController@authors')->name('sitemap_authors');
 		Route::get('scores', 'SitemapController@scores')->name('sitemap_scores');
 		Route::get('glossaries', 'SitemapController@glossaries')->name('sitemap_glossaries');
