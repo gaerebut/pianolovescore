@@ -23,17 +23,10 @@
             </li>
             <li class="lang">
                 @if(App::getLocale() == 'en')
-<<<<<<< HEAD
-                    <img src="{{ URL::to('/') }}/img/flag_en.png" class="active pull-right" alt="Free Score Piano"/>
-                    <a href="{{ $alternate_route }}" class="pull-right" title="Partition Gratuites de Piano"><img src="{{ URL::to('/') }}/img/flag_fr.png" alt="Partitions Gratuites de Piano"/></a>
-                @elseif(App::getLocale() == 'fr')
-                    <a href="{{ $alternate_route }}" class="pull-right" title="Free Scores Piano"><img src="{{ URL::to('/') }}/img/flag_en.png" alt="Free Score Piano"/></a>
-=======
                     <img src="{{ URL::to('/') }}/img/flag_en.png" class="active pull-right" alt="Free Scores Piano"/>
                     <a href="{{ $alternate_route }}" class="pull-right" title="Partition Gratuites de Piano"><img src="{{ URL::to('/') }}/img/flag_fr.png" alt="Partitions Gratuites de Piano"/></a>
                 @elseif(App::getLocale() == 'fr')
                     <a href="{{ $alternate_route }}" class="pull-right" title="Free Scores Piano"><img src="{{ URL::to('/') }}/img/flag_en.png" alt="Free Scores Piano"/></a>
->>>>>>> a11367f17b57c4f787b5a3181426d4e10427663a
                     <img src="{{ URL::to('/') }}/img/flag_fr.png" class="active pull-right" alt="Partitions Gratuites de Piano"/>
                 @endif
             </li>

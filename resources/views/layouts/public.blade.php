@@ -6,11 +6,7 @@
     <body>
         <header class="container-fluid">
             <div class="row text-center">
-<<<<<<< HEAD
-                <p class="text-center logo"><a href="{{ route(__('routes.home')) }}" title="@lang('messages.home.subtitle')">PianoLoveScore</a></p>
-=======
                 <h1 class="text-center logo"><a href="{{ route(__('routes.home')) }}" title="@lang('messages.home.subtitle')">PianoLoveScore</a></h1>
->>>>>>> a11367f17b57c4f787b5a3181426d4e10427663a
                 <span class="menu-hamburger glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
             </div>
             <div class="row">
